@@ -4,7 +4,7 @@ import os
 import sys
 import yaml
 from datetime import datetime
-from scholarly import scholarly
+from scholarly import scholarly, ProxyGenerator
 
 
 def load_scholar_user_id() -> str:
@@ -61,6 +61,17 @@ def get_scholar_citations() -> None:
             )
 
     citation_data = {"metadata": {"last_updated": today}, "papers": {}}
+
+    pg = ProxyGenerator()
+    print("Sourcing a free proxy... (this may take a few seconds)")
+
+    success = pg.FreeProxies()
+
+    if success:
+        scholarly.use_proxy(pg)
+        print("Proxy successfully configured.")
+    else:
+        print("Warning: Could not fetch a free proxy. Proceeding without one.")
 
     scholarly.set_timeout(15)
     scholarly.set_retries(3)
