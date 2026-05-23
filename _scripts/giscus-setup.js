@@ -2,39 +2,44 @@
 permalink: /assets/js/giscus-setup.js
 ---
 
-function determineGiscusTheme() {
-  {% if site.enable_darkmode %}
+(function setupGiscus() {
+  const container = document.getElementById("giscus_thread");
+  if (!container) return;
+
+  const ds = container.dataset || {};
+
+  function determineGiscusTheme(darkTheme, lightTheme) {
+    {% if site.enable_darkmode %}
     let theme =
       localStorage.getItem("theme") ||
       document.documentElement.getAttribute("data-theme") ||
       "system";
 
-    if (theme === "dark") return "{{ site.giscus.dark_theme }}";
-    if (theme === "light") return "{{ site.giscus.light_theme }}";
+    if (theme === "dark") return darkTheme || "{{ site.giscus.dark_theme }}";
+    if (theme === "light") return lightTheme || "{{ site.giscus.light_theme }}";
 
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    return prefersDark ? "{{ site.giscus.dark_theme }}" : "{{ site.giscus.light_theme }}";
-  {% else %}
-    return "{{ site.giscus.light_theme }}";
-  {% endif %}
-}
+    return prefersDark ? (darkTheme || "{{ site.giscus.dark_theme }}") : (lightTheme || "{{ site.giscus.light_theme }}");
+    {% else %}
+    return lightTheme || "{{ site.giscus.light_theme }}";
+    {% endif %}
+  }
 
-(function setupGiscus() {
-  let giscusTheme = determineGiscusTheme();
+  let giscusTheme = determineGiscusTheme(ds.darkTheme, ds.lightTheme);
 
   let giscusAttributes = {
     src: "https://giscus.app/client.js",
-    "data-repo": "{{ site.giscus.repo }}",
-    "data-repo-id": "{{ site.giscus.repo_id }}",
-    "data-category": "{{ site.giscus.category }}",
-    "data-category-id": "{{ site.giscus.category_id }}",
-    "data-mapping": "{{ site.giscus.mapping }}",
-    "data-strict": "{{ site.giscus.strict }}",
-    "data-reactions-enabled": "{{ site.giscus.reactions_enabled }}",
-    "data-emit-metadata": "{{ site.giscus.emit_metadata }}",
-    "data-input-position": "{{ site.giscus.input_position }}",
+    "data-repo": ds.repo || "{{ site.giscus.repo }}",
+    "data-repo-id": ds.repoId || "{{ site.giscus.repo_id }}",
+    "data-category": ds.category || "{{ site.giscus.category }}",
+    "data-category-id": ds.categoryId || "{{ site.giscus.category_id }}",
+    "data-mapping": ds.mapping || "{{ site.giscus.mapping }}",
+    "data-strict": ds.strict || "{{ site.giscus.strict }}",
+    "data-reactions-enabled": ds.reactionsEnabled || "{{ site.giscus.reactions_enabled }}",
+    "data-emit-metadata": ds.emitMetadata || "{{ site.giscus.emit_metadata }}",
+    "data-input-position": ds.inputPosition || "{{ site.giscus.input_position }}",
     "data-theme": giscusTheme,
-    "data-lang": "{{ site.giscus.lang }}",
+    "data-lang": ds.lang || "{{ site.giscus.lang }}",
     crossorigin: "anonymous",
     async: true,
   };
@@ -43,6 +48,6 @@ function determineGiscusTheme() {
   Object.entries(giscusAttributes).forEach(([key, value]) =>
     giscusScript.setAttribute(key, value)
   );
-  document.getElementById("giscus_thread").appendChild(giscusScript);
+  container.appendChild(giscusScript);
 })();
 

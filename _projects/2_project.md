@@ -6,6 +6,18 @@ img: assets/img/3.jpg
 importance: 2
 category: work
 giscus_comments: true
+giscus_repo: satyam-aw/CS292C-Battleship
+giscus_repo_id: R_kgDOHZcSaA
+giscus_category: General
+giscus_category_id: DIC_kwDOHZcSaM4C9r7Q
+giscus_mapping: pathname
+# optional
+giscus_dark_theme: dark
+giscus_light_theme: light
+giscus_input_position: bottom
+giscus_reactions_enabled: 1
+giscus_emit_metadata: 0
+giscus_lang: en
 ---
 
 Every project has a beautiful feature showcase page.

@@ -1,5 +1,17 @@
 <div
   id="giscus_thread"
+  data-repo="{{ page.giscus_repo | default: site.giscus.repo }}"
+  data-repo-id="{{ page.giscus_repo_id | default: site.giscus.repo_id }}"
+  data-category="{{ page.giscus_category | default: site.giscus.category }}"
+  data-category-id="{{ page.giscus_category_id | default: site.giscus.category_id }}"
+  data-mapping="{{ page.giscus_mapping | default: site.giscus.mapping }}"
+  data-strict="{{ page.giscus_strict | default: site.giscus.strict }}"
+  data-reactions-enabled="{{ page.giscus_reactions_enabled | default: site.giscus.reactions_enabled }}"
+  data-input-position="{{ page.giscus_input_position | default: site.giscus.input_position }}"
+  data-dark-theme="{{ page.giscus_dark_theme | default: site.giscus.dark_theme }}"
+  data-light-theme="{{ page.giscus_light_theme | default: site.giscus.light_theme }}"
+  data-emit-metadata="{{ page.giscus_emit_metadata | default: site.giscus.emit_metadata }}"
+  data-lang="{{ page.giscus_lang | default: site.giscus.lang }}"
   {% if page.layout == 'post' %}
     style="max-width: {{ site.max_width }}; margin: 0 auto;"
   {% endif %}
