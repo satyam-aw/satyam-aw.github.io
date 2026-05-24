@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Fruit Ripeness Classifier
-description: Nondestructive techniques for determining the ripeness state using ML methods
+description: Nondestructive techniques for determining the ripeness state using ML methods. Completed May 2018
 img: /assets/img/4_ripeness_classifier.PNG
 importance: 3
 category: fun
