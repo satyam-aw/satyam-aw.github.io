@@ -5,5 +5,17 @@
 "PhysRev":
   url: https://journals.aps.org/
 
+"ISMAR":
+  url: https://www.ismar.net/
+  color: "#e17a00"
+
+"IEEE VR":
+  url: https://ieeevr.org/
+  color: "#12a6c9"
+
+"COMSNETS":
+  url: https://www.comsnets.org/
+  color: "#76c8ef"
+
 "Vision":
   color: "#009f36"
