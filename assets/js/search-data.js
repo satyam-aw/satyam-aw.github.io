@@ -468,12 +468,12 @@ ninja.data = [{
               window.location.href = "/projects/3_project/";
             },},{id: "projects-fruit-ripeness-classifier",
           title: 'Fruit Ripeness Classifier',
-          description: "Nondestructive techniques for determining the ripeness state using ML methods",
+          description: "Nondestructive techniques for determining the ripeness state using ML methods. Completed May 2018",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
+            },},{id: "projects-in-motion-har-using-deepconvlstm",
+          title: 'In Motion - HAR using DeepConvLSTM',
+          description: "Human Activity Recognition using DeepConvLSTM and Smartphone Sensors.  Completed as a term-project for Smartphone Computing in April 2019",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
             },},{id: "projects-project-6",
