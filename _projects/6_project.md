@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 6
+title: JitterNot
 description: a project with no image
 img:
 importance: 4
-category: fun
+category: Sequential Deep Learning and ML
 ---
 
 Every project has a beautiful feature showcase page.

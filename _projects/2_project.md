@@ -4,7 +4,7 @@ title: project 2
 description: a project with a background image and giscus comments
 img: assets/img/3.jpg
 importance: 2
-category: work
+category: HCI and Computer Graphics
 giscus_comments: true
 giscus_repo: satyam-aw/CS292C-Battleship
 giscus_repo_id: R_kgDOHZcSaA

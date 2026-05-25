@@ -4,7 +4,7 @@ title: In Motion - HAR using DeepConvLSTM
 description: Human Activity Recognition using DeepConvLSTM and Smartphone Sensors. <br> Completed as a term-project for Smartphone Computing in April 2019
 img: assets/img/5.PNG
 importance: 2
-category: fun
+category: Sequential Deep Learning and ML
 project_pdf: https://docs.google.com/presentation/d/1QRr3mSakrhzpzykfH6BRo-_7HwZmj48IsuDwIsur5dE/edit?usp=sharing
 ---
 
