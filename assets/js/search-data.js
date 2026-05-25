@@ -456,9 +456,9 @@ ninja.data = [{
           description: "with background image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-spell-training-in-vr",
-          title: 'Spell Training in VR',
-          description: "A Unity-based VR experience that affords the users an innovative interaction system through midair sketching to summon and manipulate in-game characters",
+            },},{id: "projects-",
+          title: '',
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-project-3-with-very-long-name",
@@ -486,9 +486,9 @@ ninja.data = [{
           description: "with background image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
+            },},{id: "projects-tweeter",
+          title: 'Tweeter',
+          description: "A Twitter-like micro blogging social media app for load testing and bottleneck analysis",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
             },},{id: "projects-project-9",
