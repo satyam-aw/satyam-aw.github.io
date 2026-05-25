@@ -6,6 +6,7 @@ img: assets/img/8.webp
 importance: 2
 category: Software Engineering
 project_pdf: https://docs.google.com/document/d/1oxVZuh_Wj5Tc_Jv-8qsjNRmkKm0Kov0G5AQeYhBpz3M/edit?usp=sharing
+github: https://github.com/satyam-aw/Tweeters
 giscus_comments: true
 giscus_repo: satyam-aw/Tweeters
 giscus_repo_id: R_kgDOGwhrMQ
@@ -23,7 +24,7 @@ giscus_lang: en
 
 The Tweeters App is a social media app which allows users to create profiles, follow other users, create posts, comment, and like on posts as well as to message other users. We built the frontend using the Ruby-on-Rails built-in templating engine to keep the focus on creating a scalable application capable of handling high-traffic conditions. While unregistered guests can view all posts and comments, the creation of posts, comments, likes, and messages is restricted to registered users.
 
-You may view the source code at the [GitHub repository](https://github.com/scalableinternetservicesarchive/Tweeters)
+You may view the source code at the [GitHub repository (archived)](https://github.com/scalableinternetservicesarchive/Tweeters) or my [fork](https://github.com/satyam-aw/Tweeters).
 
 <div class="d-flex justify-content-center">
   <iframe width="600" height="375" src="https://www.youtube.com/embed/7h5pKCCxcLs?si=Hc8tH9fNg6p7OCwm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -54,13 +55,13 @@ We performed a bottleneck analysis to test optimizations aimed at improving perf
 
 The testing environment consisted of servers deployed on Amazon EC2 instances.
 
-#### Test Workflow: Browsing the Homepage
+##### Test Workflow: Browsing the Homepage
 We first tested the workflow of an authenticated user viewing tweets on the homepage. This scenario involves three sequential steps:
 1. **Log in:** The authenticated user visits the "view all tweets" page.
 2. **Think time:** The user waits one second to simulate browsing content.
 3. **Log out:** The user logs out of the application.
 
-#### Tsung Load Configuration
+##### Tsung Load Configuration
 The load testing strategy exponentially increments the number of users added each second across consecutive phases:
 
 * **Phase 1:** 1 user/sec
@@ -71,7 +72,7 @@ The load testing strategy exponentially increments the number of users added eac
 * **Phase 10:** 512 users/sec
 
 
-Please refer the project report to see our complete findings for a comprehensive suite of workflows and optimizations. Below are the results associated with only the above workflow and pagination optimization.
+Please refer the [project report](https://docs.google.com/document/d/1oxVZuh_Wj5Tc_Jv-8qsjNRmkKm0Kov0G5AQeYhBpz3M/edit?usp=sharing) to see our complete findings for a comprehensive suite of workflows and optimizations. Below are the results associated with only the above workflow and pagination optimization.
 
 <div class="row justify-content-sm-center">
     <div class="mt-3 mt-md-0">
