@@ -456,9 +456,9 @@ ninja.data = [{
           description: "with background image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-spell-training-in-vr",
+          title: 'Spell Training in VR',
+          description: "A Unity-based VR experience that offers users an innovative interaction system- sketching in midair to summon and manipulate in-game characters.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-project-3-with-very-long-name",
