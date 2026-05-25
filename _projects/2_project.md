@@ -1,15 +1,16 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: Spell Training in VR
+description: A Unity-based VR experience that affords the users an innovative interaction system through midair sketching to summon and manipulate in-game characters
+img: assets/img/2.PNG
 importance: 2
 category: HCI and Computer Graphics
+project_pdf: assets/pdf/2_CS291A.pdf
 giscus_comments: true
-giscus_repo: satyam-aw/CS292C-Battleship
-giscus_repo_id: R_kgDOHZcSaA
+giscus_repo: satyam-aw/Spell-Training-in-VR
+giscus_repo_id: R_kgDOG3tAmA
 giscus_category: General
-giscus_category_id: DIC_kwDOHZcSaM4C9r7Q
+giscus_category_id: DIC_kwDOG3tAmM4C9r7E
 giscus_mapping: pathname
 # optional
 giscus_dark_theme: dark
@@ -20,74 +21,49 @@ giscus_emit_metadata: 0
 giscus_lang: en
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+The ability to perceive the shape and motion of hands can be a vital component in improving the user experience across a variety of technological domains and platforms. In our project we explore utilization of hand gestures, and create an innovative interaction system based on midair sketching and build a VR game to demonstrate its usability. The project is focused on creating an immersive experience for a user placed in a Unity-based virtual world and can cast spells from their magic wand to summon and manipulate in-game characters. 
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+The spells cast (or sketches drawn) by the user are recognized via a OpenCV based [Gesture Recognition Module](https://github.com/shubhamtalbar96/virtual_board/tree/main). The engagement process is assisted via a webcam and hence there is no additional equipment baggage for the user. The [Unity-based VR game](https://github.com/satyam-aw/Spell-Training-in-VR) communicates with the [Gesture Recognition Module](https://github.com/shubhamtalbar96/virtual_board/tree/main) via a web-sockets to receive commands and the visual canvas feed for a seamless UI. 
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+
+<div class="d-flex justify-content-center">
+  <iframe width="600" height="375" src="https://www.youtube.com/embed/xMe-xDbng2Y?si=fS7G9IriuC_PMUBD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+<br>
+The entire project is composed of two backend systems working side-by side - first the Unity Game Engine, and second the Image Recognition module developed using OpenCV, MediaPipe Hands and Tesseract OCR libraries. To establish communication between the two components a server-client protocol was used to send commands/messages. Two servers were set up in total, each in one of the backends. Each backend also had a client connected to the server of the other.
+
+<figure class="mt-3 mt-md-0 text-center">
+    {% include figure.liquid path="assets/img/2_archi.PNG" title="example image" class="img-fluid rounded" %}
+  <figcaption class="caption">Figure 1: Architecture of the Spell Training VR game</figcaption>
+</figure>
+
+We utilize heuristics in [Mediapipe Handlandmarker](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker) to identify 4 specific postures: 
+
+1. Selection 
+2. Painting 
+3. Clear Canvas 
+4. Recognize gesture 
+
+These postures enable real-time midair sketching and canvas management. Once a sketch is complete, Google Tesseract optical character recognition (OCR) Engine processes the visual data. The recognized text is then converted into final code and then transmitted to the Unity Game, which executes the corresponding commands.
+
+
+<figure class="mt-3 mt-md-0 text-center">
+    {% include figure.liquid path="assets/img/2_canvas.PNG" title="example image" class="img-fluid rounded" %}
+  <figcaption class="caption">Figure 2: Image pre-processing and contour extraction for OCR</figcaption>
+</figure>
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/2_raycast1.PNG" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/2_raycast2.PNG" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    Figure 3: A raycast is fired to- summon a new creature or select an existing creature
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
+Everytime a Raycast is instantiated, we check internally if the hit point of the Raycast is close to one of the spawned monsters already in the game. If the new Raycast is close enough then we destroy the corresponding monster!
