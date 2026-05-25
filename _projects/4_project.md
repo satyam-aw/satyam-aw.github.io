@@ -8,8 +8,7 @@ category: fun
 project_pdf: /assets/pdf/4_fruits.pdf # you can also use external links here
 ---
 
-We developed and compared nondestructive techniques for the purpose of determining the ripeness state (classified as either reached ripeness or not – 2 states) of local berry fruit based on 5 machine learning methods: Decision Learning Tree, Quadratic discriminant, Support vector machine, Ensemble learning and kNN (k – Nearest Neighbors). Infrared thermal images of freshly plucked berries (ripen and unripen) were taken at two different instances. The relative size of higher temperature inner cores and its average temperature was recorded. These served as predictors or features used in each model.
-
+We developed and compared nondestructive techniques to determine the ripeness of local berries using five machine learning algorithms: Decision Tree, Quadratic Discriminant Analysis (QDA), Support Vector Machine (SVM), Ensemble Learning, and \(k\)-Nearest Neighbors (\(k\)-NN). First, we captured infrared thermal images of freshly picked berries at various stages of ripeness. We then recorded the average temperature and relative size of the higher-temperature inner cores. Finally, we used these metrics as predictors for our models.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -23,22 +22,22 @@ We developed and compared nondestructive techniques for the purpose of determini
     </div>
 </div>
 <div class="caption">
-    On the left, images of ripe and unripe wild berries from the IIT-KGP campus. Middle, corresponding infrared spectrum thermal image with a temperature resolution of 0.1 K. Right, image processed to reveal the warmer fruit core. The unripen fruits have a thermally homogenous makeup whereas the core appears distinctly for ripe fruits. 
+    Figure 1: On the left, images of ripe and unripe wild berries from the IIT-KGP campus. Middle, corresponding infrared spectrum thermal image with a temperature resolution of 0.1 K. Right, image processed to reveal the warmer fruit core. The unripen fruits have a thermally homogenous makeup whereas the core appears distinctly for ripe fruits. 
 </div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/4_scatter.PNG" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/4_roc.PNG" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+<div class="row align-items-center"> 
+  <div class="col-md-7 mt-3 mt-md-0"> 
+    {% include figure.liquid loading="eager" path="assets/img/4_scatter.PNG" title="example image" class="img-fluid rounded z-depth-1" %} 
+  </div> 
+  <div class="col-md-5 mt-3 mt-md-0"> 
+    {% include figure.liquid loading="eager" path="assets/img/4_roc.PNG" title="example image" class="img-fluid rounded z-depth-1" %} 
+  </div> 
 </div>
 <div class="caption">
-    Scatter Plot (left) and the ROC curve (right) for the Quadratic SVM model. AUC of 0.86, with an accuracy of 91.7% was the highest amongst our supervised classifiers.  
+    Figure 2: Scatter Plot (left) and the ROC curve (right) for the Quadratic SVM model. AUC of 0.86, with an accuracy of 91.7% was the highest amongst our supervised classifiers.  
 </div>
 
-Thermal patterns of two different sets of berries was captured as images in IR spectrum. First set served as training set for different supervised classifier models. One model from each category: Tree, Discriminant, SVM, kNN and Ensemble – was chosen based on highest level of response vector
-prediction accuracy amongst its category. During test phase (employing test batch), an accuracy of 100% was reached on 3 out of 5 of them.
+<h3>Discussions</h3>
+Thermal patterns from two distinct sets of berries were captured as infrared (IR) spectrum images. The first set was used to train various supervised classifier models. One model from each broad category—Tree, Discriminant, SVM, \(k\)-NN, and Ensemble—was selected based on the highest response vector prediction accuracy within that category. During the testing phase using the second set, three out of the five models achieved 100% accuracy.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
@@ -46,17 +45,20 @@ prediction accuracy amongst its category. During test phase (employing test batc
     </div>
 </div>
 <div class="caption">
-    Confusion matrices of the berry-ripeness-classification problem with Complex Tree, Quadratic Discriminant, QSVM, KNN(fine) and Ensemble (Bagged) classifiers.
+    Table 1: Confusion matrices of the berry-ripeness-classification problem with Complex Tree, Quadratic Discriminant, QSVM, KNN(fine) and Ensemble (Bagged) classifiers.
 </div>
 
-However, further work to assess the long-term reliability of the system is needed. In particular, temperature difference between core and fruit surface depends on environmental temperature and so can make the method’s predictions unstable. For example, washing the berries drastically reduced
-their temperature (both surface and core up to an extent of 5 oC) – as can be seen in Fig.1 & 4 that though few berries were present in visible spectrum image, receded from corresponding IR image as they were cooler by 5 oC after washing. 
+<p>
+However, further work is needed to assess the long-term reliability of the system. In particular, the temperature difference between the core and the fruit surface depends heavily on the ambient environmental temperature, which can cause the method’s predictions to become unstable. For example, washing the berries drastically reduced their temperature—affecting both the surface and core by up to 5 °C. Although a few berries were visible in the optical spectrum image, they became indistinguishable in the corresponding IR image due to this 5 °C temperature drop post-washing.
+</p>
 
-Nevertheless, we believe that a supervised machine learning classifier-based on core size and temperature relative to fruits’ surface provides an attractive means of identifying the ripeness of
-commercial fruit.
+<p>
+Nevertheless, we believe that a supervised machine learning classifier based on core size and temperature relative to the fruit surface provides a promising approach for identifying the ripeness of commercial fruit.
+</p>
 
-<h3 class="title">
+
+<h3>
 Acknowledgments
 </h3>
 
-The help provided by Dr. P.K. Dutta with the experimental set-up, valuable guidance and the capturing of berries’ thermal images using his IR camera is gratefully acknowledged. I am deeply grateful to Dr. P.K. Dutta, for affording me the opportunity in working and exploring on the captivating subject.
+The help provided by [Dr. P.K. Dutta](https://scholar.google.co.in/citations?hl=en&user=7elWBjEAAAAJ&view_op=list_works) with the experimental set-up, valuable guidance and the capturing of berries’ thermal images using his IR camera is gratefully acknowledged. I am deeply grateful to [Dr. P.K. Dutta](https://scholar.google.co.in/citations?hl=en&user=7elWBjEAAAAJ&view_op=list_works), for affording me the opportunity in working and exploring on the captivating subject.
