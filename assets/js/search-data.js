@@ -511,7 +511,7 @@ ninja.data = [{
         title: 'CV',
         section: 'Socials',
         handler: () => {
-          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+          window.open("/assets/pdf/Satyam_Awasthi_CV.pdf", "_blank");
         },
       },{
         id: 'social-email',
@@ -540,6 +540,13 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://github.com/satyam-aw", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/0000-0002-6095-4303", "_blank");
         },
       },{
       id: 'light-theme',
