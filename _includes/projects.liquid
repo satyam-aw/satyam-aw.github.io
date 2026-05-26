@@ -28,6 +28,13 @@
               {% endif %}
             </div>
           {% endif %}
+          {% if project.project_pdf %}
+            <div class="pdf-icon ms-4">
+              <div class="icon" data-toggle="tooltip" title="PDF Document">
+                <a href="{{ project.project_pdf }}"><i class="fa-solid fa-file-pdf pdf-icon"></i></a>
+              </div>
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>
