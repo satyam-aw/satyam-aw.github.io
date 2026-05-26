@@ -45,6 +45,13 @@
               </div>
             </div>
           {% endif %}
+          {% if project.demo_video %}
+            <div class="video-icon">
+              <div class="icon" data-toggle="tooltip" title="Demo Video">
+                <a href="{{ project.demo_video }}"><i class="fa-solid fa-video"></i></a>
+              </div>
+            </div>
+          {% endif %}
         </div>
 
         <!-- Right Side: Completion Date -->

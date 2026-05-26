@@ -27,7 +27,23 @@ layout: default
           >
             <i class="fa-solid fa-file-pdf"></i>
           </a>
-        {% endif %}   
+        {% endif %}
+
+        {% if page.demo_video %}
+          <a
+            {% if page.demo_video contains '://' %}
+              href="{{ page.demo_video }}"
+            {% else %}
+              href="{{ page.demo_video | relative_url }}"
+            {% endif %}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="float-right ms-2"
+            title="Demo Video"
+          >
+            <i class="fa-solid fa-video"></i>
+          </a>
+        {% endif %}
 
         {% if page.github %}
           <a

@@ -1,9 +1,10 @@
 ---
 layout: page
-title: CohesiveAR for Interactive Design and Modeling
+title: CohesiveAR for Interactive Design
 description: Real-Time Texture Extraction and Mapping on Virtual Objects
 img: assets/img/1.PNG
 completed_on: UCSB, W22
+demo_video: https://www.youtube.com/watch?v=eUzmJmamqFk
 importance: 1
 category: HCI and Computer Graphics
 github: https://github.com/CohesiveAR/.github
@@ -28,6 +29,8 @@ Interactive design and modeling applications in Augmented Reality (AR)—such as
 3. **Texture Mapping & Modification**: Retrieves textures from the database, applies them onto a target virtual scene object, and modifies their UV mapping coordinates.
 
 The virtual objects produced by this application appear visually cohesive and seamless, blending naturally with the surrounding physical environment.
+
+Check out the demo video [here](https://www.youtube.com/watch?v=eUzmJmamqFk).
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT_lzRCA515SO4wR5ZAKa5cK2QtyCsiNDw8BvPrHqZ7xuwdv3e7UmxN8cuuGBgcg1I9oZvzWjSYXX-G/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
