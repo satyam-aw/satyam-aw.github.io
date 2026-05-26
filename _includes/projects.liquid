@@ -1,6 +1,7 @@
 <div class="col">
-  <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
-    <div class="card h-100 hoverable">
+  <div class="card h-100 hoverable position-relative d-flex flex-column">
+    <!-- Main Card Clickable Link Area -->
+    <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" class="stretched-link text-decoration-none text-dark d-flex flex-column flex-grow-1">
       {% if project.img %}
         {%
           include figure.liquid
@@ -11,12 +12,21 @@
           class="card-img-top"
         %}
       {% endif %}
-      <div class="card-body">
+      <div class="card-body d-flex flex-column flex-grow-1">
         <h2 class="card-title">{{ project.title }}</h2>
         <p class="card-text">{{ project.description }}</p>
-        <div class="row ml-1 mr-1 p-0">
+      </div>
+    </a>
+
+    <!-- Structured Card Footer (Both Icons and Date Locked to Bottom) -->
+    <div class="card-footer bg-transparent border-top-0 pt-0 pb-3 mt-auto" style="position: relative; z-index: 2;">
+      <!-- Flex container pushing icons to the left and date to the right -->
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+        
+        <!-- Left Side: Interactive Icons -->
+        <div class="d-flex align-items-center gap-4">
           {% if project.github %}
-            <div class="github-icon">
+            <div class="github-icon d-flex align-items-center gap-2">
               <div class="icon" data-toggle="tooltip" title="Code Repository">
                 <a href="{{ project.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
               </div>
@@ -29,14 +39,20 @@
             </div>
           {% endif %}
           {% if project.project_pdf %}
-            <div class="pdf-icon ms-4">
+            <div class="pdf-icon">
               <div class="icon" data-toggle="tooltip" title="PDF Document">
                 <a href="{{ project.project_pdf }}"><i class="fa-solid fa-file-pdf pdf-icon"></i></a>
               </div>
             </div>
           {% endif %}
         </div>
+
+        <!-- Right Side: Completion Date -->
+        {% if project.completed_on %}
+          <p class="project-completed text-muted small m-0">Completed: {{ project.completed_on }}</p>
+        {% endif %}
+
       </div>
     </div>
-  </a>
+  </div>
 </div>

@@ -13,7 +13,7 @@
             <p class="card-text">{{ project.description }}</p>
             <div class="row ml-1 mr-1 p-0">
               {% if project.github %}
-                <div class="github-icon">
+                <div class="github-icon me-3">
                   <div class="icon" data-toggle="tooltip" title="Code Repository">
                     <a href="{{ project.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
                   </div>
@@ -25,7 +25,17 @@
                   {% endif %}
                 </div>
               {% endif %}
+              {% if project.project_pdf %}
+                <div class="pdf-icon">
+                  <div class="icon" data-toggle="tooltip" title="PDF Document">
+                    <a href="{{ project.project_pdf }}"><i class="fa-solid fa-file-pdf pdf-icon"></i></a>
+                  </div>
+                </div>
+              {% endif %}
             </div>
+            {% if project.completed_on %}
+              <p class="project-completed text-muted small mt-3">Completed on {{ project.completed_on }}</p>
+            {% endif %}
           </div>
         </div>
       </div>

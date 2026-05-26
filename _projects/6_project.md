@@ -1,7 +1,8 @@
 ---
 layout: page
 title: JitterNot 
-description: LSTM-based Model Predictive Controller for Adaptive Video Streaming <br>UCSB, S22 
+description: LSTM-based Model Predictive Controller for Adaptive Video Streaming
+completed_on: UCSB, S22 
 img: /assets/img/6_jitternot_block_diag.jpg
 importance: 4
 category: Sequential Deep Learning and ML
