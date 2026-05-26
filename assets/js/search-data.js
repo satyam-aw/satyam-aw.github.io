@@ -440,7 +440,7 @@ ninja.data = [{
               window.location.href = "/projects/3_project/";
             },},{id: "projects-fruit-ripeness-classifier",
           title: 'Fruit Ripeness Classifier',
-          description: "Nondestructive techniques for determining the ripeness state using ML methods. Completed May 2018",
+          description: "Nondestructive techniques for determining the ripeness state using ML methods.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
             },},{id: "projects-in-motion-har-using-deepconvlstm",
@@ -450,7 +450,7 @@ ninja.data = [{
               window.location.href = "/projects/5_project/";
             },},{id: "projects-jitternot",
           title: 'JitterNot',
-          description: "LSTM-based Model Predictive Controller for Adaptive Video Streaming UCSB, S22",
+          description: "LSTM-based Model Predictive Controller for Adaptive Video Streaming",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_project/";
             },},{id: "projects-project-7",
