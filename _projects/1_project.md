@@ -1,81 +1,93 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: CohesiveAR for Interactive Design and Modeling
+description: Real-Time Texture Extraction and Mapping on Virtual Objects
+img: assets/img/1.PNG
+completed_on: UCSB, W22
 importance: 1
 category: HCI and Computer Graphics
-related_publications: true
+github: https://github.com/CohesiveAR/.github
+giscus_comments: true
+giscus_repo: CohesiveAR/.github
+giscus_repo_id: R_kgDORjZPmw
+giscus_category: General
+giscus_category_id: DIC_kwDORjZPm84C94zW
+giscus_mapping: pathname
+# optional
+giscus_dark_theme: dark
+giscus_light_theme: light
+giscus_input_position: bottom
+giscus_reactions_enabled: 1
+giscus_emit_metadata: 0
+giscus_lang: en
 ---
+Interactive design and modeling applications in Augmented Reality (AR)—such as interior design and next-generation mobile AR games—supply real-world graphical information to their users. We present "CohesiveAR", an AR mobile application for real-time texture extraction and application to virtual objects using the Google ARCore SDK. The application architecture is designed around three core modules: 
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+1. **Texture Extraction**: Captures real-world textures in real time utilizing a dedicated marker widget.
+2. **Texture Processing & Storage**: Edits the extracted textures via the OpenCV library and loads them into a centralized texture database (DB).
+3. **Texture Mapping & Modification**: Retrieves textures from the database, applies them onto a target virtual scene object, and modifies their UV mapping coordinates.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+The virtual objects produced by this application appear visually cohesive and seamless, blending naturally with the surrounding physical environment.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT_lzRCA515SO4wR5ZAKa5cK2QtyCsiNDw8BvPrHqZ7xuwdv3e7UmxN8cuuGBgcg1I9oZvzWjSYXX-G/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+### Top-Level Architecture
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+<figure class="mt-3 mt-md-0 text-center w-50 mx-auto">
+    {% include figure.liquid path="assets/img/1-top-level.png" title="Architecture Diagram" class="img-fluid rounded" %}
+  <figcaption class="caption">Figure 1: Top-level architecture with the Ingestion and Manipulation Pipelines</figcaption>
+</figure>
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+At the highest level, the application initializes via a **Welcome Screen**, which serves as the primary gateway for user routing. From this point, a decision engine (**Choose pipeline**) branches the system execution into one of two decoupled subsystems based on the required operation:
+* **The Asset Ingestion Pipeline (`Scan Textures`)**: Responsible for real-time visual capture and data processing.
+* **The Object Modification Pipeline (`Manipulate Scene Object`)**: Responsible for spatial mapping and real-time interactive rendering.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
 
-{% raw %}
+### Asset Ingestion Pipeline (`Scan Textures`)
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+<figure class="mt-3 mt-md-0 text-center mx-auto" style="width: 70%;">
+    {% include figure.liquid path="assets/img/1-scan.png" title="Architecture Diagram" class="img-fluid rounded" %}
+  <figcaption class="caption">Figure 2: The Asset Ingestion Pipeline</figcaption>
+</figure>
 
-{% endraw %}
+The asset ingestion subsystem isolates, extracts, and normalizes physical surface textures for virtual deployment through three primary stages:
+
+#### 1. Coordinate Mapping & Image Capture
+* **Marker Localization**: The user places a digital bounding marker over the target physical surface.
+* **Spatial Translation**: The system captures 3D world coordinates (`marker vertices in AR Scene`) and uses OpenCV to project them into 2D display space (`Screen Coordinates`).
+* **Frame Ingestion**: The system captures raw pixel data directly from the display layer via a device screenshot.
+
+#### 2. Geometric Normalization
+* **Perspective Rectification**: A matrix transformation operator merges the screen coordinates with the raw screenshot.
+* **Homography Transformation**: The system executes a **Perspective Warp** to remove camera tilt skew, flattening the targeted surface region into a standardized orthogonal texture square.
+
+#### 3. Feedback & Refinement
+* **Audio-Visual Notification**: An **Earcon + UI Animation** loop confirms successful texture extraction to the user.
+* **Interface Transition**: The application initializes the **`OpenCV_Edit` Scene**, loading the unedited texture asset as a static reference object.
+* **Asset Optimization**: The user adjusts surface properties (e.g., contrast, brightness) via the **OpenCV Image Correction Menu**.
+* **Storage Commit**: The finalized, normalized asset is pushed directly to the central **Texture DB** for immediate mapping.
+
+
+### Object Manipulation Pipeline (`Manipulate Scene Object`)
+
+<figure class="mt-3 mt-md-0 text-center w-50 mx-auto">
+    {% include figure.liquid path="assets/img/1-mani.PNG" title="Architecture Diagram" class="img-fluid rounded" %}
+  <figcaption class="caption">Figure 3: The Object Manipulation Pipeline</figcaption>
+</figure>
+
+
+This subsystem handles virtual object instantiation, spatial transformations, and dynamic texture binding within the AR workspace:
+
+#### 1. Object Placement & Spatial Validation
+* **Scene Presence Verification**: The system evaluates if a virtual asset is active (`Object present in Scene`).
+* **Instantiation Loop**: If no object exists, the user chooses from a structural asset library to initialize a **3D object of peculiar geometry** in the AR environment.
+* **Spatial Feedback**: Placement triggers an **Earcon + Animate** feedback loop to confirm successful spatial grounding.
+
+#### 2. Asset Query & User Interface Routing
+* **Object Selection**: Tapping an active virtual asset (`Tap on scene object`) initializes the texture mapping pipeline.
+* **Dynamic Asset Fetching**: The application queries the centralized **Texture DB** to compile a list of user-generated textures.
+* **Interactive Selector**: The system loads the **`Page_Swiper` UI**, enabling the user to navigate saved texture profiles via lateral swipe gestures (`SWIPE TO LEFT`).
+
+#### 3. Dynamic Texture Binding & Transformation
+* **Material Mapping Application**: Selecting an asset applies the chosen texture from the user-curated list onto the active 3D geometric mesh.
+* **Transform Manipulation**: Post-application, the user can execute **Rotate and Scale** gesture mechanics to interactively adjust texture mapping parameters and alignment in real time.

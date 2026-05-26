@@ -48,6 +48,8 @@ layout: default
 <p class="post-description mb-0">{{ page.description }}</p>
 {% if page.completed_on %}
   <p class="project-completed text-muted small text-right mb-3">Completed: {{ page.completed_on }}</p>
+{% else %}
+  <br>
 {% endif %}
 
   </header>
