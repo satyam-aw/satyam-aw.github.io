@@ -5,6 +5,8 @@ description: another project with an image 🎉
 img: assets/img/6.jpg
 importance: 4
 category: Software Engineering
+redirect: https://unsplash.com
+
 ---
 
 Every project has a beautiful feature showcase page.

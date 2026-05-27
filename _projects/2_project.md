@@ -2,7 +2,7 @@
 layout: page
 title: Spell Training in VR
 description: A Unity-based VR experience that offers users an innovative interaction system- sketching in midair to summon and manipulate in-game characters.
-completed_on: UCSB, S22
+completed_on: UCSB, W22
 img: assets/img/2.PNG
 importance: 2
 category: HCI and Computer Graphics
@@ -25,7 +25,7 @@ giscus_lang: en
 
 The ability to perceive the shape and motion of hands can be a vital component in improving the user experience across a variety of technological domains and platforms. In our project we explore utilization of hand gestures, and create an innovative interaction system based on midair sketching and build a VR game to demonstrate its usability. The project is focused on creating an immersive experience for a user placed in a Unity-based virtual world and can cast spells from their magic wand to summon and manipulate in-game characters. 
 
-The spells cast (or sketches drawn) by the user are recognized via a OpenCV based [Gesture Recognition Module](https://github.com/shubhamtalbar96/virtual_board/tree/main). The engagement process is assisted via a webcam and hence there is no additional equipment baggage for the user. The [Unity-based VR game](https://github.com/satyam-aw/Spell-Training-in-VR) communicates with the [Gesture Recognition Module](https://github.com/shubhamtalbar96/virtual_board/tree/main) via a web-sockets to receive commands and the visual canvas feed for a seamless UI. 
+The spells cast (or sketches drawn) by the user are recognized via a OpenCV based [Gesture Recognition Module](https://github.com/shubhamtalbar96/virtual_board/tree/main). The engagement process is assisted via a webcam and hence there is no additional equipment baggage for the user. The [Unity-based VR game](https://github.com/satyam-aw/Spell-Training-in-VR) communicates with the [Gesture Recognition Module](https://github.com/shubhamtalbar96/virtual_board/tree/main) via WebSockets to receive commands and the visual canvas feed for a seamless UI. 
 
 
 
