@@ -52,6 +52,13 @@
               </div>
             </div>
           {% endif %}
+          {% if project.download_link %}
+            <div class="download-icon">
+              <div class="icon" data-toggle="tooltip" title="Download Executable">
+                <a href="{{ project.download_link }}"><i class="fa-solid fa-download"></i></a>
+              </div>
+            </div>
+          {% endif %}
         </div>
 
         <!-- Right Side: Completion Date -->

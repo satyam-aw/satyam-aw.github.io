@@ -5,6 +5,7 @@ description: First-person 3D maze game built with C++ and legacy fixed-function 
 img: assets/img/3.webp
 completed_on: UCSB, S22
 importance: 3
+download_link: https://github.com/satyam-aw/3d_Maze_openGL/blob/main/resources/Play_Game.zip
 category: HCI and Computer Graphics
 github: https://github.com/satyam-aw/3d_Maze_openGL
 giscus_comments: true
@@ -43,13 +44,14 @@ giscus_lang: en
   </div>
 </div>
 
+<br>
 
 This project showcases an interactive, first-person 3D maze game built with C++ and legacy fixed-function OpenGL via FreeGLUT. It highlights methods to bypass default desktop input lag, implementing frame-rate-independent navigation (strafing/jumping), smooth infinite mouse look, collision structures, and dynamic text-file map parsing.
 
 ##### 📥 Important Links
 
 * **Source Code:** [GitHub Repository](https://github.com/satyam-aw/3d_Maze_openGL)
-* **Download Game (Portable Windows x86):** [Play_Game.zip](/resources/Play_Game.zip) _(launch using Play_Game.bat)_
+* **Download Game (Portable Windows x86):** [Play_Game.zip](https://github.com/satyam-aw/3d_Maze_openGL/blob/main/resources/Play_Game.zip) _(launch using Play_Game.bat)_
 
 ---
 <br>

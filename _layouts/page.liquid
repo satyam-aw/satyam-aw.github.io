@@ -10,8 +10,26 @@ layout: default
 
 <div class="post">
   <header class="post-header">
-    <h1 class="post-title">    
-        {{ page.title }}
+<h1 class="post-title" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">    
+    <span>{{ page.title }}</span>
+    
+    <!-- Icon Container forces all children to stay on one row -->
+    <span style="display: flex; flex-direction: row-reverse; align-items: center; white-space: nowrap; flex-shrink: 0;">
+        {% if page.github %}
+          <a
+            {% if page.github contains '://' %}
+              href="{{ page.github }}"
+            {% else %}
+              href="{{ page.github | relative_url }}"
+            {% endif %}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ms-2"
+            title="Code Repository"
+          >
+            <i class="fa-brands fa-github gh-icon"></i>
+          </a>
+        {% endif %} 
 
         {% if page.project_pdf %}
           <a
@@ -22,7 +40,7 @@ layout: default
             {% endif %}
             target="_blank"
             rel="noopener noreferrer"
-            class="float-right ms-2"
+            class="ms-2"
             title="PDF Document"
           >
             <i class="fa-solid fa-file-pdf"></i>
@@ -38,29 +56,30 @@ layout: default
             {% endif %}
             target="_blank"
             rel="noopener noreferrer"
-            class="float-right ms-2"
+            class="ms-2"
             title="Demo Video"
           >
             <i class="fa-solid fa-video"></i>
           </a>
         {% endif %}
 
-        {% if page.github %}
+        {% if page.download_link %}
           <a
-            {% if page.github contains '://' %}
-              href="{{ page.github }}"
+            {% if page.download_link contains '://' %}
+              href="{{ page.download_link }}"
             {% else %}
-              href="{{ page.github | relative_url }}"
+              href="{{ page.download_link | relative_url }}"
             {% endif %}
             target="_blank"
             rel="noopener noreferrer"
-            class="float-right"
-            title="Code Repository"
+            class="ms-2"
+            title="Download Executable"
           >
-            <i class="fa-brands fa-github gh-icon"></i>
+            <i class="fa-solid fa-download"></i>
           </a>
-        {% endif %} 
-    </h1>
+        {% endif %}
+    </span>
+</h1>
 <p class="post-description mb-0">{{ page.description }}</p>
 {% if page.completed_on %}
   <p class="project-completed text-muted small text-right mb-3">Completed: {{ page.completed_on }}</p>
