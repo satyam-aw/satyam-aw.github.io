@@ -68,17 +68,17 @@ Developing real-time 3D environments requires tight syncing between logic thread
 
 #### 2. Core System Implementations
 
-##### 2.2. Stutter-Free Input & Delta Time
+##### 2.1. Stutter-Free Input & Delta Time
 Standard operating system keyboard repeat timers introduce micro-stutters when keys are held down. To achieve smooth movement:
 * **Asynchronous Keys:** A custom boolean status array (`keys[...]`) tracks exact press/release states globally.
 * **Delta Time Scaling ($dt$):** To prevent frame-rate fluctuations from speeding up or slowing down the game physics, the system checks system ticks using `glutGet(GLUT_ELAPSED_TIME)` to normalize actions across varying system refresh rates:
 
 $$dt = \frac{T_{\text{current}} - T_{\text{previous}}}{1000}$$
 
-##### 2.3. Smooth First-Person Infinite Mouse Look
+##### 2.2. Smooth First-Person Infinite Mouse Look
 To replicate standard first-person desktop game controls, the engine uses a continuous mouse resetting script via `glutWarpPointer`. The app calculates raw positional mouse deltas ($\Delta x, \Delta y$) relative to the viewport center, updates rotation variables, and snaps the system cursor back to coordinates $(cx, cy)$. This establishes an endless, boundary-free viewing axis.
 
-##### 2.4. Kinematic Jumps & Collision Handling
+##### 2.3. Kinematic Jumps & Collision Handling
 Vertical player flight (jumping) incorporates basic gravitational acceleration equations:
 
 $$v_y = v_{y0} + g \cdot dt$$
@@ -86,6 +86,26 @@ $$v_y = v_{y0} + g \cdot dt$$
 $$\text{camera}_y = \text{camera}_{y0} + v_y \cdot dt$$
 
 If structural spatial data matches solid map bounds, a reactive bounding offset (`BOUNCEBACK`) immediately offsets player positioning vectors to prevent clipping through the maze layout.
+
+##### 2.4. Pipeline-Isolated 2D Orthographic Compass
+To provide clear navigation guidance through the labyrinth, a dynamic HUD compass was implemented. The software architecture leverages a state-driven isolation pattern to draw 2D flat primitives over an active 3D context without corrupting the rendering pipeline from frame to frame:
+
+* **State Snapshotting:** `glPushAttrib(GL_ALL_ATTRIB_BITS)` takes an immediate memory snapshot of all current 3D attributes (lighting, texturing flags, and depth-testing masks) before temporarily disabling features that cause color mixing or layer clipping errors.
+* **Matrix Stack Preservation:** Calling `glPushMatrix()` on both the `GL_PROJECTION` and `GL_MODELVIEW` matrices safely caches your active 3D perspective and camera look matrices onto the system stack.
+* **4x4 Identity Reset:** Calling `glLoadIdentity()` overwrites both active matrix tracks, clearing them back to neutral 4x4 Identity Matrices:
+
+$$\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
+
+* **Orthographic Projection Mapping:** A flat pixel-for-pixel coordinate system is established directly inside the 4x4 Projection Matrix via `gluOrtho2D`, mapping input pixel bounds to normalized device tracking spaces:
+
+$$\text{Screen Viewport} \xrightarrow{\text{gluOrtho2D}} [0, \text{width}] \times [0, \text{height}]$$
+
+* **Local View Transformations:** The drawing pipeline switches focus to `GL_MODELVIEW` mode, shifts to the upper-right viewport corner via `glTranslatef`, and rotates the local coordinate space using `glRotatef`:
+
+$$\text{Rotation Angle (Degrees)} = \text{rot}_x \times 57.2957795$$
+
+* **Flattened Primitive Projection:** Fixed quadrilateral vectors are plotted using flat pixels relative to the local origin space. Because the orthographic configurations remain isolated inside the projection slot, any movements processed in the modelview stage are flattened automatically on the UI layer.
+* **Frame-to-Frame Context Restoration:** Calling `glPopMatrix()` and `glPopAttrib()` immediately pops the cached 3D matrices and spatial attributes back into active registers. This fully unwinds the temporary UI state changes, ensuring zero pipeline contamination carries over into the next frame's 3D rendering pass.
 
 ---
 <br>
