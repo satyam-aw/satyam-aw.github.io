@@ -433,9 +433,9 @@ ninja.data = [{
           description: "A Unity-based VR experience that offers users an innovative interaction system- sketching in midair to summon and manipulate in-game characters.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+            },},{id: "projects-3d-maze-exploration-via-fixed-function-opengl",
+          title: '3D Maze Exploration via Fixed-Function OpenGL',
+          description: "First-person 3D maze game built with C++ and legacy fixed-function OpenGL via FreeGLUT",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
             },},{id: "projects-fruit-ripeness-classifier",
