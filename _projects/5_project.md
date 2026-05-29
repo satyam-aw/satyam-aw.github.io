@@ -7,9 +7,12 @@ img: assets/img/5.PNG
 importance: 2
 category: Sequential Deep Learning and ML
 project_pdf: https://docs.google.com/presentation/d/1QRr3mSakrhzpzykfH6BRo-_7HwZmj48IsuDwIsur5dE/edit?usp=sharing
+related_publications: true
 ---
 
-Human Activity Recognition transforms safety and healthcare by enabling automated monitoring for the elderly, individuals with disabilities, and security surveillance networks. Our goal was to build a data-driven mobile app that accurately classifies human activities to enhance independent living and situational awareness. Based on the DeepConvLSTM by [Ordóñez & Roggen 2016](https://www.mdpi.com/1424-8220/16/1/115).
+Human Activity Recognition transforms safety and healthcare by enabling automated monitoring for the elderly, individuals with disabilities, and security surveillance networks. Our goal was to build a data-driven mobile app that accurately classifies human activities to enhance independent living and situational awareness. Based on the DeepConvLSTM {% cite s16010115 %}. 
+
+
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ-mk9EtbvaWmiLELGdl9n4iAQekwc6sR2RUb5lhpN8bbw7YDQLe7KNshwolmnddUJTQdnTbVk1ugPu/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 

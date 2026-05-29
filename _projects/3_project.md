@@ -2,7 +2,7 @@
 layout: page
 title: 3D Maze Exploration via Fixed-Function OpenGL
 description: First-person 3D maze game built with C++ and legacy fixed-function OpenGL via FreeGLUT
-img: assets/img/3.webp
+img: assets/img/3.png
 completed_on: UCSB, S22
 importance: 3
 download_link: https://github.com/satyam-aw/3d_Maze_openGL/blob/main/resources/Play_Game.zip
@@ -26,7 +26,7 @@ giscus_lang: en
   <!-- Left Video and Caption Container -->
   <div style="flex: 1; min-width: 300px;">
     <div style="aspect-ratio: 16/9; width: 100%;">
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/WjW-mPkbtok?si=O4Bf62oOqxIZnWbB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9cJ7eTtbbqo?si=cM0pXmQeOFvQLpKT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <p style="text-align: center; font-style: italic; font-size: 0.9em; color: #666; margin-top: 8px; margin-bottom: 0;">
       Level 2 Gameplay Playthrough
