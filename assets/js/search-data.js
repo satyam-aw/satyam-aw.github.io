@@ -430,7 +430,7 @@ ninja.data = [{
               window.location.href = "/projects/1_project/";
             },},{id: "projects-spell-training-in-vr",
           title: 'Spell Training in VR',
-          description: "A Unity-based VR experience that offers users an innovative interaction system- sketching in midair to summon and manipulate in-game characters.",
+          description: "A Unity-based VR experience that offers users an innovative interaction system—sketching in midair to summon and manipulate in-game characters.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-3d-maze-exploration-via-fixed-function-opengl",
@@ -453,9 +453,9 @@ ninja.data = [{
           description: "LSTM-based Model Predictive Controller for Adaptive Video Streaming",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
+            },},{id: "projects-simplified-solar-tracker-for-pv-panels",
+          title: 'Simplified Solar Tracker for PV Panels',
+          description: "A low-cost, dual-axis solar tracking system designed as a mechanical Maximum Power Point Tracker (MPPT) using an Arduino Uno and LDR sensors.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
             },},{id: "projects-tweeter",
