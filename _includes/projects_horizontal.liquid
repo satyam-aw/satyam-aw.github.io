@@ -1,14 +1,14 @@
-<div class="row align-items-center py-3">
+<div class="row align-items-start py-3">
   {% if project.img %}
-    <div class="col-md-3 d-flex align-items-center justify-content-center">
-      {% include figure.liquid 
-      loading="eager" 
-      path=project.img 
-      sizes="(min-width: 768px) 156px, 50vw" 
-      alt="project thumbnail" 
-      avoid_scaling=true
-      class="preview z-depth-1 rounded m-0" 
-      zoomable=true %}
+    <div class="col-md-3 d-flex flex-column align-items-center justify-content-center mt-1">
+        {% include figure.liquid 
+        loading="eager" 
+        path=project.img 
+        sizes="(min-width: 768px) 200px, 50vw" 
+        alt="project thumbnail" 
+        avoid_scaling=true
+        class="preview z-depth-1 rounded m-0 img-fluid" 
+        zoomable=true %}
     </div>
   {% endif %}
   
@@ -58,7 +58,6 @@
         </div>
       {% endif %}
 
-      <!-- FIX: Placed inside the row. ml-auto pushes it to the bottom-right corner of this line -->
       {% if project.completed_on %}
         <p class="project-completed text-muted small ml-auto mb-0 align-self-center">Completed: {{ project.completed_on }}</p>
       {% endif %}

@@ -7,7 +7,7 @@ project_pdf: /assets/pdf/7_solar_tracker.pdf
 importance: 1
 category: Embedded Systems and IoT
 demo_video: https://www.youtube.com/watch?v=yR4f5ZiOPAA
-completed_on: IIT-KGP Apr'19
+completed_on: IIT-KGP Apr 19
 github: https://github.com/satyam-aw/Simplified-Solar-Tracker-for-PV-Panels
 giscus_comments: true
 giscus_repo: satyam-aw/Simplified-Solar-Tracker-for-PV-Panels

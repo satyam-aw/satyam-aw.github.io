@@ -2,7 +2,7 @@
 layout: page
 title: Tweeter 
 description: A Twitter-like micro blogging social media app for load testing and bottleneck analysis
-completed_on: UCSB, F21
+completed_on: UCSB, Fall 21
 img: assets/img/8.webp
 importance: 2
 category: Software Engineering

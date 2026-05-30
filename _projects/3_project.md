@@ -3,7 +3,7 @@ layout: page
 title: 3D Maze Exploration via Fixed-Function OpenGL
 description: First-person 3D maze game built with C++ and legacy fixed-function OpenGL via FreeGLUT
 img: assets/img/3.png
-completed_on: UCSB, S22
+completed_on: UCSB, Spring 22
 importance: 20
 selected: true
 download_link: https://github.com/satyam-aw/3d_Maze_openGL/raw/refs/heads/main/resources/Play_Game.zip
