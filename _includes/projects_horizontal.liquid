@@ -1,58 +1,67 @@
-<div class="col mb-4">
-  <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
-    <div class="card h-100 hoverable">
-      <div class="row no-gutters">
-        {% if project.img %}
-          <div class="col-md-6">
-            {% include figure.liquid loading="eager" path=project.img sizes="(min-width: 768px) 156px, 50vw" alt="project thumbnail" class="card-img" %}
+<div class="row align-items-center py-3">
+  {% if project.img %}
+    <div class="col-md-3 d-flex align-items-center justify-content-center">
+      {% include figure.liquid 
+      loading="eager" 
+      path=project.img 
+      sizes="(min-width: 768px) 156px, 50vw" 
+      alt="project thumbnail" 
+      avoid_scaling=true
+      class="preview z-depth-1 rounded m-0" 
+      zoomable=true %}
+    </div>
+  {% endif %}
+  
+  <div class="col-md-{% if project.img %}9{% else %}12{% endif %}">
+    <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" class="text-decoration-none text-reset d-block">
+      <h5 class="card-title mb-1">{{ project.title }}</h5>
+      <p class="card-text">{{ project.description }}</p>
+    </a>
+
+    <!-- Single horizontal flex row container for icons and date -->
+    <div class="d-flex align-items-center flex-wrap p-0 mt-2">
+      {% if project.github %}
+        <div class="github-icon d-flex align-items-center mr-2">
+          <div class="icon" data-toggle="tooltip" title="Code Repository">
+            <a href="{{ project.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
           </div>
-        {% endif %}
-        <div class="{% if project.img %}col-md-6{% else %}col-md-12{% endif %}">
-          <div class="card-body">
-            <h3 class="card-title">{{ project.title }}</h3>
-            <p class="card-text">{{ project.description }}</p>
-            <div class="row ml-1 mr-1 p-0">
-              {% if project.github %}
-                <div class="github-icon me-3">
-                  <div class="icon" data-toggle="tooltip" title="Code Repository">
-                    <a href="{{ project.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
-                  </div>
-                  {% if project.github_stars %}
-                    <span class="stars" data-toggle="tooltip" title="GitHub Stars">
-                      <i class="fa-solid fa-star"></i>
-                      <span id="{{ project.github_stars }}-stars"></span>
-                    </span>
-                  {% endif %}
-                </div>
-              {% endif %}
-              {% if project.project_pdf %}
-                <div class="pdf-icon">
-                  <div class="icon" data-toggle="tooltip" title="PDF Document">
-                    <a href="{{ project.project_pdf }}"><i class="fa-solid fa-file-pdf pdf-icon"></i></a>
-                  </div>
-                </div>
-              {% endif %}
-              {% if project.demo_video %}
-                <div class="video-icon">
-                  <div class="icon" data-toggle="tooltip" title="Demo Video">
-                    <a href="{{ project.demo_video }}"><i class="fa-solid fa-video"></i></a>
-                  </div>
-                </div>
-              {% endif %}
-              {% if project.download_link %}
-              <div class="download-icon">
-                <div class="icon" data-toggle="tooltip" title="Download Executable">
-                  <a href="{{ project.download_link }}"><i class="fa-solid fa-download"></i></a>
-                </div>
-              </div>
-            {% endif %}
-            </div>
-            {% if project.completed_on %}
-              <p class="project-completed text-muted small mt-3">Completed on {{ project.completed_on }}</p>
-            {% endif %}
+          {% if project.github_stars %}
+            <span class="stars ml-2" data-toggle="tooltip" title="GitHub Stars">
+              <i class="fa-solid fa-star"></i>
+              <span id="{{ project.github_stars }}-stars"></span>
+            </span>
+          {% endif %}
+        </div>
+      {% endif %}
+      
+      {% if project.project_pdf %}
+        <div class="pdf-icon mr-2">
+          <div class="icon" data-toggle="tooltip" title="PDF Document">
+            <a href="{{ project.project_pdf }}"><i class="fa-solid fa-file-pdf pdf-icon"></i></a>
           </div>
         </div>
-      </div>
+      {% endif %}
+      
+      {% if project.demo_video %}
+        <div class="video-icon mr-2">
+          <div class="icon" data-toggle="tooltip" title="Demo Video">
+            <a href="{{ project.demo_video }}"><i class="fa-solid fa-video"></i></a>
+          </div>
+        </div>
+      {% endif %}
+      
+      {% if project.download_link %}
+        <div class="download-icon mr-2">
+          <div class="icon" data-toggle="tooltip" title="Download Executable">
+            <a href="{{ project.download_link }}"><i class="fa-solid fa-download"></i></a>
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- FIX: Placed inside the row. ml-auto pushes it to the bottom-right corner of this line -->
+      {% if project.completed_on %}
+        <p class="project-completed text-muted small ml-auto mb-0 align-self-center">Completed: {{ project.completed_on }}</p>
+      {% endif %}
     </div>
-  </a>
+  </div>
 </div>
