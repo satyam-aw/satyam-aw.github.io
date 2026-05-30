@@ -5,7 +5,8 @@ description: Real-Time Texture Extraction and Mapping on Virtual Objects
 img: assets/img/1.PNG
 completed_on: UCSB, F22
 demo_video: https://www.youtube.com/watch?v=eUzmJmamqFk
-importance: 1
+importance: 10
+selected: true
 category: HCI and Computer Graphics
 github: https://github.com/CohesiveAR/.github
 giscus_comments: true

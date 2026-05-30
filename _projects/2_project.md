@@ -4,7 +4,7 @@ title: Spell Training in VR
 description: A Unity-based VR experience that offers users an innovative interaction system—sketching in midair to summon and manipulate in-game characters.
 completed_on: UCSB, W22
 img: assets/img/2.PNG
-importance: 3
+importance: 30
 category: HCI and Computer Graphics
 project_pdf: assets/pdf/2_CS291A.pdf
 github: https://github.com/satyam-aw/Spell-Training-in-VR
