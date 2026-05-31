@@ -2,7 +2,7 @@
 layout: page
 title: Fruit Ripeness Classifier
 description: Nondestructive techniques for determining the ripeness state using ML methods.
-completed_on: IIT-KGP, May 18
+completed_on: IIT-KGP, May '18
 img: /assets/img/4_ripeness_classifier.PNG
 importance: 3
 category: Sequential Deep Learning and ML

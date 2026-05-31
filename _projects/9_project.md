@@ -1,82 +1,62 @@
 ---
 layout: page
-title: project 9
-description: another project with an image 🎉
+title: Autonomous Ground Vehicle and Swarm Robotics
+description: As a technical (AI / embedded) member for my institute's research groups, I worked on several projects on motion-planning and robot perception for the aim of advancing autonomous robotics and competing in collegiate robotics competition
 img: assets/img/6.jpg
+completed_on: IIT-KGP, 2016-2018
+demo_video: https://www.youtube.com/@agvkgp
 importance: 4
-category: Software Engineering
-redirect: https://unsplash.com
+category: Embedded Systems and Robotics
+---
+
+
+During my undergraduate years at IIT Kharagpur, I served as a core technical member of the [**Autonomous Ground Vehicle (AGV)**](http://www.agv.iitkgp.ac.in/) and [**Swarm**](https://swarm-iitkgp.github.io/index.html) research groups. My work sat at the intersection of Artificial Intelligence, Computer Vision, and Embedded Systems. We focused on building fully autonomous systems capable of navigating complex, dynamic indoor and outdoor environments.
 
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+#### Core Domains & Areas of Expertise
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+* **Robot Perception**: Designing pipelines for real-time obstacle detection and environment mapping.
+* **Motion Planning**: Developing path planning algorithms for non-holonomic ground vehicles.
+* **Embedded Systems**: Integrating sensors, microcontrollers, and single-board computers (SBCs).
+* **Sensor Fusion**: Combining data from LiDAR, IMU, GPS, and cameras for localization.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+---
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+#### Key Projects & Technical Details
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+##### 1. Autonomous Navigation Pipeline for AGV
+We engineered an end-to-end software and hardware stack for an outdoor autonomous rover designed to navigate unstructured campus environments.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+<figure class="mt-3 mt-md-0 text-center">
+    {% include figure.liquid path="assets/img/9_agv.webp" title="example image" class="img-fluid rounded" %}
+  <figcaption class="caption">Figure 1: AGV Dune buggy, a full-scale autonomous buggy testbed developed by the Autonomous Ground Vehicles group for field-testing real-world perception and navigation algorithms</figcaption>
+</figure>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+* **Vision & Perception**: Implemented lane detection and obstacle segmentation using traditional computer vision (OpenCV) combined with deep learning models (SegNet/U-Net) optimized for embedded deployment.
+* **Path Planning**: Developed a hierarchical planning system. Used **A* / Dijkstra** for global path generation and **Dynamic Window Approach (DWA)** for local obstacle avoidance.
+* **Localization**: Utilized an **Extended Kalman Filter (EKF)** to fuse odometry data from wheel encoders, IMU, and GPS, reducing drift during long-range traversal.
+* **Software Stack**: Developed entirely within the **Robot Operating System (ROS)** ecosystem using C++ and Python.
 
-{% raw %}
+##### 2. Swarm Robotics & Swarm Intelligence
+As part of the [Swarm](https://swarm-iitkgp.github.io/index.html) research group, I researched decentralized coordination among low-cost mobile robots.
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+<figure class="mt-3 mt-md-0 text-center">
+    {% include figure.liquid path="assets/img/9_swarm.jpg" title="Swarm Communication and Tracking Workflows" class="img-fluid rounded" %}
+  <figcaption class="caption">Figure 2: Modular, peer-to-peer swarm agents utilizing onboard Linux compute and vision sensors for decentralized relative pose estimation swarm coordination</figcaption>
+</figure>
 
-{% endraw %}
+* **Algorithms**:
+  1. **Multi-Agent Path Planning**: Implemented a **Decentralized A*** approach where each agent computes its own path independently. Agents treat neighboring robots as dynamic obstacles and broadcast intent vectors to resolve spatial conflicts locally without a central coordinator.
+  2. **Relative Pose Estimation**: To overcome occlusion and bandwidth constraints as the swarm scales, individual robots track only their immediate neighbors rather than the entire fleet. Implemented an **observation-only** broadcasting strategy, allowing peer swarm agents to receive and update their local pose graphs to infer the global swarm map. Relative pose estimation was achieved using **AprilTags** as fiducial markers.
+
+* **Communication**: Set up an ad-hoc mesh network using **XBee modules** to enable real-time state sharing and low-latency communication between adjacent robots.
+* **Hardware**: Designed custom PCBs hosting **ATmega microcontrollers** to manage closed-loop motor control, localized power distribution, and IR sensor arrays.
+
+---
+
+#### Technical Stack
+
+* **Languages**: C++, Python, MATLAB
+* **Frameworks & Tools**: ROS (Robot Operating System), OpenCV 
+* **Hardware**: Arduino, Raspberry Pi, BeagleBone Black, Hokuyo LiDAR, IMU (MPU6050)

@@ -5,7 +5,7 @@ permalink: /projects/
 description: A growing collection of cool projects.
 nav: true
 nav_order: 3
-display_categories: [Sequential Deep Learning and ML, HCI and Computer Graphics, Embedded Systems and IoT, Software Engineering]
+display_categories: [Sequential Deep Learning and ML, HCI and Computer Graphics, Embedded Systems and Robotics, Software Engineering]
 horizontal: false
 ---
 
