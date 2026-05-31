@@ -1,18 +1,30 @@
 <div class="row align-items-start py-3">
-  {% if project.img %}
-    <div class="col-md-3 d-flex flex-column align-items-center justify-content-center mt-1">
-        {% include figure.liquid 
-        loading="eager" 
-        path=project.img 
-        sizes="(min-width: 768px) 200px, 50vw" 
-        alt="project thumbnail" 
-        avoid_scaling=true
-        class="preview z-depth-1 rounded m-0 img-fluid" 
-        zoomable=true %}
-    </div>
-  {% endif %}
+
+    <!-- Count the elements in the images array -->
+    {% assign img_count = project.images | size %}
+
+    {% if img_count > 1 %}
+      <!-- Render carousel directly if multiple images exist -->
+      <div class="col-md-3 d-flex flex-column align-items-center justify-content-center mt-1">
+        {% include carousel.liquid images=project.images id=forloop.index %}
+      </div>
+
+    {% elsif project.img %}
+      <!-- Legacy fallback for a single image -->
+      <div class="col-md-3 d-flex flex-column align-items-center justify-content-center mt-1">
+          {% include figure.liquid 
+          loading="eager" 
+          path=project.img 
+          sizes="(min-width: 768px) 200px, 50vw" 
+          alt="project thumbnail" 
+          avoid_scaling=true
+          class="preview z-depth-1 rounded m-0 img-fluid" 
+          zoomable=true %}
+      </div>
+    {% endif %}
   
   <div class="col-md-{% if project.img %}9{% else %}12{% endif %}">
+    <!-- Main Card Clickable Link Area -->
     <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" class="text-decoration-none text-reset d-block">
       <h5 class="card-title mb-1">{{ project.title }}</h5>
       <p class="card-text">{{ project.description }}</p>

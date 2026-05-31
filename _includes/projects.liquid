@@ -1,23 +1,31 @@
 <div class="col">
-  <div class="card h-100 hoverable position-relative d-flex flex-column">
-    <!-- Main Card Clickable Link Area -->
-    <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" class="stretched-link text-decoration-none text-dark d-flex flex-column flex-grow-1">
-      {% if project.img %}
-        {%
-          include figure.liquid
-          loading="eager"
-          path=project.img
-          sizes = "250px"
-          alt="project thumbnail"
-          class="card-img-top"
-        %}
-      {% endif %}
+    <div class="card h-100 hoverable position-relative d-flex flex-column">
+        
+        <!-- Count the elements in the images array -->
+        {% assign img_count = project.images | size %}
 
-      <div class="card-body d-flex flex-column flex-grow-1">
-        <h2 class="card-title mb-1">{{ project.title }}</h2>
-        <p class="card-text">{{ project.description }}</p>
-      </div>
-    </a>
+        {% if img_count > 1 %}
+          <!-- Render carousel directly if multiple images exist -->
+          {% include carousel.liquid images=project.images id=forloop.index %}
+        {% elsif project.img %}
+          <!-- Legacy fallback for a single image -->
+          {%
+            include figure.liquid
+            loading="eager"
+            path=project.img
+            sizes="250px"
+            alt="project thumbnail"
+            class="card-img-top"
+          %}
+        {% endif %}
+      <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" class="stretched-link text-decoration-none text-dark d-flex flex-column flex-grow-1">
+      
+      <!-- Main Card Clickable Link Area -->
+        <div class="card-body d-flex flex-column flex-grow-1">
+          <h2 class="card-title mb-1">{{ project.title }}</h2>
+          <p class="card-text">{{ project.description }}</p>
+        </div>
+      </a>
 
     <!-- Structured Card Footer (Both Icons and Date Locked to Bottom) -->
     <div class="card-footer bg-transparent border-top-0 pt-0 pb-3 mt-auto" style="position: relative; z-index: 2;">

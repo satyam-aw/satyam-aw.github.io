@@ -1,9 +1,14 @@
 ---
 layout: page
 title: Autonomous Ground Vehicle and Swarm Robotics
-description: As a technical (AI / embedded) member for my institute's research groups, I worked on several projects on motion-planning and robot perception for the aim of advancing autonomous robotics and competing in collegiate robotics competition
-img: assets/img/6.jpg
+description: Developed perception, motion-planning, and decentralized coordination systems for the institute's AGV and swarm robotics research groups.
+img: assets/img/9_agv.webp
+images: 
+- assets/img/9_agv.webp
+- assets/img/9_swarm.jpg
+- assets/img/9_agv_e6.PNG
 completed_on: IIT-KGP, 2016-2018
+selected: true
 demo_video: https://www.youtube.com/@agvkgp
 importance: 4
 category: Embedded Systems and Robotics

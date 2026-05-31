@@ -1,0 +1,76 @@
+<!-- _includes/carousel.liquid -->
+{% assign items = include.images %}
+{% assign carousel_id = include.id %}
+
+<div class="carousel-holder" id="holder-{{ carousel_id }}">
+  <div class="custom-carousel">
+    
+    <!-- Track wrapper -->
+    <div class="carousel-track">
+      {% for item in items %}
+        <div class="carousel-slide" style="background-image: url('{{ item | relative_url }}');"></div>
+      {% endfor %}
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="carousel-dots-container">
+      {% for item in items %}
+        <div class="carousel-dot {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}"></div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function() {
+    const container = document.getElementById('holder-{{ carousel_id }}');
+    if (!container) return;
+
+    const track = container.querySelector('.carousel-track');
+    const dots = container.querySelectorAll('.carousel-dot');
+    const totalSlides = dots.length;
+    let currentIndex = 0;
+    let slideInterval;
+
+    function updateCarousel(index) {
+      currentIndex = index;
+      
+      // 1. Shift the frame container track smoothly
+      track.style.transform = `translateX(${currentIndex * -100}%)`;
+      
+      // 2. Clear old dot configurations and update the active state highlight
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[currentIndex].classList.add('active');
+    }
+
+    // Direct listener binding solves the disabled dots bug perfectly
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Blocks Bootstrap's link wrapper layer
+        const targetIndex = parseInt(dot.getAttribute('data-index'), 10);
+        updateCarousel(targetIndex);
+      });
+    });
+
+    function nextSlide() {
+      const nextIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel(nextIndex);
+    }
+
+    function startAutoSlide() {
+      slideInterval = setInterval(nextSlide, 3000);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(slideInterval);
+    }
+
+    startAutoSlide();
+
+    // Pause functionality for accessibility support
+    container.addEventListener('mouseenter', stopAutoSlide);
+    container.addEventListener('mouseleave', startAutoSlide);
+  })();
+</script>

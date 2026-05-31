@@ -3,6 +3,10 @@ layout: page
 title: CohesiveAR for Interactive Design
 description: Real-Time Texture Extraction and Mapping on Virtual Objects
 img: assets/img/1.PNG
+images: 
+  - assets/img/1.PNG
+  - assets/img/1_holo.png
+  - assets/img/1_ladder.png
 completed_on: UCSB, Fall 22
 demo_video: https://www.youtube.com/watch?v=eUzmJmamqFk
 importance: 10
