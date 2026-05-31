@@ -463,9 +463,9 @@ ninja.data = [{
           description: "A Twitter-like micro blogging social media app for load testing and bottleneck analysis",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
+            },},{id: "projects-autonomous-ground-vehicle-and-swarm-robotics",
+          title: 'Autonomous Ground Vehicle and Swarm Robotics',
+          description: "Developed perception, motion-planning, and decentralized coordination systems for the institute&#39;s AGV and swarm robotics research groups.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
             },},{id: "teachings-data-science-fundamentals",
