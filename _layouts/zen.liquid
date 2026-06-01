@@ -8,26 +8,34 @@ layout: default
   </header>
 
   <article>
-    <!-- Category Filter Controls -->
+  <!-- Minimalist Text Filter Controls -->
     <div class="container text-center my-4">
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-outline-secondary active btn-sm" onclick="filterPlants('all')">
-          <input type="radio" name="options" checked> All Species
-        </label>
-        <label class="btn btn-outline-secondary btn-sm" onclick="filterPlants('Trees')">
-          <input type="radio" name="options"> Trees
-        </label>
-        <label class="btn btn-outline-secondary btn-sm" onclick="filterPlants('Shrubs & Woody Vines')">
-          <input type="radio" name="options"> Shrubs & Vines
-        </label>
-        <label class="btn btn-outline-secondary btn-sm" onclick="filterPlants('Herbaceous Plants & Wildflowers')">
-          <input type="radio" name="options"> Herbaceous & Wildflowers
-        </label>
-        <label class="btn btn-outline-secondary btn-sm" onclick="filterPlants('Fungi & Marine Organisms')">
-          <input type="radio" name="options"> Fungi & Marine
-        </label>
+      <div class="d-flex justify-content-center align-items-center flex-wrap" id="plant-filter-text-row">
+        
+        <button type="button" class="btn filter-text-btn active" onclick="filterPlants('all', this)">
+          All Species
+        </button>
+
+        <button type="button" class="btn filter-text-btn" onclick="filterPlants('Trees', this)">
+          Trees
+        </button>
+
+        <button type="button" class="btn filter-text-btn" onclick="filterPlants('Shrubs & Woody Vines', this)">
+          Shrubs & Vines
+        </button>
+
+        <button type="button" class="btn filter-text-btn" onclick="filterPlants('Herbaceous Plants & Wildflowers', this)">
+          Herbaceous & Wildflowers
+        </button>
+
+        <button type="button" class="btn filter-text-btn" onclick="filterPlants('Fungi & Marine Organisms', this)">
+          Fungi & Marine
+        </button>
+
       </div>
     </div>
+
+
 
     <!-- Hidden Server-Rendered Liquid Pool -->
     <div id="raw-plant-pool" style="display: none;">
@@ -157,10 +165,23 @@ document.addEventListener("DOMContentLoaded", () => {
   filterPlants('all');
 });
 
-function filterPlants(category) {
+function filterPlants(category, clickedButton) {
   const sections = document.querySelectorAll('.year-section');
-  visibleItemsList = []; // Reset global list
+  visibleItemsList = []; // Reset global tracking list
 
+  // 1. Manage Active Text Highlighting
+  if (clickedButton) {
+    const textButtons = clickedButton.parentElement.querySelectorAll('.filter-text-btn');
+    textButtons.forEach(btn => {
+      if (btn === clickedButton) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  }
+
+  // 2. Filter Content Grid Layout
   sections.forEach(section => {
     const items = section.querySelectorAll('.plant-wrapper-group');
     let hasVisibleItems = false;
@@ -177,10 +198,52 @@ function filterPlants(category) {
     section.style.display = hasVisibleItems ? '' : 'none';
   });
 }
+
 </script>
 
 <!-- Layout CSS Styling -->
 <style>
+  .filter-text-btn {
+    background: transparent !important;
+    border: none !important;
+    color: var(--global-text-color, #212529) !important;
+    margin: 0 14px;
+    padding: 6px 4px;
+    font-size: 0.95rem;
+    /* Inactive style: Normal weight and slightly faded */
+    font-weight: 400;
+    opacity: 0.6; 
+    transition: all 0.2s ease-in-out;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* Completely kill Bootstrap's native button focus/click background box */
+  .filter-text-btn:focus,
+  .filter-text-btn:active,
+  .filter-text-btn.focus,
+  .filter-text-btn:focus-visible {
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  /* Hover effect: slightly sharpen the text */
+  .filter-text-btn:hover {
+    opacity: 0.9;
+    background: transparent !important;
+    text-decoration: none;
+  }
+
+  /* Active Filter Selection: Pure bold text and full opacity */
+  .filter-text-btn.active {
+    font-weight: 700 !important; /* Bold font weight */
+    opacity: 1 !important;        /* Crisp, full opacity text */
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
   /* Significantly enlarged outer static frame */
   .plant-mount-container {
     position: relative;
