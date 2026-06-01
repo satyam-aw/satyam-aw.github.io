@@ -1,11 +1,221 @@
-- name: "Monstera Deliciosa"
-  image: /assets/img/plants/monstera.jpg
-  time: "June 2025"
-  place: "Home Office"
-  category: "indoor"
+- name: "Wild Radish"
+  image: /assets/img/plants/wild_radish.jpg
+  time: "May 2021"
+  place: "Slough Rd, Goleta, CA"
+  category: "Herbaceous Plants & Wildflowers"
 
-- name: "Echeveria Succulent"
-  image: /assets/img/plants/succulent.jpg
-  time: "October 2024"
-  place: "Balcony Garden"
-  category: "outdoor"
+- name: "Monterey Cypress"
+  image: /assets/img/plants/monterey_cypress.jpg
+  time: "Nov 2022"
+  place: "Cavern Point Trail, CA"
+  category: "Trees"
+
+- name: "Heartleaf Keckiella"
+  image: /assets/img/plants/Heartleaf Keckiella.jpg
+  time: "May 2022"
+  place: "Refugio Rd, Goleta, CA"
+  category: "Shrubs & Woody Vines"
+
+- name: "Coast Morning Glory"
+  image: /assets/img/plants/Coast Morning Glory.jpg
+  time: "May 2022"
+  place: "Gaviota Peak Fire Road, Goleta, CA"
+  category: "Herbaceous Plants & Wildflowers"
+
+- name: "Seacliff Wild Buckwheat"
+  image: /assets/img/plants/Seacliff Wild Buckwheat.jpg
+  time: "July 2022"
+  place: "Goleta, CA"
+  category: "Shrubs & Woody Vines"
+
+- name: "Sacred Datura"
+  image: /assets/img/plants/Sacred Datura.jpg
+  time: "July 2022"
+  place: "Scripps Crescent St, Goleta, CA"
+  category: "Herbaceous Plants & Wildflowers"
+
+- name: "Yerba Mansa"
+  image: /assets/img/plants/Yerba Mansa.jpg
+  time: "July 2022"
+  place: "Scripps Crescent St, Goleta, CA"
+  category: "Herbaceous Plants & Wildflowers"
+
+- name: "Island Bush Monkeyflower"
+  image: /assets/img/plants/Island Bush Monkeyflower.jpg
+  time: "Sept 2022"
+  place: "Santa Barbara County, CA"
+  category: "Shrubs & Woody Vines"
+
+- name: "Sunburst Anemone"
+  image: /assets/img/plants/Sunburst Anemone.jpg
+  time: "Nov 2022"
+  place: "Santa Barbara County, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Island Bush Monkeyflower"
+  image: /assets/img/plants/Island Bush Monkeyflower.jpg
+  time: "Nov 2022"
+  place: "Santa Barbara County, CA"
+  category: "Shrubs & Woody Vines"
+
+- name: "Pacific Poison Oak"
+  image: /assets/img/plants/Pacific Poison Oak.jpg
+  time: "Feb 2023"
+  place: "Santa Barbara, CA"
+  category: "Shrubs & Woody Vines"
+
+- name: "Western Sycamore"
+  image: /assets/img/plants/Western Sycamore.jpg
+  time: "Oct 2022"
+  place: "Santa Barbara County, CA"
+  category: "Trees"
+
+- name: "Castor Bean"
+  image: /assets/img/plants/Castor Bean.jpg
+  time: "Dec 2022"
+  place: "Goleta, CA"
+  category: "Herbaceous Plants & Wildflowers"
+
+- name: "Valley Oak"
+  image: /assets/img/plants/Valley Oak.jpg
+  time: "Feb 2023"
+  place: "Goleta, CA"
+  category: "Trees"
+
+- name: "Coast Live Oak"
+  image: /assets/img/plants/Coast Live Oak.jpg
+  time: "May 2025"
+  place: "Santa Cruz, CA"
+  category: "Trees"
+
+- name: "California Bay"
+  image: /assets/img/plants/California Bay.jpg
+  time: "May 2025"
+  place: "Santa Cruz, CA"
+  category: "Trees"
+
+- name: "Coast Redwood"
+  image: /assets/img/plants/Coast Redwood.jpg
+  time: "Aug 2024"
+  place: "Hagiwara Tea Garden Dr, San Francisco, CA"
+  category: "Trees"
+
+- name: "California Buckeye"
+  image: /assets/img/plants/California Buckeye.jpg
+  time: "Sept 2024"
+  place: "Los Altos, CA"
+  category: "Trees"
+
+- name: "Alameda manzanita"
+  image: /assets/img/plants/Alameda manzanita.jpg
+  time: "Dec 2025"
+  place: " Sobrante Ridge Trail, CA"
+  category: "Shrubs & Woody Vines"
+
+- name: "Orange Bush Monkeyflower"
+  image: /assets/img/plants/Orange Bush Monkeyflower.jpg
+  time: "Oct 2025"
+  place: "Macalla Rd, San Francisco, CA"
+  category: "Shrubs & Woody Vines"
+
+- name: "Coyote Brush"
+  image: /assets/img/plants/Coyote Brush.jpg
+  time: "Feb 2026"
+  place: "Western Pacific Trail, Fremont, CA"
+  category: "Shrubs & Woody Vines"
+
+- name: "California Sagebrush"
+  image: /assets/img/plants/California Sagebrush.jpg
+  time: "July 2025"
+  place: "San Bruno Mountain State & County Park, Daly City, CA"
+  category: "Shrubs & Woody Vines"
+
+- name: "Brown Birch-Bolete"
+  image: /assets/img/plants/Brown Birch-Bolete.jpg
+  time: "June 2025"
+  place: "Pleasant Hill, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Honey Mushrooms"
+  image: /assets/img/plants/Honey Mushrooms.jpg
+  time: "May 2025"
+  place: "Sequoia-Bayview Trail, Oakland, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Common Gilled Mushrooms"
+  image: /assets/img/plants/Common Gilled Mushrooms.jpg
+  time: "May 2025"
+  place: "Joaquin Miller Park, Alameda County, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Turkey-Tail"
+  image: /assets/img/plants/Turkey-Tail.jpg
+  time: "May 2025"
+  place: "Joaquin Miller Park, Alameda County, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Genus Stereum"
+  image: /assets/img/plants/Genus Stereum.jpg
+  time: "May 2024"
+  place: "Meadow Trail, Portola Valley, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Red Pinwheel"
+  image: /assets/img/plants/Red Pinwheel.jpg
+  time: "Dec 2025"
+  place: "Sacramento County, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Brittlestems"
+  image: /assets/img/plants/Brittlestems.jpg
+  time: "Dec 2025"
+  place: "Sacramento County, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Genus Agrocybe"
+  image: /assets/img/plants/Genus Agrocybe.jpg
+  time: "April 2025"
+  place: "Pleasanton Sports and Recreation Park, Pleasanton, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Western Jack-O'-Lantern"
+  image: /assets/img/plants/Western Jack-O'-Lantern.jpg
+  time: "Jan 2026"
+  place: "Sonoma Overlook Trail, Sonoma, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Hortiboletus flavorubellus"
+  image: /assets/img/plants/Hortiboletus flavorubellus.jpg
+  time: "Jan 2026"
+  place: "Sonoma Overlook Trail, Sonoma, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Mulch Maids"
+  image: /assets/img/plants/Mulch Maids.jpg
+  time: "Jan 2026"
+  place: "Sonoma Overlook Trail, Sonoma, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Oysterlings"
+  image: /assets/img/plants/Oysterlings.jpg
+  time: "Feb 2026"
+  place: "Sonoma Mountain Rd, Petaluma, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Cabbage Parachute"
+  image: /assets/img/plants/Cabbage Parachute.jpg
+  time: "Mar 2025"
+  place: "Byron St, Palo Alto, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Western Yellow-veiled Amanita"
+  image: /assets/img/plants/Western Yellow-veiled Amanita.jpg
+  time: "Nov 2025"
+  place: "Point Reyes National Seashore, Marin County, CA"
+  category: "Fungi & Marine Organisms"
+
+- name: "Genus Xerocomellus"
+  image: /assets/img/plants/Genus Xerocomellus.jpg
+  time: "Nov 2025"
+  place: "Point Reyes National Seashore, Marin County, CA"
+  category: "Fungi & Marine Organisms"
