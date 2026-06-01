@@ -149,6 +149,21 @@ layout: default
   .plant-card:hover .plant-hover-overlay {
     opacity: 1;
   }
+
+  .modal {
+    position: fixed !important;
+    top: 0 !important;
+    /* Shifts layout to the true screen center line */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 1050; 
+    width: 100% !important;
+    /* Restricts box expanding past content on wide screens */
+    max-width: 500px !important; 
+    height: 100% !important;
+    overflow: hidden !important;
+    display: none; /* Keeps default state hidden until triggered by JS */
+  }
   
   /* Modal formatting styles */
   .max-modal-image {
