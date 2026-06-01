@@ -29,70 +29,150 @@ layout: default
       </div>
     </div>
 
+    {%- comment -%}
+      1. Map strings to numeric timestamps to achieve clean chronological array strings
+    {%- endcomment -%}
+    {%- assign mapped_plants_string = "" -%}
+    {%- assign unique_years_string = "" -%}
+
+    {%- for plant in site.data.plants -%}
+      {%- assign date_parts = plant.time | split: " " -%}
+      {%- assign month = date_parts[0] -%}
+      {%- assign year = date_parts[1] -%}
+      
+      {%- case month -%}
+        {%- when "Jan" -%}{%- assign mm = "01" -%}
+        {%- when "Feb" -%}{%- assign mm = "02" -%}
+        {%- when "Mar" -%}{%- assign mm = "03" -%}
+        {%- when "Apr" -%}{%- assign mm = "04" -%}
+        {%- when "May" -%}{%- assign mm = "05" -%}
+        {%- when "June" -%}{%- assign mm = "06" -%}
+        {%- when "July" -%}{%- assign mm = "07" -%}
+        {%- when "Aug" -%}{%- assign mm = "08" -%}
+        {%- when "Sept" -%}{%- assign mm = "09" -%}
+        {%- when "Oct" -%}{%- assign mm = "10" -%}
+        {%- when "Nov" -%}{%- assign mm = "11" -%}
+        {%- when "Dec" -%}{%- assign mm = "12" -%}
+        {%- else -%}{%- assign mm = "01" -%}
+      {%- endcase -%}
+      
+      {%- assign timestamp = year | append: "-" | append: mm -%}
+      {%- assign mapped_plants_string = mapped_plants_string | append: timestamp | append: ":::" | append: forloop.index0 | append: "|||" -%}
+      {%- assign unique_years_string = unique_years_string | append: year | append: "," -%}
+    {%- endfor -%}
+
+    {%- comment -%}
+      2. Construct sorted indexes based completely on reverse-chronological order
+    {%- endcomment -%}
+    {%- assign sorted_mapped_plants = mapped_plants_string | split: "|||" | sort | reverse -%}
+    {%- assign sorted_years = unique_years_string | split: "," | uniq | sort | reverse -%}
+    {%- assign total_plants_count = sorted_mapped_plants | size -%}
+
     <!-- Plant Grid Layout -->
-    <div class="container mt-4">
-      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center align-items-center">
-        {% for plant in site.data.plants %}
-          {% assign plant_id = forloop.index %}
-          
-          <div class="col text-center mb-5 plant-item-card" data-category="{{ plant.category }}">
-            <div class="plant-card" style="cursor: pointer;" data-toggle="modal" data-target="#plantModal-{{ plant_id }}">
+    <div class="container publications mt-4 id="plant-gallery-root"">
+      {%- for current_year in sorted_years -%}
+        {%- if current_year == "" -%}{%- continue -%}{%- endif -%}
+        
+        <div class="year-section" data-year="{{ current_year }}">
+          <h2 class="bibliography">{{ current_year }}</h2>
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-start align-items-center">
+            
+            {%- for mapped_entry in sorted_mapped_plants -%}
+              {%- assign details = mapped_entry | split: ":::" -%}
+              {%- assign item_index = details[1] | plus: 0 -%}
+              {%- assign plant = site.data.plants[item_index] -%}
+              {%- assign item_year = plant.time | split: " " | last -%}
               
-              <!-- Large Outer Mount / Completely Static Frame Background -->
-              <div class="plant-mount-container" style="background-image: url('{{ '/assets/img/plants/frame.png' | relative_url }}');">
+              {%- if item_year == current_year -%}
+                {%- assign loop_ui_id = forloop.index -%}
                 
-                <!-- Smaller Inner Circular Plant Photo with Hover Effects -->
-                <div class="plant-circle-frame">
-                  <img src="{{ plant.image | relative_url }}" alt="{{ plant.name }}" class="plant-img img-fluid">
-                  <div class="plant-hover-overlay">
-                    <span class="hover-text">🔎 View</span>
+                <div class="col text-center mb-4 plant-item-card" data-category="{{ plant.category }}">
+                  <div class="plant-card" style="cursor: pointer;" data-toggle="modal" data-target="#plantModal-{{ loop_ui_id }}">
+                    
+                    <!-- Large Outer Mount / Completely Static Frame Background -->
+                    <div class="plant-mount-container" style="background-image: url('{{ '/assets/img/plants/frame.png' | relative_url }}');">
+                      
+                      <!-- Smaller Inner Circular Plant Photo with Hover Effects -->
+                      <div class="plant-circle-frame">
+                        <img src="{{ plant.image | relative_url }}" alt="{{ plant.name }}" class="plant-img img-fluid">
+                        <div class="plant-hover-overlay">
+                          <span class="hover-text">🔎 View</span>
+                        </div>
+                      </div>
+
+                    </div>
+                    
+                    <p class="font-weight-bold text-base-color m-0 pt-2">{{ plant.name }}</p>
                   </div>
                 </div>
 
-              </div>
-              
-              <p class="font-weight-bold text-base-color">{{ plant.name }}</p>
-            </div>
-          </div>
+                <!-- Centered Bootstrap Modal Overlay with Loop Navigation Controls -->
+                {%- assign prev_id = loop_ui_id | minus: 1 -%}
+                {%- assign next_id = loop_ui_id | plus: 1 -%}
+                {%- if loop_ui_id == 1 -%}{%- assign prev_id = total_plants_count -%}{%- endif -%}
+                {%- if loop_ui_id == total_plants_count -%}{%- assign next_id = 1 -%}{%- endif -%}
 
-          <!-- Centered Bootstrap Modal Overlay with Carousel Navigation Controls -->
-          {% assign prev_id = plant_id | minus: 1 %}
-          {% assign next_id = plant_id | plus: 1 %}
-          {% if plant_id == 1 %}{% assign prev_id = site.data.plants.size %}{% endif %}
-          {% if plant_id == site.data.plants.size %}{% assign next_id = 1 %}{% endif %}
+                <div class="modal fade" id="plantModal-{{ loop_ui_id }}" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content bg-card-color text-base-color border-0 shadow position-relative">
+                      
+                      <!-- Navigation Arrows inside popup -->
+                      <button type="button" class="nav-arrow prev-arrow" data-dismiss="modal" data-toggle="modal" data-target="#plantModal-{{ prev_id }}">
+                        ‹
+                      </button>
+                      <button type="button" class="nav-arrow next-arrow" data-dismiss="modal" data-toggle="modal" data-target="#plantModal-{{ next_id }}">
+                        ›
+                      </button>
 
-          <div class="modal fade" id="plantModal-{{ plant_id }}" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content bg-card-color text-base-color border-0 shadow position-relative">
-                
-                <!-- Navigation Arrows inside popup -->
-                <button type="button" class="nav-arrow prev-arrow" data-dismiss="modal" data-toggle="modal" data-target="#plantModal-{{ prev_id }}">
-                  ‹
-                </button>
-                <button type="button" class="nav-arrow next-arrow" data-dismiss="modal" data-toggle="modal" data-target="#plantModal-{{ next_id }}">
-                  ›
-                </button>
+                      <div class="modal-header border-0 pb-0 justify-content-end">
+                        <button type="button" class="close text-base-color" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
 
-                <div class="modal-header border-0 pb-0 justify-content-end">
-                  <button type="button" class="close text-base-color" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                      <div class="modal-body text-center pt-0 px-5">
+                        <img src="{{ plant.image | relative_url }}" alt="{{ plant.name }}" class="img-fluid rounded mb-3 max-modal-image">
+                        <h3 class="modal-title font-weight-bold mb-2">{{ plant.name }}</h3>
+                        <p class="mb-1 text-muted"><span class="mr-1">📅</span> <strong>Date:</strong> {{ plant.time }}</p>
+                        <p class="text-muted"><span class="mr-1">📍</span> <strong>Location:</strong> {{ plant.place }}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              {%- endif -%}
+            {%- endfor -%}
 
-                <div class="modal-body text-center pt-0 px-5">
-                  <img src="{{ plant.image | relative_url }}" alt="{{ plant.name }}" class="img-fluid rounded mb-3 max-modal-image">
-                  <h3 class="modal-title font-weight-bold mb-2">{{ plant.name }}</h3>
-                  <p class="mb-1 text-muted"><span class="mr-1">📅</span> <strong>Date:</strong> {{ plant.time }}</p>
-                  <p class="text-muted"><span class="mr-1">📍</span> <strong>Location:</strong> {{ plant.place }}</p>
-                </div>
-              </div>
-            </div>
           </div>
-        {% endfor %}
-      </div>
+        </div>
+      {%- endfor -%}
     </div>
   </article>
 </div>
+
+<!-- Extra JS helper utility ensuring headers hide cleanly if all matching children are active filters -->
+<script>
+function filterPlants(category) {
+  const items = document.querySelectorAll('.plant-item-card');
+  items.forEach(item => {
+    if (category === 'all' || item.getAttribute('data-category') === category) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  // Toggle year headers dynamically based on visible child components
+  const sections = document.querySelectorAll('.year-section');
+  sections.forEach(section => {
+    const activeCards = Array.from(section.querySelectorAll('.plant-item-card')).filter(card => card.style.display !== 'none');
+    if (activeCards.length === 0) {
+      section.style.display = 'none';
+    } else {
+      section.style.display = '';
+    }
+  });
+}
+</script>
 
 <!-- Layout CSS Styling -->
 <style>
@@ -206,14 +286,25 @@ layout: default
 
 <!-- Category Filtering Logic Script -->
 <script>
-  function filterPlants(category) {
-    const items = document.querySelectorAll('.plant-item-card');
-    items.forEach(item => {
-      if (category === 'all' || item.getAttribute('data-category') === category) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
+function filterPlants(category) {
+  const items = document.querySelectorAll('.plant-item-card');
+  items.forEach(item => {
+    if (category === 'all' || item.getAttribute('data-category') === category) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  // Toggle year headers dynamically based on visible child components
+  const sections = document.querySelectorAll('.year-section');
+  sections.forEach(section => {
+    const activeCards = Array.from(section.querySelectorAll('.plant-item-card')).filter(card => card.style.display !== 'none');
+    if (activeCards.length === 0) {
+      section.style.display = 'none';
+    } else {
+      section.style.display = '';
+    }
+  });
+}
 </script>
