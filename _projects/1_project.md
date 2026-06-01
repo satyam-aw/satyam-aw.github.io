@@ -7,6 +7,7 @@ images:
   - assets/img/1.PNG
   - assets/img/1_holo.png
   - assets/img/1_ladder.png
+download_link: https://drive.google.com/file/d/1JFnizZqqHfdgrDATeiZgwWax0WHh_LOp/view?usp=sharing
 completed_on: UCSB, Fall 22
 demo_video: https://www.youtube.com/watch?v=eUzmJmamqFk
 importance: 10

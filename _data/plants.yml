@@ -1,0 +1,11 @@
+- name: "Monstera Deliciosa"
+  image: /assets/img/plants/monstera.jpg
+  time: "June 2025"
+  place: "Home Office"
+  category: "indoor"
+
+- name: "Echeveria Succulent"
+  image: /assets/img/plants/succulent.jpg
+  time: "October 2024"
+  place: "Balcony Garden"
+  category: "outdoor"

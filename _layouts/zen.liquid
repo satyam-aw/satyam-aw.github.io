@@ -1,0 +1,198 @@
+---
+layout: default
+---
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-description">{{ page.description }}</p>
+  </header>
+
+  <article>
+    <!-- Category Filter Controls -->
+    <div class="container text-center my-4">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-outline-secondary active btn-sm" onclick="filterPlants('all')">
+          <input type="radio" name="options" checked> All Plants
+        </label>
+        <label class="btn btn-outline-secondary btn-sm" onclick="filterPlants('indoor')">
+          <input type="radio" name="options"> Indoor
+        </label>
+        <label class="btn btn-outline-secondary btn-sm" onclick="filterPlants('outdoor')">
+          <input type="radio" name="options"> Outdoor
+        </label>
+      </div>
+    </div>
+
+    <!-- Plant Grid Layout -->
+    <div class="container mt-4">
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center align-items-center">
+        {% for plant in site.data.plants %}
+          {% assign plant_id = forloop.index %}
+          
+          <div class="col text-center mb-5 plant-item-card" data-category="{{ plant.category }}">
+            <div class="plant-card" style="cursor: pointer;" data-toggle="modal" data-target="#plantModal-{{ plant_id }}">
+              
+              <!-- Large Outer Mount / Completely Static Frame Background -->
+              <div class="plant-mount-container" style="background-image: url('{{ '/assets/img/plants/frame.png' | relative_url }}');">
+                
+                <!-- Smaller Inner Circular Plant Photo with Hover Effects -->
+                <div class="plant-circle-frame">
+                  <img src="{{ plant.image | relative_url }}" alt="{{ plant.name }}" class="plant-img img-fluid">
+                  <div class="plant-hover-overlay">
+                    <span class="hover-text">🔎 View</span>
+                  </div>
+                </div>
+
+              </div>
+              
+              <p class="font-weight-bold text-base-color">{{ plant.name }}</p>
+            </div>
+          </div>
+
+          <!-- Centered Bootstrap Modal Overlay with Carousel Navigation Controls -->
+          {% assign prev_id = plant_id | minus: 1 %}
+          {% assign next_id = plant_id | plus: 1 %}
+          {% if plant_id == 1 %}{% assign prev_id = site.data.plants.size %}{% endif %}
+          {% if plant_id == site.data.plants.size %}{% assign next_id = 1 %}{% endif %}
+
+          <div class="modal fade" id="plantModal-{{ plant_id }}" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content bg-card-color text-base-color border-0 shadow position-relative">
+                
+                <!-- Navigation Arrows inside popup -->
+                <button type="button" class="nav-arrow prev-arrow" data-dismiss="modal" data-toggle="modal" data-target="#plantModal-{{ prev_id }}">
+                  ‹
+                </button>
+                <button type="button" class="nav-arrow next-arrow" data-dismiss="modal" data-toggle="modal" data-target="#plantModal-{{ next_id }}">
+                  ›
+                </button>
+
+                <div class="modal-header border-0 pb-0 justify-content-end">
+                  <button type="button" class="close text-base-color" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-body text-center pt-0 px-5">
+                  <img src="{{ plant.image | relative_url }}" alt="{{ plant.name }}" class="img-fluid rounded mb-3 max-modal-image">
+                  <h3 class="modal-title font-weight-bold mb-2">{{ plant.name }}</h3>
+                  <p class="mb-1 text-muted"><span class="mr-1">📅</span> <strong>Date:</strong> {{ plant.time }}</p>
+                  <p class="text-muted"><span class="mr-1">📍</span> <strong>Location:</strong> {{ plant.place }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- Layout CSS Styling -->
+<style>
+  /* Significantly enlarged outer static frame */
+  .plant-mount-container {
+    position: relative;
+    width: 200px;  
+    height: 200px;
+    margin: 0 auto;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    transition: none; /* Explicitly prevents frame from scaling */
+  }
+  
+  /* Compact photo frame sitting inside the spacious mount space */
+  .plant-circle-frame {
+    position: relative;
+    width: 145px; 
+    height: 145px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--global-box-shadow, 0 2px 6px rgba(0,0,0,0.15));
+  }
+  
+  .plant-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .plant-hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .hover-text {
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: bold;
+  }
+  
+  /* Hover effects isolated strictly to the inside contents */
+  .plant-card:hover .plant-img {
+    transform: scale(1.1);
+  }
+  .plant-card:hover .plant-hover-overlay {
+    opacity: 1;
+  }
+  
+  /* Modal formatting styles */
+  .max-modal-image {
+    max-height: 55vh;
+    object-fit: contain;
+    width: 100%;
+  }
+  .bg-card-color {
+    background-color: var(--global-bg-color);
+  }
+  .text-base-color {
+    color: var(--global-text-color);
+  }
+  .nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--global-text-color);
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    cursor: pointer;
+    z-index: 1050;
+    padding: 0 15px;
+  }
+  .nav-arrow:hover {
+    opacity: 1;
+  }
+  .prev-arrow { left: 0; }
+  .next-arrow { right: 0; }
+</style>
+
+<!-- Category Filtering Logic Script -->
+<script>
+  function filterPlants(category) {
+    const items = document.querySelectorAll('.plant-item-card');
+    items.forEach(item => {
+      if (category === 'all' || item.getAttribute('data-category') === category) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+</script>
