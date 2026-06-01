@@ -40,12 +40,6 @@
   place: "Scripps Crescent St, Goleta, CA"
   category: "Herbaceous Plants & Wildflowers"
 
-- name: "Island Bush Monkeyflower"
-  image: /assets/img/plants/Island Bush Monkeyflower.jpg
-  time: "Sept 2022"
-  place: "Santa Barbara County, CA"
-  category: "Shrubs & Woody Vines"
-
 - name: "Sunburst Anemone"
   image: /assets/img/plants/Sunburst Anemone.jpg
   time: "Nov 2022"
