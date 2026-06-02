@@ -18,9 +18,10 @@ for filename in os.listdir("."):
     try:
         # Handle PNG files (Interlaced)
         if ext.endswith(".png"):
-            with Image.open(filename) as img:
-                img.save(output_path, "PNG", optimize=True)
-                print(f"Interlaced PNG: {filename}")
+            # PIL doesn't work for PNG
+            # with Image.open(filename) as img:
+            #     img.save(output_path, "PNG", optimize=True)
+            #     print(f"Interlaced PNG: {filename}")
                 
         # Handle JPEG files (Progressive)
         elif ext.endswith((".jpg", ".jpeg")):
