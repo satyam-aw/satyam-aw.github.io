@@ -38,7 +38,7 @@ layout: default
                 <!-- CRITICAL ENHANCEMENT: Removed Bootstrap data-attributes to prevent rendering lockups.
                      Click events are dynamically managed on a per-item basis. -->
                 <div class="plant-card" onclick="openIndividualModal('{{ forloop.parentloop.index }}-{{ forloop.index }}')">
-                  <div class="plant-mount-container" style="background-image: url('{{ '/assets/img/plants/interlaced_output/frame.png' | relative_url }}');">
+                  <div class="plant-mount-container" style="background-image: url('{{ '/assets/img/plants/frame_i.png' | relative_url }}');">
                     <div class="plant-circle-frame" id="frame-{{ forloop.parentloop.index }}-{{ forloop.index }}">
                       
                       <!-- Progressive tracking forces immediate render pipeline processing -->
@@ -229,6 +229,11 @@ function filterPlants(category, clickedButton) {
     opacity: 1 !important;        /* Crisp, full opacity text */
     background: transparent !important;
     box-shadow: none !important;
+    /* Underline effect */
+    border-bottom: 2px solid var(--global-theme-color) !important; 
+    padding-bottom: 4px !important;    /* Spacing between the text and the underline */
+    border-radius: 0 !important;       /* Prevents default Bootstrap button corner clipping */
+
   }
 
   /* Significantly enlarged outer static frame */

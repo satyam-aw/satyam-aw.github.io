@@ -1,37 +1,53 @@
 {% if site.teachings %}
-  <div class="courses">
-    {% assign courses_by_year = site.teachings | sort: 'year' | reverse | group_by: 'year' %}
+<div class="table-responsive">
+  <table class="table table-sm table-borderless">
+    <thead>
+      <tr style="border-bottom: 2px solid var(--global-divider-color);">
+        <th scope="col">Term</th>
+        <th scope="col">Course Title</th>
+        <th scope="col">Instructor</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% comment %}
+        We group courses by year first, sort years descending, 
+        and then manually cycle through terms in reverse order (Fall down to Winter).
+      {% endcomment %}
+      
+      {% assign courses_by_year = site.teachings | group_by: "year" %}
+      {% assign sorted_years = courses_by_year | sort: "name" | reverse %}
 
-    {% for year_group in courses_by_year %}
-      <h2 class="year">{{ year_group.name }}</h2>
-      <div class="course-list">
-        {% assign year_courses = year_group.items | sort: 'term' %}
-        {% for course in year_courses %}
-          <div class="course-item">
-            <h3 class="course-title">
-              <a href="{{ course.url | relative_url }}">{{ course.title }}</a>
-            </h3>
-
-            <div class="course-meta">
-              {% if course.term %}
-                <span class="course-term">{{ course.term }}</span>
-              {% endif %}
-
-              {% if course.instructor %}
-                <span class="course-instructor">{{ course.instructor }}</span>
-              {% endif %}
-            </div>
-
-            {% if course.description %}
-              <div class="course-description">
-                {{ course.description | markdownify }}
-              </div>
+      {% for year_group in sorted_years %}
+        {% assign term_order = "Fall,Summer,Spring,Winter" | split: "," %}
+        
+        {% for current_term in term_order %}
+          {% for course in year_group.items %}
+            {% assign course_term_down = course.term | downcase %}
+            {% assign target_term_down = current_term | downcase %}
+            
+            {% if course_term_down == target_term_down %}
+            <tr>
+              <th scope="row" style="white-space: nowrap; width: 15%;">
+                <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px;">
+                  {{ course.term | truncate: 3, "" }} '{{ course.year | append: "" | slice: 2, 2 }}
+                </span>
+              </th>
+              <td>
+                <span class="course-title font-weight-bold" style="color: var(--global-theme-color);">{{ course.title }}</span>
+                <p class="text-muted small" style="margin-bottom: 0;">{{ course.description }}</p>
+              </td>
+              <td class="text-muted small align-middle" style="white-space: nowrap; width: 25%;">
+                {{ course.instructor }}
+              </td>
+            </tr>
             {% endif %}
-          </div>
+          {% endfor %}
         {% endfor %}
-      </div>
-    {% endfor %}
-  </div>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
 {% else %}
   <p>No courses available yet.</p>
 {% endif %}

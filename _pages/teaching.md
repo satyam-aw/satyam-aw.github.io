@@ -37,6 +37,6 @@ During my tenure as a graduate student at [UC Santa Barbara](https://ucsb.edu "U
 
 ### Course Directory
 
-Below are the historical records of my academic appointments within the [UCSB Computer Science Department](https://ucsb.edu "UCSB CS Department").
+Below are the historical records of my academic appointments within the [UCSB Computer Science Department](https://www.cs.ucsb.edu/).
 
 {% include courses.liquid %}
