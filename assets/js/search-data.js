@@ -70,9 +70,9 @@ ninja.data = [{
           description: "First-person 3D maze game built with C++ and legacy fixed-function OpenGL via FreeGLUT",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
-            },},{id: "projects-fruit-ripeness-classifier",
-          title: 'Fruit Ripeness Classifier',
-          description: "Nondestructive techniques for determining the ripeness state using ML methods.",
+            },},{id: "projects-non-destructive-fruit-ripeness-classification",
+          title: 'Non-Destructive Fruit Ripeness Classification',
+          description: "Utilizing IR thermal signatures and supervised machine learning classifiers to determine berry ripeness states.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
             },},{id: "projects-in-motion-har-using-deepconvlstm",
