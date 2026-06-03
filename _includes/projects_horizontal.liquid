@@ -12,14 +12,16 @@
     {% elsif project.img %}
       <!-- Legacy fallback for a single image -->
       <div class="col-md-3 d-flex flex-column align-items-center justify-content-center mt-1">
-          {% include figure.liquid 
+        {% 
+          include figure.liquid 
           loading="eager" 
           path=project.img 
-          sizes="(min-width: 768px) 200px, 50vw" 
-          alt="project thumbnail" 
+          sizes="200px" 
+          class="preview z-depth-1 rounded" 
+          zoomable=true 
           avoid_scaling=true
-          class="preview z-depth-1 rounded m-0 img-fluid" 
-          zoomable=true %}
+          alt="project thumbnail" 
+        %}
       </div>
     {% endif %}
   

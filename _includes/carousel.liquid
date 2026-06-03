@@ -5,12 +5,22 @@
 <div class="carousel-holder" id="holder-{{ carousel_id }}">
   <div class="custom-carousel">
     
-    <!-- Track wrapper -->
-    <div class="carousel-track">
+    <!-- Horizontal flex track -->
+    <div class="carousel-track d-flex w-100">
       {% for item in items %}
-        <div class="carousel-slide" style="background-image: url('{{ item | relative_url }}');"></div>
+        <!-- FIX: Added custom height (e.g., h-200px) and image scaling utilities -->
+        <div class="carousel-slide flex-shrink-0 w-100 img-hover-zoom" style="overflow: hidden;">
+          {%
+            include figure.liquid
+            loading="eager"
+            path=item 
+            alt="project thumbnail"
+            class="w-100 h-100 object-fit-cover m-0 p-0"
+          %}
+        </div>
       {% endfor %}
     </div>
+
 
     <!-- Navigation Dots -->
     <div class="carousel-dots-container">
