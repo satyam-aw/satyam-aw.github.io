@@ -6,7 +6,7 @@ img: assets/img/9_agv.webp
 images: 
 - assets/img/9_agv.webp
 - assets/img/9_swarm.jpg
-- assets/img/9_agv_e6.PNG
+- assets/img/9_agv_e6.png
 completed_on: IIT-KGP, 2016-2018
 selected: true
 demo_video: https://www.youtube.com/@agvkgp

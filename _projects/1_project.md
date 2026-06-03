@@ -2,9 +2,9 @@
 layout: page
 title: CohesiveAR for Interactive Design
 description: Real-Time Texture Extraction and Mapping on Virtual Objects
-img: assets/img/1.PNG
+img: assets/img/1.png
 images: 
-  - assets/img/1.PNG
+  - assets/img/1.png
   - assets/img/1_holo.png
   - assets/img/1_ladder.png
 download_link: https://drive.google.com/file/d/1JFnizZqqHfdgrDATeiZgwWax0WHh_LOp/view?usp=sharing
@@ -80,7 +80,7 @@ The asset ingestion subsystem isolates, extracts, and normalizes physical surfac
 ### Object Manipulation Pipeline (`Manipulate Scene Object`)
 
 <figure class="mt-3 mt-md-0 text-center w-50 mx-auto">
-    {% include figure.liquid path="assets/img/1-mani.PNG" title="Architecture Diagram" class="img-fluid rounded" %}
+    {% include figure.liquid path="assets/img/1-mani.png" title="Architecture Diagram" class="img-fluid rounded" %}
   <figcaption class="caption">Figure 3: The Object Manipulation Pipeline</figcaption>
 </figure>
 

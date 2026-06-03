@@ -35,7 +35,7 @@ You may view the source code at the [GitHub repository (archived)](https://githu
 <h3>User Flows Implemented</h3>
 The initial task for the first-time user is to register his profile details into the application. If the user does not register the functionality will be limited for that session. 
 <figure class="mt-3 mt-md-0 text-center">
-    {% include figure.liquid path="assets/img/8_workflows.PNG" title="example image" class="img-fluid rounded" %}
+    {% include figure.liquid path="assets/img/8_workflows.png" title="example image" class="img-fluid rounded" %}
   <figcaption class="caption">Figure 1: All the possible user flows for the Tweeters App</figcaption>
 </figure>
 
@@ -77,7 +77,7 @@ Please refer the [project report](https://docs.google.com/document/d/1oxVZuh_Wj5
 
 <div class="row justify-content-sm-center">
     <div class="mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/8_results.PNG" title="example image" class="img-fluid rounded" %}
+        {% include figure.liquid path="assets/img/8_results.png" title="example image" class="img-fluid rounded" %}
     </div>
 </div>
 <div class="caption">

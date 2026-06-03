@@ -56,7 +56,6 @@ ul.task-list input[type="checkbox"] {
 
 .carousel-holder {
   position: relative;
-  z-index: 20 !important; /* Positions track structure distinctly above card framework */
   width: 100%;
   overflow: hidden;
 
@@ -90,14 +89,13 @@ ul.task-list input[type="checkbox"] {
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
-    z-index: 9999 !important; /* Forces layout layer directly over Bootstrap links */
     pointer-events: auto !important; 
   }
 
   .carousel-dot {
     width: 10px;
     height: 10px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(200, 200, 200, 0.8);
     border-radius: 50%;
     cursor: pointer !important;
     pointer-events: auto !important;

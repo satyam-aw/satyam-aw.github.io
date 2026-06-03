@@ -3,7 +3,7 @@ layout: page
 title: Fruit Ripeness Classifier
 description: Nondestructive techniques for determining the ripeness state using ML methods.
 completed_on: IIT-KGP, May '18
-img: /assets/img/4_ripeness_classifier.PNG
+img: /assets/img/4_ripeness_classifier.png
 importance: 3
 category: Sequential Deep Learning and ML
 project_pdf: /assets/pdf/4_fruits.pdf # you can also use external links here
@@ -13,13 +13,13 @@ We developed and compared nondestructive techniques to determine the ripeness of
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/4_ripeness_classifier.PNG" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/4_ripeness_classifier.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/4_ir.PNG" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/4_ir.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/4_processed.PNG" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/4_processed.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -27,10 +27,10 @@ We developed and compared nondestructive techniques to determine the ripeness of
 </div>
 <div class="row align-items-center"> 
   <div class="col-md-7 mt-3 mt-md-0"> 
-    {% include figure.liquid loading="eager" path="assets/img/4_scatter.PNG" title="example image" class="img-fluid rounded z-depth-1" %} 
+    {% include figure.liquid loading="eager" path="assets/img/4_scatter.png" title="example image" class="img-fluid rounded z-depth-1" %} 
   </div> 
   <div class="col-md-5 mt-3 mt-md-0"> 
-    {% include figure.liquid loading="eager" path="assets/img/4_roc.PNG" title="example image" class="img-fluid rounded z-depth-1" %} 
+    {% include figure.liquid loading="eager" path="assets/img/4_roc.png" title="example image" class="img-fluid rounded z-depth-1" %} 
   </div> 
 </div>
 <div class="caption">
@@ -42,7 +42,7 @@ Thermal patterns from two distinct sets of berries were captured as infrared (IR
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/4_table.PNG" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/4_table.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">

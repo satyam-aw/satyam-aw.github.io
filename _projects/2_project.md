@@ -3,7 +3,7 @@ layout: page
 title: Spell Training in VR
 description: A Unity-based VR experience that offers users an innovative interaction system—sketching in midair to summon and manipulate in-game characters.
 completed_on: UCSB, Winter 22
-img: assets/img/2.PNG
+img: assets/img/2.png
 importance: 30
 category: HCI and Computer Graphics
 project_pdf: assets/pdf/2_CS291A.pdf
@@ -38,7 +38,7 @@ The spells cast (or sketches drawn) by the user are recognized via a OpenCV base
 The project comprises two main systems running side by side: the Unity Game Engine and an Image Recognition module developed using OpenCV, MediaPipe Hands, and Tesseract OCR. To establish communication between these components, a bidirectional server-client protocol transfers commands and messages. We set up two servers in total (one in each system), with each system also running a client that connects to the opposing server.
 
 <figure class="mt-3 mt-md-0 text-center">
-    {% include figure.liquid path="assets/img/2_archi.PNG" title="Architecture Diagram" class="img-fluid rounded" %}
+    {% include figure.liquid path="assets/img/2_archi.png" title="Architecture Diagram" class="img-fluid rounded" %}
   <figcaption class="caption">Figure 1: Architecture of the Spell Training VR game</figcaption>
 </figure>
 
@@ -54,7 +54,7 @@ We utilize heuristics within the [MediaPipe Hand Landmarker](https://ai.google.d
 These gestures enable real-time, mid-air sketching and canvas management. Once a sketch is complete, the Google Tesseract Optical Character Recognition (OCR) engine processes the visual data. The recognized text translates into a specific action command, which is then transmitted to the Unity game for execution.
 
 <figure class="mt-3 mt-md-0 text-center">
-    {% include figure.liquid path="assets/img/2_canvas.PNG" title="OCR Pre-processing" class="img-fluid rounded" %}
+    {% include figure.liquid path="assets/img/2_canvas.png" title="OCR Pre-processing" class="img-fluid rounded" %}
   <figcaption class="caption">Figure 2: Image pre-processing and contour extraction for OCR</figcaption>
 </figure>
 
@@ -64,10 +64,10 @@ When the Unity VR game receives a command, it evaluates the *Raycast hit point*.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-6 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/2_raycast1.PNG" title="Raycast Summoning" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/2_raycast1.png" title="Raycast Summoning" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm-6 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/2_raycast2.PNG" title="Raycast Selection" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/2_raycast2.png" title="Raycast Selection" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
