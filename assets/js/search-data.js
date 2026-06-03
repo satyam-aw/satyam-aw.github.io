@@ -112,12 +112,12 @@ ninja.data = [{
               window.location.href = "/teachings/cmps-189s-f22/";
             },},{id: "teachings-cmpsc-16-problem-solving-with-computers-i",
           title: 'CMPSC 16: Problem Solving with Computers I',
-          description: "Introductory course teaching structural problem solving, foundational logic, C language syntax, and basic Unix command-line execution tools.",
+          description: "Fundamental concepts for solving problems using computers, foundational logic, C++ language syntax, debugging tools, and basic Unix command-line execution tools.",
           section: "Teachings",handler: () => {
               window.location.href = "/teachings/cmpsc-16-f21/";
             },},{id: "teachings-cmpsc-16-problem-solving-with-computers-i",
           title: 'CMPSC 16: Problem Solving with Computers I',
-          description: "Fundamental programming concepts in C: memory allocation, binary arithmetic, control flows, loops, functions, arrays, recursion, and debugging primitives.",
+          description: "Fundamental concepts for solving problems using computers, foundational logic, C++ language syntax, debugging tools, and basic Unix command-line execution tools.",
           section: "Teachings",handler: () => {
               window.location.href = "/teachings/cmpsc-16-w22/";
             },},{id: "teachings-cmpsc-184-mobile-application-development",
