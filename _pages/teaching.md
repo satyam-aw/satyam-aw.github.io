@@ -32,6 +32,8 @@ During my tenure as a graduate student at [UC Santa Barbara](https://ucsb.edu "U
 * **Curriculum Design:** Formulated practical coding assignments, structured lab tests, and conceptual quiz frameworks.
 * **Lecturing & Mentorship:** Delivered targeted guest lectures and guided senior capstone projects from ideation to deployment.
 * **Evaluation:** Maintained fair grading criteria for heavy assignments, code reviews, and formal examinations.
+<br>
+<br>
 
 ---
 

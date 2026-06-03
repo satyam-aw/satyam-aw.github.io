@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "CMPSC 16: Problem Solving with Computers I"
-description: "Introductory course teaching structural problem solving, foundational logic, C language syntax, and basic Unix command-line execution tools."
+description: "Fundamental concepts for solving problems using computers, foundational logic, C++ language syntax, debugging tools, and basic Unix command-line execution tools."
 instructor: "Prof. Phillip Conrad"
 year: 2021
 term: "Fall"
