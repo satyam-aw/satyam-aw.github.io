@@ -1,189 +1,196 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
+  name: Satyam Awasthi
+  label: Software Engineer & Researcher
+  email: satyam.aw@yahoo.com
+  location: Mountain View, CA
   image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  summary: Computer Science researcher and software engineer specializing in Spatial AI, Computer Vision, Ubiquitous Computing, AR, and Human-Computer Interaction (HCI).
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
+      username: SatyamA007
     - network: LinkedIn
-      username: example
+      username: satyam-awasthi
 
   address:
-    street: 2712 Broadway St
-    city: San Francisco
+    city: Mountain View
     region: California
-    postalCode: CA 94115
     countryCode: US
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+      - institution: University of California, Santa Barbara
+        location: Santa Barbara, CA, US
+        url: https://ucsb.edu
+        area: Computer Science
+        studyType: M.S.
+        start_date: 2021
+        end_date: 2023
+        score: "3.91/4.00 CGPA"
         highlights:
-          - Description 1.
-          - Description 2.
+          - Graduate Research focused on Spatial AI, AR/VR, and HCI.
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+      - institution: Indian Institute of Technology, Kharagpur
+        location: Kharagpur, India
+        url: https://iitkgp.ac.in
+        area: Electrical Engineering
+        studyType: Bachelor of Technology
+        start_date: 2016
+        end_date: 2020
+        score: "8.98/10 CGPA"
+        courses: "Minor in Computer Science"
         highlights:
-          - Description 1.
-          - Description 2.
+          - Graduated with First Class Honors with a Minor in Computer Science.
 
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: Intuit Inc
+        position: Software Engineer 2 - Android
+        location: Mountain View, CA
+        start_date: 2024-03-01
+        end_date: 2026-01-01
+        summary: Developed robust integration frameworks and AI-driven interface tools within the central data systems ecosystem.
         highlights:
-          - Relativity
-          - Description 2.
+          - "Developed the Intuit Data Exchange (IDX) Android SDK and Web Components to import data from external sources like banking, email, and calendar accounts."
+          - "Built features powered by Intuit's AI/ML workbench like GenUI (dynamically modify the UI based on the user's intent)."
+          - "Created an IDX support channel Slack bot using MCP servers for JIRA and Splunk tools to help Intuit engineers integrate with IDX."
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+      - company: Yahoo Inc
+        position: Software Dev Engineer II (IC3)
+        location: Mountain View, CA
+        start_date: 2023-04-01
+        end_date: 2023-11-01
+        summary: Worked on the Inbox Commerce team's high-impact optimization projects within the Yahoo Mail app platform.
         highlights:
-          - Description 1.
-          - Description 2.
+          - "Redesigned the Top of Inbox UI into a dynamic carousel format, generating an annualized revenue increase of +95% ($52.93M) based on 60-day PPC averages."
+          - "Led Android development for the Expense Management Squad, building the Subscription Manager features."
+          - "Integrated utility tracker systems and automated bill management pipelines into the central Receipts Tab."
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+      - company: Coupang Global LLC
+        position: Software Engineering Intern
+        location: Mountain View, CA
+        start_date: 2022-06-01
+        end_date: 2022-09-01
+        summary: Created intuitive end-user features optimized for high-volume scale within the native mobile shopping app ecosystem.
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+          - "Developed functional interface elements including search filter UI layers and a top selling items discovery widget."
+          - "Built high-performance, swipe-responsive multi-image carousel components."
+          - "Successfully integrated components into the production application following strict quality threshold checks and sales KPI metrics evaluations."
 
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+      - company: Samsung Research Institute
+        position: Software Engineer (CL 2)
+        location: Noida, India
+        start_date: 2020-09-01
+        end_date: 2021-09-01
+        summary: Architected native baseline modules and privacy infrastructure for flagship mobile systems deployments.
+        highlights:
+          - "Acted as Lead Developer for a specialized core privacy application, coordinating across 3 distinct external platform teams for an official launch on flagship devices."
+          - "Honored with the Samsung Spot Award for robust architectural engineering design patterns and secure codebase maintenance."
+          - "Contributed code modifications, feature implementation, and lower-level logic debugging on Samsung’s VisualVoiceMail system."
 
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+      - company: Samsung Research Institute
+        position: Software Engineering Intern
+        location: Noida, India
+        start_date: 2019-05-01
+        end_date: 2019-07-01
+        summary: Implemented exploratory visual models combining computer vision pipelines and structural processing.
+        highlights:
+          - "Engineered a movie rating application that identifies a movie from its physical promotional poster using localized image classification and OCR techniques."
+          - "Presented the complete software lifecycle work directly to the Samsung Mobile Apps executive committee, gaining commendations as a benchmark roadmap for future media app architectures."
 
     Publications:
-      - title: Zur Elektrodynamik bewegter Körper
+      - title: "Eye Tracking Performance in Mobile Mixed Reality"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+          - S. Awasthi
+          - V. Ross
+          - S. Lim
+          - M. Beyeler
+          - T. Höllerer
+        publisher: "2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)"
+        releaseDate: 2024
+        url: https://doi.org/10.1109/VRW62533.2024.00321
+        summary: "Investigated low-latency mobile eye tracking performance profiles across modern mixed reality layouts. Supported by NSF Grant #2211784."
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
+      - title: "EyeTTS: Evaluating and Calibrating Eye Tracking for Mixed-Reality Locomotion"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
+          - S. Awasthi
+          - V. Ross
+          - M. Beyeler
+          - T. Höllerer
+        publisher: "2023 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)"
+        releaseDate: 2023
+        url: https://doi.org/10.1109/ISMAR-Adjunct60411.2023.00104
+        summary: "Proposed unique calibration logic pipelines specifically optimized for eye tracking modalities within mixed-reality locomotion patterns. Supported by NSF Grant #2211784."
 
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
+      - title: "SmartWatch for Wall Writing: Real-time Transcription of Wall Writing from Inertial Sensing"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
-
-    Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Languages:
-      - name: German
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
+          - S. Das
+          - S. Awasthi
+          - A. Shamnan
+          - P. De
+          - S. Chakraborty
+          - B. Mitra
+        publisher: "2022 14th International Conference on COMmunication Systems & NETworkS (COMSNETS)"
+        releaseDate: 2022
+        url: https://doi.org/10.1109/COMSNETS53615.2022.9668531
+        summary: "Created inertial tracking methods to decode architectural hand stroke motions into alphanumeric symbols on wrist-worn wearables."
 
     Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
+      - name: JitterNot
+        summary: An LSTM-based Model Predictive Controller for Adaptive Video Streaming designed to optimize user-perceived Quality of Experience (QoE) on top of traditional video conference applications.
         highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
+          - "Developed an LSTM throughput prediction model that simplifies the closed-loop control system architecture from MISO to SISO."
+          - "Implemented an MPC controller that optimizes perceived QoE using the Receding Horizon Control (RHC) principle to determine optimal video resolution."
 
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - name: In Motion — HAR using DeepConvLSTM
+        summary: Built a data-driven mobile system that classifies real-time human activities using smartphone sensors and a remote deep learning inference engine.
+        highlights:
+          - "Designed a client-server data pipeline that streams raw accelerometer and gyroscope sensor data to a remote server for rolling window inference."
+          - "Implemented a DeepConvLSTM core architecture using TensorFlow and Keras to track movement patterns over time."
+          - "Utilized a TimeDistributed CNN layer to compress sequential sub-windows into feature summary vectors, preventing vanishing gradients and optimizing battery consumption."
+        start_date: 2019-11-01
+        end_date: 2019-11-01
 
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - name: Autonomous Ground Vehicle & Swarm Robotics
+        summary: Developed end-to-end perception, motion-planning, and decentralized coordination pipelines for full-scale autonomous rovers and multi-agent robotic swarms at IIT Kharagpur.
+        highlights:
+          - "Built an autonomous navigation stack in ROS fusing LiDAR, IMU, and GPS data via an Extended Kalman Filter (EKF)."
+          - "Implemented visual obstacle segmentation (SegNet/U-Net) along with global (A*/Dijkstra) and local (DWA) path planners."
+          - "Researched decentralized swarm coordination using peer-to-peer relative pose estimation (AprilTags) over an ad-hoc XBee mesh network."
+        start_date: 2016-01-01
+        end_date: 2018-12-31
+
+      - name: CohesiveAR
+        summary: Developed an interactive Augmented Reality mobile application for real-time physical texture extraction and seamless mapping onto virtual scene objects.
+        highlights:
+          - "Engineered an asset ingestion pipeline using Google ARCore and OpenCV to capture and project 3D world marker coordinates into 2D display space."
+          - "Implemented perspective wrap and homography transformations to rectify camera tilt skew into standardized orthogonal textures."
+          - "Built an object manipulation pipeline utilizing custom shaders to handle real-time texture rotation, alignment adjustments, and mesh scaling."
+
+    Volunteer:
+      - company: University of California, Santa Barbara
+        position: Graduate Teaching Assistant
+        location: Santa Barbara, CA
+        start_date: 2021-09-01
+        end_date: 2023-03-01
+        summary: Managed instructional tracks, designed course evaluation matrices, and handled core instruction for 300+ students across foundational and advanced computer science tracks.
+        highlights:
+          - "Delivered targeted guest lectures and led interactive discussion sections for up to 60 students."
+          - "Designed practical coding assignments, structured lab tests, and conceptual quiz frameworks."
+          - "Mentored senior capstone projects from system architecture planning to final product deployment."
+          - "Instructed upper-division and core tracks: CS189 (Capstone), CS184 (Android), CS24 (C++ Data Structures), and CS16 (Problem Solving)."
+
+    Skills:
+      - name: Programming Languages
+        level: Expert
+        icon: fa-solid fa-code
+        keywords: "Python, Kotlin, Java, C++, JavaScript, HTML, CSS, SQL"
+
+      - name: Frameworks & Tools
+        level: Advanced
+        icon: fa-solid fa-cubes
+        keywords: "OpenCV, Android SDK, PyTorch, TensorFlow, Scikit-Learn, Amazon EC2, Google Colab, Unity, OpenGL, Ruby on Rails, React"
+
+      - name: Methodologies & Core Research
+        level: Specialist
+        icon: fa-solid fa-brain
+        keywords: "Spatial AI, AR/VR, Human-Computer Interaction (HCI), Sequential Deep Learning, Sequential Decision Making"
