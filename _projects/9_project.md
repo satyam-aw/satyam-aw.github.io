@@ -10,7 +10,7 @@ images:
 completed_on: IIT-KGP, 2016-2018
 selected: true
 demo_video: https://www.youtube.com/@agvkgp
-importance: 4
+importance: 2
 category: Embedded Systems and Robotics
 ---
 

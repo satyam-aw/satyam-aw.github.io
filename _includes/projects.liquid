@@ -6,7 +6,8 @@
 
         {% if img_count > 1 %}
           <!-- Render carousel directly if multiple images exist -->
-          {% include carousel.liquid images=project.images id=forloop.index %}
+          {% assign unique_id = project.category | append: '-' | append: forloop.index %}
+          {% include carousel.liquid images=project.images id=unique_id %}
         {% elsif project.img %}
           <!-- Legacy fallback for a single image -->
           {%
