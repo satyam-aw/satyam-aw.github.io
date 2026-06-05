@@ -42,6 +42,64 @@ cv:
         highlights:
           - Graduated with First Class Honors with a Minor in Computer Science.
 
+    Publications:
+      - title: "Eye Tracking Performance in Mobile Mixed Reality"
+        authors:
+          - S. Awasthi
+          - V. Ross
+          - S. Lim
+          - M. Beyeler
+          - T. Höllerer
+        publisher: "2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)"
+        releaseDate: 2024
+        url: https://doi.org/10.1109/VRW62533.2024.00321
+        summary: "Investigated low-latency mobile eye tracking performance profiles across modern mixed reality layouts. Supported by NSF Grant #2211784."
+
+      - title: "EyeTTS: Evaluating and Calibrating Eye Tracking for Mixed-Reality Locomotion"
+        authors:
+          - S. Awasthi
+          - V. Ross
+          - M. Beyeler
+          - T. Höllerer
+        publisher: "2023 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)"
+        releaseDate: 2023
+        url: https://doi.org/10.1109/ISMAR-Adjunct60411.2023.00104
+        summary: "Proposed unique calibration logic pipelines specifically optimized for eye tracking modalities within mixed-reality locomotion patterns. Supported by NSF Grant #2211784."
+
+      - title: "SmartWatch for Wall Writing: Real-time Transcription of Wall Writing from Inertial Sensing"
+        authors:
+          - S. Das
+          - S. Awasthi
+          - A. Shamnan
+          - P. De
+          - S. Chakraborty
+          - B. Mitra
+        publisher: "2022 14th International Conference on COMmunication Systems & NETworkS (COMSNETS)"
+        releaseDate: 2022
+        url: https://doi.org/10.1109/COMSNETS53615.2022.9668531
+        summary: "Created inertial tracking methods to decode architectural hand stroke motions into alphanumeric symbols on wrist-worn wearables."
+
+    Skills:
+      - name: Programming Languages
+        level: Expert
+        icon: fa-solid fa-code
+        keywords: "Python, C++, Kotlin, Java, MATLAB"
+
+      - name: Frameworks & Core Tools
+        level: Advanced
+        icon: fa-solid fa-cubes
+        keywords: "Android SDK, OpenCV, Google ARCore, TensorFlow, Keras, PyTorch, ROS (Robot Operating System)"
+
+      - name: Methodologies & Core Research
+        level: Specialist
+        icon: fa-solid fa-brain
+        keywords: "Spatial AI, AR/VR, Human-Computer Interaction (HCI), Sequential Deep Learning, Sequential Decision Making"
+
+    Interests:
+      - name: Cyber-Physical Systems
+        icon: fa-solid fa-microchip
+        keywords: "Spatial AI, Robtics, AR/VR, Human-Computer Interaction (HCI), Sequential Deep Learning, Sequential Decision Making"
+    
     Experience:
       - company: Intuit Inc
         position: Software Engineer 2 - Android
@@ -97,77 +155,9 @@ cv:
           - "Engineered a movie rating application that identifies a movie from its physical promotional poster using localized image classification and OCR techniques."
           - "Presented the complete software lifecycle work directly to the Samsung Mobile Apps executive committee, gaining commendations as a benchmark roadmap for future media app architectures."
 
-    Publications:
-      - title: "Eye Tracking Performance in Mobile Mixed Reality"
-        authors:
-          - S. Awasthi
-          - V. Ross
-          - S. Lim
-          - M. Beyeler
-          - T. Höllerer
-        publisher: "2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)"
-        releaseDate: 2024
-        url: https://doi.org/10.1109/VRW62533.2024.00321
-        summary: "Investigated low-latency mobile eye tracking performance profiles across modern mixed reality layouts. Supported by NSF Grant #2211784."
-
-      - title: "EyeTTS: Evaluating and Calibrating Eye Tracking for Mixed-Reality Locomotion"
-        authors:
-          - S. Awasthi
-          - V. Ross
-          - M. Beyeler
-          - T. Höllerer
-        publisher: "2023 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)"
-        releaseDate: 2023
-        url: https://doi.org/10.1109/ISMAR-Adjunct60411.2023.00104
-        summary: "Proposed unique calibration logic pipelines specifically optimized for eye tracking modalities within mixed-reality locomotion patterns. Supported by NSF Grant #2211784."
-
-      - title: "SmartWatch for Wall Writing: Real-time Transcription of Wall Writing from Inertial Sensing"
-        authors:
-          - S. Das
-          - S. Awasthi
-          - A. Shamnan
-          - P. De
-          - S. Chakraborty
-          - B. Mitra
-        publisher: "2022 14th International Conference on COMmunication Systems & NETworkS (COMSNETS)"
-        releaseDate: 2022
-        url: https://doi.org/10.1109/COMSNETS53615.2022.9668531
-        summary: "Created inertial tracking methods to decode architectural hand stroke motions into alphanumeric symbols on wrist-worn wearables."
-
-    Projects:
-      - name: JitterNot
-        summary: An LSTM-based Model Predictive Controller for Adaptive Video Streaming designed to optimize user-perceived Quality of Experience (QoE) on top of traditional video conference applications.
-        highlights:
-          - "Developed an LSTM throughput prediction model that simplifies the closed-loop control system architecture from MISO to SISO."
-          - "Implemented an MPC controller that optimizes perceived QoE using the Receding Horizon Control (RHC) principle to determine optimal video resolution."
-
-      - name: In Motion — HAR using DeepConvLSTM
-        summary: Built a data-driven mobile system that classifies real-time human activities using smartphone sensors and a remote deep learning inference engine.
-        highlights:
-          - "Designed a client-server data pipeline that streams raw accelerometer and gyroscope sensor data to a remote server for rolling window inference."
-          - "Implemented a DeepConvLSTM core architecture using TensorFlow and Keras to track movement patterns over time."
-          - "Utilized a TimeDistributed CNN layer to compress sequential sub-windows into feature summary vectors, preventing vanishing gradients and optimizing battery consumption."
-        start_date: 2019-11-01
-        end_date: 2019-11-01
-
-      - name: Autonomous Ground Vehicle & Swarm Robotics
-        summary: Developed end-to-end perception, motion-planning, and decentralized coordination pipelines for full-scale autonomous rovers and multi-agent robotic swarms at IIT Kharagpur.
-        highlights:
-          - "Built an autonomous navigation stack in ROS fusing LiDAR, IMU, and GPS data via an Extended Kalman Filter (EKF)."
-          - "Implemented visual obstacle segmentation (SegNet/U-Net) along with global (A*/Dijkstra) and local (DWA) path planners."
-          - "Researched decentralized swarm coordination using peer-to-peer relative pose estimation (AprilTags) over an ad-hoc XBee mesh network."
-        start_date: 2016-01-01
-        end_date: 2018-12-31
-
-      - name: CohesiveAR
-        summary: Developed an interactive Augmented Reality mobile application for real-time physical texture extraction and seamless mapping onto virtual scene objects.
-        highlights:
-          - "Engineered an asset ingestion pipeline using Google ARCore and OpenCV to capture and project 3D world marker coordinates into 2D display space."
-          - "Implemented perspective wrap and homography transformations to rectify camera tilt skew into standardized orthogonal textures."
-          - "Built an object manipulation pipeline utilizing custom shaders to handle real-time texture rotation, alignment adjustments, and mesh scaling."
-
-    Volunteer:
-      - company: University of California, Santa Barbara
+    Teaching:
+      - institution: University of California, Santa Barbara
+        url: "/teaching/"
         position: Graduate Teaching Assistant
         location: Santa Barbara, CA
         start_date: 2021-09-01
@@ -179,18 +169,38 @@ cv:
           - "Mentored senior capstone projects from system architecture planning to final product deployment."
           - "Instructed upper-division and core tracks: CS189 (Capstone), CS184 (Android), CS24 (C++ Data Structures), and CS16 (Problem Solving)."
 
-    Skills:
-      - name: Programming Languages
-        level: Expert
-        icon: fa-solid fa-code
-        keywords: "Python, Kotlin, Java, C++, JavaScript, HTML, CSS, SQL"
+    Projects:
+      - name: JitterNot
+        url: "/projects/6_project/"
+        summary: An LSTM-based Model Predictive Controller for Adaptive Video Streaming designed to optimize user-perceived Quality of Experience (QoE) on top of traditional video conference applications.
+        highlights:
+          - "Developed an LSTM throughput prediction model that simplifies the closed-loop control system architecture from MISO to SISO."
+          - "Implemented an MPC controller that optimizes perceived QoE using the Receding Horizon Control (RHC) principle to determine optimal video resolution."
 
-      - name: Frameworks & Tools
-        level: Advanced
-        icon: fa-solid fa-cubes
-        keywords: "OpenCV, Android SDK, PyTorch, TensorFlow, Scikit-Learn, Amazon EC2, Google Colab, Unity, OpenGL, Ruby on Rails, React"
+      - name: In Motion — HAR using DeepConvLSTM
+        url: "/projects/5_project/"
+        summary: Built a data-driven mobile system that classifies real-time human activities using smartphone sensors and a remote deep learning inference engine.
+        highlights:
+          - "Designed a client-server data pipeline that streams raw accelerometer and gyroscope sensor data to a remote server for rolling window inference."
+          - "Implemented a DeepConvLSTM core architecture using TensorFlow and Keras to track movement patterns over time."
+          - "Utilized a TimeDistributed CNN layer to compress sequential sub-windows into feature summary vectors, preventing vanishing gradients and optimizing battery consumption."
+        start_date: 2019-11-01
+        end_date: 2019-11-01
 
-      - name: Methodologies & Core Research
-        level: Specialist
-        icon: fa-solid fa-brain
-        keywords: "Spatial AI, AR/VR, Human-Computer Interaction (HCI), Sequential Deep Learning, Sequential Decision Making"
+      - name: Autonomous Ground Vehicle & Swarm Robotics
+        url: "/projects/9_project/"
+        summary: Developed end-to-end perception, motion-planning, and decentralized coordination pipelines for full-scale autonomous rovers and multi-agent robotic swarms at IIT Kharagpur.
+        highlights:
+          - "Built an autonomous navigation stack in ROS fusing LiDAR, IMU, and GPS data via an Extended Kalman Filter (EKF)."
+          - "Implemented visual obstacle segmentation (SegNet/U-Net) along with global (A*/Dijkstra) and local (DWA) path planners."
+          - "Researched decentralized swarm coordination using peer-to-peer relative pose estimation (AprilTags) over an ad-hoc XBee mesh network."
+        start_date: 2016-01-01
+        end_date: 2018-12-31
+
+      - name: CohesiveAR
+        url: "/projects/1_project/"
+        summary: Developed an interactive Augmented Reality mobile application for real-time physical texture extraction and seamless mapping onto virtual scene objects.
+        highlights:
+          - "Engineered an asset ingestion pipeline using Google ARCore and OpenCV to capture and project 3D world marker coordinates into 2D display space."
+          - "Implemented perspective wrap and homography transformations to rectify camera tilt skew into standardized orthogonal textures."
+          - "Built an object manipulation pipeline utilizing custom shaders to handle real-time texture rotation, alignment adjustments, and mesh scaling."
