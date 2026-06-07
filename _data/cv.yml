@@ -4,7 +4,7 @@ cv:
   email: satyam.aw@yahoo.com
   location: Mountain View, CA
   image: ""
-  summary: Computer Science researcher and software engineer specializing in Spatial AI, Computer Vision, Ubiquitous Computing, XR, and Human-Computer Interaction (HCI).
+  summary: Computer Science researcher and software engineer specializing in Spatial AI, Computer Vision, XR, and Human-Computer Interaction (HCI).
 
   social_networks:
     - network: GitHub
@@ -83,7 +83,19 @@ cv:
     Interests:
       - name: Cyber-Physical Systems
         icon: fa-solid fa-microchip
-        keywords: "Spatial AI, Robotics, Ubiquitous Computing, Embedded Systems, Deep Learning"
+        keywords: 
+          - Spatial AI
+          - Robotics
+          - Embedded Systems
+          - Edge AI
+
+      - name: Autonomous Systems and Decision-Making
+        icon: fa-solid fa-robot
+        keywords: 
+          - Long-Horizon Planning
+          - Persistent Autonomy
+          - Sequential Decision-Making
+          - Sequential Deep Learning
 
     Experience:
       - company: Intuit Inc

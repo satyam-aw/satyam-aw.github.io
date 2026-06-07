@@ -6,7 +6,7 @@ completed_on: UCSB, Winter 22
 img: assets/img/2.png
 importance: 30
 category: HCI and Computer Graphics
-project_pdf: assets/pdf/2_CS291A.pdf
+project_pdf: /assets/pdf/2_CS291A.pdf
 github: https://github.com/satyam-aw/Spell-Training-in-VR
 giscus_comments: true
 giscus_repo: satyam-aw/Spell-Training-in-VR

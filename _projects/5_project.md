@@ -7,7 +7,6 @@ img: assets/img/5.png
 importance: 2
 selected: true
 category: Sequential Deep Learning and ML
-project_pdf: https://docs.google.com/presentation/d/1QRr3mSakrhzpzykfH6BRo-_7HwZmj48IsuDwIsur5dE/edit?usp=sharing
 related_publications: true
 ---
 
