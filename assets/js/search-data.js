@@ -37,14 +37,14 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "dropdown-zen-garden",
-              title: "Zen Garden",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/zen-garden/";
-              },
-            },{id: "news-a-simple-inline-announcement",
+        },{id: "nav-zen-garden",
+          title: "Zen Garden",
+          description: "A quiet place for my growing plant collection gathered from hiking trips across California. The photographs from 2021–2023 showcase species from Santa Barbara County, documented while I was pursuing my Master&#39;s degree at UC Santa Barbara. After graduating, I relocated north. The plants listed under 2023–2026 are native species discovered along the hiking trails around the Bay Area.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/zen-garden/";
+          },
+        },{id: "news-a-simple-inline-announcement",
           title: 'A simple inline announcement.',
           description: "",
           section: "News",},{id: "news-a-long-announcement-with-details",
