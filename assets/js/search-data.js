@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "",
+          description: "CS Researcher &amp; Software Engineer (ex-Intuit, Yahoo). UCSB MS &amp; IIT Kharagpur Alum specializing in Cyber-Physical Systems, Spatial AI, and Autonomous Decision-Making with a focus on long-horizon planning.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
