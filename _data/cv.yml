@@ -73,7 +73,7 @@ cv:
       - name: Frameworks & Core Tools
         level: Advanced
         icon: fa-solid fa-cubes
-        keywords: "Android SDK, OpenCV, Google ARCore, TensorFlow, Keras, PyTorch, ROS (Robot Operating System)"
+        keywords: "Android/iOS native, OpenCV, TensorFlow, Keras, PyTorch, Pydantic, ROS (Robot Operating System)"
 
       - name: Methodologies & Core Research
         level: Specialist
@@ -98,16 +98,16 @@ cv:
           - Sequential Deep Learning
 
     Experience:
+      
       - company: Intuit Inc
-        position: Software Engineer 2 - Android
+        position: Software Engineer 2
         location: Mountain View, CA
         start_date: 2024-03-01
         end_date: 2026-01-01
-        summary: Researched and developed data integration frameworks and AI-driven interfaces for central data systems.
+        summary: Researched and developed autonomous agent architectures and generative spatial interfaces for large-scale data systems.
         highlights:
-          - "Designed an Android SDK and architecture to securely ingest and unify heterogeneous external data streams."
-          - "Implemented dynamic UI generation frameworks leveraging generative AI and intent-parsing ML models."
-          - "Built an automated developer infrastructure using Model Context Protocol (MCP) servers to streamline system integrations."
+          - "Implemented a dual-stage agentic decision pipeline leveraging structured LLMs with tool-schema routing for real-time intent classification and sequential state tracking."
+          - "Developed a decoupled generative UI engine using RAG to fetch component primitives and a structured LLM to optimize deterministic UI layout configurations."
 
       - company: Yahoo Inc
         position: Software Dev Engineer II (IC3)
@@ -116,21 +116,20 @@ cv:
         end_date: 2023-11-01
         summary: Investigated optimization vectors and state-driven UI architectures within high-throughput mobile platforms.
         highlights:
+          - "Developed **client-side rule engines** to process asynchronous receipt payloads, executing deterministic filtering and cost-optimization algorithms for **real-time decision support**."
           - "Designed a dynamic, state-driven carousel UI framework optimized for high-volume content delivery systems."
-          - "Led technical implementation for mobile automated expense tracking and subscription management modules."
-          - "Architected utility tracker systems and data ingestion pipelines for central receipt parsing infrastructure."
+      
       - company: Coupang Global LLC
         position: Software Engineering Intern
         location: Mountain View, CA
         start_date: 2022-06-01
         end_date: 2022-09-01
-        summary: Analyzed and optimized UI rendering pipelines for high-throughput mobile discovery systems.
+        summary: Optimized two-stage content recommendation and filtering frameworks for high-throughput mobile systems.
         highlights:
-          - "Developed modular interface layers and filtering algorithms for multi-dimensional data search."
-          - "Engineered low-latency, swipe-responsive multi-image carousel components optimized for memory efficiency."
-          - "Evaluated and integrated pipeline components under strict system performance and latency constraints."
+          - "Designed **Content-Based Filtering (CBF)** layers using cosine similarity to rank high-dimensional product features against user affinity vectors."
+          - "Engineered **context-aware heuristics** to prune search spaces, optimizing tail latency and request throughput while maintaining downstream user conversion baselines."
 
-      - company: Samsung Research Institute
+   - company: Samsung Research Institute
         position: Software Engineer (CL 2)
         location: Noida, India
         start_date: 2020-09-01
