@@ -6,7 +6,7 @@ completed_on: IIT-KGP, Nov '19
 img: assets/img/5.png
 importance: 2
 selected: true
-category: Sequential Deep Learning and ML
+category: "Sequential Decision Models, Generative AI, and Applied ML"
 related_publications: true
 ---
 

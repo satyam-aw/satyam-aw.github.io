@@ -4,7 +4,7 @@ title: Dual-Stage Agent Pipelines for Generative UI
 description: Designing robust dual-stage agent architectures and generative UI layouts for large-scale data systems.
 img: assets/img/gen_ui2.jpg
 importance: 1
-category: Sequential Deep Learning and ML
+category: "Sequential Decision Models, Generative AI, and Applied ML"
 ---
 
 

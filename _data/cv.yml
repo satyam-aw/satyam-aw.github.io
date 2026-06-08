@@ -106,8 +106,8 @@ cv:
         end_date: 2026-01-01
         summary: Researched and developed autonomous agent architectures and generative spatial interfaces for large-scale data systems.
         highlights:
-          - "Implemented a dual-stage agentic decision pipeline leveraging structured LLMs with tool-schema routing for real-time intent classification and sequential state tracking."
-          - "Developed a decoupled generative UI engine using RAG to fetch component primitives and a structured LLM to optimize deterministic UI layout configurations."
+          - "Implemented a dual-stage **agentic decision pipeline** leveraging structured LLMs with tool-schema routing for **real-time intent classification** and sequential state tracking."
+          - "Developed a decoupled **generative UI engine** using RAG to fetch component primitives and a **structured LLM** to optimize deterministic UI layout configurations."
 
       - company: Yahoo Inc
         position: Software Dev Engineer II (IC3)
@@ -134,11 +134,11 @@ cv:
         location: Noida, India
         start_date: 2020-09-01
         end_date: 2021-09-01
-        summary: Architected native system modules and decentralized privacy infrastructure for mobile operating deployments.
+        summary: Architected **privacy enforcement frameworks** and engineered **low-level control modules** for mobile operating deployments.
         highlights:
-          - "Acted as Lead Developer for a core privacy application, formalizing data-sharing protocols across 3 distinct platform teams."
-          - "Honored with the Samsung Spot Award for robust architectural design patterns and secure codebase verification."
-          - "Optimized low-level control logic and engineered core modules for the native VisualVoiceMail subsystem."
+          - "Architected a **continuous on-device perception pipeline** that ingests multi-modal media streams (docs, images, audio) for automated classification via background ML engine."
+          - "Designed a **cross-profile data brokering engine** that leverages Android multi-user storage isolation to securely route classified assets from **User 1** into sandboxed **User 0** execution spaces."
+          - "Honored with the **Samsung Spot Award** for formal architectural design patterns and rigorous codebase verification metrics."
 
       - company: Samsung Research Institute
         position: Software Engineering Intern

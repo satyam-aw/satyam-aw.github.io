@@ -32,7 +32,7 @@ selected_projects:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a computer science researcher and software engineer specializing at the intersection of **Cyber-Physical Systems**, **Spatial AI**, and **Autonomous Decision-Making**. My research focuses on developing adaptive, intelligent systems capable of persistent autonomy and long-horizon planning in complex, dynamic environments.
+I am a computer science researcher and software engineer specializing at the intersection of **Autonomous Decision-Making**, **Spatial AI**, and **Cyber-Physical Systems**. My research focuses on developing adaptive, intelligent systems capable of persistent autonomy and long-horizon planning in complex, dynamic environments.
 
 I hold an M.S. in Computer Science from the **University of California, Santa Barbara**, where I conducted NSF-supported research at the [Four Eyes Lab](https://ilab.cs.ucsb.edu/) on low-latency mobile eye tracking and calibration architectures for mixed reality. Prior to UCSB, I completed my Bachelor of Technology in Electrical Engineering with a Minor in Computer Science from the **Indian Institute of Technology, Kharagpur**.
 
