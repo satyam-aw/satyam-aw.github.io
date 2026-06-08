@@ -100,6 +100,11 @@ ninja.data = [{
           description: "Developed perception, motion-planning, and decentralized coordination systems for the institute&#39;s AGV and swarm robotics research groups.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-dual-stage-agent-pipelines-for-generative-ui",
+          title: 'Dual-Stage Agent Pipelines for Generative UI',
+          description: "Designing robust dual-stage agent architectures and generative UI layouts for large-scale data systems.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/intuit_generative_ui/";
             },},{id: "teachings-cmpsc-189b-senior-computer-systems-project-capstone",
           title: 'CMPSC 189B: Senior Computer Systems Project (Capstone)',
           description: "The second quarter of the computer science senior capstone sequence focusing on engineering implementation, testing, and final product deployment.",
