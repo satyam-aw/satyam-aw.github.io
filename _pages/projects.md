@@ -29,9 +29,11 @@ horizontal: false
     </div>
   </div>
   {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
+  <div class="project-carousel">
     {% for project in sorted_projects %}
-      {% include projects.liquid %}
+      <div class="carousel-card-item">
+        {% include projects.liquid %}
+      </div>
     {% endfor %}
   </div>
   {% endif %}

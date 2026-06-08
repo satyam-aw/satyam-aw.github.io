@@ -222,6 +222,81 @@ ul.task-list input[type="checkbox"] {
     margin-bottom: 1rem;
     text-align: right;
   }
+  /* Horizontal carousel container */
+  .project-carousel {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    gap: 24px; 
+    padding-bottom: 16px; 
+    margin-bottom: 2rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; 
+  }
+
+  /* Individual card elements inside the carousel */
+  .carousel-card-item {
+    flex: 0 0 340px; /* Adjust card width here */
+    white-space: normal; 
+    
+    /* Reset bootstrap/al-folio structural widths for the grid container inside */
+    .grid-item {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    
+    /* Normalise card height to look consistent */
+    .card {
+      height: 100%;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  /* Scrollbar aesthetic configurations matching al-folio colors */
+  .project-carousel::-webkit-scrollbar {
+    height: 6px;
+  }
+  .project-carousel::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .project-carousel::-webkit-scrollbar-thumb {
+    background: var(--global-theme-color, #ccc); 
+    border-radius: 3px;
+  }
+
+    
+}
+
+.backend-pipeline{
+    /* Pipeline alignment styles */
+  .border-left-theme {
+    border-left: 2px solid var(--global-theme-color);
+  }
+
+  .theme-color-text {
+    color: var(--global-theme-color);
+  }
+
+  .tracking-wide {
+    letter-spacing: 0.5px;
+  }
+
+  .font-weight-semi-bold {
+    font-weight: 500;
+    font-size: 0.85rem;
+  }
+
+  /* Light background change on hover for interactivity */
+  .pipeline-block {
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: translateX(4px);
+      .border-left-theme {
+        border-left-width: 4px;
+      }
+    }
+  }
 }
 
 // Repositories

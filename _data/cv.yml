@@ -129,7 +129,7 @@ cv:
           - "Designed **Content-Based Filtering (CBF)** layers using cosine similarity to rank high-dimensional product features against user affinity vectors."
           - "Engineered **context-aware heuristics** to prune search spaces, optimizing tail latency and request throughput while maintaining downstream user conversion baselines."
 
-   - company: Samsung Research Institute
+      - company: Samsung Research Institute
         position: Software Engineer (CL 2)
         location: Noida, India
         start_date: 2020-09-01
