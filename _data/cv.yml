@@ -166,14 +166,14 @@ cv:
 
     Projects:
       - name: JitterNot
-        url: "/projects/6_project/"
+        url: "/projects/jitternot/"
         summary: An LSTM-based Model Predictive Controller for Adaptive Video Streaming designed to optimize user-perceived Quality of Experience (QoE) in real-time communication systems.
         highlights:
           - "Developed an LSTM network for real-time throughput prediction, simplifying the closed-loop control system from MISO to SISO."
           - "Implemented an MPC controller leveraging Receding Horizon Control (RHC) principles to dynamically calculate optimal video resolution."
 
       - name: In Motion — HAR using DeepConvLSTM
-        url: "/projects/5_project/"
+        url: "/projects/in_motion_har_deepconvlstm/"
         summary: Designed a distributed mobile computing system classifying real-time human activity using smartphone sensor arrays and remote deep inference engines.
         highlights:
           - "Designed a client-server telemetry pipeline streaming high-frequency accelerometer and gyroscope data for rolling window inference."
@@ -183,7 +183,7 @@ cv:
         end_date: 2019-11-01
 
       - name: Autonomous Ground Vehicle & Swarm Robotics
-        url: "/projects/9_project/"
+        url: "/projects/autonomous_ground_vehicle_and_swarm_robotics/"
         summary: Developed end-to-end perception, motion-planning, and decentralized coordination pipelines for full-scale autonomous rovers and multi-agent robotic swarms at IIT Kharagpur.
         highlights:
           - "Built an autonomous navigation stack in ROS, fusing heterogeneous sensor streams (LiDAR, IMU, GPS) via an Extended Kalman Filter (EKF)."
@@ -193,7 +193,7 @@ cv:
         end_date: 2018-12-31
 
       - name: CohesiveAR
-        url: "/projects/1_project/"
+        url: "/projects/cohesive_ar/"
         summary: Developed an interactive Augmented Reality application for real-time physical texture extraction and spatial mapping onto 3D scene elements.
         highlights:
           - "Engineered an asset ingestion pipeline using Google ARCore and OpenCV to project 3D world coordinates into 2D display space."
