@@ -48,7 +48,7 @@ cv:
         publisher: "2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)"
         releaseDate: 2024
         url: https://doi.org/10.1109/VRW62533.2024.00321
-        summary: "Investigated low-latency mobile eye tracking performance profiles across modern mixed reality layouts. Supported by NSF Grant #2211784."
+        summary: "Investigated low-latency mobile eye tracking performance profiles across modern mixed reality headsets. Supported by NSF Grant #2211784."
 
       - title: "EyeTTS: Evaluating and Calibrating Eye Tracking for Mixed-Reality Locomotion"
         authors: "S. Awasthi, V. Ross, M. Beyeler, T. Höllerer"
@@ -104,7 +104,7 @@ cv:
         location: Mountain View, CA
         start_date: 2024-03-01
         end_date: 2026-01-01
-        summary: Researched and developed autonomous agent architectures and generative spatial interfaces for large-scale data systems.
+        summary: Researched and developed autonomous agent architectures and generative UI for large-scale data systems.
         highlights:
           - "Implemented a dual-stage **agentic decision pipeline** leveraging structured LLMs with tool-schema routing for **real-time intent classification** and sequential state tracking."
           - "Developed a decoupled **generative UI engine** using RAG to fetch component primitives and a **structured LLM** to optimize deterministic UI layout configurations."

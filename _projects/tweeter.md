@@ -96,8 +96,6 @@ The testing infrastructure increases concurrency systematically across consecuti
 * **Phase 9 & 10 (Peak Concurrency)**: Extreme stress scaling rapidly from 256 to **512 users/second**.
 
 ---
-
----
 ## Performance Telemetry & Optimization Results
 
 We methodically eliminated identified system bottlenecks by implementing five core backend and infrastructure optimizations:
@@ -112,7 +110,8 @@ Please refer to the complete [project report](https://docs.google.com/document/d
 
 <div class="row justify-content-center">
     <div class="col-md-10 mt-3 text-center">
-        {% include figure.liquid path="assets/img/8_results.png" title="Pagination Optimization Telemetry" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/8_results.png" title="Pagination Optimization Telemetry" class="img-fluid rounded" zoomable=true avoid_scaling=true%}
         <div class="caption mt-2">Figure 3: System throughput comparison between unoptimized query rendering and the pagination framework under peak concurrency.</div>
     </div>
 </div>
+ 
