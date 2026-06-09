@@ -4,11 +4,11 @@ cv:
   email: satyam.aw@yahoo.com
   location: Mountain View, CA
   image: ""
-  summary: Computer Science researcher and software engineer specializing in Spatial AI, Computer Vision, XR, and Human-Computer Interaction (HCI).
+  summary: Computer Science researcher and software engineer specializing in Autonomous Decision-Making, Spatial AI, Computer Vision, and Human-Computer Interaction (HCI).
 
   social_networks:
     - network: GitHub
-      username: SatyamA007
+      username: satyam-aw
     - network: LinkedIn
       username: satyam-awasthi
 
@@ -68,34 +68,34 @@ cv:
       - name: Programming Languages
         level: Expert
         icon: fa-solid fa-code
-        keywords: "Python, C++, Kotlin, Java, MATLAB"
+        keywords: "Python, C++, Kotlin, Java, MATLAB, SQL"
 
       - name: Frameworks & Core Tools
         level: Advanced
         icon: fa-solid fa-cubes
-        keywords: "Android/iOS native, OpenCV, TensorFlow, Keras, PyTorch, Pydantic, ROS (Robot Operating System)"
+        keywords: "Android/iOS Native SDKs, LangChain, Pydantic (JSON Schema), OpenCV, ROS (Robot Operating System), PyTorch"
 
       - name: Methodologies & Core Research
         level: Specialist
         icon: fa-solid fa-brain
-        keywords: "Spatial AI, AR/VR/XR, Human-Computer Interaction (HCI), Sequential Deep Learning, Sequential Decision Making"
+        keywords: "Autonomous Decision-Making, Human-Computer Interaction (HCI), Spatial AI, Agentic Architectures"
 
     Interests:
       - name: Cyber-Physical Systems
         icon: fa-solid fa-microchip
         keywords: 
           - Spatial AI
-          - Robotics
-          - Embedded Systems
-          - Edge AI
+          - Multi-Modal Sensor Fusion
+          - Edge Computing & Inference
+          - Decentralized Architectures
 
       - name: Autonomous Systems and Decision-Making
         icon: fa-solid fa-robot
         keywords: 
-          - Long-Horizon Planning
-          - Persistent Autonomy
+          - Agentic Orchestration
           - Sequential Decision-Making
-          - Sequential Deep Learning
+          - Constraint-Bound Optimization
+          - Finite State Automation
 
     Experience:
       
@@ -192,6 +192,16 @@ cv:
         start_date: 2016-01-01
         end_date: 2018-12-31
 
+      - name: "Tweeter: Distributed Infrastructure Testbed"
+        url: "/projects/tweeter/"
+        summary: "Designed a distributed microblogging testbed on Amazon EC2 clusters to analyze backend degradation and bottlenecks under concurrent workloads"
+        highlights:
+          - "Conducted load testing via Tsung up to 512 users/second, mapping user trajectories as state machines to latency scaling curves."
+          - "Eliminated N+1 bottlenecks using database pagination and ActiveRecord preloading includes to batch-fetch relational rows via optimized ID collections."
+          - "Optimized high-concurrency read throughput by deploying nested Russian Doll fragment caches and horizontal/vertical server auto-scaling."
+        start_date: 2021-09-01
+        end_date: 2021-12-31
+
       - name: CohesiveAR
         url: "/projects/cohesive_ar/"
         summary: Developed an interactive Augmented Reality application for real-time physical texture extraction and spatial mapping onto 3D scene elements.
@@ -199,4 +209,3 @@ cv:
           - "Engineered an asset ingestion pipeline using Google ARCore and OpenCV to project 3D world coordinates into 2D display space."
           - "Implemented perspective wrap and homography transformations to rectify camera tilt skew into standardized orthogonal textures."
           - "Built a vertex and fragment shader pipeline to process real-time texture rotation, alignment adjustments, and dynamic mesh scaling."
-

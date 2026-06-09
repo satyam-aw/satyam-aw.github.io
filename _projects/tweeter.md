@@ -44,7 +44,7 @@ To accurately simulate complex production traffic, the testbed maps real-world u
 <div class="row justify-content-center">
     <div class="col-md-10 mt-3 text-center">
         {% include figure.liquid path="assets/img/8_workflows.jpg" title="Concurrent State Workflows" class="img-fluid rounded" %}
-        <div class="caption mt-2">Figure 1: State transition paths utilized during distributed load testing.</div>
+        <div class="caption mt-2">Figure 1: Global state transition paths utilized during distributed load testing.</div>
     </div>
 </div>
 
@@ -71,11 +71,23 @@ The experimental testing environment consisted of server clusters deployed acros
 * **Throughput Capacity**: Total requests successfully served per minute.
 * **Response Latency**: The mean duration and distribution bounds between consecutive requests.
 
-### Baseline Benchmark Scenario: Homepage Traversal
-One of our primary benchmark evaluations focused on an intensive read/write workflow where authenticated sessions navigate active data feeds. The scenario enforces three sequential stages:
-1. **State Ingestion (Log in)**: The session authenticates and immediately queries the global content feed.
-2. **Simulated Delays (Think time)**: The session forces a one-second pause to simulate realistic content consumption patterns.
-3. **State Termination (Log out)**: The session closes, clearing connection allocations.
+### Case Study: Homepage Traversal State Trajectory
+
+To evaluate how backend architectures degrade under high-velocity traffic, we configured a dedicated user journey modeled as a deterministic sequence diagram. This trajectory isolates read-heavy data paths to stress database thread handling.
+
+<div class="row justify-content-center">
+    <div class="col-md-10 mt-3 text-center">
+        {% include figure.liquid path="assets/img/8_homepage_traversal.jpg" title="Homepage Traversal Sequence" class="img-fluid rounded" %}
+        <div class="caption mt-2">Figure 2: Sequence diagram mapping programmatic state transitions during the Homepage Traversal workflow.</div>
+    </div>
+</div>
+
+During this specific test trajectory, the automated framework forces active sessions through three sequential stages:
+1. **Authentication State (`/users/sign_in`)**: Initiates user session creation and handles database lookup queries to verify credentials.
+2. **Resource Consumption State (`/tweets`)**: Queries the global content feed, fetching relational records. The simulation enforces a deterministic **one-second think time delay** to mimic realistic user consumption, holding database resources open to intentionally test lock limits.
+3. **Session Termination State (`/users/sign_out`)**: Safely tears down the session token and frees allocated thread connections back to the EC2 server pool.
+
+---
 
 ### Multi-Phase Exponential Scale Configuration
 The testing infrastructure increases concurrency systematically across consecutive execution phases to force the system past its operational thresholds:
@@ -85,13 +97,22 @@ The testing infrastructure increases concurrency systematically across consecuti
 
 ---
 
+---
 ## Performance Telemetry & Optimization Results
 
-Please refer to the comprehensive [project report](https://docs.google.com/document/d/1oxVZuh_Wj5Tc_Jv-8qsjNRmkKm0Kov0G5AQeYhBpz3M/edit?usp=sharing) to inspect the complete findings, including N+1 query optimization, caching, and indexing. Below are the specific results evaluating system throughput improvements after implementing pagination rules for the homepage workflow.
+We methodically eliminated identified system bottlenecks by implementing five core backend and infrastructure optimizations:
+
+1. **Pagination**: Replaced heavy global database fetches with cursor-bound query chunks to limit row scanning during content retrieval.
+2. **Preloading (N+1 Query Optimization)**: Eliminated the N+1 performance bottleneck by using ActiveRecord includes to batch-fetch only connected relational rows using optimized ID collections.
+3. **Nested Caching (Russian Doll Caching)**: Implemented nested tweet fragment caches inside an outer container cache to serve unchanged elements instantly from memory and eliminate redundant rendering.
+4. **Vertical Scaling**: Upgraded core computational resources (CPU cores and memory allocation) on individual database nodes to increase connection pool capacities.
+5. **Horizontal Scaling**: Deployed a multi-node backend cluster behind a load balancer to distribute concurrent traffic evenly across independent compute instances.
+
+Please refer to the complete [project report](https://docs.google.com/document/d/1oxVZuh_Wj5Tc_Jv-8qsjNRmkKm0Kov0G5AQeYhBpz3M/edit?usp=sharing) to inspect our comprehensive data logs and infrastructure charts. Below are the benchmark results showing the direct throughput improvements achieved specifically after deploying our database query pagination rules under peak concurrent loads.
 
 <div class="row justify-content-center">
     <div class="col-md-10 mt-3 text-center">
-        {% include figure.liquid path="assets/img/8_results.png" zoomable=true avoid_scaling=true title="Pagination Optimization Telemetry" class="img-fluid rounded" %}
+        {% include figure.liquid path="assets/img/8_results.png" title="Pagination Optimization Telemetry" class="img-fluid rounded z-depth-1" %}
         <div class="caption mt-2">Figure 3: System throughput comparison between unoptimized query rendering and the pagination framework under peak concurrency.</div>
     </div>
 </div>
