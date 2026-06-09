@@ -4,7 +4,7 @@ title: In Motion - HAR using DeepConvLSTM
 description: Human Activity Recognition using DeepConvLSTM and Smartphone Sensors. 
 completed_on: IIT-KGP, Nov '19
 img: assets/img/5.png
-importance: 2
+importance: 3
 selected: true
 category: "Sequential Decision Models, Generative AI, and Applied ML"
 related_publications: true
