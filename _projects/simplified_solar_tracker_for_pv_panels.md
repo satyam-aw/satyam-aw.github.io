@@ -4,7 +4,7 @@ title: "Simplified Solar Tracker for PV Panels"
 description: "A low-cost, dual-axis solar tracking system designed as a mechanical Maximum Power Point Tracker (MPPT) using an Arduino Uno and LDR sensors."
 img: /assets/img/7.png
 project_pdf: /assets/pdf/7_solar_tracker.pdf
-importance: 4
+importance: 6
 category: Embedded Systems and Robotics
 demo_video: https://www.youtube.com/watch?v=yR4f5ZiOPAA
 completed_on: IIT-KGP Apr '19

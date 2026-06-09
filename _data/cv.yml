@@ -126,8 +126,9 @@ cv:
         end_date: 2022-09-01
         summary: Optimized two-stage content recommendation and filtering frameworks for high-throughput mobile systems.
         highlights:
-          - "Designed **Content-Based Filtering (CBF)** layers using cosine similarity to rank high-dimensional product features against user affinity vectors."
-          - "Engineered **context-aware heuristics** to prune search spaces, optimizing tail latency and request throughput while maintaining downstream user conversion baselines."
+          - "Engineered **context-aware filtering heuristics** to prune multi-dimensional search spaces based on user state vectors prior to recommendation execution."
+          - "Designed **Content-Based Filtering (CBF)** layers using **cosine similarity** to rank high-dimensional product features against pre-filtered user affinity profiles."
+          - "Optimized system performance to increase **request throughput** and reduce **latency scaling curves** while maintaining downstream user conversion baselines."
 
       - company: Samsung Research Institute
         position: Software Engineer (CL 2)
