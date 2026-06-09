@@ -44,67 +44,56 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/zen-garden/";
           },
-        },{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
-          description: "",
-          section: "News",},{id: "projects-cohesivear-for-interactive-design",
-          title: 'CohesiveAR for Interactive Design',
-          description: "Real-Time Texture Extraction and Mapping on Virtual Objects",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-spell-training-in-vr",
-          title: 'Spell Training in VR',
-          description: "A Unity-based VR experience that offers users an innovative interaction system—sketching in midair to summon and manipulate in-game characters.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-3d-maze-exploration-via-fixed-function-opengl",
+        },{id: "projects-3d-maze-exploration-via-fixed-function-opengl",
           title: '3D Maze Exploration via Fixed-Function OpenGL',
           description: "First-person 3D maze game built with C++ and legacy fixed-function OpenGL via FreeGLUT",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-non-destructive-fruit-ripeness-classification",
-          title: 'Non-Destructive Fruit Ripeness Classification',
-          description: "Utilizing IR thermal signatures and supervised machine learning classifiers to determine berry ripeness states.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{id: "projects-in-motion-har-using-deepconvlstm",
-          title: 'In Motion - HAR using DeepConvLSTM',
-          description: "Human Activity Recognition using DeepConvLSTM and Smartphone Sensors.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
-            },},{id: "projects-jitternot",
-          title: 'JitterNot',
-          description: "LSTM-based Model Predictive Controller for Adaptive Video Streaming",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
-            },},{id: "projects-simplified-solar-tracker-for-pv-panels",
-          title: 'Simplified Solar Tracker for PV Panels',
-          description: "A low-cost, dual-axis solar tracking system designed as a mechanical Maximum Power Point Tracker (MPPT) using an Arduino Uno and LDR sensors.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-tweeter",
-          title: 'Tweeter',
-          description: "A Twitter-like micro blogging social media app for load testing and bottleneck analysis",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
+              window.location.href = "/projects/3d_maze_exploration_opengl/";
             },},{id: "projects-autonomous-ground-vehicle-and-swarm-robotics",
           title: 'Autonomous Ground Vehicle and Swarm Robotics',
           description: "Developed perception, motion-planning, and decentralized coordination systems for the institute&#39;s AGV and swarm robotics research groups.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
+              window.location.href = "/projects/autonomous_ground_vehicle_and_swarm_robotics/";
+            },},{id: "projects-cohesivear-for-interactive-design",
+          title: 'CohesiveAR for Interactive Design',
+          description: "Real-Time Texture Extraction and Mapping on Virtual Objects",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/cohesive_ar/";
+            },},{id: "projects-in-motion-har-using-deepconvlstm",
+          title: 'In Motion - HAR using DeepConvLSTM',
+          description: "Human Activity Recognition using DeepConvLSTM and Smartphone Sensors.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/in_motion_har_deepconvlstm/";
             },},{id: "projects-dual-stage-agent-pipelines-for-generative-ui",
           title: 'Dual-Stage Agent Pipelines for Generative UI',
-          description: "Designing robust dual-stage agent architectures and generative UI layouts for large-scale data systems.",
+          description: "Robust dual-stage agent architectures and generative UI layouts for large-scale data systems.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/intuit_generative_ui/";
+            },},{id: "projects-jitternot",
+          title: 'JitterNot',
+          description: "LSTM-based Model Predictive Controller for Adaptive Video Streaming",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/jitternot/";
+            },},{id: "projects-non-destructive-fruit-ripeness-classification",
+          title: 'Non-Destructive Fruit Ripeness Classification',
+          description: "Utilizing IR thermal signatures and supervised machine learning classifiers to determine berry ripeness states.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/non_destructive_fruit_ripeness_classification/";
+            },},{id: "projects-simplified-solar-tracker-for-pv-panels",
+          title: 'Simplified Solar Tracker for PV Panels',
+          description: "A low-cost, dual-axis solar tracking system designed as a mechanical Maximum Power Point Tracker (MPPT) using an Arduino Uno and LDR sensors.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/simplified_solar_tracker_for_pv_panels/";
+            },},{id: "projects-spell-training-in-vr",
+          title: 'Spell Training in VR',
+          description: "A Unity-based VR experience that offers users an innovative interaction system—sketching in midair to summon and manipulate in-game characters.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/spell_training_in_vr/";
+            },},{id: "projects-tweeter",
+          title: 'Tweeter',
+          description: "A Twitter-like micro blogging social media app for load testing and bottleneck analysis",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/tweeter/";
             },},{id: "teachings-cmpsc-189b-senior-computer-systems-project-capstone",
           title: 'CMPSC 189B: Senior Computer Systems Project (Capstone)',
           description: "The second quarter of the computer science senior capstone sequence focusing on engineering implementation, testing, and final product deployment.",
