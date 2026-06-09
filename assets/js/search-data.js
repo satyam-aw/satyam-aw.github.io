@@ -91,7 +91,7 @@ ninja.data = [{
               window.location.href = "/projects/spell_training_in_vr/";
             },},{id: "projects-tweeter",
           title: 'Tweeter',
-          description: "A Twitter-like micro blogging social media app for load testing and bottleneck analysis",
+          description: "A Distributed Testbed for Stress-Testing and Bottleneck Optimization",
           section: "Projects",handler: () => {
               window.location.href = "/projects/tweeter/";
             },},{id: "teachings-cmpsc-189b-senior-computer-systems-project-capstone",
