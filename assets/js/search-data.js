@@ -24,7 +24,7 @@ ninja.data = [{
             window.location.href = "/projects/";
           },
         },{id: "nav-cv",
-          title: "CV",
+          title: "cv",
           description: "CS Researcher &amp; Software Engineer (ex-Intuit, Yahoo). UCSB MS &amp; IIT Kharagpur Alum specializing in Cyber-Physical Systems, Spatial AI, and Autonomous Decision-Making with a focus on long-horizon planning.",
           section: "Navigation",
           handler: () => {
@@ -38,7 +38,7 @@ ninja.data = [{
             window.location.href = "/teaching/";
           },
         },{id: "nav-zen-garden",
-          title: "Zen Garden",
+          title: "zen garden",
           description: "A quiet place for my growing plant collection gathered from hiking trips across California. The photographs from 2021–2023 showcase species from Santa Barbara County, documented while I was pursuing my Master&#39;s degree at UC Santa Barbara. After graduating, I relocated north. The plants listed under 2023–2026 are native species discovered along the hiking trails around the Bay Area.",
           section: "Navigation",
           handler: () => {
