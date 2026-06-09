@@ -29,12 +29,22 @@ horizontal: false
     </div>
   </div>
   {% else %}
-  <div class="project-carousel">
-    {% for project in sorted_projects %}
-      <div class="carousel-card-item">
-        {% include projects.liquid %}
-      </div>
-    {% endfor %}
+  <!-- Wrap the carousel with a container that holds the buttons -->
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev-btn" onclick="scrollCarousel('{{ category | slugify }}', -1)">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <!-- Added data-count attribute to pass the number of items -->
+    <div id="carousel-{{ category | slugify }}" class="project-carousel carousel-container" data-count="{{ sorted_projects.size }}">
+      {% for project in sorted_projects %}
+        <div class="carousel-card-item">
+          {% include projects.liquid %}
+        </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-btn next-btn" onclick="scrollCarousel('{{ category | slugify }}', 1)">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
   </div>
   {% endif %}
   {% endfor %}
@@ -65,3 +75,37 @@ horizontal: false
   {% endif %}
 {% endif %}
 </div>
+
+<script>
+// Function to handle clicking the buttons
+function scrollCarousel(categorySlug, direction) {
+  const carousel = document.getElementById(`carousel-${categorySlug}`);
+  if (!carousel) return;
+  
+  // One card width + gap (340px + 24px)
+  const scrollAmount = 364; 
+  
+  carousel.scrollBy({
+    left: direction * scrollAmount,
+    behavior: 'smooth'
+  });
+}
+
+// Function to hide navigation buttons if items are less than 3
+document.addEventListener("DOMContentLoaded", function() {
+  const carousels = document.querySelectorAll('.carousel-container');
+  
+  carousels.forEach(carousel => {
+    const itemCount = parseInt(carousel.getAttribute('data-count'), 10) || 0;
+    
+    // If there are less than 3 items, hide the sibling buttons
+    if (itemCount < 3) {
+      const wrapper = carousel.closest('.carousel-wrapper');
+      if (wrapper) {
+        const buttons = wrapper.querySelectorAll('.carousel-btn');
+        buttons.forEach(btn => btn.style.display = 'none');
+      }
+    }
+  });
+});
+</script>

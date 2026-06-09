@@ -5,6 +5,7 @@ description: Designing robust dual-stage agent architectures and generative UI l
 img: assets/img/gen_ui2.jpg
 importance: 1
 category: "Sequential Decision Models, Generative AI, and Applied ML"
+completed_on: Intuit Inc, Winter 25
 ---
 
 
