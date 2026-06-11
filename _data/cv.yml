@@ -48,7 +48,7 @@ cv:
         publisher: "2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)"
         releaseDate: 2024
         url: https://doi.org/10.1109/VRW62533.2024.00321
-        summary: "Investigated low-latency mobile eye tracking performance profiles across modern mixed reality headsets. Supported by NSF Grant #2211784."
+        summary: "Investigated low-latency mobile eye tracking performance profiles across modern mixed reality layouts. Supported by NSF Grant #2211784."
 
       - title: "EyeTTS: Evaluating and Calibrating Eye Tracking for Mixed-Reality Locomotion"
         authors: "S. Awasthi, V. Ross, M. Beyeler, T. Höllerer"
