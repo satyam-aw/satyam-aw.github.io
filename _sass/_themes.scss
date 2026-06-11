@@ -44,7 +44,7 @@
   --global-danger-block-title: #c00;
 
   #light-toggle-system {
-    display: inline-block;
+    display: none;
   }
 
   #light-toggle-dark {
@@ -53,6 +53,18 @@
 
   #light-toggle-light {
     display: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    #light-toggle-dark {
+      display: inline-block;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    #light-toggle-light {
+      display: inline-block;
+    }
   }
 
   .only-light {
