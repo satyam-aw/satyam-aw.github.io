@@ -9,7 +9,7 @@ completed_on: Intuit Inc, Winter 25
 ---
 
 
-## Overview
+#### Overview
 
 User interface (UI) development is moving rapidly toward **highly personalized interfaces customized for each individual user**. Instead of showing everyone the same static screens, modern apps use AI to build custom layouts on the fly based on what a user needs at that exact moment. 
 
@@ -24,7 +24,7 @@ If the AI makes a single text error or forgets the user's current situation, it 
 
 At Intuit, I researched and engineered a reliable **dual-stage agent pipeline** to completely solve these issues. This system separates the step of finding the user's true intent from the step of building the actual UI layout. By splitting these tasks, the framework forces unpredictable AI models to follow strict software design rules, ensuring that every dynamically generated screen is completely error-free and stable.
 
-## Project Architecture & Tooling
+#### Project Architecture & Tooling
 
 <div class="row mt-3 backend-pipeline">
     <!-- Item 1 -->
@@ -88,7 +88,7 @@ At Intuit, I researched and engineered a reliable **dual-stage agent pipeline** 
     </div>
 </div>
 
-## Pipeline Architecture
+#### Pipeline Architecture
 <div class="w-75 mx-auto">
     {% include figure.liquid loading="eager" path="assets/img/stage 1.jpg" class="img-fluid rounded col-md-4" caption="Figure 1: Autonomous Intent Routing & State Tracking using LangChain Backend with Structured LLM" %}
 
@@ -98,9 +98,9 @@ At Intuit, I researched and engineered a reliable **dual-stage agent pipeline** 
 
 
 
-## Detailed Architectural Breakdown
+#### Detailed Architectural Breakdown
 
-### Stage 1: Autonomous Intent Routing & State Tracking
+##### Stage 1: Autonomous Intent Routing & State Tracking
 The initial phase of the pipeline focuses on stabilizing the incoming data. The system ingests messy, heterogeneous inputs from various operational data streams and directs them to a structured LLM bounded by strict tool-schema limits.
 
 * **Goal-Directed Policy Execution**: Instead of allowing the language model to chat freely, the system immediately binds raw user inputs to explicit functional pathways, classifying the goal of the prompt into a discrete state.
@@ -118,7 +118,7 @@ The initial phase of the pipeline focuses on stabilizing the incoming data. The 
 
 ---
 
-### Stage 2: Generative UI Engine
+##### Stage 2: Generative UI Engine
 Once the user's intent and parameters are successfully validated by Stage 1, the pipeline moves forward to resolve the spatial configuration. It must find the optimal way to display this information within a bounded screen.
 
 * **State-Conditioned Retrieval (RAG)**: The pipeline takes the verified state vector from Stage 1—including user context variables like filing status and required parameters—and queries a **Milvus Vector Database**. It performs a semantic search to pull canonical blueprints, allowed component restrictions, and required parameter definitions matching that precise state profile.
@@ -140,7 +140,7 @@ Once the user's intent and parameters are successfully validated by Stage 1, the
     }
     ```
 
-## Key Research Implications
+#### Key Research Implications
 
 1. **Fault-Tolerant Error Mitigation**: By anchoring conversational outputs to a strict JSON validation layout, this setup removes visual layout bugs and interface crashes caused by free-form text generations.
 2. **Resource-Conscious Optimization**: The design of the conditional early-exit gate protects centralized server resources, ensuring that heavy embedding lookups and layout generation steps only occur for valid, confident states.
