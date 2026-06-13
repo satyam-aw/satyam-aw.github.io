@@ -89,9 +89,13 @@ At Intuit, I researched and engineered a reliable **dual-stage agent pipeline** 
 </div>
 
 ## Pipeline Architecture
-{% include figure.liquid loading="eager" path="assets/img/stage 1.jpg" class="img-fluid rounded" caption="Figure 1: Autonomous Intent Routing & State Tracking using LangChain Backend with Structured LLM" %}
+<div class="w-75 mx-auto">
+    {% include figure.liquid loading="eager" path="assets/img/stage 1.jpg" class="img-fluid rounded col-md-4" caption="Figure 1: Autonomous Intent Routing & State Tracking using LangChain Backend with Structured LLM" %}
 
-{% include figure.liquid loading="eager" path="assets/img/stage 2.jpg" class="img-fluid rounded" caption="Figure 2: Generative UI Engine outputs deterministic JSON UI Schema" %}
+    {% include figure.liquid loading="eager" path="assets/img/stage 2.jpg" class="img-fluid rounded col-md-4" caption="Figure 2: Generative UI Engine outputs deterministic JSON UI Schema" %}
+</div>
+
+
 
 
 ## Detailed Architectural Breakdown
