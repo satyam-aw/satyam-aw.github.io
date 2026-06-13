@@ -89,25 +89,10 @@ At Intuit, I researched and engineered a reliable **dual-stage agent pipeline** 
 </div>
 
 ## Pipeline Architecture
+{% include figure.liquid loading="eager" path="assets/img/stage 1.jpg" class="img-fluid rounded" caption="Figure 1: Autonomous Intent Routing & State Tracking using LangChain Backend with Structured LLM" %}
 
-```text
-[User Input] ──► [STAGE 1: LangChain Backend + Structured LLM]
-                       │ (Intent Classification & State Tracking)
-                       │
-                       ├──► [Confidence < Threshold] ──► [Short-Circuit / Clarification]
-                       │
-                       └──► [Confidence ≥ Threshold]
-                                  │ (State Vector + Intent Schema)
-                                  ▼
-                    [STAGE 2: Generative Spatial UI Engine]
-                                  │
-                                  ├──► [RAG Vector DB] ──► (Fetch UI Primitives)
-                                  │                              │
-                                  ▼                              ▼
-                    [Structured LLM Parser] ◄────────────────────┘
-                                  │
-                                  └──► [Deterministic JSON Layout Schema] ──► [Web/Mobile UI Render]
-```
+{% include figure.liquid loading="eager" path="assets/img/stage 2.jpg" class="img-fluid rounded" caption="Figure 2: Generative UI Engine outputs deterministic JSON UI Schema" %}
+
 
 ## Detailed Architectural Breakdown
 
@@ -129,7 +114,7 @@ The initial phase of the pipeline focuses on stabilizing the incoming data. The 
 
 ---
 
-### Stage 2: Generative Spatial Interface Engine
+### Stage 2: Generative UI Engine
 Once the user's intent and parameters are successfully validated by Stage 1, the pipeline moves forward to resolve the spatial configuration. It must find the optimal way to display this information within a bounded screen.
 
 * **State-Conditioned Retrieval (RAG)**: The pipeline takes the verified state vector from Stage 1—including user context variables like filing status and required parameters—and queries a **Milvus Vector Database**. It performs a semantic search to pull canonical blueprints, allowed component restrictions, and required parameter definitions matching that precise state profile.
