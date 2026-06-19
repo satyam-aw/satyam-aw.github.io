@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "CS Researcher &amp; Software Engineer (ex-Intuit, Yahoo). UCSB MS &amp; IIT Kharagpur Alum specializing in Cyber-Physical Systems, Spatial AI, and Autonomous Decision-Making with a focus on long-horizon planning.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -129,7 +129,7 @@ ninja.data = [{
         title: 'CV',
         section: 'Socials',
         handler: () => {
-          window.open("/assets/pdf/Satyam_Awasthi_CV.pdf", "_blank");
+          window.open("https://satyam-aw.github.io/my_cv/satyam_awasthi_cv.pdf", "_blank");
         },
       },{
         id: 'social-email',
