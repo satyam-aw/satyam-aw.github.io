@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Ph.D. Applicant | Former Software Engineer at Intuit & Yahoo | UCSB MS & IIT Kharagpur Alum
+subtitle: Ph.D. Applicant | Ex-Intuit & Yahoo SWE | UCSB MS & IIT Kharagpur Alum
 
 profile:
   align: right
@@ -32,6 +32,8 @@ selected_projects:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Computer Science researcher and software engineer specializing in the intersection of **Autonomous Decision-Making, Spatial AI, and Cyber-Physical Systems**. I completed my M.S. in Computer Science at the University of California, Santa Barbara, where my graduate research at the Four Eyes Lab focused on mobile eye tracking frameworks in mixed-reality locomotion patterns under the advisorship of [Prof. Tobias Höllerer](https://scholar.google.com/citations?user=008lr2cAAAAJ) and co-advisorship of [Prof. Michael Beyeler](https://scholar.google.com/citations?user=dK-0kG4AAAAJ). Prior to my graduate studies, I earned my Bachelor of Technology in Electrical Engineering with a Minor in Computer Science from the Indian Institute of Technology, Kharagpur. During my time at IIT Kharagpur, my research centered on developing perception, motion-planning, and decentralized coordination pipelines for **Autonomous Ground Vehicles and Swarm Robotics**.
+I am a Computer Science researcher specializing in the intersection of **Autonomous Decision-Making, Spatial AI, and Embodied AI within Cyber-Physical Systems**. 
 
-Complementing my academic background, my industry experience centers on deploying **algorithmic decision frameworks** and system optimizations within distributed platforms. I recently worked with **Intuit** and **Yahoo**, where I engineered client-side rule engines, [dual-stage agent](/projects/intuit_generative_ui) architectures, and state-driven UI architectures. In these roles, I focused on processing heterogeneous data streams, minimizing resource overhead, and implementing constraint-bound optimization to ensure robust finite state automation. I am deeply interested in exploring the integration of autonomous decision-making, long-horizon sequential planning, and spatial AI to establish verifiably **deterministic** execution loops within complex agentic architectures.
+I completed my M.S. in Computer Science at UC Santa Barbara, where my research at the Four Eyes Lab focused on mobile eye-tracking frameworks in mixed-reality locomotion under [Prof. Tobias Höllerer](https://cs.ucsb.edu/people/faculty/tobias-hollerer) and [Prof. Michael Beyeler](https://cs.ucsb.edu/people/faculty/michael-beyeler). Previously, I earned my B.Tech in Electrical Engineering with a Minor in Computer Science from IIT Kharagpur, developing perception, motion-planning, and decentralized coordination pipelines for **Autonomous Ground Vehicles and Swarm Robotics**. 
+
+My technical background includes deploying **algorithmic decision frameworks** and system optimizations for large-scale distributed platforms. As a Software Engineer at **Intuit** and **Yahoo**, I engineered client-side rule engines, [dual-stage agent](/projects/intuit_generative_ui) architectures, and state-driven frameworks—focusing on heterogeneous data streams, resource minimization, and constraint-bound optimization. Moving forward, I am targeting Ph.D. trajectories investigating the integration of long-horizon sequential planning and spatial AI to establish verifiably **safe** and robust execution loops within complex, embodied agentic architectures.

@@ -4,7 +4,7 @@ cv:
   email: satyam.aw@yahoo.com
   location: Mountain View, CA
   image: ""
-  summary: Computer Science researcher and software engineer specializing in Autonomous Decision-Making, Spatial AI, Computer Vision, and Human-Computer Interaction (HCI).
+  summary: Computer Science researcher specializing in Autonomous Decision-Making, Spatial AI, and Embodied AI within Cyber-Physical Systems, with a core focus on engineering verifiably safe, constraint-bound execution loops.
 
   social_networks:
     - network: GitHub
@@ -28,7 +28,7 @@ cv:
         end_date: 2023
         score: "3.91/4.00 GPA"
         highlights:
-          - "Graduate Research focused on Spatial AI, AR/VR, and HCI at the Four Eyes Lab."
+          - "Graduate Research at the Four Eyes Lab focusing on Spatial AI, closed-loop locomotion, and multi-modal interaction."
 
       - institution: Indian Institute of Technology, Kharagpur
         location: Kharagpur, India
@@ -41,6 +41,7 @@ cv:
         courses: "Minor in Computer Science"
         highlights:
           - "Graduated with First Class Honors with a Minor in Computer Science."
+          - "Research focused on algorithmic pipelines for Embodied AI, swarm robotics, and autonomous ground vehicles."
 
     Publications:
       - title: "Eye Tracking Performance in Mobile Mixed Reality"
@@ -66,31 +67,31 @@ cv:
 
     Skills:
       - name: Programming Languages
-        level: Expert
+        # level: Expert
         icon: fa-solid fa-code
         keywords: "Python, C++, Kotlin, Java, MATLAB, SQL"
 
       - name: Frameworks & Core Tools
-        level: Advanced
+        # level: Advanced
         icon: fa-solid fa-cubes
         keywords: "Android/iOS Native SDKs, LangChain, Pydantic (JSON Schema), OpenCV, ROS (Robot Operating System), PyTorch"
 
-      - name: Methodologies & Core Research
-        level: Specialist
-        icon: fa-solid fa-brain
-        keywords: "Autonomous Decision-Making, Human-Computer Interaction (HCI), Spatial AI, Agentic Architectures"
+      - name: Fields of Interest
+        # level: Specialist
+        icon: fa-solid fa-diagram-project
+        keywords: "Autonomous Decision-Making, Embodied AI, Spatial AI, Multi-Modal Sensor Fusion, Cyber-Physical Systems (CPS)"
 
     Interests:
-      - name: Cyber-Physical Systems
+      - name: Cyber-Physical & Spatial Systems
         icon: fa-solid fa-microchip
         keywords: 
           - Spatial AI
           - Multi-Modal Sensor Fusion
-          - Edge Computing & Inference
+          - Embodied AI
           - Decentralized Architectures
 
-      - name: Autonomous Systems and Decision-Making
-        icon: fa-solid fa-robot
+      - name: Autonomous Decision-Making
+        icon: fa-solid fa-gears
         keywords: 
           - Agentic Orchestration
           - Sequential Decision-Making
