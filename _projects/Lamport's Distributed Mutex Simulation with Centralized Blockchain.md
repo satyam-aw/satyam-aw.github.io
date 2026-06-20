@@ -7,6 +7,7 @@ importance: 3
 category: Distributed Systems
 related_publications: false
 github: https://github.com/satyam-aw/lamport-blockchain-mutex
+demo_video: https://www.youtube.com/watch?v=K6w52aim0ig
 giscus_comments: true
 giscus_repo: satyam-aw/lamport-blockchain-mutex
 giscus_repo_id: R_kgDOGp_lRA
@@ -49,7 +50,13 @@ While real-world public blockchains rely on probabilistic consensus models (e.g.
 
 The execution cycle operates across three primary phases, governed entirely by peer-to-peer messaging and decoupled telemetry tracking.
 
-[ Web UI Gateway ] <--- WebSockets ---> [ Client Nodes ] <=== Raw TCP (Lamport Mutex) ===> [ Peer Nodes ]||Raw TCP (CS Lock)||/[ Central Blockchain Master ]
+<div class="row justify-content-center">
+    <div class="col-md-10 mt-3 text-center">
+        {% include figure.liquid path="assets/img/lamport_block_diagram.svg" title="Lamport Mutex Secured Banking Ledger" class="img-fluid rounded" %}
+        <div class="caption mt-2">Figure 1: Distributed Banking Ledger via Lamport Mutual Exclusion.</div>
+    </div>
+</div>
+
 
 ### 1. The Distributed Locking Mechanism
 When a client node initiates an action (either a balance query or a fund remittance), it cannot directly communicate with the blockchain master. Instead, it must successfully claim the system-wide distributed lock using a three-phase synchronization protocol:
