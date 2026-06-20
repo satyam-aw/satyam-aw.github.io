@@ -49,6 +49,11 @@ ninja.data = [{
           description: "First-person 3D maze game built with C++ and legacy fixed-function OpenGL via FreeGLUT",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3d_maze_exploration_opengl/";
+            },},{id: "projects-lamport-39-s-mutex-simulation-with-centralized-blockchain",
+          title: 'Lamport&amp;#39;s Mutex Simulation with Centralized Blockchain',
+          description: "An investigation into distributed mutual exclusion within an adversarial network topology.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Lamport's%20Distributed%20Mutex%20Simulation%20with%20Centralized%20Blockchain/";
             },},{id: "projects-autonomous-ground-vehicle-and-swarm-robotics",
           title: 'Autonomous Ground Vehicle and Swarm Robotics',
           description: "Developed perception, motion-planning, and decentralized coordination systems for the institute&#39;s AGV and swarm robotics research groups.",
