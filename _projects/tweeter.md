@@ -5,7 +5,7 @@ description: A Distributed Testbed for Stress-Testing and Bottleneck Optimizatio
 completed_on: UCSB, Fall 21
 img: assets/img/8.webp
 importance: 2
-category: Systems Research & Performance Engineering
+category: Distributed Systems
 project_pdf: https://docs.google.com/document/d/1oxVZuh_Wj5Tc_Jv-8qsjNRmkKm0Kov0G5AQeYhBpz3M/edit?usp=sharing
 github: https://github.com/satyam-aw/Tweeters
 giscus_comments: true
