@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Non-Destructive Fruit Ripeness Classification
-description: Utilizing IR thermal signatures and supervised machine learning classifiers to determine berry ripeness states.
+description: An early work, utilizing IR thermal signatures and supervised machine learning classifiers to determine berry ripeness states.
 completed_on: IIT-KGP, May '18
 img: /assets/img/4_ripeness_classifier.png
 importance: 4

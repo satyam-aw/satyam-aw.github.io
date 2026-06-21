@@ -63,31 +63,31 @@ cv:
         publisher: "2022 14th International Conference on COMmunication Systems & NETworkS (COMSNETS)"
         releaseDate: 2022
         url: https://doi.org/10.1109/COMSNETS53615.2022.9668531
-        summary: "Created inertial tracking methods to decode architectural hand stroke motions into alphanumeric symbols on wrist-worn wearables."
+        summary: "Engineered an adaptive coordinate transformation pipeline using gravitational alignment and PUPD micro-gesture filtering to resolve drift-free, 2D kinematic profiles of wall-writing from wearable inertial sensors."
 
     Skills:
-      - name: Programming Languages
+      - name: Programming & Simulation
         # level: Expert
         icon: fa-solid fa-code
-        keywords: "Python, C++, Kotlin, Java, MATLAB, SQL"
+        keywords: "Python, C++, MATLAB, Kotlin, Java, Gazebo, Rviz, Unity, Git"
 
-      - name: Frameworks & Core Tools
+      - name: Robotics, Vision & AI Frameworks
         # level: Advanced
         icon: fa-solid fa-cubes
-        keywords: "Android/iOS Native SDKs, LangChain, Pydantic (JSON Schema), OpenCV, ROS (Robot Operating System), PyTorch"
+        keywords: "ROS/ROS2, OpenCV, PyTorch, LangChain, Pydantic, ARCore/iOS ARKit"
 
-      - name: Fields of Interest
+      - name: Core Methodologies
         # level: Specialist
-        icon: fa-solid fa-diagram-project
-        keywords: "Autonomous Decision-Making, Embodied AI, Spatial AI, Multi-Modal Sensor Fusion, Cyber-Physical Systems (CPS)"
+        icon: fa-solid fa-calculator
+        keywords: "State Estimation (EKF), Control Theory (MPC), Kinematic Modeling, Spatial Perception"
 
     Interests:
       - name: Cyber-Physical & Spatial Systems
         icon: fa-solid fa-microchip
         keywords: 
           - Spatial AI
-          - Multi-Modal Sensor Fusion
           - Embodied AI
+          - Multi-Modal Sensor Fusion
           - Decentralized Architectures
 
       - name: Autonomous Decision-Making

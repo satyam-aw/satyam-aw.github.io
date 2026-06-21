@@ -1,7 +1,7 @@
 ---
 layout: page
 title: CohesiveAR for Interactive Design
-description: Real-Time Texture Extraction and Mapping on Virtual Objects
+description: Augmented Reality Pipeline for Texture Extraction and Homography Mapping
 img: assets/img/1.png
 images: 
   - assets/img/1.png
@@ -28,15 +28,16 @@ giscus_reactions_enabled: 1
 giscus_emit_metadata: 0
 giscus_lang: en
 ---
-Interactive design and modeling applications in Augmented Reality (AR)—such as interior design and next-generation mobile AR games—supply real-world graphical information to their users. We present "CohesiveAR", an AR mobile application for real-time texture extraction and application to virtual objects using the Google ARCore SDK. The application architecture is designed around three core modules: 
+Interactive spatial AI applications in Augmented Reality (AR) require highly accurate real-world geometric modeling to achieve realistic contextual blending. We present **"CohesiveAR"**, a spatial computing framework designed for real-time, viewpoint-invariant texture extraction and dynamic mapping onto target virtual surfaces using the Google ARCore SDK and OpenCV. 
 
-1. **Texture Extraction**: Captures real-world textures in real time utilizing a dedicated marker widget.
-2. **Texture Processing & Storage**: Edits the extracted textures via the OpenCV library and loads them into a centralized texture database (DB).
-3. **Texture Mapping & Modification**: Retrieves textures from the database, applies them onto a target virtual scene object, and modifies their UV mapping coordinates.
+The architecture coordinates three core geometric modules:
+1. **Surface Localization & Extraction**: Detects and captures real-world surface textures from variable viewpoints utilizing a bounded tracking widget.
+2. **Geometric Homography & Processing**: Normalizes perspective warp via OpenCV to generate standardized, orthogonal texture maps stored in a centralized asset database.
+3. **Dynamic Coordinate Mapping**: Retrieves processed textures, projects them onto target virtual meshes, and computes dynamic UV coordinate adjustments.
 
-The virtual objects produced by this application appear visually cohesive and seamless, blending naturally with the surrounding physical environment.
+The virtual assets produced by this pipeline appear visually cohesive and seamless, blending naturally with the surrounding physical environment's illumination and structure.
 
-Check out the demo video [here](https://www.youtube.com/watch?v=eUzmJmamqFk).
+Check out the demo video [here](https://youtu.be/eUzmJmamqFk?si=eJcXW2aYxK9W3143).
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT_lzRCA515SO4wR5ZAKa5cK2QtyCsiNDw8BvPrHqZ7xuwdv3e7UmxN8cuuGBgcg1I9oZvzWjSYXX-G/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
@@ -44,59 +45,58 @@ Check out the demo video [here](https://www.youtube.com/watch?v=eUzmJmamqFk).
 
 <figure class="mt-3 mt-md-0 text-center w-50 mx-auto">
     {% include figure.liquid path="assets/img/1-top-level.png" title="Architecture Diagram" class="img-fluid rounded" %}
-  <figcaption class="caption">Figure 1: Top-level architecture with the Ingestion and Manipulation Pipelines</figcaption>
+  <figcaption class="caption">Figure 1: Top-level architecture highlighting the Spatial Ingestion and Mesh Manipulation Pipelines</figcaption>
 </figure>
 
-At the highest level, the application initializes via a **Welcome Screen**, which serves as the primary gateway for user routing. From this point, a decision engine (**Choose pipeline**) branches the system execution into one of two decoupled subsystems based on the required operation:
-* **The Asset Ingestion Pipeline (`Scan Textures`)**: Responsible for real-time visual capture and data processing.
-* **The Object Modification Pipeline (`Manipulate Scene Object`)**: Responsible for spatial mapping and real-time interactive rendering.
+At the highest level, the framework initializes via a unified tracking portal. From this point, a decision engine branches system execution into one of two decoupled subsystems based on the required operation:
+* **The Spatial Ingestion Pipeline (`Scan Textures`)**: Responsible for real-time visual tracking, geometric normalization, and matrix transformations.
+* **The Mesh Manipulation Pipeline (`Manipulate Scene Object`)**: Responsible for virtual coordinate alignment, spatial grounding, and real-time interactive mapping.
 
 
-### Asset Ingestion Pipeline (`Scan Textures`)
+### Spatial Ingestion & Rectification Pipeline (`Scan Textures`)
 
 <figure class="mt-3 mt-md-0 text-center mx-auto" style="width: 70%;">
     {% include figure.liquid path="assets/img/1-scan.png" title="Architecture Diagram" class="img-fluid rounded" %}
-  <figcaption class="caption">Figure 2: The Asset Ingestion Pipeline</figcaption>
+  <figcaption class="caption">Figure 2: The Spatial Ingestion and Geometric Rectification Pipeline</figcaption>
 </figure>
 
-The asset ingestion subsystem isolates, extracts, and normalizes physical surface textures for virtual deployment through three primary stages:
+The spatial ingestion subsystem isolates, extracts, and normalizes physical surface textures for virtual deployment through three primary stages:
 
 #### 1. Coordinate Mapping & Image Capture
-* **Marker Localization**: The user places a digital bounding marker over the target physical surface.
-* **Spatial Translation**: The system captures 3D world coordinates (`marker vertices in AR Scene`) and uses OpenCV to project them into 2D display space (`Screen Coordinates`).
-* **Frame Ingestion**: The system captures raw pixel data directly from the display layer via a device screenshot.
+* **Marker Localization**: The user places a digital bounding anchor over the target physical surface.
+* **Spatial Translation**: The system tracks 3D world coordinates (`marker vertices in AR Scene`) and projects them into 2D image coordinates using pinhole camera model principles.
+* **Frame Ingestion**: Raw pixel arrays are ingested directly from the live camera frame buffer.
 
 #### 2. Geometric Normalization
-* **Perspective Rectification**: A matrix transformation operator merges the screen coordinates with the raw screenshot.
-* **Homography Transformation**: The system executes a **Perspective Warp** to remove camera tilt skew, flattening the targeted surface region into a standardized orthogonal texture square.
+* **Perspective Rectification**: A homography transformation matrix maps the skewed image coordinates back to a canonical reference plane.
+* **Homography Transformation**: The system executes a linear perspective warp operator to completely remove camera tilt skew, flattening the targeted surface region into a standardized orthogonal texture square.
 
 #### 3. Feedback & Refinement
-* **Audio-Visual Notification**: An **Earcon + UI Animation** loop confirms successful texture extraction to the user.
-* **Interface Transition**: The application initializes the **`OpenCV_Edit` Scene**, loading the unedited texture asset as a static reference object.
-* **Asset Optimization**: The user adjusts surface properties (e.g., contrast, brightness) via the **OpenCV Image Correction Menu**.
-* **Storage Commit**: The finalized, normalized asset is pushed directly to the central **Texture DB** for immediate mapping.
+* **Audio-Visual Notification**: An Earcon + UI animation loop confirms successful texture extraction and bounding validation.
+* **Interface Transition**: The application initializes the editing workspace, loading the unedited texture asset as a static reference object matrix.
+* **Asset Optimization**: The user adjust surface properties (e.g., contrast, brightness) using localized image correction matrices.
+* **Storage Commit**: The finalized, normalized asset matrix is pushed directly to the central database for immediate projection.
 
 
-### Object Manipulation Pipeline (`Manipulate Scene Object`)
+### Object Instantiation & Mesh Manipulation Pipeline (`Manipulate Scene Object`)
 
 <figure class="mt-3 mt-md-0 text-center w-50 mx-auto">
     {% include figure.liquid path="assets/img/1-mani.png" title="Architecture Diagram" class="img-fluid rounded" %}
-  <figcaption class="caption">Figure 3: The Object Manipulation Pipeline</figcaption>
+  <figcaption class="caption">Figure 3: The Mesh Manipulation and Coordinate Binding Pipeline</figcaption>
 </figure>
 
-
-This subsystem handles virtual object instantiation, spatial transformations, and dynamic texture binding within the AR workspace:
+This subsystem handles virtual asset instantiation, spatial transformations, and dynamic material tracking within the AR workspace:
 
 #### 1. Object Placement & Spatial Validation
-* **Scene Presence Verification**: The system evaluates if a virtual asset is active (`Object present in Scene`).
-* **Instantiation Loop**: If no object exists, the user chooses from a structural asset library to initialize a **3D object of peculiar geometry** in the AR environment.
-* **Spatial Feedback**: Placement triggers an **Earcon + Animate** feedback loop to confirm successful spatial grounding.
+* **Scene Presence Verification**: The system evaluates whether a target virtual asset is active within the current spatial scene.
+* **Instantiation Loop**: If no object exists, the user selects from a structural geometry library to initialize an arbitrary 3D geometric mesh into the tracking environment.
+* **Spatial Feedback**: Asset placement triggers a closed-loop audio-visual confirmation to verify robust spatial grounding.
 
 #### 2. Asset Query & User Interface Routing
-* **Object Selection**: Tapping an active virtual asset (`Tap on scene object`) initializes the texture mapping pipeline.
-* **Dynamic Asset Fetching**: The application queries the centralized **Texture DB** to compile a list of user-generated textures.
-* **Interactive Selector**: The system loads the **`Page_Swiper` UI**, enabling the user to navigate saved texture profiles via lateral swipe gestures (`SWIPE TO LEFT`).
+* **Object Selection**: Selecting an active virtual asset mesh initializes the runtime texture mapping pipeline.
+* **Dynamic Asset Fetching**: The application queries the centralized database to compile and index user-generated textures.
+* **Interactive Selector**: The system loads the asset navigation interface, enabling seamless iteration through saved surface texture matrices.
 
 #### 3. Dynamic Texture Binding & Transformation
-* **Material Mapping Application**: Selecting an asset applies the chosen texture from the user-curated list onto the active 3D geometric mesh.
-* **Transform Manipulation**: Post-application, the user can execute **Rotate and Scale** gesture mechanics to interactively adjust texture mapping parameters and alignment in real time.
+* **Material Mapping Application**: Selecting an asset applies the chosen texture matrix directly onto the active 3D geometric mesh layout.
+* **Transform Manipulation**: Post-application, the user can execute rotation and scaling gesture mechanics to interactively adjust transformation parameters, modifying texture orientation and spatial alignment in real time.
