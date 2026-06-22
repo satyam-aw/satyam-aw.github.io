@@ -15,36 +15,36 @@ category: Embedded Systems and Robotics
 ---
 
 
-During my undergraduate years at IIT Kharagpur, I served as a core technical member of the [**Autonomous Ground Vehicle (AGV)**](http://www.agv.iitkgp.ac.in/) and [**Swarm**](https://swarm-iitkgp.github.io/index.html) research groups. My work sat at the intersection of Artificial Intelligence, Computer Vision, and Embedded Systems. We focused on building fully autonomous systems capable of navigating complex, dynamic indoor and outdoor environments.
+During my undergraduate years at IIT Kharagpur, I served as a core research and technical team member of the [**Autonomous Ground Vehicle (AGV)**](http://www.agv.iitkgp.ac.in/) and [**Swarm**](https://swarm-iitkgp.github.io/index.html) research groups. My work sat at the intersection of Robot Learning, Spatial Perception, and Control Theory, focusing on building fully autonomous, decentralized systems capable of navigating complex, unmodeled indoor and outdoor physical environments.
 
 ---
 
 #### Core Domains & Areas of Expertise
 
-* **Robot Perception**: Designing pipelines for real-time obstacle detection and environment mapping.
-* **Motion Planning**: Developing path planning algorithms for non-holonomic ground vehicles.
-* **Embedded Systems**: Integrating sensors, microcontrollers, and single-board computers (SBCs).
-* **Sensor Fusion**: Combining data from LiDAR, IMU, GPS, and cameras for localization.
+* **Spatial Perception**: Designing pipelines for real-time dense semantic segmentation and structural environment mapping.
+* **Motion Planning & Control**: Developing global/local trajectory planning frameworks for non-holonomic, constraint-bound ground vehicles.
+* **Sim-to-Real (Sim2Real) Transfer**: Building hardware-agnostic ROS abstractions to validate software loops in high-fidelity simulation prior to physical deployment.
+* **State Estimation & Multi-Modal Sensor Fusion**: Fusing asynchronous telemetry from LiDAR, IMU, GPS, and camera sensors to resolve state estimation under drift conditions.
 
 ---
 
 #### Key Projects & Technical Details
 
 ##### 1. Autonomous Navigation Pipeline for AGV
-We engineered an end-to-end software and hardware stack for an outdoor autonomous rover designed to navigate unstructured campus environments.
+We engineered an end-to-end, hardware-agnostic navigation stack for an outdoor autonomous rover designed to navigate unstructured campus environments under strict runtime limits.
 
 <figure class="mt-3 mt-md-0 text-center">
     {% include figure.liquid path="assets/img/9_agv.webp" title="example image" class="img-fluid rounded" %}
   <figcaption class="caption">Figure 1: AGV Dune buggy, a full-scale autonomous buggy testbed developed by the Autonomous Ground Vehicles group for field-testing real-world perception and navigation algorithms</figcaption>
 </figure>
 
-* **Vision & Perception**: Implemented lane detection and obstacle segmentation using traditional computer vision (OpenCV) combined with deep learning models (SegNet/U-Net) optimized for embedded deployment.
-* **Path Planning**: Developed a hierarchical planning system. Used **A* / Dijkstra** for global path generation and **Dynamic Window Approach (DWA)** for local obstacle avoidance.
-* **Localization**: Utilized an **Extended Kalman Filter (EKF)** to fuse odometry data from wheel encoders, IMU, and GPS, reducing drift during long-range traversal.
-* **Software Stack**: Developed entirely within the **Robot Operating System (ROS)** ecosystem using C++ and Python.
+* **Perception & Vision**: Implemented robust visual obstacle segmentation using a custom U-Net architecture alongside traditional computer vision (OpenCV) filters optimized for real-time embedded deployment.
+* **Hybrid Motion Planning**: Developed a hierarchical trajectory generation system, combining global path generation ($A^*$ / Dijkstra) with a **Dynamic Window Approach (DWA)** local planner for real-time, non-holonomic collision avoidance.
+* **State Estimation**: Utilized an **Extended Kalman Filter (EKF)** to handle multi-modal sensor fusion by merging noisy wheel encoders, IMU, and GPS telemetry, drastically minimizing dead-reckoning tracking drift.
+* **Sim2Real Optimization**: Developed the entire software stack within the **ROS** ecosystem using C++ and Python. By completely decoupling the core perception and planning algorithms from physical actuator configs, we achieved a zero-shot **Sim2Real transfer** from simulation to hardware.
 
 ##### 2. Swarm Robotics & Swarm Intelligence
-As part of the [Swarm](https://swarm-iitkgp.github.io/index.html) research group, I researched decentralized coordination among low-cost mobile robots.
+As part of the [Swarm](https://swarm-iitkgp.github.io/index.html) research group, I formulated decentralized coordination protocols and peer-to-peer relative pose estimation mechanics for low-cost mobile robots.
 
 <figure class="mt-3 mt-md-0 text-center">
     {% include figure.liquid path="assets/img/9_swarm.jpg" title="Swarm Communication and Tracking Workflows" class="img-fluid rounded" %}
@@ -52,16 +52,16 @@ As part of the [Swarm](https://swarm-iitkgp.github.io/index.html) research group
 </figure>
 
 * **Algorithms**:
-  1. **Multi-Agent Path Planning**: Implemented a **Decentralized A*** approach where each agent computes its own path independently. Agents treat neighboring robots as dynamic obstacles and broadcast intent vectors to resolve spatial conflicts locally without a central coordinator.
-  2. **Relative Pose Estimation**: To overcome occlusion and bandwidth constraints as the swarm scales, individual robots track only their immediate neighbors rather than the entire fleet. Implemented an **observation-only** broadcasting strategy, allowing peer swarm agents to receive and update their local pose graphs to infer the global swarm map. Relative pose estimation was achieved using **AprilTags** as fiducial markers.
+  1. **Decentralized Multi-Agent Path Planning**: Implemented a decentralized routing framework where each agent computes its own path independently. Agents treat adjacent robots as dynamic physical obstacles and broadcast localized intent vectors to resolve spatial boundary conflicts without a centralized master node.
+  2. **Relative Pose Estimation**: To overcome occlusion and bandwidth limits as the swarm scales, individual robots track only their immediate neighbors. Implemented an observation-only broadcasting strategy allowing peer agents to receive and update their local pose graphs to infer the global swarm map. Inter-agent relative pose was computed using **AprilTags** as fiducial markers.
 
-* **Communication**: Set up an ad-hoc mesh network using **XBee modules** to enable real-time state sharing and low-latency communication between adjacent robots.
-* **Hardware**: Designed custom PCBs hosting **ATmega microcontrollers** to manage closed-loop motor control, localized power distribution, and IR sensor arrays.
+* **Communication**: Configured an ad-hoc mesh network topology using **XBee modules** to enforce low-latency state sharing and deterministic message routing between adjacent robots.
+* **Hardware & Low-Level Control**: Designed custom PCBs hosting **ATmega microcontrollers** to manage closed-loop motor control loops, localized power distribution, and IR sensor arrays.
 
 ---
 
 #### Technical Stack
 
 * **Languages**: C++, Python, MATLAB
-* **Frameworks & Tools**: ROS (Robot Operating System), OpenCV 
-* **Hardware**: Arduino, Raspberry Pi, BeagleBone Black, Hokuyo LiDAR, IMU (MPU6050)
+* **Frameworks \& Tools**: ROS (Robot Operating System), OpenCV, PyTorch
+* **Hardware \& Simulation**: Gazebo, Hokuyo LiDAR, Raspberry Pi, BeagleBone Black, Arduino

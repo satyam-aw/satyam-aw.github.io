@@ -4,7 +4,7 @@ cv:
   email: satyam.aw@yahoo.com
   location: Mountain View, CA
   image: ""
-  summary: Computer Science researcher specializing in Autonomous Decision-Making, Spatial AI, and Embodied AI within Cyber-Physical Systems, with a core focus on engineering verifiably safe, constraint-bound execution loops.
+  summary: Computer Science researcher specializing in the intersection of Autonomous Decision-Making, Spatial Perception, and Robot Learning within Embodied Systems, with a core focus on engineering verifiably safe, constraint-bound execution loops.
 
   social_networks:
     - network: GitHub
@@ -28,7 +28,7 @@ cv:
         end_date: 2023
         score: "3.91/4.00 GPA"
         highlights:
-          - "Graduate Research at the Four Eyes Lab focusing on Spatial AI, closed-loop locomotion, and multi-modal interaction."
+          - "Graduate Research at the Four Eyes Lab focusing on calibrating eye-tracking frameworks for mixed-reality locomotion and multi-modal spatial perception."
 
       - institution: Indian Institute of Technology, Kharagpur
         location: Kharagpur, India
@@ -41,7 +41,7 @@ cv:
         courses: "Minor in Computer Science"
         highlights:
           - "Graduated with First Class Honors with a Minor in Computer Science."
-          - "Research focused on algorithmic pipelines for Embodied AI, swarm robotics, and autonomous ground vehicles."
+          - "Research focused on 2D kinematic profiles, decentralized multi-agent motion planning, and hardware-agnostic stacks for Sim2Real transfer."
 
     Publications:
       - title: "Eye Tracking Performance in Mobile Mixed Reality"
@@ -49,14 +49,14 @@ cv:
         publisher: "2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)"
         releaseDate: 2024
         url: https://doi.org/10.1109/VRW62533.2024.00321
-        summary: "Investigated low-latency mobile eye tracking performance profiles across modern mixed reality layouts. Supported by NSF Grant #2211784."
+        summary: "Expanded the tracking framework to benchmark low-latency performance profiles and gaze errors via a robust 3-device user study across diverse mixed-reality locomotion layouts. Supported by NSF Grant #2211784."
 
       - title: "EyeTTS: Evaluating and Calibrating Eye Tracking for Mixed-Reality Locomotion"
         authors: "S. Awasthi, V. Ross, M. Beyeler, T. Höllerer"
         publisher: "2023 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)"
         releaseDate: 2023
         url: https://doi.org/10.1109/ISMAR-Adjunct60411.2023.00104
-        summary: "Proposed unique calibration logic pipelines specifically optimized for eye tracking modalities within mixed-reality locomotion patterns. Supported by NSF Grant #2211784."
+        summary: "Developed a novel eye-tracking test suite (EyeTTS) and engineered unique software calibration pipelines optimized to correct tracking drift during active human locomotion; validated via a 2-device user study. Supported by NSF Grant #2211784."
 
       - title: "SmartWatch for Wall Writing: Real-time Transcription of Wall Writing from Inertial Sensing"
         authors: "S. Das, S. Awasthi, A. Shamnan, P. De, S. Chakraborty, B. Mitra"
@@ -79,14 +79,14 @@ cv:
       - name: Core Methodologies
         # level: Specialist
         icon: fa-solid fa-calculator
-        keywords: "State Estimation (EKF), Control Theory (MPC), Kinematic Modeling, Spatial Perception"
+        keywords: "State Estimation (EKF), Control Theory (MPC), Kinematic Modeling, Spatial Perception, Robot Learning, Sim-to-Real (Sim2Real) Transfer"
 
     Interests:
-      - name: Cyber-Physical & Spatial Systems
+      - name: Embodied Robotic & Spatial Systems
         icon: fa-solid fa-microchip
         keywords: 
-          - Spatial AI
-          - Embodied AI
+          - Spatial Perception
+          - Autonomous Vehicle Stacks
           - Multi-Modal Sensor Fusion
           - Decentralized Architectures
 
