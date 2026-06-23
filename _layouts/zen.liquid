@@ -96,9 +96,66 @@ layout: default
 
     </div>
   </article>
+  <!-- Snail Element -->
+  <div id="zen-snail" style="
+    position: fixed;
+    font-size: 24px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s linear;
+    will-change: left, top;
+  ">🐌</div>
 </div>
 
+
 <script>
+  const snail = document.getElementById('zen-snail');
+  
+  // Track target cursor position
+  let targetX = window.innerWidth / 2;
+  let targetY = window.innerHeight / 2;
+  
+  // Current snail position
+  let currentX = targetX;
+  let currentY = targetY;
+  
+  // Speed control: lower = slower (0.01 is very slow)
+  const speed = 0.001; 
+
+  // Update target coordinates on mouse move
+  window.addEventListener('mousemove', (e) => {
+    targetX = e.clientX;
+    targetY = e.clientY;
+  });
+
+  // Animation loop
+  function animate() {
+    // Calculate distance to target
+    const dx = targetX - currentX;
+    const dy = targetY - currentY;
+    
+    // Move a small fraction of the distance
+    currentX += dx * speed;
+    currentY += dy * speed;
+    
+    // Apply new position
+    snail.style.left = `${currentX}px`;
+    snail.style.top = `${currentY}px`;
+    
+    // Flip snail emoji based on horizontal direction
+    if (dx > 1) {
+      snail.style.transform = 'translate(-50%, -50%) scaleX(-1)'; // Facing right
+    } else if (dx < -1) {
+      snail.style.transform = 'translate(-50%, -50%) scaleX(1)';  // Facing left
+    }
+    
+    requestAnimationFrame(animate);
+  }
+  
+  // Start the loop
+  animate();
+
 // Dynamic map to instantly track if a card's baseline data layout has rendered its 1st pass
 const functionalImagesMap = {};
 
