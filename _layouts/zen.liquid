@@ -97,10 +97,25 @@ layout: default
     </div>
   </article>
   
-  <div id="zen-snail" style="
+  <div id="scared-snail" style="
   position: absolute; 
   left: 50%;
   top: 50%;
+  width: 140px; 
+  height: auto;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s linear;
+  will-change: left, top;
+">
+  <img src="{{ 'assets/img/plants/gary.gif' | relative_url }}" alt="Snail" style="width: 100%; height: auto; display: block;">
+</div>
+<!-- Scared Snail Container (Runs Away) -->
+<div id="zen-snail" style="
+  position: absolute;
+  left: 30%; /* Starts at a different spot */
+  top: 40%;
   width: 80px; 
   height: auto;
   pointer-events: none;
@@ -115,12 +130,68 @@ layout: default
 </div>
 
 <script>
-  const snail = document.getElementById('zen-snail');
+(function initScaredSnail() {
+  const snail = document.getElementById('scared-snail');
+  if (!snail) return;
+
+  // Start position
+  let currentX = window.innerWidth * 0.5;
+  let currentY = window.innerHeight * 0.5;
   
-  // Track target page position
+  let mouseX = currentX;
+  let mouseY = currentY;
+
+  // Settings
+  const speed = 0.004;            // Fleeing speed
+  const fearDistance = 250;      // How close the mouse gets before it panics (in pixels)
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+  });
+
+  function animate() {
+    // Calculate distance between mouse and snail
+    const dx = currentX - mouseX;
+    const dy = currentY - mouseY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    // Only move if the cursor gets too close
+    if (distance < fearDistance && distance > 0) {
+      // Calculate push force (stronger push when cursor is closer)
+      const force = (fearDistance - distance) / fearDistance;
+      
+      // Update coordinates moving AWAY from mouse
+      currentX += (dx / distance) * fearDistance * force * speed;
+      currentY += (dy / distance) * fearDistance * force * speed;
+
+      // Keep snail inside page boundaries
+      currentX = Math.max(40, Math.min(window.innerWidth - 40, currentX));
+      currentY = Math.max(40, Math.min(document.documentElement.scrollHeight - 40, currentY));
+
+      snail.style.left = `${currentX}px`;
+      snail.style.top = `${currentY}px`;
+
+      // Flip snail based on escape direction (assumes asset faces left)
+      if (dx > 0) {
+        snail.style.transform = 'translate(-50%, -50%) scaleX(-1)'; // Fleeing right
+      } else {
+        snail.style.transform = 'translate(-50%, -50%) scaleX(1)';  // Fleeing left
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+})();
+
+(function initZenSnail() {
+  const snail = document.getElementById('zen-snail');
+  if (!snail) return; // Prevent errors if the element isn't on the page
+
   let targetX = window.innerWidth / 2;
   let targetY = window.innerHeight / 2;
-  
   let currentX = targetX;
   let currentY = targetY;
   
@@ -151,6 +222,7 @@ layout: default
   }
   
   animate();
+})();
 
 // Dynamic map to instantly track if a card's baseline data layout has rendered its 1st pass
 const functionalImagesMap = {};
