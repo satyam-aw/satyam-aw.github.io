@@ -130,130 +130,120 @@ layout: default
 </div>
 
 <script>
-(function initScaredSnail() {
-  const snail = document.getElementById('scared-snail');
-  if (!snail) return;
 
-  // Start position
-  let currentX = window.innerWidth * 0.5;
-  let currentY = window.innerHeight * 0.5;
-  
-  let mouseX = currentX;
-  let mouseY = currentY;
+(function initZenGardenSnails() {
+  const follower = document.getElementById('zen-snail');
+  const scared = document.getElementById('scared-snail');
+  if (!follower && !scared) return;
 
-  // Settings
-  const speed = 0.004;            // Fleeing speed
-  const fearDistance = 250;      // How close the mouse gets before it panics (in pixels)
+  // State Management
+  let isTabActive = true;
+  let isLoopRunning = false;
 
-  // Track mouse movement
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.pageX;
-    mouseY = e.pageY;
+  // Follower Snail State
+  let fTargetX = window.innerWidth, fTargetY = window.innerHeight;
+  let fCurrentX = fTargetX, fCurrentY = fTargetY;
+  const fSpeed = 0.002;
+
+  // Scared Snail State
+  let sCurrentX = window.innerWidth / 2, sCurrentY = window.innerHeight / 2;
+  let mouseX = sCurrentX, mouseY = sCurrentY;
+  const sSpeed = 0.004;
+  const fearDistance = 250;
+
+  // Central loop starter
+  function wakeUpEngine() {
+    if (!isLoopRunning && isTabActive) {
+      isLoopRunning = true;
+      requestAnimationFrame(animateLoop);
+    }
+  }
+
+  // Input Tracking (Mouse + Mobile Touch)
+  function updateInputCoordinates(x, y) {
+    fTargetX = x;
+    fTargetY = y;
+    mouseX = x;
+    mouseY = y;
+    wakeUpEngine(); // Wake engine up on movement
+  }
+
+  window.addEventListener('mousemove', (e) => updateInputCoordinates(e.pageX, e.pageY));
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 0) updateInputCoordinates(e.touches[0].pageX, e.touches[0].pageY);
+  }, { passive: true });
+
+  // Tab Focus Management
+  document.addEventListener('visibilitychange', () => {
+    isTabActive = !document.hidden;
+    if (isTabActive) wakeUpEngine();
+    else isLoopRunning = false; // Instantly halts loop when user leaves tab
   });
 
-  // Track mobile touch/drag
-  window.addEventListener('touchmove', (e) => {
-    if (e.touches.length > 0) {
-      mouseX = e.touches[0].pageX;
-      mouseY = e.touches[0].pageY;
+  // Core Animation Loop
+  function animateLoop() {
+    if (!isTabActive) {
+      isLoopRunning = false;
+      return;
     }
-  }, { passive: true });
 
-  window.addEventListener('touchstart', (e) => {
-    if (e.touches.length > 0) {
-      mouseX = e.touches[0].pageX;
-      mouseY = e.touches[0].pageY;
-    }
-  }, { passive: true });
+    let needsNextFrame = false;
 
-  function animate() {
-    // Calculate distance between mouse and snail
-    const dx = currentX - mouseX;
-    const dy = currentY - mouseY;
-    const distance = Math.sqrt(dx * dx + dy * dy);
-
-    // Only move if the cursor gets too close
-    if (distance < fearDistance && distance > 0) {
-      // Calculate push force (stronger push when cursor is closer)
-      const force = (fearDistance - distance) / fearDistance;
+    // 1. Process Follower Snail
+    if (follower && follower.style.display !== 'none') {
+      const fDx = fTargetX - fCurrentX;
+      const fDy = fTargetY - fCurrentY;
       
-      // Update coordinates moving AWAY from mouse
-      currentX += (dx / distance) * fearDistance * force * speed;
-      currentY += (dy / distance) * fearDistance * force * speed;
-
-      // Keep snail inside page boundaries
-      currentX = Math.max(40, Math.min(window.innerWidth - 40, currentX));
-      currentY = Math.max(40, Math.min(document.documentElement.scrollHeight - 40, currentY));
-
-      snail.style.left = `${currentX}px`;
-      snail.style.top = `${currentY}px`;
-
-      // Flip snail based on escape direction (assumes asset faces left)
-      if (dx > 0) {
-        snail.style.transform = 'translate(-50%, -50%) scaleX(-1)'; // Fleeing right
-      } else {
-        snail.style.transform = 'translate(-50%, -50%) scaleX(1)';  // Fleeing left
+      // Move if further away than 0.5 pixels
+      if (Math.abs(fDx) > 0.5 || Math.abs(fDy) > 0.5) {
+        fCurrentX += fDx * fSpeed;
+        fCurrentY += fDy * fSpeed;
+        follower.style.left = `${fCurrentX}px`;
+        follower.style.top = `${fCurrentY}px`;
+        
+        if (fDx > 1) follower.style.transform = 'translate(-50%, -50%) scaleX(-1)';
+        else if (fDx < -1) follower.style.transform = 'translate(-50%, -50%) scaleX(1)';
+        
+        needsNextFrame = true;
       }
     }
 
-    requestAnimationFrame(animate);
+    // 2. Process Scared Snail
+    if (scared && scared.style.display !== 'none') {
+      const sDx = sCurrentX - mouseX;
+      const sDy = sCurrentY - mouseY;
+      const distance = Math.sqrt(sDx * sDx + sDy * sDy);
+
+      if (distance < fearDistance && distance > 0.5) {
+        const force = (fearDistance - distance) / fearDistance;
+        
+        sCurrentX += (sDx / distance) * fearDistance * force * sSpeed;
+        sCurrentY += (sDy / distance) * fearDistance * force * sSpeed;
+
+        // Keep inside boundaries
+        sCurrentX = Math.max(40, Math.min(window.innerWidth - 40, sCurrentX));
+        sCurrentY = Math.max(40, Math.min(document.documentElement.scrollHeight - 40, sCurrentY));
+
+        scared.style.left = `${sCurrentX}px`;
+        scared.style.top = `${sCurrentY}px`;
+
+        if (sDx > 0) scared.style.transform = 'translate(-50%, -50%) scaleX(-1)';
+        else scared.style.transform = 'translate(-50%, -50%) scaleX(1)';
+
+        needsNextFrame = true;
+      }
+    }
+
+    // Shut down engine if everyone arrived/stopped, otherwise request next frame
+    if (needsNextFrame) {
+      requestAnimationFrame(animateLoop);
+    } else {
+      isLoopRunning = false;
+    }
   }
 
-  animate();
-})();
-
-(function initZenSnail() {
-  const snail = document.getElementById('zen-snail');
-  if (!snail) return; // Prevent errors if the element isn't on the page
-
-  let targetX = window.innerWidth;
-  let targetY = window.innerHeight;
-  let currentX = targetX;
-  let currentY = targetY;
-  
-  const speed = 0.002; 
-
-  // Track mouse movement
-  window.addEventListener('mousemove', (e) => {
-    targetX = e.pageX;
-    targetY = e.pageY;
-  });
-
-  // Track mobile touch/drag
-  window.addEventListener('touchmove', (e) => {
-    if (e.touches.length > 0) {
-      targetX = e.touches[0].pageX;
-      targetY = e.touches[0].pageY;
-    }
-  }, { passive: true });
-
-  window.addEventListener('touchstart', (e) => {
-    if (e.touches.length > 0) {
-      targetX = e.touches[0].pageX;
-      targetY = e.touches[0].pageY;
-    }
-  }, { passive: true });
-
-  function animate() {
-    const dx = targetX - currentX;
-    const dy = targetY - currentY;
-    
-    currentX += dx * speed;
-    currentY += dy * speed;
-    
-    snail.style.left = `${currentX}px`;
-    snail.style.top = `${currentY}px`;
-    
-    if (dx > 1) {
-      snail.style.transform = 'translate(-50%, -50%) scaleX(-1)';
-    } else if (dx < -1) {
-      snail.style.transform = 'translate(-50%, -50%) scaleX(1)';
-    }
-    
-    requestAnimationFrame(animate);
-  }
-  
-  animate();
+  // Initial wake up
+  wakeUpEngine();
 })();
 
 // Dynamic map to instantly track if a card's baseline data layout has rendered its 1st pass
