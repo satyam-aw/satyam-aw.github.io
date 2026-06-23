@@ -134,7 +134,7 @@ ninja.data = [{
         title: 'CV',
         section: 'Socials',
         handler: () => {
-          window.open("https://satyam-aw.github.io/my_cv/satyam_awasthi_cv.pdf", "_blank");
+          window.open("https://satyam-aw.github.io/my_cv/Satyam_Awasthi_CV.pdf", "_blank");
         },
       },{
         id: 'social-email',
