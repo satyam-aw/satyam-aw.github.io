@@ -4,7 +4,8 @@ cv:
   email: satyam.aw@yahoo.com
   location: Mountain View, CA
   image: ""
-  summary: Computer Science researcher specializing in the intersection of Autonomous Decision-Making, Spatial Perception, and Robot Learning within Embodied Systems, with a core focus on engineering verifiably safe, constraint-bound execution loops.
+  summary: I am a Computer Science researcher focused on **Autonomous Systems, Spatial Perception**, and **Model-Based** and **Learning-Based Control**, with interests in long-horizon decision-making for robust robotic autonomy.
+
 
   social_networks:
     - network: GitHub

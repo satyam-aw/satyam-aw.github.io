@@ -141,16 +141,26 @@ layout: default
   let isLoopRunning = false;
 
   // Follower Snail State
-  let fTargetX = window.innerWidth, fTargetY = window.innerHeight;
+  let fTargetX = 100, fTargetY = window.innerHeight/2;
   let fCurrentX = fTargetX, fCurrentY = fTargetY;
-  const fSpeed = 0.002;
+  const fSpeed = 0.0015;
+  const nbrhdDistance = 500;
+  if (follower) {
+    follower.style.position = 'absolute'; // Ensures page-relative mapping
+    follower.style.left = `${fCurrentX}px`;
+    follower.style.top = `${fCurrentY}px`;
+  } 
 
   // Scared Snail State
   let sCurrentX = window.innerWidth / 2, sCurrentY = window.innerHeight / 2;
   let mouseX = sCurrentX, mouseY = sCurrentY;
   const sSpeed = 0.002;
   const fearDistance = 250;
-
+  if (scared) {
+    scared.style.position = 'absolute'; // Ensures page-relative mapping
+    scared.style.left = `${sCurrentX}px`;
+    scared.style.top = `${sCurrentY}px`;
+  }
   // Central loop starter
   function wakeUpEngine() {
     if (!isLoopRunning && isTabActive) {
@@ -193,9 +203,9 @@ layout: default
     if (follower && follower.style.display !== 'none') {
       const fDx = fTargetX - fCurrentX;
       const fDy = fTargetY - fCurrentY;
-      
+      const distance = Math.sqrt(fDx * fDx + fDy * fDy);
       // Move if further away than 0.5 pixels
-      if (Math.abs(fDx) > 0.5 || Math.abs(fDy) > 0.5) {
+      if ((Math.abs(fDx) > 0.5 || Math.abs(fDy) > 0.5) && distance < nbrhdDistance) {
         fCurrentX += fDx * fSpeed;
         fCurrentY += fDy * fSpeed;
         follower.style.left = `${fCurrentX}px`;
