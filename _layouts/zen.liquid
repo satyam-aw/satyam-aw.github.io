@@ -141,10 +141,10 @@ layout: default
   let isLoopRunning = false;
 
   // Follower Snail State
-  let fTargetX = 100, fTargetY = window.innerHeight/2;
+  let fTargetX = window.innerWidth * 0.2, fTargetY = window.innerHeight * 0.5;
   let fCurrentX = fTargetX, fCurrentY = fTargetY;
-  const fSpeed = 0.0015;
-  const nbrhdDistance = 500;
+  const fSpeed = 0.002;
+  const nbrhdDistance = 250;
   if (follower) {
     follower.style.position = 'absolute'; // Ensures page-relative mapping
     follower.style.left = `${fCurrentX}px`;
@@ -152,7 +152,7 @@ layout: default
   } 
 
   // Scared Snail State
-  let sCurrentX = window.innerWidth / 2, sCurrentY = window.innerHeight / 2;
+  let sCurrentX = window.innerWidth * 0.5, sCurrentY = window.innerHeight * 0.7;
   let mouseX = sCurrentX, mouseY = sCurrentY;
   const sSpeed = 0.002;
   const fearDistance = 250;
