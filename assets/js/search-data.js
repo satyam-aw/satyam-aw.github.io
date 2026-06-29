@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "A growing collection of cool projects.",
+          description: "A portfolio of research projects exploring autonomous systems, spatial perception, and intelligent decision-making.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -49,18 +49,23 @@ ninja.data = [{
           description: "First-person 3D maze game built with C++ and legacy fixed-function OpenGL via FreeGLUT",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3d_maze_exploration_opengl/";
-            },},{id: "projects-autonomous-ground-vehicle-and-swarm-robotics",
-          title: 'Autonomous Ground Vehicle and Swarm Robotics',
+            },},{id: "projects-autonomous-ground-vehicle-navigation-amp-swarm-robotics",
+          title: 'Autonomous Ground Vehicle Navigation &amp;amp; Swarm Robotics',
           description: "Developed perception, motion-planning, and decentralized coordination systems for the institute&#39;s AGV and swarm robotics research groups.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/autonomous_ground_vehicle_and_swarm_robotics/";
-            },},{id: "projects-cohesivear-for-interactive-design",
-          title: 'CohesiveAR for Interactive Design',
+            },},{id: "projects-cohesivear",
+          title: 'CohesiveAR',
           description: "Augmented Reality Pipeline for Texture Extraction and Homography Mapping",
           section: "Projects",handler: () => {
               window.location.href = "/projects/cohesive_ar/";
-            },},{id: "projects-in-motion-har-using-deepconvlstm",
-          title: 'In Motion - HAR using DeepConvLSTM',
+            },},{id: "projects-eyetts",
+          title: 'EyeTTS',
+          description: "Evaluating and Calibrating Eye Tracking for Mobile Mixed Reality",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/eyetts_for_mobile_mr/";
+            },},{id: "projects-deepconvlstm-for-wearable-human-activity-recognition",
+          title: 'DeepConvLSTM for Wearable Human Activity Recognition',
           description: "Human Activity Recognition using DeepConvLSTM and Smartphone Sensors.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/in_motion_har_deepconvlstm/";
@@ -74,13 +79,13 @@ ninja.data = [{
           description: "LSTM-based Model Predictive Controller for Adaptive Video Streaming",
           section: "Projects",handler: () => {
               window.location.href = "/projects/jitternot/";
-            },},{id: "projects-lamport-39-s-mutex-simulation-with-centralized-blockchain",
-          title: 'Lamport&amp;#39;s Mutex Simulation with Centralized Blockchain',
+            },},{id: "projects-distributed-mutual-exclusion-under-adversarial-networks",
+          title: 'Distributed Mutual Exclusion under Adversarial Networks',
           description: "An investigation into distributed mutual exclusion within an adversarial network topology.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/lamport_mutex_simulation_with_blockchain/";
-            },},{id: "projects-non-destructive-fruit-ripeness-classification",
-          title: 'Non-Destructive Fruit Ripeness Classification',
+            },},{id: "projects-thermal-imaging-for-non-destructive-fruit-ripeness-classification",
+          title: 'Thermal Imaging for Non-Destructive Fruit Ripeness Classification',
           description: "An early work, utilizing IR thermal signatures and supervised machine learning classifiers to determine berry ripeness states.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/non_destructive_fruit_ripeness_classification/";
@@ -89,14 +94,14 @@ ninja.data = [{
           description: "A low-cost, dual-axis solar tracking system designed as a mechanical Maximum Power Point Tracker (MPPT) using an Arduino Uno and LDR sensors.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/simplified_solar_tracker_for_pv_panels/";
-            },},{id: "projects-spell-training-in-vr",
-          title: 'Spell Training in VR',
-          description: "A Unity-based VR experience that offers users an innovative interaction system—sketching in midair to summon and manipulate in-game characters.",
+            },},{id: "projects-spell-training-vr",
+          title: 'Spell Training VR',
+          description: "Mid-Air Gesture Interaction in Virtual Reality",
           section: "Projects",handler: () => {
               window.location.href = "/projects/spell_training_in_vr/";
             },},{id: "projects-tweeter",
           title: 'Tweeter',
-          description: "A Distributed Testbed for Stress-Testing and Bottleneck Optimization",
+          description: "Distributed Systems Testbed for Scalability Analysis",
           section: "Projects",handler: () => {
               window.location.href = "/projects/tweeter/";
             },},{id: "teachings-cmpsc-189b-senior-computer-systems-project-capstone",
