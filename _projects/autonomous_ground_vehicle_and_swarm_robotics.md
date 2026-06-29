@@ -15,8 +15,7 @@ category: Autonomous Systems
 ---
 
 
-During my undergraduate years at IIT Kharagpur, I served as a core research and technical team member of the [**Autonomous Ground Vehicle (AGV)**](http://www.agv.iitkgp.ac.in/) and [**Swarm**](https://swarm-iitkgp.github.io/index.html) research groups. My work sat at the intersection of Robot Learning, Spatial Perception, and Control Theory, focusing on building fully autonomous, decentralized systems capable of navigating complex, unmodeled indoor and outdoor physical environments.
-
+During my undergraduate years at IIT Kharagpur, I was a core research and technical team member of the [**Autonomous Ground Vehicle (AGV)**](http://www.agv.iitkgp.ac.in/) and [**Swarm**](https://swarm-iitkgp.github.io/index.html) research groups. As part of the AGV team, I contributed to the development of **Eklavya 6.0**, the autonomous ground vehicle that finished **Runner-Up at the Intelligent Ground Vehicle Competition (IGVC) 2018**. Watch the [**competition demonstration**](https://www.youtube.com/watch?v=nu-RGhk0T80) or explore the team's broader work on the [**AGV Research Group YouTube Channel**](https://www.youtube.com/@agvkgp). My work sat at the intersection of robot learning, spatial perception, motion planning, and control, focusing on building fully autonomous, decentralized systems capable of navigating complex, unstructured indoor and outdoor environments.
 ---
 
 #### Core Domains & Areas of Expertise
