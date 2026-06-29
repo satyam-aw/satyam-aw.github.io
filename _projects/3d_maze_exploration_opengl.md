@@ -8,7 +8,7 @@ importance: 20
 selected: true
 download_link: https://github.com/satyam-aw/3d_Maze_openGL/raw/refs/heads/main/resources/Play_Game.zip
 demo_video: https://youtu.be/9cJ7eTtbbqo
-category: HCI and Computer Graphics
+category: Systems Engineering
 github: https://github.com/satyam-aw/3d_Maze_openGL
 giscus_comments: true
 giscus_repo: satyam-aw/3d_Maze_openGL

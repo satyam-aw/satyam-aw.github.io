@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Autonomous Ground Vehicle and Swarm Robotics
+title: Autonomous Ground Vehicle Navigation & Swarm Robotics
 description: Developed perception, motion-planning, and decentralized coordination systems for the institute's AGV and swarm robotics research groups.
 img: assets/img/9_agv.webp
 images: 
@@ -10,8 +10,8 @@ images:
 completed_on: IIT-KGP, 2016-2018
 selected: true
 demo_video: https://www.youtube.com/@agvkgp
-importance: 3
-category: Embedded Systems and Robotics
+importance: 2
+category: Autonomous Systems & Robotics
 ---
 
 

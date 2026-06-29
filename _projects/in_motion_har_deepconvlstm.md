@@ -1,12 +1,12 @@
 ---
 layout: page
-title: In Motion - HAR using DeepConvLSTM 
+title: DeepConvLSTM for Wearable Human Activity Recognition
 description: Human Activity Recognition using DeepConvLSTM and Smartphone Sensors. 
 completed_on: IIT-KGP, Nov '19
 img: assets/img/5.png
-importance: 3
+importance: 10
 selected: true
-category: "Sequential Decision Models, Generative AI, and Applied ML"
+category: "Machine Learning & Intelligent Systems"
 related_publications: true
 ---
 

@@ -5,7 +5,7 @@ permalink: /projects/
 description: A growing collection of cool projects.
 nav: true
 nav_order: 3
-display_categories: ["Sequential Decision Models, Generative AI, and Applied ML", HCI and Computer Graphics, Embedded Systems and Robotics, Distributed Systems]
+display_categories: [Autonomous Systems & Robotics, Spatial Perception & XR, Machine Learning & Intelligent Systems, Systems Engineering, Engineering Projects]
 horizontal: false
 ---
 

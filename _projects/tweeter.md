@@ -1,11 +1,11 @@
 ---
 layout: page
 title: Tweeter
-description: A Distributed Testbed for Stress-Testing and Bottleneck Optimization
+description: Distributed Systems Testbed for Scalability Analysis
 completed_on: UCSB, Fall 21
 img: assets/img/8.webp
 importance: 2
-category: Distributed Systems
+category: Systems Engineering
 project_pdf: https://docs.google.com/document/d/1oxVZuh_Wj5Tc_Jv-8qsjNRmkKm0Kov0G5AQeYhBpz3M/edit?usp=sharing
 github: https://github.com/satyam-aw/Tweeters
 giscus_comments: true

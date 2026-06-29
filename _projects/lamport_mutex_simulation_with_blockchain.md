@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Lamport's Mutex Simulation with Centralized Blockchain
+title: Distributed Mutual Exclusion under Adversarial Networks
 description: An investigation into distributed mutual exclusion within an adversarial network topology.
 img: /assets/img/lamport_cover.jpg # Replace with a preview image if you have one
 importance: 3
 completed_on: UCSB, Winter 22 
-category: Distributed Systems
+category: Systems Engineering
 related_publications: false
 github: https://github.com/satyam-aw/lamport-blockchain-mutex
 demo_video: https://www.youtube.com/watch?v=K6w52aim0ig

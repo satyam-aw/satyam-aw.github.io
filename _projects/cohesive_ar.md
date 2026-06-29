@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CohesiveAR for Interactive Design
+title: CohesiveAR
 description: Augmented Reality Pipeline for Texture Extraction and Homography Mapping
 img: assets/img/1.png
 images: 
@@ -10,9 +10,9 @@ images:
 download_link: https://drive.google.com/file/d/1JFnizZqqHfdgrDATeiZgwWax0WHh_LOp/view?usp=sharing
 completed_on: UCSB, Fall 22
 demo_video: https://www.youtube.com/watch?v=eUzmJmamqFk
-importance: 10
+importance: 6
 selected: true
-category: HCI and Computer Graphics
+category: Spatial Perception & XR
 github: https://github.com/CohesiveAR/.github
 giscus_comments: true
 giscus_repo: CohesiveAR/.github
