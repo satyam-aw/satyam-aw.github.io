@@ -6,7 +6,7 @@ completed_on: UCSB, Spring 22
 img: /assets/img/6_jitternot_block_diag.jpg
 importance: 4
 selected: true
-category: "Autonomous Systems & Robotics"
+category: "Autonomous Systems"
 project_pdf: /assets/pdf/jitternot_293N_ml_ns.pdf
 github: https://github.com/satyam-aw/Jitternot-LSTM-MPC-for-ABR
 giscus_comments: true

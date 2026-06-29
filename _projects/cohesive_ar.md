@@ -12,7 +12,7 @@ completed_on: UCSB, Fall 22
 demo_video: https://www.youtube.com/watch?v=eUzmJmamqFk
 importance: 6
 selected: true
-category: Spatial Perception & XR
+category: Spatial Perception
 github: https://github.com/CohesiveAR/.github
 giscus_comments: true
 giscus_repo: CohesiveAR/.github

@@ -5,7 +5,7 @@ description: An early work, utilizing IR thermal signatures and supervised machi
 completed_on: IIT-KGP, May '18
 img: /assets/img/4_ripeness_classifier.png
 importance: 11
-category: "Machine Learning & Intelligent Systems"
+category: "Machine Learning"
 project_pdf: /assets/pdf/4_fruits.pdf # you can also use external links here
 ---
 

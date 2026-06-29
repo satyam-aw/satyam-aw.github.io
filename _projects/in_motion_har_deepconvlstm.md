@@ -6,7 +6,7 @@ completed_on: IIT-KGP, Nov '19
 img: assets/img/5.png
 importance: 10
 selected: true
-category: "Machine Learning & Intelligent Systems"
+category: "Machine Learning"
 related_publications: true
 ---
 

@@ -2,10 +2,17 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of cool projects.
+description: A portfolio of research projects exploring autonomous systems, spatial perception, and intelligent decision-making.
 nav: true
 nav_order: 3
-display_categories: [Autonomous Systems & Robotics, Spatial Perception & XR, Machine Learning & Intelligent Systems, Systems Engineering, Engineering Projects]
+display_categories:
+  [
+    Autonomous Systems,
+    Spatial Perception,
+    Machine Learning,
+    Systems Engineering,
+    Engineering
+  ]
 horizontal: false
 ---
 
