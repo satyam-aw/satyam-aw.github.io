@@ -5,6 +5,10 @@ description: Evaluating and Calibrating Eye Tracking for Mobile Mixed Reality
 img: assets/img/publication_preview/eyetts.webp
 importance: 1
 category: Spatial Perception
+demo_video: https://www.youtube.com/playlist?list=PLQbqwztmTvAVAUClXj-sOkpQ9sBJbT5pG
+github: https://github.com/CohesiveAR/.github
+project_pdf: assets/pdf/IEEEVR-2024-Poster-A0.pdf
+
 ---
 
 > ### Project at a Glance
