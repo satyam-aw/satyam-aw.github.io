@@ -14,53 +14,81 @@ importance: 2
 category: Autonomous Systems
 ---
 
+During my undergraduate years at IIT Kharagpur, I was a core technical member of the [**Autonomous Ground Vehicle (AGV)**](http://www.agv.iitkgp.ac.in/) and [**Swarm Robotics**](https://swarm-iitkgp.github.io/index.html) research groups. As part of the AGV team, I contributed to the development of **Eklavya 6.0**, an autonomous ground vehicle that finished **Runner-Up at the Intelligent Ground Vehicle Competition (IGVC) 2018**. You can watch the [**competition demonstration**](https://www.youtube.com/watch?v=nu-RGhk0T80) or explore the team’s broader work on the [**AGV Research Group YouTube Channel**](https://www.youtube.com/@agvkgp).
 
-During my undergraduate years at IIT Kharagpur, I was a core research and technical team member of the [**Autonomous Ground Vehicle (AGV)**](http://www.agv.iitkgp.ac.in/) and [**Swarm**](https://swarm-iitkgp.github.io/index.html) research groups. As part of the AGV team, I contributed to the development of **Eklavya 6.0**, the autonomous ground vehicle that finished **Runner-Up at the Intelligent Ground Vehicle Competition (IGVC) 2018**. Watch the [**competition demonstration**](https://www.youtube.com/watch?v=nu-RGhk0T80) or explore the team's broader work on the [**AGV Research Group YouTube Channel**](https://www.youtube.com/@agvkgp). My work sat at the intersection of robot learning, spatial perception, motion planning, and control, focusing on building fully autonomous, decentralized systems capable of navigating complex, unstructured indoor and outdoor environments.
----
-
-#### Core Domains & Areas of Expertise
-
-* **Spatial Perception**: Designing pipelines for real-time dense semantic segmentation and structural environment mapping.
-* **Motion Planning & Control**: Developing global/local trajectory planning frameworks for non-holonomic, constraint-bound ground vehicles.
-* **Sim-to-Real (Sim2Real) Transfer**: Building hardware-agnostic ROS abstractions to validate software loops in high-fidelity simulation prior to physical deployment.
-* **State Estimation & Multi-Modal Sensor Fusion**: Fusing asynchronous telemetry from LiDAR, IMU, GPS, and camera sensors to resolve state estimation under drift conditions.
+My work focused on building autonomous navigation and coordination systems for mobile robots operating in complex indoor and outdoor environments. Across these projects, I worked on perception, motion planning, state estimation, sensor fusion, inter-robot communication, ROS-based system integration, visualization/debugging workflows, and low-level embedded control.
 
 ---
 
-#### Key Projects & Technical Details
+## Core Technical Areas
 
-##### 1. Autonomous Navigation Pipeline for AGV
-We engineered an end-to-end, hardware-agnostic navigation stack for an outdoor autonomous rover designed to navigate unstructured campus environments under strict runtime limits.
+- **Spatial Perception**: Developed vision-based pipelines for obstacle detection, segmentation, and structural environment understanding.
+- **Motion Planning & Control**: Worked on global and local planning approaches for non-holonomic ground robots operating under real-time constraints.
+- **Simulation-to-Hardware Deployment**: Built and tested ROS-based software modules in simulation before validating them on physical robot platforms.
+- **State Estimation & Sensor Fusion**: Integrated telemetry from LiDAR, IMU, GPS, wheel encoders, and camera sensors to improve localization and navigation robustness.
+- **ROS Tooling & Visualization**: Used Gazebo and RViz for simulation, debugging, sensor-stream inspection, trajectory visualization, and system-level validation.
+- **Multi-Agent Coordination**: Implemented decentralized coordination strategies for low-cost mobile robots using local communication and relative pose estimation.
+
+---
+
+## 1. Autonomous Navigation Pipeline for AGV
+
+We developed a ROS-based autonomous navigation stack for an outdoor ground vehicle designed to navigate unstructured environments under competition-level runtime and safety constraints.
 
 <figure class="mt-3 mt-md-0 text-center">
-    {% include figure.liquid path="assets/img/9_agv.webp" title="example image" class="img-fluid rounded" %}
-  <figcaption class="caption">Figure 1: AGV Dune buggy, a full-scale autonomous buggy testbed developed by the Autonomous Ground Vehicles group for field-testing real-world perception and navigation algorithms</figcaption>
+  {% include figure.liquid path="assets/img/9_agv.webp" title="Autonomous Ground Vehicle" class="img-fluid rounded" %}
+  <figcaption class="caption">
+    Figure 1: AGV dune buggy, a full-scale autonomous testbed developed by the Autonomous Ground Vehicles group for field-testing real-world perception, planning, and navigation algorithms.
+  </figcaption>
 </figure>
 
-* **Perception & Vision**: Implemented robust visual obstacle segmentation using a custom U-Net architecture alongside traditional computer vision (OpenCV) filters optimized for real-time embedded deployment.
-* **Hybrid Motion Planning**: Developed a hierarchical trajectory generation system, combining global path generation ($A^*$ / Dijkstra) with a **Dynamic Window Approach (DWA)** local planner for real-time, non-holonomic collision avoidance.
-* **State Estimation**: Utilized an **Extended Kalman Filter (EKF)** to handle multi-modal sensor fusion by merging noisy wheel encoders, IMU, and GPS telemetry, drastically minimizing dead-reckoning tracking drift.
-* **Sim2Real Optimization**: Developed the entire software stack within the **ROS** ecosystem using C++ and Python. By completely decoupling the core perception and planning algorithms from physical actuator configs, we achieved a zero-shot **Sim2Real transfer** from simulation to hardware.
-
-##### 2. Swarm Robotics & Swarm Intelligence
-As part of the [Swarm](https://swarm-iitkgp.github.io/index.html) research group, I formulated decentralized coordination protocols and peer-to-peer relative pose estimation mechanics for low-cost mobile robots.
-
-<figure class="mt-3 mt-md-0 text-center">
-    {% include figure.liquid path="assets/img/9_swarm.jpg" title="Swarm Communication and Tracking Workflows" class="img-fluid rounded" %}
-  <figcaption class="caption">Figure 2: Modular, peer-to-peer swarm agents utilizing onboard Linux compute and vision sensors for decentralized relative pose estimation swarm coordination</figcaption>
-</figure>
-
-* **Algorithms**:
-  1. **Decentralized Multi-Agent Path Planning**: Implemented a decentralized routing framework where each agent computes its own path independently. Agents treat adjacent robots as dynamic physical obstacles and broadcast localized intent vectors to resolve spatial boundary conflicts without a centralized master node.
-  2. **Relative Pose Estimation**: To overcome occlusion and bandwidth limits as the swarm scales, individual robots track only their immediate neighbors. Implemented an observation-only broadcasting strategy allowing peer agents to receive and update their local pose graphs to infer the global swarm map. Inter-agent relative pose was computed using **AprilTags** as fiducial markers.
-
-* **Communication**: Configured an ad-hoc mesh network topology using **XBee modules** to enforce low-latency state sharing and deterministic message routing between adjacent robots.
-* **Hardware & Low-Level Control**: Designed custom PCBs hosting **ATmega microcontrollers** to manage closed-loop motor control loops, localized power distribution, and IR sensor arrays.
+- **Perception & Vision**: Contributed to visual obstacle-detection pipelines using OpenCV-based image processing and learning-based segmentation approaches, including U-Net-style architectures for scene understanding.
+- **Motion Planning**: Worked on hierarchical planning methods combining global path-search algorithms such as $A^*$ and Dijkstra with local obstacle-avoidance strategies for real-time navigation.
+- **Local Control & Collision Avoidance**: Integrated local planning concepts such as the Dynamic Window Approach to support feasible trajectory generation for a non-holonomic ground vehicle.
+- **State Estimation**: Used Extended Kalman Filter-based sensor fusion to combine noisy wheel encoder, IMU, GPS, and LiDAR/camera-derived measurements for more reliable localization.
+- **ROS-Based Integration & Visualization**: Developed modular C++ and Python software components within the ROS ecosystem, using Gazebo for simulation and RViz for debugging, visualization, sensor-stream inspection, trajectory validation, and end-to-end system integration before deployment on physical hardware.
 
 ---
 
-#### Technical Stack
+## 2. Swarm Robotics & Decentralized Coordination
 
-* **Languages**: C++, Python, MATLAB
-* **Frameworks \& Tools**: ROS (Robot Operating System), OpenCV, PyTorch
-* **Hardware \& Simulation**: Gazebo, Hokuyo LiDAR, Raspberry Pi, BeagleBone Black, Arduino
+As part of the Swarm Robotics group, I worked on decentralized coordination, peer-to-peer communication, and relative pose estimation for teams of low-cost mobile robots.
+
+<figure class="mt-3 mt-md-0 text-center">
+  {% include figure.liquid path="assets/img/9_swarm.jpg" title="Swarm Robotics Platform" class="img-fluid rounded" %}
+  <figcaption class="caption">
+    Figure 2: Modular swarm agents using onboard compute, local sensing, and peer-to-peer communication for decentralized coordination and relative pose estimation.
+  </figcaption>
+</figure>
+
+- **Decentralized Multi-Agent Path Planning**: Implemented coordination strategies where each robot planned locally while treating neighboring robots as dynamic obstacles. Agents exchanged local intent and state information to reduce spatial conflicts without relying on a centralized controller.
+- **Relative Pose Estimation**: Developed neighbor-based relative pose estimation workflows using fiducial markers such as AprilTags, allowing robots to estimate nearby agents’ positions and maintain a local representation of the swarm.
+- **Peer-to-Peer Communication**: Configured ad-hoc communication using XBee modules to support low-latency state sharing between nearby robots.
+- **Embedded Control & Hardware Integration**: Worked with ATmega-based custom PCB designs for low-level motor control, power distribution, and IR sensor integration.
+- **System-Level Testing**: Validated coordination behavior across perception, communication, and control loops on physical robot platforms.
+
+---
+
+## Research Relevance
+
+This project shaped my current research interests in safe and reliable autonomy, particularly at the intersection of perception, planning, control, and multi-agent coordination. The AGV work exposed me to the challenges of deploying autonomy stacks on real robots under noisy sensing, imperfect state estimation, non-holonomic motion constraints, and real-time execution limits.
+
+The Swarm Robotics work further motivated my interest in decentralized decision-making, relative localization, and coordination under communication and sensing limitations. Together, these experiences now inform my broader interest in learning-enhanced model predictive control, safe multi-agent autonomy, and robot decision-making under uncertainty.
+
+---
+
+## Technical Stack
+
+- **Languages**: C++, Python, MATLAB
+- **Frameworks & Tools**: ROS, OpenCV, PyTorch, RViz
+- **Simulation & Visualization**: Gazebo, RViz
+- **Hardware**: Hokuyo LiDAR, IMU, GPS, Raspberry Pi, BeagleBone Black, Arduino, ATmega microcontrollers, XBee modules, AprilTags
+
+---
+
+## Links
+
+- [AGV Research Group](http://www.agv.iitkgp.ac.in/)
+- [Swarm Robotics, IIT Kharagpur](https://swarm-iitkgp.github.io/index.html)
+- [Eklavya 6.0 IGVC 2018 Demonstration](https://www.youtube.com/watch?v=nu-RGhk0T80)
+- [AGV Research Group YouTube Channel](https://www.youtube.com/@agvkgp)
