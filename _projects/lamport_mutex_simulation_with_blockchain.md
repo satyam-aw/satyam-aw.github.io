@@ -3,7 +3,7 @@ layout: page
 title: Distributed Mutual Exclusion under Adversarial Networks
 description: An investigation into distributed mutual exclusion within an adversarial network topology.
 img: /assets/img/lamport_cover.jpg # Replace with a preview image if you have one
-importance: 3
+importance: 7
 completed_on: UCSB, Winter 22 
 category: Systems Engineering
 related_publications: false

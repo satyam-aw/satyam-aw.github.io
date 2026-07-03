@@ -5,7 +5,6 @@ description: First-person 3D maze game built with C++ and legacy fixed-function 
 img: assets/img/3.png
 completed_on: UCSB, Spring 22
 importance: 20
-selected: true
 download_link: https://github.com/satyam-aw/3d_Maze_openGL/raw/refs/heads/main/resources/Play_Game.zip
 demo_video: https://youtu.be/9cJ7eTtbbqo
 category: Systems Engineering

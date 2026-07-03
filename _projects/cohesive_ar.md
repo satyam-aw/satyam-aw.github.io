@@ -11,7 +11,6 @@ download_link: https://drive.google.com/file/d/1JFnizZqqHfdgrDATeiZgwWax0WHh_LOp
 completed_on: UCSB, Fall 22
 demo_video: https://www.youtube.com/watch?v=eUzmJmamqFk
 importance: 6
-selected: true
 category: Spatial Perception
 github: https://github.com/CohesiveAR/.github
 giscus_comments: true
