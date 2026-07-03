@@ -54,6 +54,11 @@ ninja.data = [{
           description: "Developed perception, motion-planning, and decentralized coordination systems for the institute&#39;s AGV and swarm robotics research groups.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/autonomous_ground_vehicle_and_swarm_robotics/";
+            },},{id: "projects-battleship-solitaire-solver",
+          title: 'Battleship Solitaire Solver',
+          description: "Solver-aided constraint synthesis for Battleship Solitaire using Rosette/Racket, symbolic variables, and angelic execution.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/battleship-solitaire-solver/";
             },},{id: "projects-cohesivear",
           title: 'CohesiveAR',
           description: "Augmented Reality Pipeline for Texture Extraction and Homography Mapping",
