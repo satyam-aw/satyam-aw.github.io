@@ -32,7 +32,7 @@ selected_projects:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Computer Science researcher focused on **Autonomous Systems, Spatial Perception**, and **Model-Based and Learning-Based Control**, with interests in long-horizon decision-making for robust robotic autonomy.
+I am a Computer Science researcher working at the intersection of **autonomous systems, spatial perception**, and **model-based and learning-based control**, with a focus on enabling robust long-horizon decision-making in robotic systems.
 
 I completed my M.S. in Computer Science at UC Santa Barbara, where I conducted research in the Four Eyes Lab under Prof. Tobias Höllerer and Prof. Michael Beyeler. My work centered on **spatial perception** and eye-tracking calibration for mixed-reality locomotion, investigating how sensing systems behave under motion-induced uncertainty. Prior to that, I earned a B.Tech. in Electrical Engineering with a Minor in Computer Science from IIT Kharagpur, where I worked on autonomous ground vehicles and swarm robotics, developing **perception**, **localization**, **planning**, and **decentralized coordination** pipelines for embodied robotic platforms.
 
