@@ -7,7 +7,7 @@ img: /assets/img/6_jitternot_block_diag.jpg
 importance: 4
 selected: true
 category: "Autonomous Systems"
-project_pdf: /assets/pdf/jitternot_293N_ml_ns.pdf
+project_pdf: https://satyam-aw.github.io/Jitternot_CS293N_Final_Report/main.pdf
 github: https://github.com/satyam-aw/Jitternot-LSTM-MPC-for-ABR
 giscus_comments: true
 giscus_repo: satyam-aw/Jitternot-LSTM-MPC-for-ABR
@@ -108,4 +108,4 @@ used by commercial VCAs by employing DL-based solutions since, unlike rule-based
 approaches, they can inherently account for fluctuating network conditions across different
 deployment environments and adapt to them dynamically.
 
-Please read our [full report](/assets/pdf/jitternot_293N_ml_ns.pdf) for complete implementation details and findings.
+Please read our [full report](https://satyam-aw.github.io/Jitternot_CS293N_Final_Report/main.pdf) for complete implementation details and findings.
