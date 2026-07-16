@@ -6,7 +6,7 @@ img: assets/img/publication_preview/eyetts.webp
 importance: 1
 category: Spatial Perception
 demo_video: https://www.youtube.com/playlist?list=PLQbqwztmTvAVAUClXj-sOkpQ9sBJbT5pG
-github: https://github.com/CohesiveAR/.github
+github: https://github.com/satyam-aw/EyeTTS_Calibration-Framework
 project_pdf: assets/pdf/IEEEPosterEyeTracking2024.pdf
 
 ---
