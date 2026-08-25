@@ -7,6 +7,7 @@ img: assets/img/projects/safe-output-fb-mpc.jpg
 category: "Safe & Intelligent Control"
 importance: 2
 selected: true
+completed_on: "Summer 26-Present"
 ---
 
 ## State-Dependent Robust Output-Feedback MPC

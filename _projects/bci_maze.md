@@ -2,11 +2,10 @@
 layout: page
 
 title: EEG-Based BCI for 3D Navigation
-description: Developing a 4-channel EEG brain-computer interface for real-time intent decoding and navigation in an interactive 3D environment
-
+description: Developing a 4-channel SSVEP-based EEG brain-computer interface for real-time intent decoding and navigation in an interactive 3D environment.
 img: assets/img/projects/bci_maze/bioamp-hardware.jpg
 
-completed_on: "BCI Extension: 2026–Present"
+completed_on: "(BCI Extension) 2026–Present"
 selected: true
 
 importance: 1

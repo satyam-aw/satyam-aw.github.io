@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Ph.D. Applicant | Neural Interfaces & Intelligent Control | Ex-Intuit & Yahoo SWE | UCSB MS & IIT Kharagpur Alum
+subtitle: Ph.D. Applicant | Neural Interfaces & Intelligent Control | UCSB MS · IIT Kharagpur · Ex-Intuit/Yahoo
 
 profile:
   align: right
@@ -32,8 +32,6 @@ selected_projects:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Computer Science researcher interested in **neural interfaces, physiological sensing, and intelligent control**, with a broader goal of developing systems that can reliably interpret biological signals and use them for closed-loop interaction and decision-making. My current work spans **EEG-based brain-computer interfaces, human sensing, and uncertainty-aware control**, combining signal processing, machine learning, and model-based methods.
+I am a researcher with a background in electrical engineering and computer science, interested in **neural interfaces, physiological sensing, and intelligent control**. My current work spans EEG-based brain–computer interfaces and uncertainty-aware control for closed-loop systems.
 
-I completed my M.S. in Computer Science at UC Santa Barbara, where I conducted research in the Four Eyes Lab under Prof. Tobias Höllerer and Prof. Michael Beyeler. My work investigated **eye-tracking behavior and calibration during mixed-reality locomotion**, studying how gaze sensing accuracy changes under motion and across devices. I am currently extending these interests toward **EEG-based neural interfaces** while also working on robust output-feedback control with state-dependent estimation and tracking uncertainty. Prior to UCSB, I earned a B.Tech. in Electrical Engineering with a Minor in Computer Science from IIT Kharagpur, where my work included wearable sensing, autonomous systems, and robotics.
-
-Before returning to full-time research, I worked as a software engineer at **Intuit and Yahoo**, building large-scale production systems under real-world latency, reliability, and resource constraints. These experiences continue to shape my interest in developing **robust, data-driven systems that connect sensing, inference, and closed-loop decision-making**.
+I completed my M.S. in Computer Science at UC Santa Barbara, where I worked in the Four Eyes Lab with Prof. Tobias Höllerer and Prof. Michael Beyeler on **eye-tracking behavior** and calibration during mixed-reality locomotion, including fixation, saccades, and smooth pursuit. I am currently working with Dr. Johannes Köhler at Imperial College London on **robust output-feedback control** with state-dependent uncertainty.
