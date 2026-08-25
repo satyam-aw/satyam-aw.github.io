@@ -400,34 +400,34 @@ These measurements will allow comparison between different signal-processing and
   margin: 15px 0 25px 0;
   background: var(--global-card-bg-color);
   border-radius: 6px;
-">
+" markdown="1">
 
-**Stage 1 — EEG acquisition**
+**Stage 1 — EEG acquisition**  
 Acquire clean multi-channel EEG and characterize signal quality.
 
 ↓
 
-**Stage 2 — Offline SSVEP decoding**
+**Stage 2 — Offline SSVEP decoding**  
 Collect labeled trials and evaluate spectral / CCA-based classification.
 
 ↓
 
-**Stage 3 — Online intent decoding**
+**Stage 3 — Online intent decoding**  
 Stream EEG and produce movement predictions in real time.
 
 ↓
 
-**Stage 4 — Closed-loop maze control**
+**Stage 4 — Closed-loop maze control**  
 Connect the neural decoder to the interactive navigation interface.
 
 ↓
 
-**Stage 5 — Confidence-aware control**
+**Stage 5 — Confidence-aware control**  
 Evaluate decision thresholds and temporal evidence accumulation.
 
 ↓
 
-**Stage 6 — Shared BCI navigation**
+**Stage 6 — Shared BCI navigation**  
 Investigate environment-aware filtering of neural commands.
 
 </div>
