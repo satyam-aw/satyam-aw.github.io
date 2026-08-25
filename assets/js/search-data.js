@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "A portfolio of research projects exploring autonomous systems, spatial perception, and intelligent decision-making.",
+          description: "Research projects in neural interfaces, physiological sensing, and safe intelligent control.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -44,9 +44,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/zen-garden/";
           },
-        },{id: "projects-3d-maze-exploration-via-fixed-function-opengl",
-          title: '3D Maze Exploration via Fixed-Function OpenGL',
-          description: "First-person 3D maze game built with C++ and legacy fixed-function OpenGL via FreeGLUT",
+        },{id: "projects-eeg-based-bci-for-3d-navigation",
+          title: 'EEG-Based BCI for 3D Navigation',
+          description: "Developing a 4-channel EEG brain-computer interface for real-time intent decoding and navigation in an interactive 3D environment",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3d_maze_exploration_opengl/";
             },},{id: "projects-autonomous-ground-vehicle-navigation-amp-swarm-robotics",
@@ -66,12 +66,12 @@ ninja.data = [{
               window.location.href = "/projects/cohesive_ar/";
             },},{id: "projects-eyetts",
           title: 'EyeTTS',
-          description: "Evaluating and Calibrating Eye Tracking for Mobile Mixed Reality",
+          description: "Eye-tracking calibration and gaze analysis during mixed-reality locomotion.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/eyetts_for_mobile_mr/";
-            },},{id: "projects-deepconvlstm-for-wearable-human-activity-recognition",
-          title: 'DeepConvLSTM for Wearable Human Activity Recognition',
-          description: "Human Activity Recognition using DeepConvLSTM and Smartphone Sensors.",
+            },},{id: "projects-wearable-human-activity-recognition",
+          title: 'Wearable Human Activity Recognition',
+          description: "DeepConvLSTM modeling of inertial signals for human-motion recognition.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/in_motion_har_deepconvlstm/";
             },},{id: "projects-dual-stage-agent-pipelines-for-generative-ui",
@@ -81,7 +81,7 @@ ninja.data = [{
               window.location.href = "/projects/intuit_generative_ui/";
             },},{id: "projects-jitternot",
           title: 'JitterNot',
-          description: "LSTM-based Model Predictive Controller for Adaptive Video Streaming",
+          description: "Predictive control of adaptive video streaming using learned network forecasts.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/jitternot/";
             },},{id: "projects-distributed-mutual-exclusion-under-adversarial-networks",
@@ -99,11 +99,21 @@ ninja.data = [{
           description: "A low-cost, dual-axis solar tracking system designed as a mechanical Maximum Power Point Tracker (MPPT) using an Arduino Uno and LDR sensors.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/simplified_solar_tracker_for_pv_panels/";
+            },},{id: "projects-smartwatch-for-wall-writing",
+          title: 'SmartWatch for Wall Writing',
+          description: "Real-time transcription of free-form wall writing from smartwatch inertial sensing",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/smartwatch_wall_writing/";
             },},{id: "projects-spell-training-vr",
           title: 'Spell Training VR',
           description: "Mid-Air Gesture Interaction in Virtual Reality",
           section: "Projects",handler: () => {
               window.location.href = "/projects/spell_training_in_vr/";
+            },},{id: "projects-state-dependent-robust-output-feedback-mpc",
+          title: 'State-Dependent Robust Output-Feedback MPC',
+          description: "State-dependent estimation and tracking-error bounds for safe output-feedback predictive control",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/state-dependent-robust-output-fb-mpc/";
             },},{id: "projects-tweeter",
           title: 'Tweeter',
           description: "Distributed Systems Testbed for Scalability Analysis",
