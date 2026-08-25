@@ -44,12 +44,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/zen-garden/";
           },
-        },{id: "projects-eeg-based-bci-for-3d-navigation",
-          title: 'EEG-Based BCI for 3D Navigation',
-          description: "Developing a 4-channel EEG brain-computer interface for real-time intent decoding and navigation in an interactive 3D environment",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/3d_maze_exploration_opengl/";
-            },},{id: "projects-autonomous-ground-vehicle-navigation-amp-swarm-robotics",
+        },{id: "projects-autonomous-ground-vehicle-navigation-amp-swarm-robotics",
           title: 'Autonomous Ground Vehicle Navigation &amp;amp; Swarm Robotics',
           description: "Developed perception, motion-planning, and decentralized coordination systems for the institute&#39;s AGV and swarm robotics research groups.",
           section: "Projects",handler: () => {
@@ -59,6 +54,11 @@ ninja.data = [{
           description: "Solver-aided constraint synthesis for Battleship Solitaire using Rosette/Racket, symbolic variables, and angelic execution.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/battleship-solitaire-solver/";
+            },},{id: "projects-eeg-based-bci-for-3d-navigation",
+          title: 'EEG-Based BCI for 3D Navigation',
+          description: "Developing a 4-channel EEG brain-computer interface for real-time intent decoding and navigation in an interactive 3D environment",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/bci_maze/";
             },},{id: "projects-cohesivear",
           title: 'CohesiveAR',
           description: "Augmented Reality Pipeline for Texture Extraction and Homography Mapping",
@@ -88,17 +88,22 @@ ninja.data = [{
           title: 'Distributed Mutual Exclusion under Adversarial Networks',
           description: "An investigation into distributed mutual exclusion within an adversarial network topology.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/lamport_mutex_simulation_with_blockchain/";
+              window.location.href = "/projects/old/lamport_mutex_simulation_with_blockchain/";
             },},{id: "projects-thermal-imaging-for-non-destructive-fruit-ripeness-classification",
           title: 'Thermal Imaging for Non-Destructive Fruit Ripeness Classification',
           description: "An early work, utilizing IR thermal signatures and supervised machine learning classifiers to determine berry ripeness states.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/non_destructive_fruit_ripeness_classification/";
+              window.location.href = "/projects/old/non_destructive_fruit_ripeness_classification/";
             },},{id: "projects-simplified-solar-tracker-for-pv-panels",
           title: 'Simplified Solar Tracker for PV Panels',
           description: "A low-cost, dual-axis solar tracking system designed as a mechanical Maximum Power Point Tracker (MPPT) using an Arduino Uno and LDR sensors.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/simplified_solar_tracker_for_pv_panels/";
+              window.location.href = "/projects/old/simplified_solar_tracker_for_pv_panels/";
+            },},{id: "projects-tweeter",
+          title: 'Tweeter',
+          description: "Distributed Systems Testbed for Scalability Analysis",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/old/tweeter/";
             },},{id: "projects-smartwatch-for-wall-writing",
           title: 'SmartWatch for Wall Writing',
           description: "Real-time transcription of free-form wall writing from smartwatch inertial sensing",
@@ -114,11 +119,6 @@ ninja.data = [{
           description: "State-dependent estimation and tracking-error bounds for safe output-feedback predictive control",
           section: "Projects",handler: () => {
               window.location.href = "/projects/state-dependent-robust-output-fb-mpc/";
-            },},{id: "projects-tweeter",
-          title: 'Tweeter',
-          description: "Distributed Systems Testbed for Scalability Analysis",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/tweeter/";
             },},{id: "teachings-cmpsc-189b-senior-computer-systems-project-capstone",
           title: 'CMPSC 189B: Senior Computer Systems Project (Capstone)',
           description: "The second quarter of the computer science senior capstone sequence focusing on engineering implementation, testing, and final product deployment.",
