@@ -56,7 +56,7 @@ ninja.data = [{
               window.location.href = "/projects/battleship-solitaire-solver/";
             },},{id: "projects-eeg-based-bci-for-3d-navigation",
           title: 'EEG-Based BCI for 3D Navigation',
-          description: "Developing a 4-channel EEG brain-computer interface for real-time intent decoding and navigation in an interactive 3D environment",
+          description: "Developing a 4-channel SSVEP-based EEG brain-computer interface for real-time intent decoding and navigation in an interactive 3D environment.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/bci_maze/";
             },},{id: "projects-cohesivear",
