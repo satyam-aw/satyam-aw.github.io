@@ -1,12 +1,12 @@
 ---
 layout: page
 title: JitterNot 
-description: LSTM-based Model Predictive Controller for Adaptive Video Streaming
+description: Predictive control of adaptive video streaming using learned network forecasts.
 completed_on: UCSB, Spring 22 
 img: /assets/img/6_jitternot_block_diag.jpg
 importance: 4
 selected: true
-category: "Autonomous Systems"
+category: "Safe & Intelligent Control"
 project_pdf: https://satyam-aw.github.io/Jitternot_CS293N_Final_Report/main.pdf
 github: https://github.com/satyam-aw/Jitternot-LSTM-MPC-for-ABR
 giscus_comments: true

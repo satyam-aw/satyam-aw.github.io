@@ -8,14 +8,13 @@ images:
 - assets/img/9_swarm.jpg
 - assets/img/9_agv_e6.png
 completed_on: IIT-KGP, 2016-2018
-selected: true
 demo_video: https://www.youtube.com/@agvkgp
 importance: 2
-category: Autonomous Systems
+category: "Selected Engineering Projects"
 github: https://github.com/satyam-aw/IGVC_Lane_Detector
 ---
 
-During my undergraduate years at IIT Kharagpur, I was a core technical member of the [**Autonomous Ground Vehicle (AGV)**](http://www.agv.iitkgp.ac.in/) and [**Swarm Robotics**](https://swarm-iitkgp.github.io/index.html) research groups. As part of the AGV team, I contributed to the development of **Eklavya 6.0**, an autonomous ground vehicle that finished **Runner-Up at the Intelligent Ground Vehicle Competition (IGVC) 2018**. You can watch the [**competition demonstration**](https://www.youtube.com/watch?v=nu-RGhk0T80) or explore the team’s broader work on the [**AGV Research Group YouTube Channel**](https://www.youtube.com/@agvkgp).
+During my undergraduate years at IIT Kharagpur, I was a core technical member of the [**Autonomous Ground Vehicle (AGV)**](http://www.agv.iitkgp.ac.in/) and [**Swarm Robotics**](https://swarm-iitkgp.github.io/index.html) research groups. As part of the AGV team, I contributed to the development of **Eklavya**, an autonomous ground vehicle that finished **Runner-Up at the Intelligent Ground Vehicle Competition (IGVC) 2018**. You can watch the [**competition demonstration**](https://www.youtube.com/watch?v=nu-RGhk0T80) or explore the team’s broader work on the [**AGV Research Group YouTube Channel**](https://www.youtube.com/@agvkgp).
 
 My work focused on building autonomous navigation and coordination systems for mobile robots operating in complex indoor and outdoor environments. Across these projects, I worked on perception, motion planning, state estimation, sensor fusion, inter-robot communication, ROS-based system integration, visualization/debugging workflows, and low-level embedded control.
 

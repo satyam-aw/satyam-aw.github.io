@@ -1,10 +1,10 @@
 ---
 layout: page
 title: EyeTTS
-description: Evaluating and Calibrating Eye Tracking for Mobile Mixed Reality
+description: Eye-tracking calibration and gaze analysis during mixed-reality locomotion.
 img: assets/img/publication_preview/eyetts.webp
 importance: 1
-category: Spatial Perception
+category: "Neural Interfaces & Biosignals"
 demo_video: https://www.youtube.com/playlist?list=PLQbqwztmTvAVAUClXj-sOkpQ9sBJbT5pG
 github: https://github.com/satyam-aw/EyeTTS_Calibration-Framework
 project_pdf: assets/pdf/IEEEPosterEyeTracking2024.pdf

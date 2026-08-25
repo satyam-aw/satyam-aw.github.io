@@ -2,16 +2,15 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A portfolio of research projects exploring autonomous systems, spatial perception, and intelligent decision-making.
+description: Research projects in neural interfaces, physiological sensing, and safe intelligent control.
 nav: true
 nav_order: 3
 display_categories:
   [
-    Autonomous Systems,
-    Spatial Perception,
-    Machine Learning,
-    Systems Engineering,
-    Engineering
+    "Neural Interfaces & Biosignals",
+    "Safe & Intelligent Control",
+    "Human Sensing & Interaction",
+    "Selected Engineering Projects",
   ]
 horizontal: false
 ---

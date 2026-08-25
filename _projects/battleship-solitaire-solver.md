@@ -4,10 +4,9 @@ title: Battleship Solitaire Solver
 description: Solver-aided constraint synthesis for Battleship Solitaire using Rosette/Racket, symbolic variables, and angelic execution.
 img: assets/img/projects/battleship-solitaire/battleship-solver-overview.jpg
 importance: 6
-category: Systems Engineering
+category: "Selected Engineering Projects"
 related_publications: false
 project_pdf: /assets/pdf/battleship-solitaire-rosette-report.pdf
-selected: true
 github: https://github.com/satyam-aw/Battleship-Solitaire-Solver
 giscus_comments: true
 giscus_repo: satyam-aw/Battleship-Solitaire-Solver

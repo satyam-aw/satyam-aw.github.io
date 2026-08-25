@@ -5,7 +5,7 @@ description: Mid-Air Gesture Interaction in Virtual Reality
 completed_on: UCSB, Winter 22
 img: assets/img/2.png
 importance: 7
-category: Spatial Perception
+category: "Human Sensing & Interaction"
 project_pdf: /assets/pdf/2_CS291A.pdf
 github: https://github.com/satyam-aw/Spell-Training-in-VR
 giscus_comments: true

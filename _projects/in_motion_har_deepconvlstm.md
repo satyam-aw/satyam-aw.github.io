@@ -1,12 +1,12 @@
 ---
 layout: page
-title: DeepConvLSTM for Wearable Human Activity Recognition
-description: Human Activity Recognition using DeepConvLSTM and Smartphone Sensors. 
+title: Wearable Human Activity Recognition
+description: DeepConvLSTM modeling of inertial signals for human-motion recognition. 
 completed_on: IIT-KGP, Nov '19
 img: assets/img/5.png
 importance: 10
 selected: true
-category: "Machine Learning"
+category: "Neural Interfaces & Biosignals"
 related_publications: true
 ---
 

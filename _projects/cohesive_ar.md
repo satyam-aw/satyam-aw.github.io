@@ -11,7 +11,7 @@ download_link: https://drive.google.com/file/d/1JFnizZqqHfdgrDATeiZgwWax0WHh_LOp
 completed_on: UCSB, Fall 22
 demo_video: https://www.youtube.com/watch?v=eUzmJmamqFk
 importance: 6
-category: Spatial Perception
+category: "Human Sensing & Interaction"
 github: https://github.com/CohesiveAR/.github
 giscus_comments: true
 giscus_repo: CohesiveAR/.github
