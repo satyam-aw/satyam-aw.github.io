@@ -1,6 +1,7 @@
 ---
 layout: page
 title: projects
+seo_title: "Research Projects | Satyam Awasthi"
 permalink: /projects/
 description: Research spanning physiological signal acquisition, intent decoding, and estimation and control for reliable closed-loop brain–computer interfaces.
 nav: true

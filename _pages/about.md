@@ -1,6 +1,8 @@
 ---
 layout: about
 title: about
+seo_title: "Satyam Awasthi | Closed-Loop Brain–Computer Interfaces"
+og_image_alt: "Satyam Awasthi"
 permalink: /
 subtitle: Ph.D. Applicant | Closed-Loop Brain–Computer Interfaces | UCSB MS · IIT Kharagpur · Ex-Intuit/Yahoo
 
