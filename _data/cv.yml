@@ -1,11 +1,10 @@
 cv:
   name: Satyam Awasthi
-  label: Researcher & Software Engineer 
+  label: Researcher & Software Engineer
   email: satyam.aw@yahoo.com
   location: Mountain View, CA
   image: ""
   summary: I am a Computer Science researcher focused on **Autonomous Systems, Spatial Perception**, and **Model-Based** and **Learning-Based Control**, with interests in long-horizon decision-making for robust robotic autonomy.
-
 
   social_networks:
     - network: GitHub
@@ -85,7 +84,7 @@ cv:
     Interests:
       - name: Embodied Robotic & Spatial Systems
         icon: fa-solid fa-microchip
-        keywords: 
+        keywords:
           - Spatial Perception
           - Autonomous Vehicle Stacks
           - Multi-Modal Sensor Fusion
@@ -93,14 +92,13 @@ cv:
 
       - name: Autonomous Decision-Making
         icon: fa-solid fa-gears
-        keywords: 
+        keywords:
           - Agentic Orchestration
           - Sequential Decision-Making
           - Constraint-Bound Optimization
           - Finite State Automation
 
     Experience:
-      
       - company: Intuit Inc
         position: Software Engineer 2
         location: Mountain View, CA
@@ -120,7 +118,7 @@ cv:
         highlights:
           - "Developed **client-side rule engines** to process asynchronous receipt payloads, executing deterministic filtering and cost-optimization algorithms for **real-time decision support**."
           - "Designed a dynamic, state-driven carousel UI framework optimized for high-volume content delivery systems."
-      
+
       - company: Coupang Global LLC
         position: Software Engineering Intern
         location: Mountain View, CA

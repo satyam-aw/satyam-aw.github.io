@@ -59,15 +59,13 @@ The optimized classification models were trained and benchmarked across the prim
 
 Below is the consolidated performance layout tracking individual validation berry specimens against true versus predicted classes:
 
-
-
-| Method | Ripe (Class 1) Samples | Unripe (Class 0) Samples | Overall Accuracy |
-| :--- | :---: | :---: | :---: |
-| **Complex DT** | 1, 1, 1, 1 | 0, 0, 0 | **100%** |
-| **Quadratic Discriminant** | 0, 0, 1, 1 | 0, 0, 0 | **71.429%** |
-| **Quadratic SVM** | 1, 1, 0, 1 | 0, 0, 0 | **85.714%** |
-| **Fine $k$-NN** | 1, 1, 1, 1 | 0, 0, 0 | **100%** |
-| **Ensemble (Bagged)** | 1, 1, 1, 1 | 0, 0, 0 | **100%** |
+| Method                     | Ripe (Class 1) Samples | Unripe (Class 0) Samples | Overall Accuracy |
+| :------------------------- | :--------------------: | :----------------------: | :--------------: |
+| **Complex DT**             |       1, 1, 1, 1       |         0, 0, 0          |     **100%**     |
+| **Quadratic Discriminant** |       0, 0, 1, 1       |         0, 0, 0          |   **71.429%**    |
+| **Quadratic SVM**          |       1, 1, 0, 1       |         0, 0, 0          |   **85.714%**    |
+| **Fine $k$-NN**            |       1, 1, 1, 1       |         0, 0, 0          |     **100%**     |
+| **Ensemble (Bagged)**      |       1, 1, 1, 1       |         0, 0, 0          |     **100%**     |
 
 ---
 
@@ -137,7 +135,7 @@ The comprehensive multi-model tracking performance of true versus predicted matu
     <strong>Table 1:</strong> Matrix breakdown evaluating true versus predicted classification performance across the Complex Tree, Quadratic Discriminant, QSVM, Fine $k$-NN, and Bagged Ensemble frameworks. Red values denote misclassified sample counts.
 </div>
 
-While initial validation results are promising, further investigation is required to establish the long-term system resilience under shifting operational environments. Crucially, the transient temperature delta separating the inner core from the fruit surface remains highly sensitive to fluctuations in ambient environmental conditions, which can introduce instability into the predictive boundaries. 
+While initial validation results are promising, further investigation is required to establish the long-term system resilience under shifting operational environments. Crucially, the transient temperature delta separating the inner core from the fruit surface remains highly sensitive to fluctuations in ambient environmental conditions, which can introduce instability into the predictive boundaries.
 
 For instance, post-harvest washing drastically altered the fruits' baseline thermal signatures—reducing both core and surface readings by up to $5^\circ\text{C}$ via evaporative cooling. Consequently, while several berry specimens resolved cleanly within the optical imagery reference (see Figure 3), they receded entirely and became indistinguishable inside the matching IR profiles due to this immediate temperature drop.
 

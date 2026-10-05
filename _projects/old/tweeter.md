@@ -25,7 +25,7 @@ giscus_lang: en
 
 ## Project Overview
 
-When engineering large-scale internet applications, high-concurrency traffic conditions inevitably expose hidden hardware and database limitations. This project introduces a containerized, distributed testbed modeled after a microblogging platform. It was engineered specifically to run high-throughput stress tests, monitor real-time system degradation, and systematically analyze infrastructure bottlenecks. 
+When engineering large-scale internet applications, high-concurrency traffic conditions inevitably expose hidden hardware and database limitations. This project introduces a containerized, distributed testbed modeled after a microblogging platform. It was engineered specifically to run high-throughput stress tests, monitor real-time system degradation, and systematically analyze infrastructure bottlenecks.
 
 Rather than focusing on frontend complexity, the application leverages a lightweight server layout to keep the computational focus entirely on optimizing backend database routing, horizontal scaling strategies, and memory performance under heavy concurrent workloads.
 
@@ -68,8 +68,9 @@ The system architecture utilizes an optimized entity-relationship schema designe
 To stress-test the environment and identify system constraints, we deployed [Tsung](https://erlang-projects.org)—an open-source, XML-configured XML load-testing tool. Tsung allows developers to simulate mass user trajectories at precise, exponentially accelerating interaction intervals.
 
 The experimental testing environment consisted of server clusters deployed across distributed **Amazon EC2 instances**. Optimization efficiency was evaluated using two core telemetry metrics:
-* **Throughput Capacity**: Total requests successfully served per minute.
-* **Response Latency**: The mean duration and distribution bounds between consecutive requests.
+
+- **Throughput Capacity**: Total requests successfully served per minute.
+- **Response Latency**: The mean duration and distribution bounds between consecutive requests.
 
 ### Case Study: Homepage Traversal State Trajectory
 
@@ -83,6 +84,7 @@ To evaluate how backend architectures degrade under high-velocity traffic, we co
 </div>
 
 During this specific test trajectory, the automated framework forces active sessions through three sequential stages:
+
 1. **Authentication State (`/users/sign_in`)**: Initiates user session creation and handles database lookup queries to verify credentials.
 2. **Resource Consumption State (`/tweets`)**: Queries the global content feed, fetching relational records. The simulation enforces a deterministic **one-second think time delay** to mimic realistic user consumption, holding database resources open to intentionally test lock limits.
 3. **Session Termination State (`/users/sign_out`)**: Safely tears down the session token and frees allocated thread connections back to the EC2 server pool.
@@ -90,12 +92,15 @@ During this specific test trajectory, the automated framework forces active sess
 ---
 
 ### Multi-Phase Exponential Scale Configuration
+
 The testing infrastructure increases concurrency systematically across consecutive execution phases to force the system past its operational thresholds:
-* **Phase 1 to 3**: Baseline testing scaling from 1 to 4 users/second.
-* **Phase 4 to 8**: Mid-tier stress scaling from 8 to 128 users/second.
-* **Phase 9 & 10 (Peak Concurrency)**: Extreme stress scaling rapidly from 256 to **512 users/second**.
+
+- **Phase 1 to 3**: Baseline testing scaling from 1 to 4 users/second.
+- **Phase 4 to 8**: Mid-tier stress scaling from 8 to 128 users/second.
+- **Phase 9 & 10 (Peak Concurrency)**: Extreme stress scaling rapidly from 256 to **512 users/second**.
 
 ---
+
 ## Performance Telemetry & Optimization Results
 
 We methodically eliminated identified system bottlenecks by implementing five core backend and infrastructure optimizations:
@@ -114,4 +119,3 @@ Please refer to the complete [project report](https://docs.google.com/document/d
         <div class="caption mt-2">Figure 3: System throughput comparison between unoptimized query rendering and the pagination framework under peak concurrency.</div>
     </div>
 </div>
- 

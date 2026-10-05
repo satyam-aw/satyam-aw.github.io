@@ -196,14 +196,20 @@ layout: default
           </div>
         {% endif %}
 
-
         <!-- 7. Fallback Loop for all remaining/uncaught sections -->
         {% for section_pair in cv.sections %}
           {% assign section_title = section_pair[0] %}
           {% assign section_entries = section_pair[1] %}
 
           {% comment %} Skip the explicitly ordered blocks we just handled above {% endcomment %}
-          {% if section_title == 'Education' or section_title == 'Skills' or section_title == 'Interests' or section_title == 'Publications' or section_title == 'Experience' or section_title == 'Teaching' or section_title == 'Volunteer' %}
+          {% if section_title == 'Education'
+            or section_title == 'Skills'
+            or section_title == 'Interests'
+            or section_title == 'Publications'
+            or section_title == 'Experience'
+            or section_title == 'Teaching'
+            or section_title == 'Volunteer'
+          %}
             {% continue %}
           {% endif %}
 

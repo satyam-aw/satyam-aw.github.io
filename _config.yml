@@ -10,9 +10,7 @@ last_name: Awasthi
 #   You can even add a little note about which of these is the best way to reach you.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Satyam Awasthi — research in closed-loop brain–computer interfaces, physiological sensing, and estimation and control under uncertainty.
-footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and based on the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+footer_text: ""
 
 keywords: Satyam Awasthi, brain-computer interfaces, EEG, physiological sensing, intent decoding, robust estimation, model predictive control
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)

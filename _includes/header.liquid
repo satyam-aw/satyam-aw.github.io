@@ -100,7 +100,13 @@
               {% else %}
                 <!-- Regular pages -->
                 <li class="nav-item {% if page.permalink == p.permalink %}active{% endif %}">
-                  <a class="nav-link" href="{% if p.external_url %}{{ p.external_url }}{% else %}{{ p.permalink | relative_url }}{% endif %}" {% if p.external_url %}target="_blank"{% endif %}>
+                  <a
+                    class="nav-link"
+                    href="{% if p.external_url %}{{ p.external_url }}{% else %}{{ p.permalink | relative_url }}{% endif %}"
+                    {% if p.external_url %}
+                      target="_blank"
+                    {% endif %}
+                  >
                     {{- p.title }}
                     {% if page.permalink == p.permalink %}
                       <span class="sr-only">(current)</span>

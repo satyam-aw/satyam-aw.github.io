@@ -14,43 +14,45 @@ layout: default
         <button type="button" class="btn filter-text-btn active" onclick="filterPlants('all', this)">All Species</button>
         <button type="button" class="btn filter-text-btn" onclick="filterPlants('Trees', this)">Trees</button>
         <button type="button" class="btn filter-text-btn" onclick="filterPlants('Shrubs & Woody Vines', this)">Shrubs & Vines</button>
-        <button type="button" class="btn filter-text-btn" onclick="filterPlants('Herbaceous Plants & Wildflowers', this)">Herbaceous & Wildflowers</button>
+        <button type="button" class="btn filter-text-btn" onclick="filterPlants('Herbaceous Plants & Wildflowers', this)">
+          Herbaceous & Wildflowers
+        </button>
         <button type="button" class="btn filter-text-btn" onclick="filterPlants('Fungi & Marine Organisms', this)">Fungi & Marine</button>
       </div>
     </div>
 
     <!-- Active Production Target Grid Container -->
     <div class="container" id="plant-gallery-root">
-      
-      {% assign plants_by_year = site.data.plants | group_by_exp: "item", "item.time | split: ' ' | last" | sort: "name" | reverse %}
+      {% assign plants_by_year = site.data.plants | group_by_exp: 'item', "item.time | split: ' ' | last" | sort: 'name' | reverse %}
 
       {% for group in plants_by_year %}
         <div class="year-section mb-5" data-year="{{ group.name }}">
           <h2 class="year-heading year">{{ group.name }}</h2>
           <div class="row justify-content-start align-items-center">
-            
             {% for plant in group.items %}
-              <div class="col-6 col-md-4 col-lg-3 text-center mb-4 plant-wrapper-group" 
-                   data-time="{{ plant.time }}" 
-                   data-category="{{ plant.category }}"
-                   data-id="{{ forloop.parentloop.index }}-{{ forloop.index }}">
-                
-                <!-- CRITICAL ENHANCEMENT: Removed Bootstrap data-attributes to prevent rendering lockups.
-                     Click events are dynamically managed on a per-item basis. -->
+              <div
+                class="col-6 col-md-4 col-lg-3 text-center mb-4 plant-wrapper-group"
+                data-time="{{ plant.time }}"
+                data-category="{{ plant.category }}"
+                data-id="{{ forloop.parentloop.index }}-{{ forloop.index }}"
+              >
+                <!--
+                  CRITICAL ENHANCEMENT: Removed Bootstrap data-attributes to prevent rendering lockups.
+                  Click events are dynamically managed on a per-item basis.
+                -->
                 <div class="plant-card" onclick="openIndividualModal('{{ forloop.parentloop.index }}-{{ forloop.index }}')">
                   <div class="plant-mount-container" style="background-image: url('{{ '/assets/img/plants/frame_i.png' | relative_url }}');">
                     <div class="plant-circle-frame" id="frame-{{ forloop.parentloop.index }}-{{ forloop.index }}">
-                      
                       <!-- Progressive tracking forces immediate render pipeline processing -->
-                      <img 
-                        src="{{ plant.image | relative_url }}" 
-                        alt="{{ plant.name }}" 
+                      <img
+                        src="{{ plant.image | relative_url }}"
+                        alt="{{ plant.name }}"
                         class="plant-img img-fluid"
                         loading="lazy"
                         decoding="async"
                         onload="markFirstPassActive('{{ forloop.parentloop.index }}-{{ forloop.index }}')"
                       >
-                      
+
                       <div class="image-spinner-wrapper">
                         <div class="spinner-border spinner-border-sm text-secondary" role="status">
                           <span class="sr-only">Loading...</span>
@@ -66,12 +68,18 @@ layout: default
                 </div>
 
                 <!-- Modal Window Overlay Layout -->
-                <div class="modal fade plant-modal-element" id="plantModal-{{ forloop.parentloop.index }}-{{ forloop.index }}" tabindex="-1" role="dialog" aria-hidden="true">
+                <div
+                  class="modal fade plant-modal-element"
+                  id="plantModal-{{ forloop.parentloop.index }}-{{ forloop.index }}"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-hidden="true"
+                >
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content bg-card-color text-base-color border-0 shadow position-relative">
                       <button type="button" class="nav-arrow prev-arrow custom-nav-btn" data-dismiss="modal">‹</button>
                       <button type="button" class="nav-arrow next-arrow custom-nav-btn" data-dismiss="modal">›</button>
-                      
+
                       <div class="modal-header border-0 pb-0 justify-content-end">
                         <button type="button" class="close text-base-color" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
@@ -86,264 +94,271 @@ layout: default
                     </div>
                   </div>
                 </div>
-
               </div>
             {% endfor %}
-
           </div>
         </div>
       {% endfor %}
-
     </div>
   </article>
-  
-  <div id="scared-snail" style="
-  position: absolute; 
-  left: 50%;
-  top: 50%;
-  width: 140px; 
-  height: auto;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s linear;
-  will-change: left, top;
-">
-  <img src="{{ 'assets/img/plants/gary.gif' | relative_url }}" alt="Snail" style="width: 100%; height: auto; display: block;">
-</div>
-<!-- Scared Snail Container (Runs Away) -->
-<div id="zen-snail" style="
-  position: absolute;
-  left: 30%; /* Starts at a different spot */
-  top: 40%;
-  width: 80px; 
-  height: auto;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s linear;
-  will-change: left, top;
-">
-  <img src="{{ 'assets/img/plants/Stinky_The_Snail.webp' | relative_url }}" alt="Snail" style="width: 100%; height: auto; display: block;">
-</div>
 
+  <div
+    id="scared-snail"
+    style="
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 140px;
+      height: auto;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s linear;
+      will-change: left, top;
+    "
+  >
+    <img src="{{ 'assets/img/plants/gary.gif' | relative_url }}" alt="Snail" style="width: 100%; height: auto; display: block;">
+  </div>
+  <!-- Scared Snail Container (Runs Away) -->
+  <div
+    id="zen-snail"
+    style="
+      position: absolute;
+      left: 30%; /* Starts at a different spot */
+      top: 40%;
+      width: 80px;
+      height: auto;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s linear;
+      will-change: left, top;
+    "
+  >
+    <img src="{{ 'assets/img/plants/Stinky_The_Snail.webp' | relative_url }}" alt="Snail" style="width: 100%; height: auto; display: block;">
+  </div>
 </div>
 
 <script>
+  (function initZenGardenSnails() {
+    const follower = document.getElementById('zen-snail');
+    const scared = document.getElementById('scared-snail');
+    if (!follower && !scared) return;
 
-(function initZenGardenSnails() {
-  const follower = document.getElementById('zen-snail');
-  const scared = document.getElementById('scared-snail');
-  if (!follower && !scared) return;
+    // State Management
+    let isTabActive = true;
+    let isLoopRunning = false;
 
-  // State Management
-  let isTabActive = true;
-  let isLoopRunning = false;
-
-  // Follower Snail State
-  let fTargetX = window.innerWidth * 0.2, fTargetY = window.innerHeight * 0.5;
-  let fCurrentX = fTargetX, fCurrentY = fTargetY;
-  const fSpeed = 0.002;
-  const nbrhdDistance = 250;
-  if (follower) {
-    follower.style.position = 'absolute'; // Ensures page-relative mapping
-    follower.style.left = `${fCurrentX}px`;
-    follower.style.top = `${fCurrentY}px`;
-  } 
-
-  // Scared Snail State
-  let sCurrentX = window.innerWidth * 0.5, sCurrentY = window.innerHeight * 0.7;
-  let mouseX = sCurrentX, mouseY = sCurrentY;
-  const sSpeed = 0.002;
-  const fearDistance = 250;
-  if (scared) {
-    scared.style.position = 'absolute'; // Ensures page-relative mapping
-    scared.style.left = `${sCurrentX}px`;
-    scared.style.top = `${sCurrentY}px`;
-  }
-  // Central loop starter
-  function wakeUpEngine() {
-    if (!isLoopRunning && isTabActive) {
-      isLoopRunning = true;
-      requestAnimationFrame(animateLoop);
-    }
-  }
-
-  // Input Tracking (Mouse + Mobile Touch)
-  function updateInputCoordinates(x, y) {
-    fTargetX = x;
-    fTargetY = y;
-    mouseX = x;
-    mouseY = y;
-    wakeUpEngine(); // Wake engine up on movement
-  }
-
-  window.addEventListener('mousemove', (e) => updateInputCoordinates(e.pageX, e.pageY));
-  window.addEventListener('touchmove', (e) => {
-    if (e.touches.length > 0) updateInputCoordinates(e.touches[0].pageX, e.touches[0].pageY);
-  }, { passive: true });
-
-  // Tab Focus Management
-  document.addEventListener('visibilitychange', () => {
-    isTabActive = !document.hidden;
-    if (isTabActive) wakeUpEngine();
-    else isLoopRunning = false; // Instantly halts loop when user leaves tab
-  });
-
-  // Core Animation Loop
-  function animateLoop() {
-    if (!isTabActive) {
-      isLoopRunning = false;
-      return;
+    // Follower Snail State
+    let fTargetX = window.innerWidth * 0.2,
+      fTargetY = window.innerHeight * 0.5;
+    let fCurrentX = fTargetX,
+      fCurrentY = fTargetY;
+    const fSpeed = 0.002;
+    const nbrhdDistance = 250;
+    if (follower) {
+      follower.style.position = 'absolute'; // Ensures page-relative mapping
+      follower.style.left = `${fCurrentX}px`;
+      follower.style.top = `${fCurrentY}px`;
     }
 
-    let needsNextFrame = false;
-
-    // 1. Process Follower Snail
-    if (follower && follower.style.display !== 'none') {
-      const fDx = fTargetX - fCurrentX;
-      const fDy = fTargetY - fCurrentY;
-      const distance = Math.sqrt(fDx * fDx + fDy * fDy);
-      // Move if further away than 0.5 pixels
-      if ((Math.abs(fDx) > 0.5 || Math.abs(fDy) > 0.5) && distance < nbrhdDistance) {
-        fCurrentX += fDx * fSpeed;
-        fCurrentY += fDy * fSpeed;
-        follower.style.left = `${fCurrentX}px`;
-        follower.style.top = `${fCurrentY}px`;
-        
-        if (fDx > 1) follower.style.transform = 'translate(-50%, -50%) scaleX(-1)';
-        else if (fDx < -1) follower.style.transform = 'translate(-50%, -50%) scaleX(1)';
-        
-        needsNextFrame = true;
+    // Scared Snail State
+    let sCurrentX = window.innerWidth * 0.5,
+      sCurrentY = window.innerHeight * 0.7;
+    let mouseX = sCurrentX,
+      mouseY = sCurrentY;
+    const sSpeed = 0.002;
+    const fearDistance = 250;
+    if (scared) {
+      scared.style.position = 'absolute'; // Ensures page-relative mapping
+      scared.style.left = `${sCurrentX}px`;
+      scared.style.top = `${sCurrentY}px`;
+    }
+    // Central loop starter
+    function wakeUpEngine() {
+      if (!isLoopRunning && isTabActive) {
+        isLoopRunning = true;
+        requestAnimationFrame(animateLoop);
       }
     }
 
-    // 2. Process Scared Snail
-    if (scared && scared.style.display !== 'none') {
-      const sDx = sCurrentX - mouseX;
-      const sDy = sCurrentY - mouseY;
-      const distance = Math.sqrt(sDx * sDx + sDy * sDy);
-
-      if (distance < fearDistance && distance > 0.5) {
-        const force = (fearDistance - distance) / fearDistance;
-        
-        sCurrentX += (sDx / distance) * fearDistance * force * sSpeed;
-        sCurrentY += (sDy / distance) * fearDistance * force * sSpeed;
-
-        // Keep inside boundaries
-        sCurrentX = Math.max(40, Math.min(window.innerWidth - 40, sCurrentX));
-        sCurrentY = Math.max(40, Math.min(document.documentElement.scrollHeight - 40, sCurrentY));
-
-        scared.style.left = `${sCurrentX}px`;
-        scared.style.top = `${sCurrentY}px`;
-
-        if (sDx > 0) scared.style.transform = 'translate(-50%, -50%) scaleX(-1)';
-        else scared.style.transform = 'translate(-50%, -50%) scaleX(1)';
-
-        needsNextFrame = true;
-      }
+    // Input Tracking (Mouse + Mobile Touch)
+    function updateInputCoordinates(x, y) {
+      fTargetX = x;
+      fTargetY = y;
+      mouseX = x;
+      mouseY = y;
+      wakeUpEngine(); // Wake engine up on movement
     }
 
-    // Shut down engine if everyone arrived/stopped, otherwise request next frame
-    if (needsNextFrame) {
-      requestAnimationFrame(animateLoop);
-    } else {
-      isLoopRunning = false;
-    }
-  }
+    window.addEventListener('mousemove', (e) => updateInputCoordinates(e.pageX, e.pageY));
+    window.addEventListener(
+      'touchmove',
+      (e) => {
+        if (e.touches.length > 0) updateInputCoordinates(e.touches[0].pageX, e.touches[0].pageY);
+      },
+      { passive: true }
+    );
 
-  // Initial wake up
-  wakeUpEngine();
-})();
-
-// Dynamic map to instantly track if a card's baseline data layout has rendered its 1st pass
-const functionalImagesMap = {};
-
-function markFirstPassActive(uid) {
-  const frame = document.getElementById(`frame-${uid}`);
-  if (frame) {
-    frame.classList.add('first-pass-ready');
-    frame.closest('.plant-card').classList.add('first-pass-ready');
-  }
-  // Store true state instantly for independent clickability
-  functionalImagesMap[uid] = true;
-}
-
-// Global click handler isolates action requests instantly on an individual basis
-function openIndividualModal(uid) {
-  // Enables immediate fallback navigation if the item is interacted with
-  const targetModalId = `#plantModal-${uid}`;
-  $(targetModalId).modal('show');
-}
-
-let visibleItemsList = [];
-
-function buildVisibleTrackList() {
-  visibleItemsList = Array.from(document.querySelectorAll('.plant-wrapper-group'))
-    .filter(item => item.style.display !== 'none');
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  buildVisibleTrackList();
-
-  // Unified global tracking loop for arrow keys 
-  document.addEventListener('click', (e) => {
-    const btn = e.target.closest('.custom-nav-btn');
-    if (!btn) return;
-
-    const currentWrapper = btn.closest('.plant-wrapper-group');
-    const currentIndex = visibleItemsList.indexOf(currentWrapper);
-    if (currentIndex === -1) return;
-
-    let targetIndex;
-    if (btn.classList.contains('prev-arrow')) {
-      targetIndex = currentIndex === 0 ? visibleItemsList.length - 1 : currentIndex - 1;
-    } else {
-      targetIndex = currentIndex === visibleItemsList.length - 1 ? 0 : currentIndex + 1;
-    }
-
-    const targetWrapper = visibleItemsList[targetIndex];
-    const targetModalId = `#plantModal-${targetWrapper.dataset.id}`;
-    
-    setTimeout(() => {
-      $(targetModalId).modal('show');
-    }, 200); 
-  });
-});
-
-function filterPlants(category, clickedButton) {
-  const sections = document.querySelectorAll('.year-section');
-
-  if (clickedButton) {
-    const textButtons = clickedButton.parentElement.querySelectorAll('.filter-text-btn');
-    textButtons.forEach(btn => {
-      if (btn === clickedButton) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
+    // Tab Focus Management
+    document.addEventListener('visibilitychange', () => {
+      isTabActive = !document.hidden;
+      if (isTabActive) wakeUpEngine();
+      else isLoopRunning = false; // Instantly halts loop when user leaves tab
     });
+
+    // Core Animation Loop
+    function animateLoop() {
+      if (!isTabActive) {
+        isLoopRunning = false;
+        return;
+      }
+
+      let needsNextFrame = false;
+
+      // 1. Process Follower Snail
+      if (follower && follower.style.display !== 'none') {
+        const fDx = fTargetX - fCurrentX;
+        const fDy = fTargetY - fCurrentY;
+        const distance = Math.sqrt(fDx * fDx + fDy * fDy);
+        // Move if further away than 0.5 pixels
+        if ((Math.abs(fDx) > 0.5 || Math.abs(fDy) > 0.5) && distance < nbrhdDistance) {
+          fCurrentX += fDx * fSpeed;
+          fCurrentY += fDy * fSpeed;
+          follower.style.left = `${fCurrentX}px`;
+          follower.style.top = `${fCurrentY}px`;
+
+          if (fDx > 1) follower.style.transform = 'translate(-50%, -50%) scaleX(-1)';
+          else if (fDx < -1) follower.style.transform = 'translate(-50%, -50%) scaleX(1)';
+
+          needsNextFrame = true;
+        }
+      }
+
+      // 2. Process Scared Snail
+      if (scared && scared.style.display !== 'none') {
+        const sDx = sCurrentX - mouseX;
+        const sDy = sCurrentY - mouseY;
+        const distance = Math.sqrt(sDx * sDx + sDy * sDy);
+
+        if (distance < fearDistance && distance > 0.5) {
+          const force = (fearDistance - distance) / fearDistance;
+
+          sCurrentX += (sDx / distance) * fearDistance * force * sSpeed;
+          sCurrentY += (sDy / distance) * fearDistance * force * sSpeed;
+
+          // Keep inside boundaries
+          sCurrentX = Math.max(40, Math.min(window.innerWidth - 40, sCurrentX));
+          sCurrentY = Math.max(40, Math.min(document.documentElement.scrollHeight - 40, sCurrentY));
+
+          scared.style.left = `${sCurrentX}px`;
+          scared.style.top = `${sCurrentY}px`;
+
+          if (sDx > 0) scared.style.transform = 'translate(-50%, -50%) scaleX(-1)';
+          else scared.style.transform = 'translate(-50%, -50%) scaleX(1)';
+
+          needsNextFrame = true;
+        }
+      }
+
+      // Shut down engine if everyone arrived/stopped, otherwise request next frame
+      if (needsNextFrame) {
+        requestAnimationFrame(animateLoop);
+      } else {
+        isLoopRunning = false;
+      }
+    }
+
+    // Initial wake up
+    wakeUpEngine();
+  })();
+
+  // Dynamic map to instantly track if a card's baseline data layout has rendered its 1st pass
+  const functionalImagesMap = {};
+
+  function markFirstPassActive(uid) {
+    const frame = document.getElementById(`frame-${uid}`);
+    if (frame) {
+      frame.classList.add('first-pass-ready');
+      frame.closest('.plant-card').classList.add('first-pass-ready');
+    }
+    // Store true state instantly for independent clickability
+    functionalImagesMap[uid] = true;
   }
 
-  sections.forEach(section => {
-    const items = section.querySelectorAll('.plant-wrapper-group');
-    let hasVisibleItems = false;
+  // Global click handler isolates action requests instantly on an individual basis
+  function openIndividualModal(uid) {
+    // Enables immediate fallback navigation if the item is interacted with
+    const targetModalId = `#plantModal-${uid}`;
+    $(targetModalId).modal('show');
+  }
 
-    items.forEach(item => {
-      if (category === 'all' || item.dataset.category === category) {
-        item.style.setProperty('display', '', 'important'); 
-        hasVisibleItems = true;
+  let visibleItemsList = [];
+
+  function buildVisibleTrackList() {
+    visibleItemsList = Array.from(document.querySelectorAll('.plant-wrapper-group')).filter((item) => item.style.display !== 'none');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    buildVisibleTrackList();
+
+    // Unified global tracking loop for arrow keys
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.custom-nav-btn');
+      if (!btn) return;
+
+      const currentWrapper = btn.closest('.plant-wrapper-group');
+      const currentIndex = visibleItemsList.indexOf(currentWrapper);
+      if (currentIndex === -1) return;
+
+      let targetIndex;
+      if (btn.classList.contains('prev-arrow')) {
+        targetIndex = currentIndex === 0 ? visibleItemsList.length - 1 : currentIndex - 1;
       } else {
-        item.style.setProperty('display', 'none', 'important');
+        targetIndex = currentIndex === visibleItemsList.length - 1 ? 0 : currentIndex + 1;
       }
+
+      const targetWrapper = visibleItemsList[targetIndex];
+      const targetModalId = `#plantModal-${targetWrapper.dataset.id}`;
+
+      setTimeout(() => {
+        $(targetModalId).modal('show');
+      }, 200);
     });
-    section.style.display = hasVisibleItems ? '' : 'none';
   });
 
-  buildVisibleTrackList();
-}
+  function filterPlants(category, clickedButton) {
+    const sections = document.querySelectorAll('.year-section');
+
+    if (clickedButton) {
+      const textButtons = clickedButton.parentElement.querySelectorAll('.filter-text-btn');
+      textButtons.forEach((btn) => {
+        if (btn === clickedButton) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    sections.forEach((section) => {
+      const items = section.querySelectorAll('.plant-wrapper-group');
+      let hasVisibleItems = false;
+
+      items.forEach((item) => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.setProperty('display', '', 'important');
+          hasVisibleItems = true;
+        } else {
+          item.style.setProperty('display', 'none', 'important');
+        }
+      });
+      section.style.display = hasVisibleItems ? '' : 'none';
+    });
+
+    buildVisibleTrackList();
+  }
 </script>
-
 
 <!-- Layout CSS Styling -->
 <style>
@@ -356,7 +371,7 @@ function filterPlants(category, clickedButton) {
     font-size: 0.95rem;
     /* Inactive style: Normal weight and slightly faded */
     font-weight: 400;
-    opacity: 0.6; 
+    opacity: 0.6;
     transition: all 0.2s ease-in-out;
     box-shadow: none !important;
     outline: none !important;
@@ -383,20 +398,19 @@ function filterPlants(category, clickedButton) {
   /* Active Filter Selection: Pure bold text and full opacity */
   .filter-text-btn.active {
     font-weight: 700 !important; /* Bold font weight */
-    opacity: 1 !important;        /* Crisp, full opacity text */
+    opacity: 1 !important; /* Crisp, full opacity text */
     background: transparent !important;
     box-shadow: none !important;
     /* Underline effect */
-    border-bottom: 2px solid var(--global-theme-color) !important; 
-    padding-bottom: 4px !important;    /* Spacing between the text and the underline */
-    border-radius: 0 !important;       /* Prevents default Bootstrap button corner clipping */
-
+    border-bottom: 2px solid var(--global-theme-color) !important;
+    padding-bottom: 4px !important; /* Spacing between the text and the underline */
+    border-radius: 0 !important; /* Prevents default Bootstrap button corner clipping */
   }
 
   /* Significantly enlarged outer static frame */
   .plant-mount-container {
     position: relative;
-    width: 200px;  
+    width: 200px;
     height: 200px;
     margin: 0 auto;
     background-size: contain;
@@ -408,23 +422,23 @@ function filterPlants(category, clickedButton) {
     transition: none; /* Explicitly prevents frame from scaling */
   }
 
- .plant-circle-frame {
+  .plant-circle-frame {
     position: relative;
     overflow: hidden;
     background-color: #e0e0e0;
   }
-  
+
   /* Individual card configuration allows immediate action */
   .plant-card {
     cursor: pointer;
-    opacity: 0.85; 
+    opacity: 0.85;
     transition: opacity 0.2s ease;
   }
-  
+
   /* Fallback visibility overrides default hidden rendering behaviors */
   .plant-img {
     display: block !important;
-    opacity: 1 !important; 
+    opacity: 1 !important;
   }
 
   .image-spinner-wrapper {
@@ -437,9 +451,11 @@ function filterPlants(category, clickedButton) {
     justify-content: center;
     align-items: center;
     z-index: 2;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease;
   }
-  
+
   /* The instant pass class drops layout locks */
   .first-pass-ready .image-spinner-wrapper {
     opacity: 0;
@@ -453,20 +469,20 @@ function filterPlants(category, clickedButton) {
   /* Compact photo frame sitting inside the spacious mount space */
   .plant-circle-frame {
     position: relative;
-    width: 145px; 
+    width: 145px;
     height: 145px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: var(--global-box-shadow, 0 2px 6px rgba(0,0,0,0.15));
+    box-shadow: var(--global-box-shadow, 0 2px 6px rgba(0, 0, 0, 0.15));
   }
-  
+
   .plant-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
   }
-  
+
   .plant-hover-overlay {
     position: absolute;
     top: 0;
@@ -480,13 +496,13 @@ function filterPlants(category, clickedButton) {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
   }
-  
+
   .hover-text {
     color: #ffffff;
     font-size: 0.85rem;
     font-weight: bold;
   }
-  
+
   /* Hover effects isolated strictly to the inside contents */
   .plant-card:hover .plant-img {
     transform: scale(1.1);
@@ -501,15 +517,15 @@ function filterPlants(category, clickedButton) {
     /* Shifts layout to the true screen center line */
     left: 50% !important;
     transform: translateX(-50%) !important;
-    z-index: 1050; 
+    z-index: 1050;
     width: 100% !important;
     /* Restricts box expanding past content on wide screens */
-    max-width: 500px !important; 
+    max-width: 500px !important;
     height: 100% !important;
     overflow: hidden !important;
     display: none; /* Keeps default state hidden until triggered by JS */
   }
-  
+
   /* Modal formatting styles */
   .max-modal-image {
     max-height: 55vh;
@@ -539,8 +555,10 @@ function filterPlants(category, clickedButton) {
   .nav-arrow:hover {
     opacity: 1;
   }
-  .prev-arrow { left: 0; }
-  .next-arrow { right: 0; }
+  .prev-arrow {
+    left: 0;
+  }
+  .next-arrow {
+    right: 0;
+  }
 </style>
-
-
