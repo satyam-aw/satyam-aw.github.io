@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "Research projects in neural interfaces, physiological sensing, and safe intelligent control.",
+          description: "Research spanning physiological signal acquisition, intent decoding, and estimation and control for reliable closed-loop brain–computer interfaces.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -71,7 +71,7 @@ ninja.data = [{
               window.location.href = "/projects/eeg-kinematics-decoding/";
             },},{id: "projects-eyetts",
           title: 'EyeTTS',
-          description: "Eye-tracking calibration and gaze analysis during mixed-reality locomotion.",
+          description: "Evaluating and calibrating eye tracking during mixed-reality locomotion.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/eyetts_for_mobile_mr/";
             },},{id: "projects-wearable-human-activity-recognition",
