@@ -2,3 +2,5 @@ nbconvert
 pyyaml
 rendercv[full]
 scholarly
+# scholarly requires the bibtexparser v1 API.
+bibtexparser==1.4.4
