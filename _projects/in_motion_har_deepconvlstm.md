@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Wearable Human Activity Recognition
-description: DeepConvLSTM modeling of inertial signals for human-motion recognition. 
-completed_on: IIT-KGP, Nov '19
+description: DeepConvLSTM modeling of inertial signals for human-motion recognition.
+completed_on: IIT-KGP, November 2019
 img: assets/img/5.png
 importance: 10
 selected: true
@@ -10,11 +10,9 @@ category: "Neural Interfaces & Biosignals"
 related_publications: true
 ---
 
-Human Activity Recognition transforms safety and healthcare by enabling automated monitoring for the elderly, individuals with disabilities, and security surveillance networks. Our goal was to build a data-driven mobile app that accurately classifies human activities to enhance independent living and situational awareness. Based on the DeepConvLSTM {% cite s16010115 %}. 
-
+Human Activity Recognition transforms safety and healthcare by enabling automated monitoring for the elderly, individuals with disabilities, and security surveillance networks. Our goal was to build a data-driven mobile app that accurately classifies human activities to enhance independent living and situational awareness. Based on the DeepConvLSTM {% cite s16010115 %}.
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ-mk9EtbvaWmiLELGdl9n4iAQekwc6sR2RUb5lhpN8bbw7YDQLe7KNshwolmnddUJTQdnTbVk1ugPu/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-
 
 <br><br>
 
@@ -66,7 +64,7 @@ model = Sequential(name="CNN_LSTM_Activity_Classifier")
 
 # 1. CNN Feature Extraction (Wrapped in TimeDistributed)
 model.add(TimeDistributed(
-    Conv1D(filters=64, kernel_size=3, activation='relu'), 
+    Conv1D(filters=64, kernel_size=3, activation='relu'),
     input_shape=(BLOCKS, READINGS_PER_BLOCK, CHANNELS)
 ))
 model.add(TimeDistributed(Conv1D(filters=64, kernel_size=3, activation='relu')))
@@ -84,8 +82,8 @@ model.add(Dense(units=NUM_CLASSES, activation='softmax'))
 
 # --- Compile Model ---
 model.compile(
-    optimizer='adam', 
-    loss='categorical_crossentropy', 
+    optimizer='adam',
+    loss='categorical_crossentropy',
     metrics=['accuracy']
 )
 

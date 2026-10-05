@@ -32,7 +32,7 @@ giscus_lang: en
   Solver-aided pipeline: parse puzzle clues, initialize symbolic board variables, assert Battleship constraints, and synthesize a satisfying board assignment with Rosette/Z3.
 </div>
 
-**Code:** [GitHub](https://github.com/SatyamA007/CS292C-Battleship) &nbsp;|&nbsp;
+**Code:** [GitHub](https://github.com/satyam-aw/Battleship-Solitaire-Solver) &nbsp;|&nbsp;
 **Report:** [PDF]({{ '/assets/pdf/battleship-solitaire-rosette-report.pdf' | relative_url }}) &nbsp;|&nbsp;
 **Stack:** Rosette, Racket, Z3, symbolic execution, constraint solving
 
@@ -86,10 +86,10 @@ The system is organized around two modules: a **generator** and a **solution syn
 I evaluated the solver across easy, medium, and hard puzzle instances. Average solving time increased sharply with puzzle difficulty:
 
 | Difficulty | Grid Size Range | Average Time |
-| --- | ---: | ---: |
-| Easy | `N < 10` | 8.04 s |
-| Medium | `10 <= N <= 13` | 44.41 s |
-| Hard | `N > 13` | 517.59 s |
+| ---------- | --------------: | -----------: |
+| Easy       |        `N < 10` |       8.04 s |
+| Medium     | `10 <= N <= 13` |      44.41 s |
+| Hard       |        `N > 13` |     517.59 s |
 
 The evaluation suggests that puzzle difficulty is influenced by both the number of symbolic constants, which grows with grid size, and the fleet's packing fraction. Larger grids increase the symbolic search space, while packing fraction affects how constrained the board is and how many feasible placements remain.
 

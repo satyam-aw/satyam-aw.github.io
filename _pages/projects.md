@@ -5,13 +5,7 @@ permalink: /projects/
 description: Research projects in neural interfaces, physiological sensing, and safe intelligent control.
 nav: true
 nav_order: 3
-display_categories:
-  [
-    "Neural Interfaces & Biosignals",
-    "Safe & Intelligent Control",
-    "Human Sensing & Interaction",
-    "Selected Engineering Projects",
-  ]
+display_categories: ["Neural Interfaces & Biosignals", "Safe & Intelligent Control", "Human Sensing & Interaction", "Selected Engineering Projects"]
 horizontal: false
 ---
 
@@ -37,7 +31,7 @@ horizontal: false
   {% else %}
   <!-- Wrap the carousel with a container that holds the buttons -->
   <div class="carousel-wrapper">
-    <button class="carousel-btn prev-btn" onclick="scrollCarousel('{{ category | slugify }}', -1)">
+    <button type="button" aria-label="Previous projects" class="carousel-btn prev-btn" onclick="scrollCarousel('{{ category | slugify }}', -1)">
       <i class="fa-solid fa-chevron-left"></i>
     </button>
     <!-- Added data-count attribute to pass the number of items -->
@@ -48,7 +42,7 @@ horizontal: false
         </div>
       {% endfor %}
     </div>
-    <button class="carousel-btn next-btn" onclick="scrollCarousel('{{ category | slugify }}', 1)">
+    <button type="button" aria-label="Next projects" class="carousel-btn next-btn" onclick="scrollCarousel('{{ category | slugify }}', 1)">
       <i class="fa-solid fa-chevron-right"></i>
     </button>
   </div>
@@ -83,35 +77,26 @@ horizontal: false
 </div>
 
 <script>
-// Function to handle clicking the buttons
 function scrollCarousel(categorySlug, direction) {
   const carousel = document.getElementById(`carousel-${categorySlug}`);
   if (!carousel) return;
-  
-  // One card width + gap (340px + 24px)
-  const scrollAmount = 364; 
-  
-  carousel.scrollBy({
-    left: direction * scrollAmount,
-    behavior: 'smooth'
-  });
+  const card = carousel.querySelector('.carousel-card-item');
+  const gap = parseFloat(getComputedStyle(carousel).gap) || 0;
+  const scrollAmount = card ? card.getBoundingClientRect().width + gap : carousel.clientWidth;
+  carousel.scrollBy({left: direction * scrollAmount, behavior: 'smooth'});
 }
 
-// Function to hide navigation buttons if items are less than 3
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
   const carousels = document.querySelectorAll('.carousel-container');
-  
-  carousels.forEach(carousel => {
-    const itemCount = parseInt(carousel.getAttribute('data-count'), 10) || 0;
-    
-    // If there are less than 3 items, hide the sibling buttons
-    if (itemCount < 3) {
-      const wrapper = carousel.closest('.carousel-wrapper');
-      if (wrapper) {
-        const buttons = wrapper.querySelectorAll('.carousel-btn');
-        buttons.forEach(btn => btn.style.display = 'none');
-      }
-    }
-  });
+  function updateButtons() {
+    carousels.forEach(carousel => {
+      const overflows = carousel.scrollWidth > carousel.clientWidth + 1;
+      carousel.closest('.carousel-wrapper').querySelectorAll('.carousel-btn').forEach(button => {
+        button.style.display = overflows ? '' : 'none';
+      });
+    });
+  }
+  updateButtons();
+  window.addEventListener('resize', updateButtons);
 });
 </script>

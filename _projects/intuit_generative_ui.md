@@ -5,24 +5,23 @@ description: Robust dual-stage agent architectures and generative UI layouts for
 img: assets/img/gen_ui2.jpg
 importance: 3
 category: "Selected Engineering Projects"
-completed_on: Intuit Inc, Winter 25
+completed_on: Intuit Inc, Winter 2025
 ---
-
 
 #### Overview
 
-User interface (UI) development is moving rapidly toward **highly personalized interfaces customized for each individual user**. Instead of showing everyone the same static screens, modern apps use AI to build custom layouts on the fly based on what a user needs at that exact moment. 
+User interface (UI) development is moving rapidly toward **highly personalized interfaces customized for each individual user**. Instead of showing everyone the same static screens, modern apps use AI to build custom layouts on the fly based on what a user needs at that exact moment.
 
     {% include figure.liquid path="assets/img/gen_ui.jpg" title="Architecture Diagram" class="img-fluid rounded" %}
 
 However, letting AI automatically build interfaces introduces two major technical problems:
+
 1. **AI Hallucinations**: The model often invents fake UI buttons or broken components that do not exist.
 2. **Context Loss**: The AI frequently forgets what the user was doing earlier in the conversation.
 
-If the AI makes a single text error or forgets the user's current situation, it sends broken code to the app, causing the mobile screen to crash. 
+If the AI makes a single text error or forgets the user's current situation, it sends broken code to the app, causing the mobile screen to crash.
 
-
-At Intuit, I researched and engineered a reliable **dual-stage agent pipeline** to completely solve these issues. This system separates the step of finding the user's true intent from the step of building the actual UI layout. By splitting these tasks, the framework forces unpredictable AI models to follow strict software design rules, ensuring that every dynamically generated screen is completely error-free and stable.
+At Intuit, I researched and engineered a reliable **dual-stage agent pipeline** to address these issues. This system separates the step of finding the user's true intent from the step of building the actual UI layout. By splitting these tasks, the framework forces unpredictable AI models to follow strict software design rules, reducing invalid UI output and improving consistency across generated screens.
 
 #### Project Architecture & Tooling
 
@@ -41,7 +40,7 @@ At Intuit, I researched and engineered a reliable **dual-stage agent pipeline** 
             <p class="card-text text-justify text-muted small-body">In a generative UI environment, standard text generations are highly prone to formatting anomalies that crash frontend codebases. I utilized the OpenAI Structured Outputs API as a rigid grammatical compiler. This tool intercepts the raw capabilities of the language model and forces its generation into absolute compliance with our schema parameters, acting as a structural guarantee that no malformed data reaches the client device.</p>
         </div>
     </div>
-    
+
     <!-- Item 2 -->
     <div class="col-12 mb-3 pipeline-block">
         <div class="pl-3 border-left-theme">
@@ -86,53 +85,59 @@ At Intuit, I researched and engineered a reliable **dual-stage agent pipeline** 
             <p class="card-text text-justify text-muted small-body">Because an LLM cannot memorize an entire enterprise design library within its standard context window, a retrieval mechanism is necessary. I built a Retrieval-Augmented Generation (RAG) pipeline powered by a Milvus Vector Database. This infrastructure stores the high-dimensional vector embeddings of code templates, visual primitives, and token designs, allowing the system to rapidly look up and fetch the exact structural pieces needed for any verified user state.</p>
         </div>
     </div>
+
 </div>
 
 #### Pipeline Architecture
+
 <div class="w-75 mx-auto">
     {% include figure.liquid loading="eager" path="assets/img/stage 1.jpg" class="img-fluid rounded col-md-4" caption="Figure 1: Autonomous Intent Routing & State Tracking using LangChain Backend with Structured LLM" %}
 
     {% include figure.liquid loading="eager" path="assets/img/stage 2.jpg" class="img-fluid rounded col-md-4" caption="Figure 2: Generative UI Engine outputs deterministic JSON UI Schema" %}
+
 </div>
-
-
-
 
 #### Detailed Architectural Breakdown
 
 ##### Stage 1: Autonomous Intent Routing & State Tracking
+
 The initial phase of the pipeline focuses on stabilizing the incoming data. The system ingests messy, heterogeneous inputs from various operational data streams and directs them to a structured LLM bounded by strict tool-schema limits.
 
-* **Goal-Directed Policy Execution**: Instead of allowing the language model to chat freely, the system immediately binds raw user inputs to explicit functional pathways, classifying the goal of the prompt into a discrete state.
-  * *Example*: A messy input like *"hey i just moved to california and need to figure out my state deductions"* is intercepted by the **LangChain framework** and mapped precisely to a discrete `tax_withholding_calculator` intent, rather than triggering a generic, conversational text response.
-* **Dynamic Frame Slot-Filling**: Once a target intent is locked in by the routing engine, the backend initializes a matching template schema. The LLM is prompted to inspect the user's ongoing interaction history, isolate the required values, and fill in the open slots to build a reliable operational baseline.
-  * *Example*: The backend loads a blank schema requiring `[state: string, user_tier: string, filing_status: string]`. The structured LLM extracts data points from the user's account history buffer and populates the slots:
+- **Goal-Directed Policy Execution**: Instead of allowing the language model to chat freely, the system immediately binds raw user inputs to explicit functional pathways, classifying the goal of the prompt into a discrete state.
+  - _Example_: A messy input like _"hey i just moved to california and need to figure out my state deductions"_ is intercepted by the **LangChain framework** and mapped precisely to a discrete `tax_withholding_calculator` intent, rather than triggering a generic, conversational text response.
+- **Dynamic Frame Slot-Filling**: Once a target intent is locked in by the routing engine, the backend initializes a matching template schema. The LLM is prompted to inspect the user's ongoing interaction history, isolate the required values, and fill in the open slots to build a reliable operational baseline.
+  - _Example_: The backend loads a blank schema requiring `[state: string, user_tier: string, filing_status: string]`. The structured LLM extracts data points from the user's account history buffer and populates the slots:
     ```json
     {
       "intent": "tax_withholding_calculator",
-      "slots": { "state": "CA", "user_tier": "Premium", "filing_status": "Single" }
+      "slots": {
+        "state": "CA",
+        "user_tier": "Premium",
+        "filing_status": "Single"
+      }
     }
     ```
-* **Conditional Early Exit Strategy**: To manage server overhead and eliminate downstream chaos, the system incorporates a conditional threshold gate. If Stage 1 cannot identify user intent with high confidence, it completely short-circuits the execution loop. The pipeline remains inside Stage 1 to trigger clarification dialogs, ensuring the system never runs costly downstream generation algorithms on unverified or garbage data.
-  * *Example*: If a user submits an ambiguous query like *"make it look blue"*, the classifier yields a low confidence score of `0.23`. LangChain catches this score, flags it as below the operational `0.80` threshold, and skips Stage 2 entirely. It returns a structured clarification prompt asking: *"Would you like to change your app theme settings, or view your expense charts?"*
+- **Conditional Early Exit Strategy**: To manage server overhead and eliminate downstream chaos, the system incorporates a conditional threshold gate. If Stage 1 cannot identify user intent with high confidence, it completely short-circuits the execution loop. The pipeline remains inside Stage 1 to trigger clarification dialogs, ensuring the system never runs costly downstream generation algorithms on unverified or garbage data.
+  - _Example_: If a user submits an ambiguous query like _"make it look blue"_, the classifier yields a low confidence score of `0.23`. LangChain catches this score, flags it as below the operational `0.80` threshold, and skips Stage 2 entirely. It returns a structured clarification prompt asking: _"Would you like to change your app theme settings, or view your expense charts?"_
 
 ---
 
 ##### Stage 2: Generative UI Engine
+
 Once the user's intent and parameters are successfully validated by Stage 1, the pipeline moves forward to resolve the spatial configuration. It must find the optimal way to display this information within a bounded screen.
 
-* **State-Conditioned Retrieval (RAG)**: The pipeline takes the verified state vector from Stage 1—including user context variables like filing status and required parameters—and queries a **Milvus Vector Database**. It performs a semantic search to pull canonical blueprints, allowed component restrictions, and required parameter definitions matching that precise state profile.
-  * *Example*: Using the state vector `[intent: tax_calculator, filing_status: Single]`, the RAG engine queries the design repository and returns raw text component documentation. It states that a `SingleFilerTaxCard` must be used, which strictly requires a `state_tax` attribute and allows a `PremiumGraph` component inside its visual block.
-* **Constraint Satisfaction & Error Correction**: A structured LLM parser ingests the combined prompt payload, which includes both the dynamic state vectors from Stage 1 and the unconstrained, potentially noisy raw component documentation returned by the RAG search. This layer acts as a strict compiler, mapping runtime values into the structural parameters while filtering out layout anomalies.
-  * *Example*: The LLM receives the state values `[state: CA, filing_status: Single]` alongside the retrieved primitive rule stating that a `SingleFilerTaxCard` requires a `state_tax` property. If the raw text returned by the RAG layer accidentally includes a legacy typo or an invalid attribute name like `"provincial_tax"`, the structured LLM intercepts and corrects it to match valid design standards.
-* **Deterministic Layout Synthesis**: The structured LLM injects runtime parameters into the verified building blocks. Bound by a strict JSON layout schema, it outputs a clean, syntactically guaranteed configuration file that the web or mobile client can instantly render without experiencing layout errors or interface bugs.
-  * *Example*: The final output compiled by the structured LLM maps the values directly into the corrected layout structural constraints, producing a production-ready payload parsed natively by the frontend framework:
+- **State-Conditioned Retrieval (RAG)**: The pipeline takes the verified state vector from Stage 1—including user context variables like filing status and required parameters—and queries a **Milvus Vector Database**. It performs a semantic search to pull canonical blueprints, allowed component restrictions, and required parameter definitions matching that precise state profile.
+  - _Example_: Using the state vector `[intent: tax_calculator, filing_status: Single]`, the RAG engine queries the design repository and returns raw text component documentation. It states that a `SingleFilerTaxCard` must be used, which strictly requires a `state_tax` attribute and allows a `PremiumGraph` component inside its visual block.
+- **Constraint Satisfaction & Error Correction**: A structured LLM parser ingests the combined prompt payload, which includes both the dynamic state vectors from Stage 1 and the unconstrained, potentially noisy raw component documentation returned by the RAG search. This layer acts as a strict compiler, mapping runtime values into the structural parameters while filtering out layout anomalies.
+  - _Example_: The LLM receives the state values `[state: CA, filing_status: Single]` alongside the retrieved primitive rule stating that a `SingleFilerTaxCard` requires a `state_tax` property. If the raw text returned by the RAG layer accidentally includes a legacy typo or an invalid attribute name like `"provincial_tax"`, the structured LLM intercepts and corrects it to match valid design standards.
+- **Deterministic Layout Synthesis**: The structured LLM injects runtime parameters into the verified building blocks. Bound by a strict JSON layout schema, it outputs a clean, syntactically guaranteed configuration file that the web or mobile client can instantly render without experiencing layout errors or interface bugs.
+  - _Example_: The final output compiled by the structured LLM maps the values directly into the corrected layout structural constraints, producing a production-ready payload parsed natively by the frontend framework:
     ```json
     {
       "ui_canvas": "split_pane",
       "components": [
-        { 
-          "type": "SingleFilerTaxCard", 
+        {
+          "type": "SingleFilerTaxCard",
           "properties": { "state_tax": "CA", "filing_status": "Single" }
         },
         { "type": "PremiumGraph", "theme": "ca_tax_palette" }

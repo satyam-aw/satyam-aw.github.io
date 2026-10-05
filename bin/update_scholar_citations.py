@@ -2,9 +2,10 @@
 
 import os
 import sys
+import tempfile
 import yaml
 from datetime import datetime
-from scholarly import scholarly, ProxyGenerator
+from scholarly import scholarly
 
 
 def load_scholar_user_id() -> str:
@@ -41,6 +42,8 @@ def get_scholar_citations() -> None:
     print(f"Fetching citations for Google Scholar ID: {SCHOLAR_USER_ID}")
     today = datetime.now().strftime("%Y-%m-%d")
 
+    existing_data = None
+
     # Check if the output file was already updated today
     if os.path.exists(OUTPUT_FILE):
         try:
@@ -62,22 +65,12 @@ def get_scholar_citations() -> None:
 
     citation_data = {"metadata": {"last_updated": today}, "papers": {}}
 
-    pg = ProxyGenerator()
-    print("Sourcing a free proxy... (this may take a few seconds)")
-
-    success = pg.FreeProxies()
-
-    if success:
-        scholarly.use_proxy(pg)
-        print("Proxy successfully configured.")
-    else:
-        print("Warning: Could not fetch a free proxy. Proceeding without one.")
-
+    # Direct access avoids unreliable public proxies.
     scholarly.set_timeout(15)
-    scholarly.set_retries(3)
+    scholarly.set_retries(1)
     try:
         author = scholarly.search_author_id(SCHOLAR_USER_ID)
-        author_data = scholarly.fill(author)
+        author_data = scholarly.fill(author, sections=["publications"])
     except Exception as e:
         print(
             f"Error fetching author data from Google Scholar for user ID '{SCHOLAR_USER_ID}': {e}. Please check your internet connection and Scholar user ID."
@@ -90,7 +83,7 @@ def get_scholar_citations() -> None:
         )
         sys.exit(1)
 
-    if "publications" not in author_data:
+    if not author_data.get("publications"):
         print(f"No publications found in author data for user ID '{SCHOLAR_USER_ID}'.")
         sys.exit(1)
 
@@ -99,13 +92,15 @@ def get_scholar_citations() -> None:
             pub_id = pub.get("pub_id") or pub.get("author_pub_id")
             if not pub_id:
                 print(
-                    f"Warning: No ID found for publication: {pub.get('bib', {}).get('title', 'Unknown')}. This publication will be skipped."
+                    f"Warning: No ID found for publication: {pub.get('bib', {}).get('title', 'Unknown')}. Saved citation data will be preserved."
                 )
-                continue
+                raise ValueError("Publication missing its ID; preserving saved data")
 
             title = pub.get("bib", {}).get("title", "Unknown Title")
             year = pub.get("bib", {}).get("pub_year", "Unknown Year")
-            citations = pub.get("num_citations", 0)
+            citations = pub["num_citations"]
+            if type(citations) is not int or citations < 0:
+                raise ValueError("Invalid citation count")
 
             print(f"Found: {title} ({year}) - Citations: {citations}")
 
@@ -116,23 +111,28 @@ def get_scholar_citations() -> None:
             }
         except Exception as e:
             print(
-                f"Error processing publication '{pub.get('bib', {}).get('title', 'Unknown')}': {e}. This publication will be skipped."
+                f"Error processing publication '{pub.get('bib', {}).get('title', 'Unknown')}': {e}. Saved citation data will be preserved."
             )
+            raise
 
-    # Compare new data with existing data
-    if existing_data and existing_data.get("papers") == citation_data["papers"]:
-        print("No changes in citation data. Skipping file update.")
-        return
-
+    # Record successful checks even when the counts have not changed.
+    temporary_path = None
     try:
-        with open(OUTPUT_FILE, "w") as f:
+        with tempfile.NamedTemporaryFile(mode="w", dir="_data", suffix=".tmp", delete=False) as f:
+            temporary_path = f.name
             yaml.dump(citation_data, f, width=1000, sort_keys=True)
+        os.replace(temporary_path, OUTPUT_FILE)
         print(f"Citation data saved to {OUTPUT_FILE}")
     except Exception as e:
         print(
             f"Error writing citation data to {OUTPUT_FILE}: {e}. Please check file permissions and disk space."
         )
         sys.exit(1)
+
+
+    finally:
+        if temporary_path and os.path.exists(temporary_path):
+            os.unlink(temporary_path)
 
 
 if __name__ == "__main__":

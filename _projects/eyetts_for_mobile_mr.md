@@ -3,28 +3,26 @@ layout: page
 title: EyeTTS
 description: Eye-tracking calibration and gaze analysis during mixed-reality locomotion.
 img: assets/img/publication_preview/eyetts.webp
-importance: 1
+importance: 5
 category: "Neural Interfaces & Biosignals"
 demo_video: https://www.youtube.com/playlist?list=PLQbqwztmTvAVAUClXj-sOkpQ9sBJbT5pG
 github: https://github.com/satyam-aw/EyeTTS_Calibration-Framework
-project_pdf: assets/pdf/IEEEPosterEyeTracking2024.pdf
-
+project_pdf: /assets/pdf/IEEEPosterEyeTracking2024.pdf
 ---
 
 > ### Project at a Glance
 >
-> | | |
-> |:---|:---|
-> | **Research Area** | Spatial Perception · Mixed Reality · Human-Computer Interaction |
-> | **Institution** | Four Eyes Laboratory, University of California, Santa Barbara |
-> | **Duration** | September 2021 – June 2024 |
-> | **Advisor** | Prof. Tobias Höllerer |
-> | **Co-Advisor** | Prof. Michael Beyeler |
-> | **Role** | Graduate Researcher (Lead Developer & First Author) |
-> | **Research Outputs** | IEEE ISMAR Adjunct 2023 · IEEE VR Workshops 2024 |
-> | **Open-Source Artifacts** | User Study Framework · Calibration Framework · Dataset |
-> | **Technologies** | Unity, C#, Python, Jupyter, NumPy, Pandas, OpenCV |
-
+> |                           |                                                                 |
+> | :------------------------ | :-------------------------------------------------------------- |
+> | **Research Area**         | Spatial Perception · Mixed Reality · Human-Computer Interaction |
+> | **Institution**           | Four Eyes Laboratory, University of California, Santa Barbara   |
+> | **Duration**              | September 2021 – June 2024                                      |
+> | **Advisor**               | Prof. Tobias Höllerer                                           |
+> | **Co-Advisor**            | Prof. Michael Beyeler                                           |
+> | **Role**                  | Graduate Researcher (Lead Developer & First Author)             |
+> | **Research Outputs**      | IEEE ISMAR Adjunct 2023 · IEEE VR Workshops 2024                |
+> | **Open-Source Artifacts** | User Study Framework · Calibration Framework · Dataset          |
+> | **Technologies**          | Unity, C#, Python, Jupyter, NumPy, Pandas, OpenCV               |
 
 EyeTTS (Eye Tracking Test Suite) is an end-to-end framework for evaluating eye-tracking performance during natural mixed-reality locomotion. The project combines controlled experimental environments with automated calibration and statistical analysis pipelines to study gaze accuracy across heterogeneous AR devices.
 
@@ -71,6 +69,7 @@ The framework implements seven experimental paradigms spanning static calibratio
             caption="Screen-stabilized tracking paradigm."
         %}
     </div>
+
 </div>
 
 <div class="row mt-3">
@@ -91,6 +90,7 @@ The framework implements seven experimental paradigms spanning static calibratio
             caption="Linear hallway locomotion experiment."
         %}
     </div>
+
 </div>
 
 ---
@@ -202,7 +202,6 @@ EyeTTS separates gaze into fixation, smooth pursuit, and saccadic behaviors to e
 
 ---
 
-
 ### Research Outputs
 
 The EyeTTS project produced a complete set of open research artifacts supporting reproducible mixed-reality eye-tracking research, including peer-reviewed publications, experimental software, analysis pipelines, and publicly available datasets.
@@ -213,7 +212,7 @@ The EyeTTS project produced a complete set of open research artifacts supporting
 
 **Satyam Awasthi**, Vivian Ross, Sydney Lim, Michael Beyeler, Tobias Höllerer
 
-*IEEE Conference on Virtual Reality and 3D User Interfaces Workshops (IEEE VRW), 2024*
+_IEEE Conference on Virtual Reality and 3D User Interfaces Workshops (IEEE VRW), 2024_
 
 This paper presents a large-scale empirical evaluation of eye-tracking accuracy during natural locomotion, quantifying the effects of calibration drift, behavioral eye movements, spatial reference frames, and hardware latency on tracking performance.
 
@@ -227,7 +226,7 @@ This paper presents a large-scale empirical evaluation of eye-tracking accuracy 
 
 **Satyam Awasthi**, Vivian Ross, Michael Beyeler, Tobias Höllerer
 
-*IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR Adjunct), 2023*
+_IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR Adjunct), 2023_
 
 Introduces EyeTTS as a reproducible framework for evaluating eye-tracking systems under realistic locomotion conditions. The work presents standardized experimental protocols, post-hoc calibration techniques, and quantitative metrics for benchmarking mixed-reality eye-tracking performance.
 

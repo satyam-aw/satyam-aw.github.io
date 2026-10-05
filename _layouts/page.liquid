@@ -10,11 +10,11 @@ layout: default
 
 <div class="post">
   <header class="post-header">
-<h1 class="post-title" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">    
-    <span>{{ page.title }}</span>
-    
-    <!-- Icon Container forces all children to stay on one row -->
-    <span style="display: flex; flex-direction: row-reverse; align-items: center; white-space: nowrap; flex-shrink: 0;">
+    <h1 class="post-title" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; width: 100%;">
+      <span>{{ page.title }}</span>
+
+      <!-- Icon Container forces all children to stay on one row -->
+      <span style="display: flex; flex-direction: row-reverse; align-items: center; white-space: nowrap; flex-shrink: 0;">
         {% if page.github %}
           <a
             {% if page.github contains '://' %}
@@ -29,7 +29,7 @@ layout: default
           >
             <i class="fa-brands fa-github gh-icon"></i>
           </a>
-        {% endif %} 
+        {% endif %}
 
         {% if page.project_pdf %}
           <a
@@ -78,15 +78,14 @@ layout: default
             <i class="fa-solid fa-download"></i>
           </a>
         {% endif %}
-    </span>
-</h1>
-<p class="post-description mb-0">{{ page.description }}</p>
-{% if page.completed_on %}
-  <p class="project-completed text-muted small text-right mb-3">Completed: {{ page.completed_on }}</p>
-{% else %}
-  <br>
-{% endif %}
-
+      </span>
+    </h1>
+    <p class="post-description mb-0">{{ page.description }}</p>
+    {% if page.completed_on %}
+      <p class="project-completed text-muted small text-right mb-3">Period: {{ page.completed_on }}</p>
+    {% else %}
+      <br>
+    {% endif %}
   </header>
 
   <article>

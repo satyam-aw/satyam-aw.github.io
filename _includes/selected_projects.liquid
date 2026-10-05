@@ -1,20 +1,20 @@
 <div class="projects mt-2 mb-2">
   {% if page.selected_projects != blank %}
     {% assign selected_projects_size = site.projects | size %}
-    {% assign filtered_projects = site.projects | where: "selected", true %}
-    {% assign sorted_projects = filtered_projects | sort: "importance" %}
-        {% if page.selected_projects.limit %}
-          {% assign selected_projects_limit = page.selected_projects.limit %}
-        {% else %}
-          {% assign selected_projects_limit = selected_projects_size %}
-        {% endif %}
-        <div class="container">
-          <div class="row row-cols-1">
-          {% for project in sorted_projects %}
-            {% include projects_horizontal.liquid %}
-          {% endfor %}
-          </div>
-        </div>
+    {% assign filtered_projects = site.projects | where: 'selected', true %}
+    {% assign sorted_projects = filtered_projects | sort: 'importance' %}
+    {% if page.selected_projects.limit %}
+      {% assign selected_projects_limit = page.selected_projects.limit %}
+    {% else %}
+      {% assign selected_projects_limit = selected_projects_size %}
+    {% endif %}
+    <div class="container">
+      <div class="row row-cols-1">
+        {% for project in sorted_projects limit: selected_projects_limit %}
+          {% include projects_horizontal.liquid %}
+        {% endfor %}
+      </div>
+    </div>
   {% else %}
     <p>Nothing here...Will update soon!</p>
   {% endif %}

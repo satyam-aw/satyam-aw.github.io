@@ -3,7 +3,8 @@ layout: page
 
 title: SmartWatch for Wall Writing
 description: Real-time transcription of free-form wall writing from smartwatch inertial sensing
-img: assets/img/publication_preview/smart_watch.png
+# img: assets/img/publication_preview/smart_watch.png
+img: assets/img/projects/smart_watch_thumbnail.png
 category: "Human Sensing & Interaction"
 importance: 5
 ---
@@ -35,6 +36,6 @@ The project explores several challenges inherent to wearable gesture recognition
 This work contributed to:
 
 **“SmartWatch for Wall Writing: Real-time Transcription of Wall Writing from Inertial Sensing”**  
-*COMSNETS 2022*
+_COMSNETS 2022_
 
 The project represents an early exploration of **wearable biosensing-adjacent interfaces and computational modeling of human movement**, themes that continue in my work on physiological sensing and neural interfaces.

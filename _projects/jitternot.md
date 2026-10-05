@@ -1,8 +1,8 @@
 ---
 layout: page
-title: JitterNot 
+title: JitterNot
 description: Predictive control of adaptive video streaming using learned network forecasts.
-completed_on: UCSB, Spring 22 
+completed_on: UCSB, Spring 2022
 img: /assets/img/6_jitternot_block_diag.jpg
 importance: 4
 selected: true
@@ -31,10 +31,11 @@ Adaptive bitrate (ABR) algorithms are commonly used to regulate video quality du
 **JitterNot** is a learning-assisted Model Predictive Control (MPC) framework evaluated using Jitsi Meet as an open-source WebRTC testbed. An LSTM throughput predictor is trained offline using WebRTC telemetry collected under emulated network conditions. During a live call, the trained model performs online inference, and its short-horizon throughput forecasts are supplied to an MPC controller that selects the next video-resolution action.
 
 ##### Our Contributions
-* **Short-Horizon Throughput Prediction:** An offline-trained Long Short-Term Memory (LSTM) model predicts future network throughput from recent WebRTC telemetry.
-* **Control-System Simplification:** Frame jitter and quantization-parameter models are expressed as functions of predicted throughput and video resolution, reducing the online optimization to a single manipulated variable: video resolution \(R\).
-* **QoE Optimization:** An MPC controller applies the Receding Horizon Control (RHC) principle to optimize predicted QoE while respecting resolution, jitter, and quantization constraints.
-* **Open-Source Testbed:** Jitsi Meet provides a reproducible WebRTC environment for collecting telemetry and comparing JitterNot against the platform's default adaptation behavior.
+
+- **Short-Horizon Throughput Prediction:** An offline-trained Long Short-Term Memory (LSTM) model predicts future network throughput from recent WebRTC telemetry.
+- **Control-System Simplification:** Frame jitter and quantization-parameter models are expressed as functions of predicted throughput and video resolution, reducing the online optimization to a single manipulated variable: video resolution \(R\).
+- **QoE Optimization:** An MPC controller applies the Receding Horizon Control (RHC) principle to optimize predicted QoE while respecting resolution, jitter, and quantization constraints.
+- **Open-Source Testbed:** Jitsi Meet provides a reproducible WebRTC environment for collecting telemetry and comparing JitterNot against the platform's default adaptation behavior.
 
 We demonstrate that JitterNot can improve or match the QoE achieved by Jitsi Meet's default video adaptation mechanism under a range of emulated network conditions.
 
@@ -62,9 +63,9 @@ The LSTM weights remain fixed during a call. Only inference is performed online,
 
 The system observes several video-quality and network variables, but the online controller optimizes a single manipulated variable: video resolution \(R\). Frame jitter and quantization behavior are modeled as functions of resolution and predicted throughput.
 
-* **Frame-Jitter Model \(F\):** Estimates frame-delay variation over a sliding five-second window:
+- **Frame-Jitter Model \(F\):** Estimates frame-delay variation over a sliding five-second window:
 
-  $$F(t) =
+  $$ F(t) =
   \sum_{k=t-4}^{t}
   \left|
   \frac{R(k)}{C(k)}
@@ -72,7 +73,9 @@ The system observes several video-quality and network variables, but the online 
   \frac{R(k-1)}{C(k-1)}
   \right|$$
 
-* **Quantization-Parameter Model \(P\):** Uses third-degree polynomial regression to model encoding compression as a function of available throughput relative to frame resolution:
+  $$
+
+- **Quantization-Parameter Model \(P\):** Uses third-degree polynomial regression to model encoding compression as a function of available throughput relative to frame resolution:
 
   $$
   P(t) =
@@ -132,33 +135,33 @@ The optimizer computes a sequence of candidate resolution actions for the full p
 
 JitterNot was evaluated using live **Jitsi Meet** sessions running in Google Chrome. Nested MahiMahi network-emulation shells were used to generate a broad range of network conditions:
 
-* latency from 0 to 1500 ms,
-* random packet loss from 0% to 35%, and
-* link rates from 3 Mbps to 100 Mbps.
+- latency from 0 to 1500 ms,
+- random packet loss from 0% to 35%, and
+- link rates from 3 Mbps to 100 Mbps.
 
 WebRTC statistics were collected through Chrome's `webrtc-internals` interface and used both to train the offline throughput predictor and to evaluate the closed-loop controller.
 
 ##### Core Findings vs. Jitsi Meet's Default Adaptation
 
-* **Predictive Accuracy:** The LSTM throughput predictor achieved an average normalized RMSE of **0.4** on the held-out evaluation data.
-* **Resolution Selection:** Across the evaluated windows, the MPC-selected resolution profile matched or exceeded the resolution selected by Jitsi Meet's default adaptation mechanism.
-* **QoE Improvement:** Across 10 evaluation sessions, JitterNot improved the project-defined QoE metric and several associated video-quality terms.
+- **Predictive Accuracy:** The LSTM throughput predictor achieved an average normalized RMSE of **0.4** on the held-out evaluation data.
+- **Resolution Selection:** Across the evaluated windows, the MPC-selected resolution profile matched or exceeded the resolution selected by Jitsi Meet's default adaptation mechanism.
+- **QoE Improvement:** Across 10 evaluation sessions, JitterNot improved the project-defined QoE metric and several associated video-quality terms.
 
-| Performance Metric | Average Change vs. Jitsi Meet Baseline |
-| :--- | :--- |
-| **Overall QoE Metric** | **+18.78%** |
-| **Perceived Video Quality \(q(R)\)** | **+68.50%** |
-| **Frame Jitter** | **-18.97%** |
-| **Quantization-Parameter Metric** | **+9.77%** |
+| Performance Metric                   | Average Change vs. Jitsi Meet Baseline |
+| :----------------------------------- | :------------------------------------- |
+| **Overall QoE Metric**               | **+18.78%**                            |
+| **Perceived Video Quality \(q(R)\)** | **+68.50%**                            |
+| **Frame Jitter**                     | **-18.97%**                            |
+| **Quantization-Parameter Metric**    | **+9.77%**                             |
 
 <br>
 
 ##### Current Limitations
 
-* **Solver Latency:** Each MPC decision required approximately 100–400 ms in the evaluated implementation. This is high for a client-side real-time controller and motivates a faster solver, an amortized policy, or server-side computation.
-* **Interaction with Jitsi's Existing Adaptation Loop:** JitterNot was evaluated on top of Jitsi Meet's default codec and adaptation behavior. The two control loops can interact, which may affect latency, jitter, or stability. Because Jitsi Meet is open source, a stronger future implementation could integrate JitterNot directly into the sender-side adaptation path or disable the default controller for a cleaner comparison.
-* **Generalization:** The LSTM was trained offline on data collected under the selected MahiMahi conditions and video workload. Prediction performance may degrade under substantially different network environments or source-video characteristics.
-* **Discrete Resolution Actions:** Video resolutions are selected from a finite set. A production implementation should explicitly use candidate-sequence search, dynamic programming, mixed-integer optimization, or a continuous bitrate relaxation followed by quantization.
+- **Solver Latency:** Each MPC decision required approximately 100–400 ms in the evaluated implementation. This is high for a client-side real-time controller and motivates a faster solver, an amortized policy, or server-side computation.
+- **Interaction with Jitsi's Existing Adaptation Loop:** JitterNot was evaluated on top of Jitsi Meet's default codec and adaptation behavior. The two control loops can interact, which may affect latency, jitter, or stability. Because Jitsi Meet is open source, a stronger future implementation could integrate JitterNot directly into the sender-side adaptation path or disable the default controller for a cleaner comparison.
+- **Generalization:** The LSTM was trained offline on data collected under the selected MahiMahi conditions and video workload. Prediction performance may degrade under substantially different network environments or source-video characteristics.
+- **Discrete Resolution Actions:** Video resolutions are selected from a finite set. A production implementation should explicitly use candidate-sequence search, dynamic programming, mixed-integer optimization, or a continuous bitrate relaxation followed by quantization.
 
 ##### Conclusion
 

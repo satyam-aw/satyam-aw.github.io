@@ -2,7 +2,7 @@
 layout: page
 title: Spell Training VR
 description: Mid-Air Gesture Interaction in Virtual Reality
-completed_on: UCSB, Winter 22
+completed_on: UCSB, Winter 2022
 img: assets/img/2.png
 importance: 7
 category: "Human Sensing & Interaction"
@@ -23,11 +23,9 @@ giscus_emit_metadata: 0
 giscus_lang: en
 ---
 
-The ability to perceive the shape and motion of hands can be a vital component in improving the user experience across a variety of technological domains and platforms. In our project we explore utilization of hand gestures, and create an innovative interaction system based on midair sketching and build a VR game to demonstrate its usability. The project is focused on creating an immersive experience for a user placed in a Unity-based virtual world and can cast spells from their magic wand to summon and manipulate in-game characters. 
+The ability to perceive the shape and motion of hands can be a vital component in improving the user experience across a variety of technological domains and platforms. In our project we explore utilization of hand gestures, and create an innovative interaction system based on midair sketching and build a VR game to demonstrate its usability. The project is focused on creating an immersive experience for a user placed in a Unity-based virtual world and can cast spells from their magic wand to summon and manipulate in-game characters.
 
-The spells cast (or sketches drawn) by the user are recognized via a OpenCV based [Gesture Recognition Module](https://github.com/shubhamtalbar96/virtual_board/tree/main). The engagement process is assisted via a webcam and hence there is no additional equipment baggage for the user. The [Unity-based VR game](https://github.com/satyam-aw/Spell-Training-in-VR) communicates with the [Gesture Recognition Module](https://github.com/shubhamtalbar96/virtual_board/tree/main) via WebSockets to receive commands and the visual canvas feed for a seamless UI. 
-
-
+The spells cast (or sketches drawn) by the user are recognized via a OpenCV based [Gesture Recognition Module](https://github.com/shubhamtalbar96/virtual_board/tree/main). The engagement process is assisted via a webcam and hence there is no additional equipment baggage for the user. The [Unity-based VR game](https://github.com/satyam-aw/Spell-Training-in-VR) communicates with the [Gesture Recognition Module](https://github.com/shubhamtalbar96/virtual_board/tree/main) via WebSockets to receive commands and the visual canvas feed for a seamless UI.
 
 <div class="d-flex justify-content-center">
   <iframe width="600" height="375" src="https://www.youtube.com/embed/xMe-xDbng2Y?si=fS7G9IriuC_PMUBD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -44,12 +42,12 @@ The project comprises two main systems running side by side: the Unity Game Engi
 
 ### Gesture Recognition Module
 
-We utilize heuristics within the [MediaPipe Hand Landmarker](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker) API to identify four specific gestures: 
+We utilize heuristics within the [MediaPipe Hand Landmarker](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker) API to identify four specific gestures:
 
-1. Selection 
-2. Painting 
-3. Clear Canvas 
-4. Recognize Gesture 
+1. Selection
+2. Painting
+3. Clear Canvas
+4. Recognize Gesture
 
 These gestures enable real-time, mid-air sketching and canvas management. Once a sketch is complete, the Google Tesseract Optical Character Recognition (OCR) engine processes the visual data. The recognized text translates into a specific action command, which is then transmitted to the Unity game for execution.
 
@@ -60,7 +58,7 @@ These gestures enable real-time, mid-air sketching and canvas management. Once a
 
 ### Unity Raycast System
 
-When the Unity VR game receives a command, it evaluates the *Raycast hit point*. Depending on whether the Raycast hits an existing creature or empty space, the game executes the command to either **summon** or **manipulate** a creature along the spell's path.
+When the Unity VR game receives a command, it evaluates the _Raycast hit point_. Depending on whether the Raycast hits an existing creature or empty space, the game executes the command to either **summon** or **manipulate** a creature along the spell's path.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-6 mt-3 mt-md-0">

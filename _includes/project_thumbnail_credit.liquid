@@ -1,0 +1,6 @@
+{% if include.project.thumbnail_credit %}
+  <p class="thumbnail-credit small text-muted px-3 mb-2" style="line-height: 1.4; white-space: normal;">
+    Image: <a href="{{ include.project.thumbnail_credit.source }}">{{ include.project.thumbnail_credit.authors | escape }}</a> ·
+    <a href="{{ include.project.thumbnail_credit.license }}">CC BY 4.0</a> · resized
+  </p>
+{% endif %}

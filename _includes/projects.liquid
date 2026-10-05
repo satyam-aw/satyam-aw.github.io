@@ -1,41 +1,41 @@
-<div class="col">
-    <div class="card h-100 hoverable position-relative d-flex flex-column" style="min-height: 500px;">
-        
-        <!-- Count the elements in the images array -->
-        {% assign img_count = project.images | size %}
+<div class="col d-flex flex-column">
+  <div class="card flex-grow-1 hoverable position-relative d-flex flex-column" style="min-height: 500px; height: auto !important;">
+    <!-- Count the elements in the images array -->
+    {% assign img_count = project.images | size %}
 
-        {% if img_count > 1 %}
-          <!-- Render carousel directly if multiple images exist -->
-          {% assign unique_id = project.category | append: '-' | append: forloop.index %}
-          {% include carousel.liquid images=project.images id=unique_id %}
-        {% elsif project.img %}
-          <!-- Legacy fallback for a single image -->
-          {%
-            include figure.liquid
-            loading="eager"
-            path=project.img
-            sizes="250px"
-            alt="project thumbnail"
-            class="card-img-top"
-          %}
-        {% endif %}
-      
-      <!-- Main Card Clickable Link Area -->
-        <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" class="text-decoration-none text-dark d-flex flex-column flex-grow-1 justify-content-center">
-        <!-- Added justify-content-center here -->
-        <div class="card-body d-flex flex-column flex-grow-1 justify-content-center">
-          <h2 class="card-title mb-1">{{ project.title }}</h2>
-          <p class="card-text">{{ project.description }}</p>
-        </div>
-        </a>
+    {% if img_count > 1 %}
+      <!-- Render carousel directly if multiple images exist -->
+      {% assign unique_id = project.category | append: '-' | append: forloop.index %}
+      {% include carousel.liquid images=project.images id=unique_id %}
+    {% elsif project.img %}
+      <!-- Legacy fallback for a single image -->
+      {%
+        include figure.liquid
+        loading="eager"
+        path=project.img
+        sizes="250px"
+        alt="project thumbnail"
+        class="card-img-top"
+      %}
+    {% endif %}
+
+    <!-- Main Card Clickable Link Area -->
+    <a
+      href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}"
+      class="text-decoration-none text-reset d-flex flex-column flex-grow-1 justify-content-center"
+    >
+      <!-- Added justify-content-center here -->
+      <div class="card-body d-flex flex-column flex-grow-1 justify-content-center">
+        <h2 class="card-title mb-1">{{ project.title }}</h2>
+        <p class="card-text">{{ project.description }}</p>
+      </div>
+    </a>
 
     <!-- Structured Card Footer (Both Icons and Date Locked to Bottom) -->
     <div class="card-footer bg-transparent border-top-0 pt-0 pb-3 mt-auto" style="position: relative; z-index: 2;">
       <!-- Single horizontal flex container -->
       <div class="d-flex align-items-center flex-wrap">
-        
         {% if project.github %}
-
           <div class="github-icon d-flex align-items-center mr-1">
             <div class="icon" data-toggle="tooltip" title="Code Repository">
               <a href="{{ project.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
@@ -48,15 +48,15 @@
             {% endif %}
           </div>
         {% endif %}
-        
+
         {% if project.project_pdf %}
           <div class="pdf-icon mr-1">
             <div class="icon" data-toggle="tooltip" title="PDF Document">
-              <a href="{{ project.project_pdf }}"><i class="fa-solid fa-file-pdf pdf-icon"></i></a>
+              <a href="{{ project.project_pdf | relative_url }}"><i class="fa-solid fa-file-pdf pdf-icon"></i></a>
             </div>
           </div>
         {% endif %}
-        
+
         {% if project.demo_video %}
           <div class="video-icon mr-1">
             <div class="icon" data-toggle="tooltip" title="Demo Video">
@@ -64,7 +64,7 @@
             </div>
           </div>
         {% endif %}
-        
+
         {% if project.download_link %}
           <div class="download-icon mr-1">
             <div class="icon" data-toggle="tooltip" title="Download Executable">
@@ -75,10 +75,12 @@
 
         <!-- Right Side: Completion Date (ml-auto pulls it to the far right side of the footer) -->
         {% if project.completed_on %}
-          <p class="project-completed text-muted small ml-auto mb-0 align-self-center">Completed: {{ project.completed_on }}</p>
+          <p class="project-completed text-muted small ml-auto mb-0 align-self-center">Period: {{ project.completed_on }}</p>
         {% endif %}
-
       </div>
     </div>
+  </div>
+  <div class="pt-2" style="min-height: 3rem;">
+    {% include project_thumbnail_credit.liquid project=project %}
   </div>
 </div>
