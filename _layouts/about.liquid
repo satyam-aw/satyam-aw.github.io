@@ -58,18 +58,22 @@ layout: default
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
+      <section class="homepage-section">
+        <h2>
+          <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+        </h2>
+        {% include selected_papers.liquid %}
+      </section>
     {% endif %}
 
     <!-- Selected Projects -->
     {% if page.selected_projects and page.selected_projects.enabled %}
-      <h2>
-        <a href="{{ '/projects/' | relative_url }}" style="color: inherit">selected projects</a>
-      </h2>
-      {% include selected_projects.liquid %}
+      <section class="homepage-section">
+        <h2>
+          <a href="{{ '/projects/' | relative_url }}" style="color: inherit">selected projects</a>
+        </h2>
+        {% include selected_projects.liquid %}
+      </section>
     {% endif %}
 
     <!-- Social -->
