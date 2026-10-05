@@ -182,13 +182,15 @@ layout: default
 
         <!-- 6. Combined Experience & Volunteer Section -->
         {% assign empty_array = '' | split: ',' %}
-        {% assign exp = cv.sections.Experience | default: empty_array %}
+        {% assign exp = cv.sections['Research Experience'] | default: cv.sections.Experience | default: empty_array %}
         {% assign vol = cv.sections.Volunteer | default: empty_array %}
         {% assign combined_experience = exp | concat: vol %}
         {% if combined_experience.size > 0 %}
           <a class="anchor" id="experience"></a>
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">Experience</h3>
+            <h3 class="card-title font-weight-medium">
+              {% if cv.sections['Research Experience'] %}Research Experience{% else %}Experience{% endif %}
+            </h3>
             <div>
               {% assign entries = combined_experience %}
               {% include cv/experience.liquid %}
@@ -207,6 +209,7 @@ layout: default
             or section_title == 'Interests'
             or section_title == 'Publications'
             or section_title == 'Experience'
+            or section_title == 'Research Experience'
             or section_title == 'Teaching'
             or section_title == 'Volunteer'
           %}
@@ -226,6 +229,9 @@ layout: default
               {% elsif section_title == 'Certificates' %}
                 {% assign entries = section_entries %}
                 {% include cv/certificates.liquid %}
+              {% elsif section_title == 'Industry Experience' %}
+                {% assign entries = section_entries %}
+                {% include cv/experience.liquid %}
               {% elsif section_title == 'Projects' or section_title == 'Open Source Projects' %}
                 {% assign entries = section_entries %}
                 {% include cv/projects.liquid %}

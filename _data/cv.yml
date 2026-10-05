@@ -1,212 +1,310 @@
+# Research and project content: _pages/about.md, _projects/, _teachings/, and _bibliography/papers.bib.
+# Education, industry roles, and service: https://satyam-aw.github.io/my_cv/Satyam_Awasthi_CV.pdf
+# Project periods follow the current portfolio where its dates differ from the published CV.
 cv:
   name: Satyam Awasthi
-  label: Researcher & Software Engineer
+  label: Ph.D. Applicant | Closed-Loop Brain–Computer Interfaces
   email: satyam.aw@yahoo.com
-  location: Mountain View, CA
-  image: ""
-  summary: I am a Computer Science researcher focused on **Autonomous Systems, Spatial Perception**, and **Model-Based** and **Learning-Based Control**, with interests in long-horizon decision-making for robust robotic autonomy.
-
+  website: https://satyam-aw.github.io
+  summary: My research interests center on reliable closed-loop brain–computer interfaces, from physiological signal
+    acquisition and intended-action decoding to control, feedback, and adaptation. My current work explores EEG-based
+    interfaces and robust estimation and control under uncertainty. My graduate research at UC Santa Barbara examined
+    eye-tracking behavior and calibration during mixed-reality locomotion.
   social_networks:
     - network: GitHub
       username: satyam-aw
     - network: LinkedIn
       username: satyam-awasthi
-
-  address:
-    city: Mountain View
-    region: California
-    countryCode: US
-
   sections:
     Education:
       - institution: University of California, Santa Barbara
-        location: Santa Barbara, CA, US
-        url: https://ucsb.edu
+        degree: M.S.
         area: Computer Science
-        studyType: M.S.
-        start_date: 2021
-        end_date: 2023
-        score: "3.91/4.00 GPA"
+        start_date: 2021-09
+        end_date: 2023-06
+        url: https://ucsb.edu
         highlights:
-          - "Graduate Research at the Four Eyes Lab focusing on calibrating eye-tracking frameworks for mixed-reality locomotion and multi-modal spatial perception."
-
+          - "GPA: 3.91/4.00"
+          - Graduate research in the Four Eyes Laboratory with Prof. Tobias Höllerer and Prof. Michael Beyeler.
+          - Studied gaze-tracking reliability and calibration during mixed-reality locomotion through EyeTTS.
+        location: Santa Barbara, CA
       - institution: Indian Institute of Technology, Kharagpur
-        location: Kharagpur, India
-        url: https://iitkgp.ac.in
         area: Electrical Engineering
-        studyType: Bachelor of Technology
-        start_date: 2016
-        end_date: 2020
-        score: "8.98/10.00 CGPA"
-        courses: "Minor in Computer Science"
+        url: https://iitkgp.ac.in
         highlights:
-          - "Graduated with First Class Honors with a Minor in Computer Science."
-          - "Research focused on 2D kinematic profiles, decentralized multi-agent motion planning, and hardware-agnostic stacks for Sim2Real transfer."
-
-    Publications:
-      - title: "Eye Tracking Performance in Mobile Mixed Reality"
-        authors: "S. Awasthi, V. Ross, S. Lim, M. Beyeler, T. Höllerer"
-        publisher: "2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)"
-        releaseDate: 2024
-        url: https://doi.org/10.1109/VRW62533.2024.00321
-        summary: "Expanded the tracking framework to benchmark low-latency performance profiles and gaze errors via a robust 3-device user study across diverse mixed-reality locomotion layouts. Supported by NSF Grant #2211784."
-
-      - title: "EyeTTS: Evaluating and Calibrating Eye Tracking for Mixed-Reality Locomotion"
-        authors: "S. Awasthi, V. Ross, M. Beyeler, T. Höllerer"
-        publisher: "2023 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)"
-        releaseDate: 2023
-        url: https://doi.org/10.1109/ISMAR-Adjunct60411.2023.00104
-        summary: "Developed a novel eye-tracking test suite (EyeTTS) and engineered unique software calibration pipelines optimized to correct tracking drift during active human locomotion; validated via a 2-device user study. Supported by NSF Grant #2211784."
-
-      - title: "SmartWatch for Wall Writing: Real-time Transcription of Wall Writing from Inertial Sensing"
-        authors: "S. Das, S. Awasthi, A. Shamnan, P. De, S. Chakraborty, B. Mitra"
-        publisher: "2022 14th International Conference on COMmunication Systems & NETworkS (COMSNETS)"
-        releaseDate: 2022
-        url: https://doi.org/10.1109/COMSNETS53615.2022.9668531
-        summary: "Engineered an adaptive coordinate transformation pipeline using gravitational alignment and PUPD micro-gesture filtering to resolve drift-free, 2D kinematic profiles of wall-writing from wearable inertial sensors."
-
-    Skills:
-      - name: Programming & Simulation
-        # level: Expert
-        icon: fa-solid fa-code
-        keywords: "Python, C++, MATLAB, Kotlin, Java, Gazebo, Rviz, Unity, Git"
-
-      - name: Robotics, Vision & AI Frameworks
-        # level: Advanced
-        icon: fa-solid fa-cubes
-        keywords: "ROS/ROS2, OpenCV, PyTorch, LangChain, Pydantic, ARCore/iOS ARKit"
-
-      - name: Core Methodologies
-        # level: Specialist
-        icon: fa-solid fa-calculator
-        keywords: "State Estimation (EKF), Control Theory (MPC), Kinematic Modeling, Spatial Perception, Robot Learning, Sim-to-Real (Sim2Real) Transfer"
-
+          - "GPA: 8.98/10.0; Minor in Computer Science."
+          - Core technical member of the Autonomous Ground Vehicle and Swarm Robotics research groups.
+          - Projects in wearable sensing, human activity recognition, autonomous navigation, and swarm coordination.
+        degree: B.Tech.
+        start_date: 2016-07
+        end_date: 2020-07
+        location: Kharagpur, India
     Interests:
-      - name: Embodied Robotic & Spatial Systems
-        icon: fa-solid fa-microchip
+      - name: Closed-loop brain–computer interfaces
         keywords:
-          - Spatial Perception
-          - Autonomous Vehicle Stacks
-          - Multi-Modal Sensor Fusion
-          - Decentralized Architectures
-
-      - name: Autonomous Decision-Making
-        icon: fa-solid fa-gears
+          - Physiological signal acquisition
+          - Intended-action decoding
+          - Control, feedback, and adaptation
+      - name: Reliable inference and control
         keywords:
-          - Agentic Orchestration
-          - Sequential Decision-Making
-          - Constraint-Bound Optimization
-          - Finite State Automation
-
-    Experience:
+          - Robust output-feedback MPC
+          - State estimation under imperfect sensing
+          - Confidence-aware decisions
+      - name: Human sensing and interaction
+        keywords:
+          - EEG and movement kinematics
+          - Eye-tracking reliability and calibration
+          - Inertial sensing and movement reconstruction
+    Research Questions:
+      - bullet: How much can noisy physiological signals tell us about an intended action, and how early and precisely
+          can we infer it?
+      - bullet: How should a system act when that inference is uncertain?
+    Research Experience:
+      - company: Inria
+        position: SSVEP-Based EEG Navigation — ongoing research under guidance
+        start_date: 2026
+        end_date: present
+        url: /projects/bci_maze/
+        summary: Under the guidance of Prof. Camille Gontier.
+        highlights:
+          - Developing a four-channel EEG interface for confidence-aware navigation in a C++/OpenGL maze.
+          - Assembled BioAmp acquisition hardware with shared ground and reference; implemented visual targets and raw
+            acquisition diagnostics.
+          - Built photodiode capture hardware and Python tools to measure delivered stimulus timing.
+          - Calibrated EEG streaming, CCA decoding, and EEG-controlled navigation remain integration and evaluation
+            work.
+      - company: University of Reading
+        position: EEG-to-Kinematics Decoding — ongoing research under guidance
+        start_date: 2026
+        end_date: present
+        url: /projects/eeg-kinematics-decoding/
+        summary: Under the guidance of Prof. Slawomir Nasuto.
+        highlights:
+          - Predicting wrist X, Y, and Z position from 32-channel EEG using the WAY-EEG-GAL dataset.
+          - Built run-separated evaluation with training-only scaling and windows that never cross recording-run boundaries.
+          - Compared six regression baselines on held-out runs from participant P1; CNN–BiLSTM achieved R² of 0.809,
+            0.783, and 0.748.
+          - Results cover one participant and one seed; cross-participant transfer and broader validation remain future
+            work.
+      - company: Autonomous Systems Group, Imperial College London
+        position: Research Collaboration — State-Dependent Robust Output-Feedback MPC
+        start_date: 2026-07
+        end_date: present
+        url: /projects/state-dependent-robust-output-fb-mpc/
+        summary: Under the guidance of Prof. Johannes Köhler.
+        highlights:
+          - Developing dynamic estimation and tracking-error bounds for state-dependent uncertainty using a reproduced
+            ROHMPC certificate.
+          - Reused the offline design's metric, observer gain, feedback gain, and LMI certificate to propagate coupled
+            error bounds.
+          - Illustrated a 6.68% final-time observer-radius reduction under a prescribed synthetic disturbance envelope.
+          - The result is a tube-propagation illustration; closed-loop MPC integration and validation remain ongoing.
+      - company: Four Eyes Laboratory, University of California, Santa Barbara
+        position: Graduate Researcher — EyeTTS
+        start_date: 2021-09
+        end_date: 2023-06
+        url: /projects/eyetts_for_mobile_mr/
+        summary: "Advisor: Prof. Tobias Höllerer; co-advisor: Prof. Michael Beyeler."
+        highlights:
+          - Developed a Unity-based eye-tracking study platform and Python calibration and analysis pipeline for mixed-reality
+            locomotion.
+          - Studied gaze errors across target motion, head/body movement, and spatial reference frames.
+          - Contributed the Magic Leap 1 study framework and calibration work; Vivian Ross and Sydney Lim developed
+            the HoloLens 2 and Meta Quest Pro frameworks.
+          - First-author poster papers appeared at IEEE ISMAR Adjunct 2023 and IEEE VR Workshops 2024.
+      - company: Autonomous Ground Vehicle & Swarm Robotics Group, IIT Kharagpur
+        position: Undergraduate Researcher
+        start_date: 2016-01
+        end_date: 2018-12
+        url: /projects/autonomous_ground_vehicle_and_swarm_robotics/
+        highlights:
+          - Contributed perception, multimodal state-estimation, and navigation components to Eklavya, the team's autonomous
+            ground vehicle.
+          - Worked on visual perception, hierarchical motion planning, local collision avoidance, and EKF-based sensor
+            fusion in ROS.
+          - The Eklavya team finished runner-up at IGVC 2018.
+    Publications:
+      - title: Eye Tracking Performance in Mobile Mixed Reality
+        authors:
+          - Satyam Awasthi
+          - Vivian Ross
+          - Sydney Lim
+          - Michael Beyeler
+          - Tobias Höllerer
+        publisher: 2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)
+        releaseDate: 2024
+        doi: 10.1109/VRW62533.2024.00321
+        url: https://doi.org/10.1109/VRW62533.2024.00321
+        summary: First-author poster paper, pp. 1049–1050.
+      - title: "EyeTTS: Evaluating and Calibrating Eye Tracking for Mixed-Reality Locomotion"
+        authors:
+          - Satyam Awasthi
+          - Vivian Ross
+          - Michael Beyeler
+          - Tobias Höllerer
+        publisher: 2023 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)
+        releaseDate: 2023
+        doi: 10.1109/ISMAR-Adjunct60411.2023.00104
+        url: https://doi.org/10.1109/ISMAR-Adjunct60411.2023.00104
+        summary: First-author poster paper, pp. 479–480.
+      - title: "SmartWatch for Wall Writing: Real-time Transcription of Wall Writing from Inertial Sensing"
+        authors:
+          - Snigdha Das
+          - Satyam Awasthi
+          - Abdul Shamnar P
+          - Pradipta De
+          - Sandip Chakraborty
+          - Bivas Mitra
+        publisher: 2022 14th International Conference on COMmunication Systems & NETworkS (COMSNETS)
+        releaseDate: 2022
+        doi: 10.1109/COMSNETS53615.2022.9668531
+        url: https://doi.org/10.1109/COMSNETS53615.2022.9668531
+        summary: Collaborative work on handwriting reconstruction from smartwatch inertial signals, pp. 675–683.
+    Industry Experience:
       - company: Intuit Inc
         position: Software Engineer 2
         location: Mountain View, CA
-        start_date: 2024-03-01
-        end_date: 2026-01-01
-        summary: Researched and developed autonomous agent architectures and generative UI for large-scale data systems.
+        start_date: 2024-03
+        end_date: 2026-01
         highlights:
-          - "Implemented a dual-stage **agentic decision pipeline** leveraging structured LLMs with tool-schema routing for **real-time intent classification** and sequential state tracking."
-          - "Developed a decoupled **generative UI engine** using RAG to fetch component primitives and a **structured LLM** to optimize deterministic UI layout configurations."
-
+          - Built dual-stage agent pipelines for intent routing, structured tool execution, and generative user-interface
+            composition.
+          - Developed production platform infrastructure supporting large-scale client applications and internal developer
+            workflows.
       - company: Yahoo Inc
         position: Software Dev Engineer II (IC3)
         location: Mountain View, CA
-        start_date: 2023-04-01
-        end_date: 2023-11-01
-        summary: Investigated optimization vectors and state-driven UI architectures within high-throughput mobile platforms.
+        start_date: 2023-04
+        end_date: 2023-11
         highlights:
-          - "Developed **client-side rule engines** to process asynchronous receipt payloads, executing deterministic filtering and cost-optimization algorithms for **real-time decision support**."
-          - "Designed a dynamic, state-driven carousel UI framework optimized for high-volume content delivery systems."
-
+          - Developed production Android systems for Yahoo Mail, including data-driven inbox commerce and expense-management
+            features.
       - company: Coupang Global LLC
         position: Software Engineering Intern
         location: Mountain View, CA
-        start_date: 2022-06-01
-        end_date: 2022-09-01
-        summary: Optimized two-stage content recommendation and filtering frameworks for high-throughput mobile systems.
+        start_date: 2022-06
+        end_date: 2022-09
         highlights:
-          - "Engineered **context-aware filtering heuristics** to prune multi-dimensional search spaces based on user state vectors prior to recommendation execution."
-          - "Designed **Content-Based Filtering (CBF)** layers using **cosine similarity** to rank high-dimensional product features against pre-filtered user affinity profiles."
-          - "Optimized system performance to increase **request throughput** and reduce **latency scaling curves** while maintaining downstream user conversion baselines."
-
+          - Developed user-facing search and product-discovery features for Coupang's Android commerce platform.
       - company: Samsung Research Institute
         position: Software Engineer (CL 2)
         location: Noida, India
-        start_date: 2020-09-01
-        end_date: 2021-09-01
-        summary: Architected **privacy enforcement frameworks** and engineered **low-level control modules** for mobile operating deployments.
+        start_date: 2020-09
+        end_date: 2021-09
         highlights:
-          - "Architected a **continuous on-device perception pipeline** that ingests multi-modal media streams (docs, images, audio) for automated classification via background ML engine."
-          - "Designed a **cross-profile data brokering engine** that leverages Android multi-user storage isolation to securely route classified assets from **User 1** into sandboxed **User 0** execution spaces."
-          - "Honored with the **Samsung Spot Award** for formal architectural design patterns and rigorous codebase verification metrics."
-
-      - company: Samsung Research Institute
-        position: Software Engineering Intern
-        location: Noida, India
-        start_date: 2019-05-01
-        end_date: 2019-07-01
-        summary: Implemented exploratory computer vision models and structural image processing pipelines.
-        highlights:
-          - "Engineered a media classification application utilizing localized feature extraction, CNNs, and OCR to identify target objects."
-          - "Presented technical software lifecycle architecture to the executive committee as a blueprint for future media frameworks."
-
+          - Developed Android platform and device applications involving media processing, privacy, and isolated user-storage
+            architectures.
     Teaching:
-      - institution: University of California, Santa Barbara
-        url: "/teaching/"
+      - company: University of California, Santa Barbara
         position: Graduate Teaching Assistant
+        start_date: 2021-09
+        end_date: 2023-06
+        url: /teaching/
+        summary: Six quarters of teaching across introductory, mobile-development, and capstone courses; mentored
+          and evaluated 300+ students.
+        highlights:
+          - Led weekly discussion sections for up to 60 students; designed coding assignments, lab tests, quizzes, and
+            grading criteria.
+          - Delivered guest lectures and guided senior capstone projects from ideation to deployment.
+          - "CMPSC 16: Problem Solving with Computers I — Fall 2021 and Winter 2022."
+          - "CMPSC 184: Mobile Application Development — Spring 2022."
+          - "CMPSC 24: Problem Solving with Computers II — Summer 2022."
+          - "CMPSC 189A/B: Senior Computer Systems Project — Fall 2022 and Winter 2023."
         location: Santa Barbara, CA
-        start_date: 2021-09-01
-        end_date: 2023-03-01
-        summary: Directed instructional labs, designed academic evaluation matrices, and mentored 300+ computer science students.
-        highlights:
-          - "Delivered targeted technical lectures and led interactive discussion sections for up to 60 students."
-          - "Formulated algorithmic programming assignments, automated lab tests, and conceptual examination frameworks."
-          - "Mentored senior capstone projects from initial system architecture planning to formal software deployment."
-          - "Instructed advanced and core tracks: CS189 (Capstone), CS184 (Android), CS24 (C++ Data Structures), and CS16 (Problem Solving)."
-
     Projects:
+      - name: SmartWatch for Wall Writing (WatchScribe)
+        start_date: 2019
+        end_date: 2020
+        url: /projects/smartwatch_wall_writing/
+        summary: IIT Kharagpur. Reconstructing wall writing from smartwatch accelerometer and gyroscope signals.
+        highlights:
+          - Combined rotational kinematics, orientation correction, and unsupervised stroke separation without a pretrained
+            handwriting model.
+          - Evaluated reconstructed writing through human readability and geometric comparison; published at COMSNETS
+            2022.
       - name: JitterNot
-        url: "/projects/jitternot/"
-        summary: An LSTM-based Model Predictive Controller for Adaptive Video Streaming designed to optimize user-perceived Quality of Experience (QoE) in real-time communication systems.
+        date: Spring 2022
+        url: /projects/jitternot/
+        summary: UC Santa Barbara. Learning-assisted model predictive control for adaptive video streaming.
         highlights:
-          - "Developed an LSTM network for real-time throughput prediction, simplifying the closed-loop control system from MISO to SISO."
-          - "Implemented an MPC controller leveraging Receding Horizon Control (RHC) principles to dynamically calculate optimal video resolution."
-
-      - name: In Motion — HAR using DeepConvLSTM
-        url: "/projects/in_motion_har_deepconvlstm/"
-        summary: Designed a distributed mobile computing system classifying real-time human activity using smartphone sensor arrays and remote deep inference engines.
+          - Trained an LSTM throughput predictor offline and used its online forecasts to select video-resolution actions.
+          - Evaluated constrained QoE optimization against Jitsi Meet's default adaptation under emulated network conditions.
+      - name: Wearable Human Activity Recognition
+        date: 2019-11
+        url: /projects/in_motion_har_deepconvlstm/
+        summary: IIT Kharagpur. DeepConvLSTM modeling of smartphone inertial signals for human-motion recognition.
         highlights:
-          - "Designed a client-server telemetry pipeline streaming high-frequency accelerometer and gyroscope data for rolling window inference."
-          - "Implemented a DeepConvLSTM core architecture using TensorFlow and Keras to model spatial-temporal features."
-          - "Utilized TimeDistributed CNN layers to extract sequential sub-window vectors, preventing vanishing gradients and optimizing power efficiency."
-        start_date: 2019-11-01
-        end_date: 2019-11-01
-
-      - name: Autonomous Ground Vehicle & Swarm Robotics
-        url: "/projects/autonomous_ground_vehicle_and_swarm_robotics/"
-        summary: Developed end-to-end perception, motion-planning, and decentralized coordination pipelines for full-scale autonomous rovers and multi-agent robotic swarms at IIT Kharagpur.
+          - Streamed six sensor channels at 100 Hz to a server for inference on overlapping five-second windows.
+          - Combined TimeDistributed convolutional feature extraction with LSTM sequence modeling.
+      - name: Dual-Stage Agent Pipelines for Generative UI
+        date: Winter 2025
+        url: /projects/intuit_generative_ui/
+        summary: Intuit. Separating user-intent interpretation and state tracking from structured UI generation.
         highlights:
-          - "Built an autonomous navigation stack in ROS, fusing heterogeneous sensor streams (LiDAR, IMU, GPS) via an Extended Kalman Filter (EKF)."
-          - "Implemented visual obstacle segmentation networks (SegNet/U-Net) along with global (A*/Dijkstra) and local (DWA) path planners."
-          - "Researched decentralized swarm coordination using peer-to-peer relative pose estimation (AprilTags) over an ad-hoc XBee mesh network."
-        start_date: 2016-01-01
-        end_date: 2018-12-31
-
-      - name: "Tweeter: Distributed Infrastructure Testbed"
-        url: "/projects/tweeter/"
-        summary: "Designed a distributed microblogging testbed on Amazon EC2 clusters to analyze backend degradation and bottlenecks under concurrent workloads"
-        highlights:
-          - "Conducted load testing via Tsung up to 512 users/second, mapping user trajectories as state machines to latency scaling curves."
-          - "Eliminated N+1 bottlenecks using database pagination and ActiveRecord preloading includes to batch-fetch relational rows via optimized ID collections."
-          - "Optimized high-concurrency read throughput by deploying nested Russian Doll fragment caches and horizontal/vertical server auto-scaling."
-        start_date: 2021-09-01
-        end_date: 2021-12-31
-
+          - Used structured outputs, Pydantic/JSON Schema validation, and retrieved component primitives to constrain
+            generated layouts.
       - name: CohesiveAR
-        url: "/projects/cohesive_ar/"
-        summary: Developed an interactive Augmented Reality application for real-time physical texture extraction and spatial mapping onto 3D scene elements.
+        date: Fall 2022
+        url: /projects/cohesive_ar/
+        summary: UC Santa Barbara. Texture extraction and homography mapping for augmented reality.
         highlights:
-          - "Engineered an asset ingestion pipeline using Google ARCore and OpenCV to project 3D world coordinates into 2D display space."
-          - "Implemented perspective wrap and homography transformations to rectify camera tilt skew into standardized orthogonal textures."
-          - "Built a vertex and fragment shader pipeline to process real-time texture rotation, alignment adjustments, and dynamic mesh scaling."
+          - Combined ARCore surface localization, OpenCV perspective rectification, and dynamic texture mapping onto
+            virtual surfaces.
+      - name: Spell Training VR
+        date: Winter 2022
+        url: /projects/spell_training_in_vr/
+        summary: UC Santa Barbara. Mid-air gesture interaction for a Unity-based VR game.
+        highlights:
+          - Connected webcam-based hand tracking and sketch recognition to Unity using WebSockets.
+      - name: Battleship Solitaire Solver
+        date: Spring 2022
+        url: /projects/battleship-solitaire-solver/
+        summary: UC Santa Barbara. Solver-aided constraint synthesis in Rosette/Racket.
+        highlights:
+          - Encoded fleet composition, initial clues, non-adjacency, and row/column tallies as symbolic constraints.
+          - Built a puzzle generator and evaluated solving time across grid sizes, fleet configurations, and packing
+            fractions.
+    Skills:
+      - name: Programming and scientific computing
+        keywords:
+          - Python
+          - C++
+          - MATLAB
+          - Java
+          - Kotlin
+          - Rosette/Racket
+      - name: Machine learning and signal processing
+        keywords:
+          - PyTorch
+          - NumPy/SciPy
+          - OpenCV
+          - CNN/LSTM models
+          - Time-series modeling
+          - Spectral analysis
+          - Digital filtering
+          - Wearable/inertial signal processing
+          - Run-separated evaluation
+      - name: Control and estimation
+        keywords:
+          - Model predictive control
+          - Robust output-feedback MPC
+          - Contraction-based methods
+          - State estimation (EKF)
+          - Sensor fusion
+          - Motion planning
+      - name: Robotics and interactive systems
+        keywords:
+          - ROS/ROS2
+          - Gazebo
+          - RViz
+          - Unity
+          - OpenGL
+          - ARCore
+          - BioAmp acquisition
+          - Optical stimulus measurement
+      - name: Developer tools
+        keywords:
+          - Git
+    Academic Service:
+      - bullet: Peer Reviewer, ACM UIST 2024 — reviewed submissions on interactive systems, spatial tracking, and
+          interface hardware.

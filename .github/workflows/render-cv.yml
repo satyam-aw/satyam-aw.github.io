@@ -6,6 +6,10 @@ on:
       - master
     paths:
       - "_data/cv.yml"
+      - "bin/prepare_rendercv.py"
+      - "requirements.txt"
+      - ".github/workflows/render-cv.yml"
+      - "_config.yml"
       - "assets/rendercv/design.yaml"
       - "assets/rendercv/locale.yaml"
       - "assets/rendercv/settings.yaml"
@@ -42,8 +46,11 @@ jobs:
             echo "Missing RenderCV config file!"
             exit 1
           fi
-          rendercv render $cv_file --settings $settings
-          rm assets/rendercv/rendercv_output/*.typ
+          prepared_cv=$(mktemp _data/rendercv-input-XXXXXX.yaml)
+          trap 'rm -f "$prepared_cv"' EXIT
+          python3 bin/prepare_rendercv.py "$cv_file" "$prepared_cv"
+          rendercv render "$prepared_cv" --settings "$settings"
+          rm -f assets/rendercv/rendercv_output/*.typ
       - name: Upload rendercv_output as an artifact
         uses: actions/upload-artifact@v4
         with:
@@ -53,6 +60,10 @@ jobs:
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git add -A
+          git add -- assets/rendercv/rendercv_output
+          if git diff --cached --quiet; then
+            echo "Rendered CV is unchanged."
+            exit 0
+          fi
           git commit -m "chore: render the latest CV"
           git push
