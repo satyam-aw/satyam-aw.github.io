@@ -44,21 +44,16 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/zen-garden/";
           },
-        },{id: "projects-autonomous-ground-vehicle-navigation-amp-swarm-robotics",
-          title: 'Autonomous Ground Vehicle Navigation &amp;amp; Swarm Robotics',
-          description: "Developed perception, motion-planning, and decentralized coordination systems for the institute&#39;s AGV and swarm robotics research groups.",
+        },{id: "projects-autonomous-navigation-amp-robotics",
+          title: 'Autonomous Navigation &amp;amp; Robotics',
+          description: "Undergraduate robotics work with the AGV group and Technology Robotix Society at IIT Kharagpur, spanning autonomous navigation, robot coordination, and drones.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/autonomous_ground_vehicle_and_swarm_robotics/";
+              window.location.href = "/projects/agv_and_robotix/";
             },},{id: "projects-battleship-solitaire-solver",
           title: 'Battleship Solitaire Solver',
           description: "Solver-aided constraint synthesis for Battleship Solitaire using Rosette/Racket, symbolic variables, and angelic execution.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/battleship-solitaire-solver/";
-            },},{id: "projects-ssvep-based-eeg-navigation",
-          title: 'SSVEP-Based EEG Navigation',
-          description: "Developing a four-channel EEG interface for confidence-aware navigation, with an OpenGL maze, SSVEP visual targets, and optical stimulus validation hardware.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/bci_maze/";
             },},{id: "projects-cohesivear",
           title: 'CohesiveAR',
           description: "Augmented Reality Pipeline for Texture Extraction and Homography Mapping",
@@ -119,6 +114,11 @@ ninja.data = [{
           description: "Mid-Air Gesture Interaction in Virtual Reality",
           section: "Projects",handler: () => {
               window.location.href = "/projects/spell_training_in_vr/";
+            },},{id: "projects-ssvep-based-eeg-navigation",
+          title: 'SSVEP-Based EEG Navigation',
+          description: "Developing a four-channel EEG interface for confidence-aware navigation, with an OpenGL maze, SSVEP visual targets, and optical stimulus validation hardware.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ssvep_navigation/";
             },},{id: "projects-state-dependent-robust-output-feedback-mpc",
           title: 'State-Dependent Robust Output-Feedback MPC',
           description: "Dynamic estimation and tracking-error bounds using a reproduced ROHMPC certificate and state-dependent disturbance envelopes.",
@@ -159,7 +159,7 @@ ninja.data = [{
         title: 'CV',
         section: 'Socials',
         handler: () => {
-          window.open("https://satyam-aw.github.io/my_cv/Satyam_Awasthi_CV.pdf", "_blank");
+          window.open("/assets/rendercv/rendercv_output/Satyam_Awasthi_CV.pdf", "_blank");
         },
       },{
         id: 'social-email',
