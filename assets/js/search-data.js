@@ -54,9 +54,9 @@ ninja.data = [{
           description: "Solver-aided constraint synthesis for Battleship Solitaire using Rosette/Racket, symbolic variables, and angelic execution.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/battleship-solitaire-solver/";
-            },},{id: "projects-eeg-based-bci-for-3d-navigation",
-          title: 'EEG-Based BCI for 3D Navigation',
-          description: "Developing a 4-channel SSVEP-based EEG brain-computer interface for real-time intent decoding and navigation in an interactive 3D environment.",
+            },},{id: "projects-ssvep-based-eeg-navigation",
+          title: 'SSVEP-Based EEG Navigation',
+          description: "Developing a four-channel EEG interface for confidence-aware navigation, with an OpenGL maze, SSVEP visual targets, and optical stimulus validation hardware.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/bci_maze/";
             },},{id: "projects-cohesivear",
@@ -64,6 +64,11 @@ ninja.data = [{
           description: "Augmented Reality Pipeline for Texture Extraction and Homography Mapping",
           section: "Projects",handler: () => {
               window.location.href = "/projects/cohesive_ar/";
+            },},{id: "projects-eeg-to-kinematics-decoding",
+          title: 'EEG-to-Kinematics Decoding',
+          description: "Decoding wrist position from 32-channel EEG with run-separated evaluation and six regression baselines on WAY-EEG-GAL.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/eeg-kinematics-decoding/";
             },},{id: "projects-eyetts",
           title: 'EyeTTS',
           description: "Eye-tracking calibration and gaze analysis during mixed-reality locomotion.",
@@ -116,7 +121,7 @@ ninja.data = [{
               window.location.href = "/projects/spell_training_in_vr/";
             },},{id: "projects-state-dependent-robust-output-feedback-mpc",
           title: 'State-Dependent Robust Output-Feedback MPC',
-          description: "State-dependent estimation and tracking-error bounds for safe output-feedback predictive control",
+          description: "Dynamic estimation and tracking-error bounds using a reproduced ROHMPC certificate and state-dependent disturbance envelopes.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/state-dependent-robust-output-fb-mpc/";
             },},{id: "teachings-cmpsc-189b-senior-computer-systems-project-capstone",
