@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Battleship Solitaire Solver
+completed_on: "UCSB, Spring 2022"
 description: Solver-aided constraint synthesis for Battleship Solitaire using Rosette/Racket, symbolic variables, and angelic execution.
 img: assets/img/projects/battleship-solitaire/battleship-solver-overview.jpg
 importance: 6
@@ -21,6 +22,15 @@ giscus_input_position: bottom
 giscus_reactions_enabled: 1
 giscus_emit_metadata: 0
 giscus_lang: en
+project_keywords:
+  - Constraint solving
+  - Symbolic reasoning
+  - Program synthesis
+project_tools:
+  - Rosette / Racket
+  - Z3
+project_toc: true
+project_toc_level: "2"
 ---
 
 <div class="row">
@@ -31,10 +41,6 @@ giscus_lang: en
 <div class="caption">
   Solver-aided pipeline: parse puzzle clues, initialize symbolic board variables, assert Battleship constraints, and synthesize a satisfying board assignment with Rosette/Z3.
 </div>
-
-**Code:** [GitHub](https://github.com/satyam-aw/Battleship-Solitaire-Solver) &nbsp;|&nbsp;
-**Report:** [PDF]({{ '/assets/pdf/battleship-solitaire-rosette-report.pdf' | relative_url }}) &nbsp;|&nbsp;
-**Stack:** Rosette, Racket, Z3, symbolic execution, constraint solving
 
 ## Overview
 

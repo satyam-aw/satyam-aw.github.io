@@ -7,7 +7,7 @@ description: Evaluating and calibrating eye tracking during mixed-reality locomo
 img: assets/img/publication_preview/eyetts.webp
 importance: 5
 category: "Neural Interfaces & Biosignals"
-completed_on: "Sep 2021–Jun 2023"
+completed_on: "UCSB, Sep 2021–Jun 2023"
 demo_video: https://www.youtube.com/playlist?list=PLQbqwztmTvAVAUClXj-sOkpQ9sBJbT5pG
 github: https://github.com/EyeTTS
 project_pdf: /assets/pdf/IEEEPosterEyeTracking2024.pdf
@@ -31,6 +31,44 @@ _styles: |
   .eyetts-table th { background: var(--global-card-bg-color); }
   .eyetts-pipeline { padding: 1rem 1.25rem; background: var(--global-card-bg-color); border-left: 3px solid var(--global-theme-color); line-height: 1.7; }
   @media (max-width: 575.98px) { .eyetts-task-grid { grid-template-columns: minmax(0, 1fr); } }
+project_keywords:
+  - Eye tracking
+  - Calibration
+  - Mixed reality
+  - Locomotion
+project_resources:
+  - label: Magic Leap 1 framework
+    url: https://github.com/EyeTTS/User-Study-Framework_Magic-Leap-1
+    credit: Satyam Awasthi
+  - label: HoloLens 2 framework
+    url: https://github.com/EyeTTS/User-Study-Framework_Hololens-2
+    credit: Vivian Ross
+  - label: Meta Quest Pro framework
+    url: https://github.com/EyeTTS/User-Study-Framework_Meta_Quest_Pro
+    credit: Sydney Lim
+  - label: Calibration & analysis
+    url: https://github.com/EyeTTS/Calibration-Framework
+  - label: Participant data
+    url: https://github.com/EyeTTS/Calibration-Framework/tree/main/participant-data
+project_publications:
+  - title: Eye Tracking Performance in Mobile Mixed Reality
+    venue: IEEE VR Workshops, 2024
+    authors: Satyam Awasthi, Vivian Ross, Sydney Lim, Michael Beyeler, and Tobias Höllerer
+    links:
+      - label: Paper
+        url: https://doi.org/10.1109/VRW62533.2024.00321
+      - label: Poster
+        url: /assets/img/projects/eyetts/IEEEVR-2024-Poster-A0.pdf
+  - title: "EyeTTS: Evaluating and Calibrating Eye Tracking for Mixed-Reality Locomotion"
+    venue: IEEE ISMAR Adjunct, 2023
+    authors: Satyam Awasthi, Vivian Ross, Michael Beyeler, and Tobias Höllerer
+    links:
+      - label: Paper
+        url: https://doi.org/10.1109/ISMAR-Adjunct60411.2023.00104
+      - label: Poster
+        url: /assets/img/projects/eyetts/ISMAR2023_poster.pdf
+project_toc: true
+project_toc_level: "2"
 ---
 
 **EyeTTS (Eye Tracking Test Suite)** studies how reliably mixed-reality headsets measure gaze when people move, follow targets, and switch between spatial reference frames. It combines a Unity-based experimental platform with a Python calibration and analysis pipeline.
@@ -128,27 +166,3 @@ The [lag-analysis notebook](https://github.com/EyeTTS/Calibration-Framework/blob
 - Developed the Magic Leap 1 experimental platform and contributed to the shared study protocol.
 - Built the post-hoc calibration and analysis workflow for participant recordings.
 - Evaluated task-dependent gaze errors, temporal alignment, and eye-movement behavior, contributing to two first-author poster papers.
-
-## Publications and open resources
-
-**Eye Tracking Performance in Mobile Mixed Reality**<br>
-Satyam Awasthi, Vivian Ross, Sydney Lim, Michael Beyeler, and Tobias Höllerer. IEEE VR Workshops, 2024.<br>
-[Paper](https://doi.org/10.1109/VRW62533.2024.00321) · [Poster]({{ '/assets/img/projects/eyetts/IEEEVR-2024-Poster-A0.pdf' | relative_url }})
-
-**EyeTTS: Evaluating and Calibrating Eye Tracking for Mixed-Reality Locomotion**<br>
-Satyam Awasthi, Vivian Ross, Michael Beyeler, and Tobias Höllerer. IEEE ISMAR Adjunct, 2023.<br>
-[Paper](https://doi.org/10.1109/ISMAR-Adjunct60411.2023.00104) · [Poster]({{ '/assets/img/projects/eyetts/ISMAR2023_poster.pdf' | relative_url }})
-
-The [EyeTTS GitHub organization](https://github.com/EyeTTS) brings together the shared calibration and analysis framework and the three headset-specific user study implementations.
-
-**User study frameworks**
-
-- [Magic Leap 1](https://github.com/EyeTTS/User-Study-Framework_Magic-Leap-1) — Satyam Awasthi
-- [HoloLens 2](https://github.com/EyeTTS/User-Study-Framework_Hololens-2) — Vivian Ross
-- [Meta Quest Pro](https://github.com/EyeTTS/User-Study-Framework_Meta_Quest_Pro) — Sydney Lim
-
-**Analysis and supplementary material**
-
-- [Calibration framework and analysis notebooks](https://github.com/EyeTTS/Calibration-Framework)
-- [Participant data](https://github.com/EyeTTS/Calibration-Framework/tree/main/participant-data)
-- [Task demonstrations and participant recordings](https://www.youtube.com/playlist?list=PLQbqwztmTvAVAUClXj-sOkpQ9sBJbT5pG)

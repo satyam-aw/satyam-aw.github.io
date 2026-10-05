@@ -7,7 +7,7 @@ description: WatchScribe reconstructs wall writing from smartwatch inertial sign
 img: assets/img/projects/watchscribe/smart_watch_thumbnail.png
 category: "Human Sensing & Interaction"
 importance: 5
-completed_on: "2019–2020"
+completed_on: "IIT-KGP, 2019–2020"
 project_pdf: /assets/pdf/2022_COMSNETS_WatchScribe.pdf
 _styles: |
   .post article h2, .research-label { color: var(--global-theme-color); }
@@ -19,6 +19,19 @@ _styles: |
   .post article .key-table thead { background: #e9edf2; color: #202b38; }
   .post article .key-table tbody tr:nth-child(odd) { background: #fff; color: #202b38; }
   .post article .key-table tbody tr:nth-child(even) { background: #f3f4f6; color: #202b38; }
+project_keywords:
+  - Inertial sensing
+  - Writing reconstruction
+  - Stroke separation
+project_publications:
+  - title: "SmartWatch for Wall Writing: Real-time Transcription of Wall Writing from Inertial Sensing"
+    venue: COMSNETS 2022
+    authors: Snigdha Das, Satyam Awasthi, Abdul Shamnar P, Pradipta De, Sandip Chakraborty, and Bivas Mitra
+    links:
+      - label: Submitted manuscript
+        url: /assets/pdf/2022_COMSNETS_WatchScribe.pdf
+project_toc: true
+project_toc_level: "2"
 ---
 
 **B.Tech. final-year project · IIT Kharagpur · 2019–2020**
@@ -120,12 +133,5 @@ Against GyroPen, the manuscript reports lower geometric disparity and improved d
 The central result is that useful handwriting reconstruction is possible from a wrist-worn inertial sensor without character-specific training. Improving orientation and angular-displacement estimation is a natural next step toward more faithful strokes and more complex boardwork.
 
 ---
-
-## 7. Paper and figure credit
-
-**SmartWatch for Wall Writing: Real-time Transcription of Wall Writing from Inertial Sensing**<br>
-Snigdha Das, Satyam Awasthi, Abdul Shamnar P, Pradipta De, Sandip Chakraborty, and Bivas Mitra. COMSNETS 2022.
-
-[Read the submitted manuscript]({{ '/assets/pdf/2022_COMSNETS_WatchScribe.pdf' | relative_url }}).
 
 <p class="small text-muted">The architecture figure is reproduced from Figure 2 of the submitted manuscript by Das et al. The methods and numerical results on this page refer to that manuscript version.</p>

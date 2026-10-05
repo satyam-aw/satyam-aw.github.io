@@ -5,7 +5,7 @@ research_connection: >-
 title: SSVEP-Based EEG Navigation
 description: Developing a four-channel EEG interface for confidence-aware navigation, with an OpenGL maze, SSVEP visual targets, and optical stimulus validation hardware.
 img: /assets/img/projects/bci_maze/ssvep_thumbnail.png
-completed_on: "2026–Present"
+completed_on: "Inria, 2026–Present"
 selected: true
 thumbnail_credit:
   authors: "Rejer & Cieszyński"
@@ -29,7 +29,23 @@ _styles: |
   .post article .key-table tbody tr:nth-child(odd) { background: #fff; color: #202b38; }
   .post article .key-table tbody tr:nth-child(even) { background: #f3f4f6; color: #202b38; }
   .post article td:first-child { font-weight: 500; }
+project_keywords:
+  - SSVEP
+  - EEG acquisition
+  - Intent decoding
+  - Confidence-aware control
+project_resources:
+  - label: Acquisition & optical tools
+    url: https://github.com/neurocontrol-lab/ssvep-acquisition
+  - label: Original manual-navigation demo
+    url: https://youtu.be/9cJ7eTtbbqo
+  - label: Original Windows game
+    url: https://github.com/neurocontrol-lab/ssvep-navigation-ui/raw/refs/heads/opengl-game/resources/Play_Game.zip
+project_toc: true
+project_toc_level: "2"
 ---
+
+**Ongoing research under the guidance of Prof. Camille Gontier at Inria.**
 
 I am extending an interactive 3D maze into a **four-channel EEG-based brain–computer interface (BCI)**. The aim is to translate a user's attention to flickering visual targets into navigation commands, while studying how signal quality, decoding confidence, and decision timing affect control.
 
@@ -243,13 +259,6 @@ The original game is preserved on the navigation repository's `opengl-game` bran
 <div class="caption">Original OpenGL maze demonstration, before EEG-control integration.</div>
 
 ---
-
-## Code and resources
-
-- [Navigation interface and visual targets](https://github.com/neurocontrol-lab/ssvep-navigation-ui)
-- [Acquisition firmware and optical measurement tools](https://github.com/neurocontrol-lab/ssvep-acquisition)
-- [Original environment demo](https://youtu.be/9cJ7eTtbbqo)
-- [Original Windows game download](https://github.com/neurocontrol-lab/ssvep-navigation-ui/raw/refs/heads/opengl-game/resources/Play_Game.zip)
 
 The long-term objective is a compact experimental platform for studying how neural decoding, decision confidence, and lightweight assistance interact in closed-loop navigation.
 

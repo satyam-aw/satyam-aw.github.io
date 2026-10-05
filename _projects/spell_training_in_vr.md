@@ -21,6 +21,15 @@ giscus_input_position: bottom
 giscus_reactions_enabled: 1
 giscus_emit_metadata: 0
 giscus_lang: en
+project_keywords:
+  - Gesture recognition
+  - Virtual reality
+  - Mid-air interaction
+project_resources:
+  - label: Gesture recognition module
+    url: https://github.com/shubhamtalbar96/virtual_board/tree/main
+  - label: Detailed project report
+    url: https://docs.google.com/document/d/1xfZlb3wNs5YU3gytwz8naTpyTMmHXUMzQ_JH7zJFFVs/edit?usp=sharing
 ---
 
 The ability to perceive the shape and motion of hands can be a vital component in improving the user experience across a variety of technological domains and platforms. In our project we explore utilization of hand gestures, and create an innovative interaction system based on midair sketching and build a VR game to demonstrate its usability. The project is focused on creating an immersive experience for a user placed in a Unity-based virtual world and can cast spells from their magic wand to summon and manipulate in-game characters.
@@ -73,5 +82,3 @@ When the Unity VR game receives a command, it evaluates the _Raycast hit point_.
 </div>
 
 Each time a Raycast is cast, the system checks if the hit point is within range of an active, spawned monster. If the hit point is close enough to a monster, that specific monster is targeted and destroyed.
-
-This page provides a brief summary covering only the fundamental aspects of the project. Please refer to our full [project report](https://docs.google.com/document/d/1xfZlb3wNs5YU3gytwz8naTpyTMmHXUMzQ_JH7zJFFVs/edit?usp=sharing) for complete implementation details.

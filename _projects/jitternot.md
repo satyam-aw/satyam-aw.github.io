@@ -22,6 +22,14 @@ giscus_input_position: bottom
 giscus_reactions_enabled: 1
 giscus_emit_metadata: 0
 giscus_lang: en
+project_keywords:
+  - Model predictive control
+  - Throughput prediction
+  - Adaptive video streaming
+project_toc: true
+project_toc_levels:
+  - "4"
+  - "5"
 ---
 
 Video conferencing quality can vary significantly under changing network conditions. For a video-conferencing application (VCA), the way the system adapts video quality directly affects the user-perceived Quality of Experience (QoE).
@@ -65,14 +73,17 @@ The system observes several video-quality and network variables, but the online 
 
 - **Frame-Jitter Model \(F\):** Estimates frame-delay variation over a sliding five-second window:
 
-  $$ F(t) =
+  $$
+  F(t) =
   \sum_{k=t-4}^{t}
   \left|
   \frac{R(k)}{C(k)}
   -
   \frac{R(k-1)}{C(k-1)}
-  \right|$$
+  \right|
+  $$
 
+  $$
   $$
 
 - **Quantization-Parameter Model \(P\):** Uses third-degree polynomial regression to model encoding compression as a function of available throughput relative to frame resolution:
@@ -168,5 +179,3 @@ WebRTC statistics were collected through Chrome's `webrtc-internals` interface a
 JitterNot demonstrates how learned short-horizon throughput prediction can be combined with model predictive control for adaptive real-time video conferencing. The LSTM captures recent network dynamics, while MPC converts those predictions into constraint-aware resolution decisions using a receding-horizon feedback loop.
 
 The results indicate that prediction-based control can improve the project-defined QoE relative to Jitsi Meet's default adaptation behavior under the evaluated network conditions. Jitsi Meet also provides an open-source path toward tighter integration, lower control-loop interaction, and more reproducible future experimentation.
-
-Please read our [full report](https://satyam-aw.github.io/Jitternot_CS293N_Final_Report/main.pdf) for complete implementation details and findings.

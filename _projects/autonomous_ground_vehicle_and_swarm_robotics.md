@@ -7,11 +7,31 @@ images:
   - assets/img/9_agv.webp
   - assets/img/9_swarm.jpg
   - assets/img/9_agv_e6.png
-completed_on: IIT-KGP, 2016-2018
+completed_on: "IIT-KGP, 2016–2018"
 demo_video: https://www.youtube.com/@agvkgp
 importance: 2
 category: "Selected Engineering Projects"
 github: https://github.com/satyam-aw/IGVC_Lane_Detector
+project_keywords:
+  - Autonomous navigation
+  - Swarm robotics
+  - Perception
+  - Motion planning
+project_tools:
+  - C++ / Python / MATLAB
+  - ROS / OpenCV / PyTorch
+  - Gazebo / RViz
+  - LiDAR / IMU / GPS
+  - Embedded boards / XBee
+project_resources:
+  - label: AGV research group
+    url: http://www.agv.iitkgp.ac.in/
+  - label: Swarm robotics group
+    url: https://swarm-iitkgp.github.io/index.html
+  - label: IGVC 2018 demonstration
+    url: https://www.youtube.com/watch?v=nu-RGhk0T80
+project_toc: true
+project_toc_level: "2"
 ---
 
 During my undergraduate years at IIT Kharagpur, I was a core technical member of the [**Autonomous Ground Vehicle (AGV)**](http://www.agv.iitkgp.ac.in/) and [**Swarm Robotics**](https://swarm-iitkgp.github.io/index.html) research groups. As part of the AGV team, I contributed to the development of **Eklavya**, an autonomous ground vehicle that finished **Runner-Up at the Intelligent Ground Vehicle Competition (IGVC) 2018**. You can watch the [**competition demonstration**](https://www.youtube.com/watch?v=nu-RGhk0T80) or explore the team’s broader work on the [**AGV Research Group YouTube Channel**](https://www.youtube.com/@agvkgp).
@@ -74,21 +94,3 @@ As part of the Swarm Robotics group, I worked on decentralized coordination, pee
 This project shaped my current research interests in safe and reliable autonomy, particularly at the intersection of perception, planning, control, and multi-agent coordination. The AGV work exposed me to the challenges of deploying autonomy stacks on real robots under noisy sensing, imperfect state estimation, non-holonomic motion constraints, and real-time execution limits.
 
 The Swarm Robotics work further motivated my interest in decentralized decision-making, relative localization, and coordination under communication and sensing limitations. Together, these experiences now inform my broader interest in learning-enhanced model predictive control, safe multi-agent autonomy, and robot decision-making under uncertainty.
-
----
-
-## Technical Stack
-
-- **Languages**: C++, Python, MATLAB
-- **Frameworks & Tools**: ROS, OpenCV, PyTorch, RViz
-- **Simulation & Visualization**: Gazebo, RViz
-- **Hardware**: Hokuyo LiDAR, IMU, GPS, Raspberry Pi, BeagleBone Black, Arduino, ATmega microcontrollers, XBee modules, AprilTags
-
----
-
-## Links
-
-- [AGV Research Group](http://www.agv.iitkgp.ac.in/)
-- [Swarm Robotics, IIT Kharagpur](https://swarm-iitkgp.github.io/index.html)
-- [Eklavya 6.0 IGVC 2018 Demonstration](https://www.youtube.com/watch?v=nu-RGhk0T80)
-- [AGV Research Group YouTube Channel](https://www.youtube.com/@agvkgp)

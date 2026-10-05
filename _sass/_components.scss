@@ -452,14 +452,14 @@ ul.task-list input[type="checkbox"] {
   position: relative;
 }
 
-// Research context sits beside the introduction; technical sections retain full width.
-.project-introduction {
+// The resource rail adds space to the page instead of taking width from the article.
+.project-content {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 1rem;
 }
 
-.project-introduction-content {
+.project-article {
   min-width: 0;
 }
 
@@ -472,21 +472,22 @@ ul.task-list input[type="checkbox"] {
   font-size: 0.875rem;
   line-height: 1.6;
 
-  .research-connection-title {
-    margin: 0 0 0.5rem;
-    color: var(--global-text-color-light);
-    font-size: 0.8rem;
-    font-weight: 600;
-    line-height: 1.4;
-  }
-
   p {
     margin: 0;
   }
 }
 
-@media (min-width: 992px) {
-  .project-introduction {
+@media (min-width: 1200px) {
+  .post-with-sidebar {
+    width: calc(100% + 15rem);
+    margin-left: -7.5rem;
+
+    > .post-header {
+      width: calc(100% - 15rem);
+    }
+  }
+
+  .project-content {
     grid-template-columns: minmax(0, 1fr) 13rem;
     gap: 2rem;
   }
@@ -496,7 +497,7 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
-// Project resources and dates occupy their own row below the title.
+// Dates remain below the title; resource links can also appear in the side rail.
 .project-header-meta {
   display: flex;
   justify-content: space-between;
@@ -511,11 +512,81 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
-.project-header-links {
+.project-resource-links {
   display: flex;
   align-items: center;
   gap: 1rem;
   flex-shrink: 0;
   font-size: 1.35rem;
   line-height: 1.4;
+}
+
+.research-connection-title,
+.project-resource-title,
+.project-sidebar-title {
+  margin: 0 0 0.5rem;
+  color: var(--global-text-color-light);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.project-sidebar {
+  align-self: start;
+
+  font-size: 0.875rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+
+  .project-resources,
+  .project-sidebar-section {
+    padding-left: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .research-connection {
+    margin-bottom: 2.5rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.project-sidebar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li + li {
+    margin-top: 0.5rem;
+  }
+}
+
+.project-additional-resources {
+  margin-top: 1rem;
+}
+.project-resource-credit {
+  display: block;
+  color: var(--global-text-color-light);
+  font-size: 0.75rem;
+}
+.project-sidebar-publication {
+  & + & {
+    margin-top: 1.25rem;
+  }
+  .project-publication-title {
+    font-weight: 500;
+  }
+  .project-publication-links {
+    margin-top: 0.35rem;
+  }
+  details {
+    color: var(--global-text-color-light);
+    font-size: 0.75rem;
+  }
+}
+
+.project-article [id] {
+  scroll-margin-top: 6rem;
 }

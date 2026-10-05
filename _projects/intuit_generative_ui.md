@@ -5,7 +5,13 @@ description: Robust dual-stage agent architectures and generative UI layouts for
 img: assets/img/gen_ui2.jpg
 importance: 3
 category: "Selected Engineering Projects"
-completed_on: Intuit Inc, Winter 2025
+completed_on: "Intuit, Winter 2025"
+project_keywords:
+  - Generative UI
+  - Intent routing
+  - Structured outputs
+project_toc: true
+project_toc_level: "4"
 ---
 
 #### Overview

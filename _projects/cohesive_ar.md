@@ -26,6 +26,10 @@ giscus_input_position: bottom
 giscus_reactions_enabled: 1
 giscus_emit_metadata: 0
 giscus_lang: en
+project_keywords:
+  - Augmented reality
+  - Homography
+  - Texture mapping
 ---
 
 Interactive spatial AI applications in Augmented Reality (AR) require highly accurate real-world geometric modeling to achieve realistic contextual blending. We present **"CohesiveAR"**, a spatial computing framework designed for real-time, viewpoint-invariant texture extraction and dynamic mapping onto target virtual surfaces using the Google ARCore SDK and OpenCV.
@@ -37,8 +41,6 @@ The architecture coordinates three core geometric modules:
 3. **Dynamic Coordinate Mapping**: Retrieves processed textures, projects them onto target virtual meshes, and computes dynamic UV coordinate adjustments.
 
 The virtual assets produced by this pipeline appear visually cohesive and seamless, blending naturally with the surrounding physical environment's illumination and structure.
-
-Check out the demo video [here](https://youtu.be/eUzmJmamqFk?si=eJcXW2aYxK9W3143).
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT_lzRCA515SO4wR5ZAKa5cK2QtyCsiNDw8BvPrHqZ7xuwdv3e7UmxN8cuuGBgcg1I9oZvzWjSYXX-G/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 

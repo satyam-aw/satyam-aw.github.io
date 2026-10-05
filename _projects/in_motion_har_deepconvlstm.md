@@ -2,12 +2,16 @@
 layout: page
 title: Wearable Human Activity Recognition
 description: DeepConvLSTM modeling of inertial signals for human-motion recognition.
-completed_on: IIT-KGP, November 2019
+completed_on: "IIT-KGP, Nov 2019"
 img: assets/img/5.png
 importance: 10
 selected: true
 category: "Neural Interfaces & Biosignals"
 related_publications: true
+project_keywords:
+  - Wearable sensing
+  - Activity recognition
+  - CNN–LSTM
 ---
 
 Human Activity Recognition transforms safety and healthcare by enabling automated monitoring for the elderly, individuals with disabilities, and security surveillance networks. Our goal was to build a data-driven mobile app that accurately classifies human activities to enhance independent living and situational awareness. Based on the DeepConvLSTM {% cite s16010115 %}.

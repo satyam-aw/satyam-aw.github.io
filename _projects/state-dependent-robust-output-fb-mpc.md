@@ -8,7 +8,7 @@ img: /assets/img/projects/safe-output-fb-mpc.jpg
 category: "Safe & Intelligent Control"
 importance: 3
 selected: true
-completed_on: "2026–Present"
+completed_on: "Imperial College London, 2026–Present"
 github: https://github.com/satyam-aw/ROHMPC-State-Dependent-Uncertainty
 project_pdf: https://github.com/satyam-aw/ROHMPC-State-Dependent-Uncertainty/blob/master/research/state_dependent_bounds/manuscript/state_dependent_rohmpc.pdf
 _styles: |
@@ -23,9 +23,23 @@ _styles: |
   .post article .key-table tbody tr:nth-child(odd) { background: #fff; color: #202b38; }
   .post article .key-table tbody tr:nth-child(even) { background: #f3f4f6; color: #202b38; }
   .post article td:first-child { font-weight: 500; }
+project_keywords:
+  - Robust MPC
+  - Output feedback
+  - State estimation
+  - State-dependent uncertainty
+project_resources:
+  - label: Implementation & scope
+    url: https://github.com/satyam-aw/ROHMPC-State-Dependent-Uncertainty/blob/master/research/state_dependent_bounds/README.md
+  - label: LMI derivation & comparison
+    url: https://github.com/satyam-aw/ROHMPC-State-Dependent-Uncertainty/blob/master/research/state_dependent_bounds/LMI_RADIUS_DERIVATION.md
+  - label: Conditional proof framework
+    url: https://github.com/satyam-aw/ROHMPC-State-Dependent-Uncertainty/blob/master/research/state_dependent_bounds/CLOSED_LOOP_PROOF_FRAMEWORK.md
+project_toc: true
+project_toc_level: "2"
 ---
 
-**Ongoing research with Dr. Johannes Köhler, Imperial College London.**
+**Ongoing research under the guidance of Prof. Johannes Köhler at Imperial College London.**
 
 This project studies robust output-feedback model predictive control when uncertainty varies with the system state. An observer estimates the state from noisy measurements; estimation error and tracking error then jointly determine the robustness margins used by the controller.
 
@@ -94,11 +108,3 @@ A subsequent analytical note develops a conditional formulation with tube-consis
 Remaining work includes rigorous Jacobian-domain coverage, numerical certificate validation, model/data validation, terminal-set compatibility, and closed-loop MPC integration and evaluation. Finite numerical audits alone do not establish nonlinear safety or recursive feasibility.
 
 ---
-
-## 5. Code and research notes
-
-- [Project repository](https://github.com/satyam-aw/ROHMPC-State-Dependent-Uncertainty)
-- [Research implementation and scope](https://github.com/satyam-aw/ROHMPC-State-Dependent-Uncertainty/blob/master/research/state_dependent_bounds/README.md)
-- [Baseline-equivalent LMI derivation and numerical comparison](https://github.com/satyam-aw/ROHMPC-State-Dependent-Uncertainty/blob/master/research/state_dependent_bounds/LMI_RADIUS_DERIVATION.md)
-- [Conditional closed-loop proof framework](https://github.com/satyam-aw/ROHMPC-State-Dependent-Uncertainty/blob/master/research/state_dependent_bounds/CLOSED_LOOP_PROOF_FRAMEWORK.md)
-- [Working manuscript](https://github.com/satyam-aw/ROHMPC-State-Dependent-Uncertainty/blob/master/research/state_dependent_bounds/manuscript/state_dependent_rohmpc.pdf)

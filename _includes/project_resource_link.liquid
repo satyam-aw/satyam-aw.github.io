@@ -1,0 +1,11 @@
+<a
+  {% if include.resource.url contains '://' %}
+    href="{{ include.resource.url | escape }}"
+  {% else %}
+    href="{{ include.resource.url | relative_url }}"
+  {% endif %}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  {{- include.resource.label | escape -}}
+</a>

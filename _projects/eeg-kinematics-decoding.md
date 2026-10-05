@@ -10,7 +10,7 @@ thumbnail_credit:
   authors: "Luciw, Jarocka & Edin"
   source: https://www.nature.com/articles/sdata201447
   license: https://creativecommons.org/licenses/by/4.0/
-completed_on: "2026–Present"
+completed_on: "University of Reading, 2026–Present"
 github: https://github.com/neurocontrol-lab/eeg-kinematics-decoding
 _styles: |
   .research-flow { display: block; width: 100%; height: auto; margin: 1.5rem 0; color: var(--global-text-color); }
@@ -24,7 +24,24 @@ _styles: |
   .post article .key-table tbody tr:nth-child(odd) { background: #fff; color: #202b38; }
   .post article .key-table tbody tr:nth-child(even) { background: #f3f4f6; color: #202b38; }
   .post article td:first-child { font-weight: 500; }
+project_keywords:
+  - EEG decoding
+  - Movement kinematics
+  - Run-separated evaluation
+project_resources:
+  - label: Six-model results
+    url: https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/six-model-comparison-p1-gpu-20260930T095506Z/RESULTS.md
+  - label: Corrected baseline methods
+    url: https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/documentation/PIPELINE_V2_CORRECTED_BASELINE.md
+  - label: Target provenance
+    url: https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/documentation/KINEMATICS_PROVENANCE.md
+  - label: WAY-EEG-GAL dataset paper
+    url: https://doi.org/10.1038/sdata.2014.47
+project_toc: true
+project_toc_level: "2"
 ---
+
+**Ongoing research under the guidance of Prof. Slawomir Nasuto at the University of Reading.**
 
 This project investigates how well EEG can predict movement kinematics using the WAY-EEG-GAL grasp-and-lift dataset. The current target is the wrist tracker's **X, Y, and Z position**, predicted from 32 EEG channels.
 
@@ -89,16 +106,6 @@ Both test runs contain friction condition 3 only. Evaluation across other condit
 The reduced kinematics columns were identified as wrist position through sample-aligned comparisons with original recordings. Their upstream filtering, scaling formula, and physical units are not documented. MSE and MAE therefore use standardized target units.
 
 Next steps are to repeat run-level evaluation across conditions, establish a population model, and evaluate participant-specific fine-tuning with separate target-participant test data.
-
----
-
-## 5. Code, results, and provenance
-
-- [Source code and notebooks](https://github.com/neurocontrol-lab/eeg-kinematics-decoding)
-- [Published six-model results](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/six-model-comparison-p1-gpu-20260930T095506Z/RESULTS.md)
-- [Corrected baseline methods](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/documentation/PIPELINE_V2_CORRECTED_BASELINE.md)
-- [Kinematics target provenance](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/documentation/KINEMATICS_PROVENANCE.md)
-- [Original WAY-EEG-GAL dataset publication](https://doi.org/10.1038/sdata.2014.47)
 
 ---
 

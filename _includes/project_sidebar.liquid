@@ -1,0 +1,60 @@
+{% if page.research_connection %}{% include research_connection.liquid %}{% endif %}
+{% if page.project_keywords %}
+  <section class="project-sidebar-section" aria-labelledby="project-keywords-title">
+    <h2 id="project-keywords-title" class="project-sidebar-title">Keywords</h2>
+    <p>{{ page.project_keywords | join: ' · ' | escape }}</p>
+  </section>
+{% endif %}
+{% include project_resources.liquid %}
+{% if page.project_publications %}
+  <section class="project-sidebar-section" aria-labelledby="project-publications-title">
+    <h2 id="project-publications-title" class="project-sidebar-title">Publications</h2>
+    {% for publication in page.project_publications %}
+      <div class="project-sidebar-publication">
+        <p class="project-publication-title">{{ publication.title | escape }}</p>
+        <p>{{ publication.venue | escape }}</p>
+        <details>
+          <summary>Authors</summary>
+          <p>{{ publication.authors | escape }}</p>
+        </details>
+        <p class="project-publication-links">
+          {% for resource in publication.links %}
+            {% include project_resource_link.liquid resource=resource %}
+            {% unless forloop.last %} · {% endunless %}
+          {% endfor %}
+        </p>
+      </div>
+    {% endfor %}
+  </section>
+{% endif %}
+{% if page.project_tools %}
+  <section class="project-sidebar-section" aria-labelledby="project-tools-title">
+    <h2 id="project-tools-title" class="project-sidebar-title">Tools &amp; platforms</h2>
+    <ul class="project-sidebar-list">
+      {% for tool in page.project_tools %}
+        <li>{{ tool | escape }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endif %}
+{% if page.project_toc %}
+  <nav class="project-sidebar-section" aria-labelledby="project-toc-title">
+    <h2 id="project-toc-title" class="project-sidebar-title">On this page</h2>
+    <ul class="project-sidebar-list">
+      {% assign headings = content | split: '<h' %}
+      {% for heading in headings offset: 1 %}
+        {% assign level = heading | slice: 0 %}
+        {% if level == page.project_toc_level or page.project_toc_levels contains level %}
+          {% assign opening_tag = heading | split: '>' | first %}
+          {% if opening_tag contains 'id="' %}
+            {% assign anchor = opening_tag | split: 'id="' | last | split: '"' | first %}
+            {% assign heading_text = heading | split: '</h' | first | remove_first: opening_tag | remove_first: '>' | strip_html %}
+            <li>
+              <a href="#{{ anchor | escape }}">{{ heading_text | escape }}</a>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}
