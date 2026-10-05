@@ -111,7 +111,7 @@ ninja.data = [{
               window.location.href = "/projects/old/tweeter/";
             },},{id: "projects-smartwatch-for-wall-writing",
           title: 'SmartWatch for Wall Writing',
-          description: "Real-time transcription of free-form wall writing from smartwatch inertial sensing",
+          description: "WatchScribe reconstructs wall writing from smartwatch inertial signals using orientation correction and unsupervised stroke separation.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/smartwatch_wall_writing/";
             },},{id: "projects-spell-training-vr",
