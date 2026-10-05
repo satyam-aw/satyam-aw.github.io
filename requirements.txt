@@ -1,6 +1,6 @@
 nbconvert
 pyyaml
-rendercv[full]
+rendercv[full]==2.8
 scholarly
 # scholarly requires the bibtexparser v1 API.
 bibtexparser==1.4.4
