@@ -69,6 +69,17 @@
 
       .title {
         font-weight: bolder;
+
+        a {
+          color: var(--global-text-color);
+          text-decoration: none;
+
+          &:hover,
+          &:focus-visible,
+          &:active {
+            color: var(--global-theme-color);
+          }
+        }
       }
 
       .author {

@@ -55,7 +55,7 @@ footer_fixed: false
 search_enabled: true
 socials_in_search: true
 posts_in_search: true
-bib_search: true
+bib_search: false
 
 # Dimensions
 max_width: 930px
@@ -321,6 +321,7 @@ filtered_bibtex_keywords:
     pmid,
     poster,
     preview,
+    project_url,
     selected,
     slides,
     supp,
