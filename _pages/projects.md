@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Research projects in neural interfaces, physiological sensing, and safe intelligent control.
+description: Research spanning physiological signal acquisition, intent decoding, and estimation and control for reliable closed-loop brain–computer interfaces.
 nav: true
 nav_order: 3
 display_categories: ["Neural Interfaces & Biosignals", "Safe & Intelligent Control", "Human Sensing & Interaction", "Selected Engineering Projects"]

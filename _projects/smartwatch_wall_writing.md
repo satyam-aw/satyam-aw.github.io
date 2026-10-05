@@ -1,8 +1,10 @@
 ---
 layout: page
+research_connection: >-
+  Reconstructing writing from wrist-mounted inertial signals developed my interest in inferring human actions from indirect measurements, connecting acquisition, signal interpretation, and output evaluation.
 title: SmartWatch for Wall Writing
 description: WatchScribe reconstructs wall writing from smartwatch inertial signals using orientation correction and unsupervised stroke separation.
-img: assets/img/projects/smart_watch_thumbnail.png
+img: assets/img/projects/watchscribe/smart_watch_thumbnail.png
 category: "Human Sensing & Interaction"
 importance: 5
 completed_on: "2019–2020"

@@ -89,7 +89,19 @@ layout: default
   </header>
 
   <article>
-    {{ content }}
+    {% if page.research_connection %}
+      {% assign project_intro = content | split: '<hr' | first %}
+      {% assign project_details = content | remove_first: project_intro %}
+      <div class="project-introduction">
+        <div class="project-introduction-content">
+          {{ project_intro }}
+        </div>
+        {% include research_connection.liquid %}
+      </div>
+      {{ project_details }}
+    {% else %}
+      {{ content }}
+    {% endif %}
   </article>
 
   {% if page.related_publications %}

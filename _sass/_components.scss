@@ -53,7 +53,6 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
-
 .carousel-holder {
   position: relative;
   width: 100%;
@@ -89,7 +88,7 @@ ul.task-list input[type="checkbox"] {
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
-    pointer-events: auto !important; 
+    pointer-events: auto !important;
   }
 
   .carousel-dot {
@@ -99,10 +98,12 @@ ul.task-list input[type="checkbox"] {
     border-radius: 50%;
     cursor: pointer !important;
     pointer-events: auto !important;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    
-    &:hover { 
-      background-color: rgba(255, 255, 255, 0.9); 
+    transition:
+      background-color 0.3s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.9);
     }
 
     // Native layout overrides to handle backward and forward clicks perfectly
@@ -113,8 +114,6 @@ ul.task-list input[type="checkbox"] {
     }
   }
 }
-
-
 
 // Profile
 
@@ -222,24 +221,24 @@ ul.task-list input[type="checkbox"] {
     margin-bottom: 1rem;
     text-align: right;
   }
-/* Horizontal carousel container */
-.project-carousel {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: stretch !important; /* CRITICAL: Forces all child columns to match the height of the tallest card */
-  overflow-x: auto !important;
-  white-space: nowrap !important;
-  gap: 24px; 
-  padding-bottom: 16px; 
-  margin-bottom: 2rem;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; 
-}
+  /* Horizontal carousel container */
+  .project-carousel {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important; /* CRITICAL: Forces all child columns to match the height of the tallest card */
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    gap: 24px;
+    padding-bottom: 16px;
+    margin-bottom: 2rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
 
   /* Individual card elements inside the carousel */
   .carousel-card-item {
     flex: 0 0 340px; /* Adjust card width here */
-    white-space: normal; 
+    white-space: normal;
     display: flex !important;
 
     /* Reset bootstrap/al-folio structural widths for the grid container inside */
@@ -247,7 +246,7 @@ ul.task-list input[type="checkbox"] {
       width: 100% !important;
       max-width: 100% !important;
     }
-    
+
     /* Normalise card height to look consistent */
     .card {
       height: 100% !important; /* Extends card box down to the bottom grid edge */
@@ -280,8 +279,10 @@ ul.task-list input[type="checkbox"] {
     justify-content: center;
     cursor: pointer;
     z-index: 10;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition:
+      background 0.2s,
+      transform 0.2s;
   }
 
   .carousel-btn:hover {
@@ -300,8 +301,12 @@ ul.task-list input[type="checkbox"] {
 
   /* Responsive fix: tuck buttons inside on small screens */
   @media (max-width: 1030px) {
-    .prev-btn { left: 10px; }
-    .next-btn { right: 10px; }
+    .prev-btn {
+      left: 10px;
+    }
+    .next-btn {
+      right: 10px;
+    }
   }
 
   /* Scrollbar aesthetic configurations matching al-folio colors */
@@ -312,13 +317,13 @@ ul.task-list input[type="checkbox"] {
     background: transparent;
   }
   .project-carousel::-webkit-scrollbar-thumb {
-    background: var(--global-theme-color, #ccc); 
+    background: var(--global-theme-color, #ccc);
     border-radius: 3px;
   }
 }
 
-.backend-pipeline{
-    /* Pipeline alignment styles */
+.backend-pipeline {
+  /* Pipeline alignment styles */
   .border-left-theme {
     border-left: 2px solid var(--global-theme-color);
   }
@@ -445,4 +450,48 @@ ul.task-list input[type="checkbox"] {
 
 .d2h-diff-table {
   position: relative;
+}
+
+// Research context sits beside the introduction; technical sections retain full width.
+.project-introduction {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.project-introduction-content {
+  min-width: 0;
+}
+
+.research-connection {
+  align-self: start;
+  border-left: 1px solid var(--global-divider-color);
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  color: var(--global-text-color-light);
+  font-size: 0.875rem;
+  line-height: 1.6;
+
+  .research-connection-title {
+    margin: 0 0 0.5rem;
+    color: var(--global-text-color-light);
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .project-introduction {
+    grid-template-columns: minmax(0, 1fr) 13rem;
+    gap: 2rem;
+  }
+
+  .research-connection {
+    margin-top: 0.25rem;
+  }
 }

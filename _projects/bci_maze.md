@@ -1,5 +1,7 @@
 ---
 layout: page
+research_connection: >-
+  Acquiring EEG signals and decoding intended commands connects this project to my work on closed-loop BCIs, particularly the trade-off between decoding reliability and command latency.
 title: SSVEP-Based EEG Navigation
 description: Developing a four-channel EEG interface for confidence-aware navigation, with an OpenGL maze, SSVEP visual targets, and optical stimulus validation hardware.
 img: /assets/img/projects/bci_maze/ssvep_thumbnail.png

@@ -10,5 +10,4 @@ children:
   # - title: divider
   - title: Zen Garden
     permalink: /zen-garden/
-
 ---

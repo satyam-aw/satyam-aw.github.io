@@ -1,5 +1,7 @@
 ---
 layout: page
+research_connection: >-
+  Understanding calibration, latency, and movement-dependent sensing errors informs my work on reliable signal decoding in closed-loop BCIs.
 title: EyeTTS
 description: Eye-tracking calibration and gaze analysis during mixed-reality locomotion.
 img: assets/img/publication_preview/eyetts.webp
@@ -16,7 +18,7 @@ project_pdf: /assets/pdf/IEEEPosterEyeTracking2024.pdf
 > | :------------------------ | :-------------------------------------------------------------- |
 > | **Research Area**         | Spatial Perception · Mixed Reality · Human-Computer Interaction |
 > | **Institution**           | Four Eyes Laboratory, University of California, Santa Barbara   |
-> | **Duration**              | September 2021 – June 2024                                      |
+> | **Duration**              | September 2021 – June 2023                                      |
 > | **Advisor**               | Prof. Tobias Höllerer                                           |
 > | **Co-Advisor**            | Prof. Michael Beyeler                                           |
 > | **Role**                  | Graduate Researcher (Lead Developer & First Author)             |
