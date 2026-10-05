@@ -9,40 +9,77 @@ on:
     branches:
       - master
       - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prettier-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
 
 jobs:
   check:
-    # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node.js ⚙️
+        with:
+          # Check the triggering revision; a newer branch tip must not be overwritten.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Setup Node.js
         uses: actions/setup-node@v4
-      - name: Install Prettier 💾
-        run: npm install --save-dev --save-exact prettier @shopify/prettier-plugin-liquid
-      - name: Prettier Check 🔎
+        with:
+          node-version: "24"
+          cache: npm
+      - name: Install Prettier
+        run: npm ci --ignore-scripts
+      - name: Check formatting
         id: prettier
-        run: npx prettier . --check
-      - name: Create diff 📝
-        # https://docs.github.com/en/actions/learn-github-actions/expressions#failure
-        if: ${{ failure() }}
+        continue-on-error: true
+        run: npx --no-install prettier . --check
+      - name: Fix and verify formatting
+        if: steps.prettier.outcome == 'failure'
+        id: autofix
         run: |
-          npx prettier . --write
-          git diff -- . ':(exclude)package-lock.json' ':(exclude)package.json' > diff.txt
-          npm install -g diff2html-cli
-          diff2html -i file -s side -F diff.html -- diff.txt
-      - name: Upload html diff ⬆️
-        id: artifact-upload
-        if: ${{ failure() && steps.prettier.conclusion == 'failure' }}
+          npx --no-install prettier . --write
+          npx --no-install prettier . --check
+          git diff --check
+          git diff --binary > "$RUNNER_TEMP/prettier.patch"
+      - name: Upload formatting patch
+        if: steps.autofix.outcome == 'success'
         uses: actions/upload-artifact@v4
         with:
-          name: HTML Diff
-          path: diff.html
+          name: prettier-fixes
+          path: ${{ runner.temp }}/prettier.patch
           retention-days: 7
-      - name: Dispatch information to repository 🗣️
-        if: ${{ failure() && steps.prettier.conclusion == 'failure' && github.event_name == 'pull_request' }}
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          event-type: prettier-failed-on-pr
-          client-payload: '{"pr_number": "${{ github.event.number }}", "artifact_url": "${{ steps.artifact-upload.outputs.artifact-url }}", "run_id": "${{ github.run_id }}"}'
+      - name: Commit formatting fixes
+        if: >-
+          steps.autofix.outcome == 'success' &&
+          github.actor != 'dependabot[bot]' &&
+          (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+        env:
+          TARGET_BRANCH: ${{ github.event.pull_request.head.ref || github.ref_name }}
+        run: |
+          if git diff --quiet; then
+            echo "::error::The formatting check failed but no fixes were generated."
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Checkout is clean before Prettier, so only its tracked-file edits are staged.
+          git add --update
+          git commit -m "style(prettier): automatically fix formatting"
+          if ! git push origin "HEAD:refs/heads/$TARGET_BRANCH"; then
+            echo "::error::Could not save formatting fixes. Branch protection or a newer push may block this update. Download the prettier-fixes artifact and apply it locally."
+            exit 1
+          fi
+          echo "Formatting fixes committed to $TARGET_BRANCH." >> "$GITHUB_STEP_SUMMARY"
+      - name: Report fixes requiring manual application
+        if: >-
+          steps.autofix.outcome == 'success' &&
+          (github.actor == 'dependabot[bot]' ||
+          (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository))
+        run: |
+          echo "::error::This run cannot push to the source branch. Download the prettier-fixes artifact and apply prettier.patch with git apply."
+          exit 1
