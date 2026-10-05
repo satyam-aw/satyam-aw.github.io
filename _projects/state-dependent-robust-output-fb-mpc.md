@@ -8,7 +8,7 @@ img: /assets/img/projects/safe-output-fb-mpc.jpg
 category: "Safe & Intelligent Control"
 importance: 3
 selected: true
-completed_on: "Imperial College London, 2026–Present"
+completed_on: "Remote collaboration · Imperial College London, 2026–Present"
 github: https://github.com/satyam-aw/ROHMPC-State-Dependent-Uncertainty
 project_pdf: https://github.com/satyam-aw/ROHMPC-State-Dependent-Uncertainty/blob/master/research/state_dependent_bounds/manuscript/state_dependent_rohmpc.pdf
 _styles: |
@@ -39,7 +39,7 @@ project_toc: true
 project_toc_level: "2"
 ---
 
-**Ongoing research under the guidance of Prof. Johannes Köhler at Imperial College London.**
+**Ongoing remote research collaboration under the guidance of Prof. Johannes Köhler at Imperial College London.**
 
 This project studies robust output-feedback model predictive control when uncertainty varies with the system state. An observer estimates the state from noisy measurements; estimation error and tracking error then jointly determine the robustness margins used by the controller.
 

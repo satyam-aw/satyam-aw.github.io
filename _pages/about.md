@@ -30,7 +30,7 @@ selected_projects:
 
 My research interests center on **reliable closed-loop brain–computer interfaces**—from physiological signal acquisition and intended-action decoding to control, feedback, and adaptation. My current work explores EEG-based interfaces and robust estimation and control under uncertainty.
 
-I earned my M.S. in Computer Science at UC Santa Barbara, where I studied eye-tracking behavior and calibration during mixed-reality locomotion with Prof. Tobias Höllerer and Prof. Michael Beyeler in the Four Eyes Lab. I now work with Dr. Johannes Köhler at Imperial College London on robust output-feedback control with state-dependent uncertainty.
+I earned my M.S. in Computer Science at UC Santa Barbara, where I studied eye-tracking behavior and calibration during mixed-reality locomotion with Prof. Tobias Höllerer and Prof. Michael Beyeler in the Four Eyes Lab. I now collaborate remotely with Prof. Johannes Köhler at Imperial College London on robust output-feedback control with state-dependent uncertainty.
 
 ### Research questions
 

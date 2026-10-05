@@ -33,8 +33,8 @@ cv:
         url: https://iitkgp.ac.in
         highlights:
           - "GPA: 8.98/10.0; Minor in Computer Science."
-          - Core technical member of the Autonomous Ground Vehicle and Swarm Robotics research groups.
-          - Projects in wearable sensing, human activity recognition, autonomous navigation, and swarm coordination.
+          - Worked with the Autonomous Ground Vehicle group and Technology Robotix Society.
+          - Projects in wearable sensing, human activity recognition, autonomous navigation, robot coordination, and drones.
         degree: B.Tech.
         start_date: 2016-07
         end_date: 2020-07
@@ -61,11 +61,12 @@ cv:
       - bullet: How should a system act when that inference is uncertain?
     Research Experience:
       - company: Inria
-        position: SSVEP-Based EEG Navigation — ongoing research under guidance
+        position: Research Collaboration — SSVEP-Based EEG Navigation
         start_date: 2026
         end_date: present
         url: /projects/bci_maze/
-        summary: Under the guidance of Prof. Camille Gontier.
+        location: Remote
+        summary: Remote research collaboration under the guidance of Prof. Camille Gontier.
         highlights:
           - Developing a four-channel EEG interface for confidence-aware navigation in a C++/OpenGL maze.
           - Assembled BioAmp acquisition hardware with shared ground and reference; implemented visual targets and raw
@@ -74,11 +75,12 @@ cv:
           - Calibrated EEG streaming, CCA decoding, and EEG-controlled navigation remain integration and evaluation
             work.
       - company: University of Reading
-        position: EEG-to-Kinematics Decoding — ongoing research under guidance
+        position: Research Collaboration — EEG-to-Kinematics Decoding
         start_date: 2026
         end_date: present
         url: /projects/eeg-kinematics-decoding/
-        summary: Under the guidance of Prof. Slawomir Nasuto.
+        location: Remote
+        summary: Remote research collaboration under the guidance of Prof. Slawomir Nasuto.
         highlights:
           - Predicting wrist X, Y, and Z position from 32-channel EEG using the WAY-EEG-GAL dataset.
           - Built run-separated evaluation with training-only scaling and windows that never cross recording-run boundaries.
@@ -91,7 +93,8 @@ cv:
         start_date: 2026-07
         end_date: present
         url: /projects/state-dependent-robust-output-fb-mpc/
-        summary: Under the guidance of Prof. Johannes Köhler.
+        location: Remote
+        summary: Remote research collaboration under the guidance of Prof. Johannes Köhler.
         highlights:
           - Developing dynamic estimation and tracking-error bounds for state-dependent uncertainty using a reproduced
             ROHMPC certificate.
@@ -112,7 +115,7 @@ cv:
           - Contributed the Magic Leap 1 study framework and calibration work; Vivian Ross and Sydney Lim developed
             the HoloLens 2 and Meta Quest Pro frameworks.
           - First-author poster papers appeared at IEEE ISMAR Adjunct 2023 and IEEE VR Workshops 2024.
-      - company: Autonomous Ground Vehicle & Swarm Robotics Group, IIT Kharagpur
+      - company: Autonomous Ground Vehicle Group & Technology Robotix Society, IIT Kharagpur
         position: Undergraduate Researcher
         start_date: 2016-01
         end_date: 2018-12
@@ -122,7 +125,7 @@ cv:
             ground vehicle.
           - Worked on visual perception, hierarchical motion planning, local collision avoidance, and EKF-based sensor
             fusion in ROS.
-          - The Eklavya team finished runner-up at IGVC 2018.
+          - Worked on robot coordination and drone projects through Technology Robotix Society.
     Publications:
       - title: Eye Tracking Performance in Mobile Mixed Reality
         authors:

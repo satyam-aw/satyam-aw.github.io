@@ -10,7 +10,7 @@ thumbnail_credit:
   authors: "Luciw, Jarocka & Edin"
   source: https://www.nature.com/articles/sdata201447
   license: https://creativecommons.org/licenses/by/4.0/
-completed_on: "University of Reading, 2026–Present"
+completed_on: "Remote collaboration · University of Reading, 2026–Present"
 github: https://github.com/neurocontrol-lab/eeg-kinematics-decoding
 _styles: |
   .research-flow { display: block; width: 100%; height: auto; margin: 1.5rem 0; color: var(--global-text-color); }
@@ -41,7 +41,7 @@ project_toc: true
 project_toc_level: "2"
 ---
 
-**Ongoing research under the guidance of Prof. Slawomir Nasuto at the University of Reading.**
+**Ongoing remote research collaboration under the guidance of Prof. Slawomir Nasuto at the University of Reading.**
 
 This project investigates how well EEG can predict movement kinematics using the WAY-EEG-GAL grasp-and-lift dataset. The current target is the wrist tracker's **X, Y, and Z position**, predicted from 32 EEG channels.
 
