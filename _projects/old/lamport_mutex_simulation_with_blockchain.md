@@ -4,7 +4,7 @@ title: Distributed Mutual Exclusion under Adversarial Networks
 description: An investigation into distributed mutual exclusion within an adversarial network topology.
 img: /assets/img/lamport_cover.jpg # Replace with a preview image if you have one
 importance: 7
-completed_on: UCSB, Winter 22
+completed_on: "UCSB, Winter 2022"
 category: Systems Engineering
 related_publications: false
 github: https://github.com/satyam-aw/lamport-blockchain-mutex

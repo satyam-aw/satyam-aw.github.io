@@ -34,8 +34,6 @@ project_toc: true
 project_toc_level: "2"
 ---
 
-**B.Tech. final-year project · IIT Kharagpur · 2019–2020**
-
 **WatchScribe** explores how a wrist-worn smartwatch can reproduce writing on a vertical surface as digital boardwork. It uses accelerometer and gyroscope signals to estimate the pen's path, then removes the movements made while lifting and repositioning the pen between strokes.
 
 The system uses **rotational kinematics and unsupervised clustering**, without a pretrained handwriting model or a user-specific training session. This collaborative work was presented at **COMSNETS 2022**.

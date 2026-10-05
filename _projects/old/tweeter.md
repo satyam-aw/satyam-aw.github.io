@@ -2,7 +2,7 @@
 layout: page
 title: Tweeter
 description: Distributed Systems Testbed for Scalability Analysis
-completed_on: UCSB, Fall 21
+completed_on: "UCSB, Fall 2021"
 img: assets/img/8.webp
 importance: 8
 category: Systems Engineering
