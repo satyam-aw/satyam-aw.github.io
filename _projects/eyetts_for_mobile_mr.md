@@ -7,7 +7,7 @@ description: Evaluating and calibrating eye tracking during mixed-reality locomo
 img: assets/img/publication_preview/eyetts.webp
 importance: 5
 category: "Neural Interfaces & Biosignals"
-completed_on: "UCSB, Sep 2021–Jun 2023"
+completed_on: "UCSB, Sep 2021–Mar 2023"
 demo_video: https://www.youtube.com/playlist?list=PLQbqwztmTvAVAUClXj-sOkpQ9sBJbT5pG
 github: https://github.com/EyeTTS
 project_pdf: /assets/pdf/IEEEPosterEyeTracking2024.pdf

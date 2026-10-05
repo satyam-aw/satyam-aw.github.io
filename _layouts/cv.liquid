@@ -232,7 +232,7 @@ layout: default
               {% elsif section_title == 'Industry Experience' %}
                 {% assign entries = section_entries %}
                 {% include cv/experience.liquid %}
-              {% elsif section_title == 'Projects' or section_title == 'Open Source Projects' %}
+              {% elsif section_title == 'Projects' or section_title == 'Selected Research Projects' or section_title == 'Open Source Projects' %}
                 {% assign entries = section_entries %}
                 {% include cv/projects.liquid %}
               {% elsif section_title == 'References' %}

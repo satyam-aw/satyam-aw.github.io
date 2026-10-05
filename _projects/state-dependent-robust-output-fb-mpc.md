@@ -39,7 +39,7 @@ project_toc: true
 project_toc_level: "2"
 ---
 
-**Ongoing remote research collaboration under the guidance of Prof. Johannes Köhler at Imperial College London.**
+**Ongoing remote research collaboration under the guidance of Dr. Johannes Köhler at Imperial College London.**
 
 This project studies robust output-feedback model predictive control when uncertainty varies with the system state. An observer estimates the state from noisy measurements; estimation error and tracking error then jointly determine the robustness margins used by the controller.
 

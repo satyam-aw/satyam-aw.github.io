@@ -45,7 +45,7 @@ project_toc: true
 project_toc_level: "2"
 ---
 
-**Ongoing remote research collaboration under the guidance of Prof. Camille Gontier at Inria.**
+**Ongoing remote research collaboration under the guidance of Dr. Camille Gontier at Inria.**
 
 I am extending an interactive 3D maze into a **four-channel EEG-based brain–computer interface (BCI)**. The aim is to translate a user's attention to flickering visual targets into navigation commands, while studying how signal quality, decoding confidence, and decision timing affect control.
 

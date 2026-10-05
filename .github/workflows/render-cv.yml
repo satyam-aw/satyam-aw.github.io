@@ -49,7 +49,8 @@ jobs:
           prepared_cv=$(mktemp _data/rendercv-input-XXXXXX.yaml)
           trap 'rm -f "$prepared_cv"' EXIT
           python3 bin/prepare_rendercv.py "$cv_file" "$prepared_cv"
-          rendercv render "$prepared_cv" --settings "$settings"
+          rendercv render "$prepared_cv" --settings "$settings" \
+            --design "$rendercv_dir/design.yaml" --locale-catalog "$rendercv_dir/locale.yaml"
           rm -f assets/rendercv/rendercv_output/*.typ
       - name: Upload rendercv_output as an artifact
         uses: actions/upload-artifact@v4
@@ -65,5 +66,5 @@ jobs:
             echo "Rendered CV is unchanged."
             exit 0
           fi
-          git commit -m "chore: render the latest CV"
+          git commit -m "chore(cv): render the latest CV"
           git push

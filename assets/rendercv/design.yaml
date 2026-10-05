@@ -1,7 +1,71 @@
-# for more options, see https://docs.rendercv.com/user_guide/yaml_input_structure/design/
+# Application layout for RenderCV 2.8; keep body text readable rather than shrinking it to fit.
 design:
   theme: classic
   page:
     size: a4
-    show_footer: false
+    top_margin: 1.7cm
+    bottom_margin: 1.7cm
+    left_margin: 1.8cm
+    right_margin: 1.8cm
+    show_footer: true
     show_top_note: false
+  colors:
+    name: rgb(25, 45, 65)
+    headline: rgb(65, 65, 65)
+    connections: rgb(25, 70, 110)
+    section_titles: rgb(25, 45, 65)
+    links: rgb(25, 70, 110)
+  typography:
+    alignment: left
+    line_spacing: 0.65em
+    font_size:
+      body: 11pt
+      name: 24pt
+      headline: 10pt
+      connections: 9pt
+      section_titles: 13pt
+  header:
+    space_below_name: 0.3cm
+    space_below_headline: 0.3cm
+    space_below_connections: 0.45cm
+  section_titles:
+    space_above: 0.6cm
+    space_below: 0.2cm
+  sections:
+    # Keep each section together so a new page retains its heading.
+    allow_page_break: false
+    space_between_regular_entries: 0.85em
+  entries:
+    allow_page_break: false
+    date_and_location_width: 4.1cm
+    degree_width: 0cm
+    space_between_columns: 0.3cm
+    short_second_row: false
+  templates:
+    footer: "NAME | PAGE_NUMBER / TOTAL_PAGES"
+    education_entry:
+      main_column: |-
+        **INSTITUTION**
+        DEGREE in AREA
+        SUMMARY
+        HIGHLIGHTS
+      degree_column: ""
+      date_and_location_column: |-
+        LOCATION
+        DATE
+    experience_entry:
+      main_column: |-
+        **COMPANY**
+        POSITION
+        SUMMARY
+        HIGHLIGHTS
+      date_and_location_column: |-
+        LOCATION
+        DATE
+    publication_entry:
+      main_column: |-
+        **TITLE**
+        AUTHORS
+        *JOURNAL*, DATE
+        URL
+      date_and_location_column: ""

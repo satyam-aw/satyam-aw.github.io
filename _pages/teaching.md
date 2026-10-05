@@ -27,13 +27,13 @@ calendar: true
 
 ### Core Responsibilities
 
-During my tenure as a graduate student at [UC Santa Barbara](https://ucsb.edu "UC Santa Barbara"), my instructional duties included:
+During my graduate studies at [UC Santa Barbara](https://ucsb.edu "UC Santa Barbara") from September 2021 to March 2023, my instructional duties included:
 
 - **Discussion Sections:** Led weekly interactive modules to reinforce lecture materials for up to 60 students per section.
 - **Curriculum Design:** Formulated practical coding assignments, structured lab tests, and conceptual quiz frameworks.
 - **Lecturing & Mentorship:** Delivered targeted guest lectures and guided senior capstone projects from ideation to deployment.
 - **Evaluation:** Maintained fair grading criteria for heavy assignments, code reviews, and formal examinations.
-<br>
+  <br>
 
 <br>
 
