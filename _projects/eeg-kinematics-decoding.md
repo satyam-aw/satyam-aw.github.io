@@ -19,10 +19,10 @@ _styles: |
   .research-note { border-left: 3px solid var(--global-theme-color); background: var(--global-card-bg-color); padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
   .research-figure { max-width: 720px; margin: 1.5rem auto; }
   .post article table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.75rem; font-size: 0.95rem; line-height: 1.55; }
-  .post article th, .post article td { padding: 0.8rem 1rem; vertical-align: top; border-bottom: 1px solid #dfe3e8; }
-  .post article .key-table thead { background: #e9edf2; color: #202b38; }
-  .post article .key-table tbody tr:nth-child(odd) { background: #fff; color: #202b38; }
-  .post article .key-table tbody tr:nth-child(even) { background: #f3f4f6; color: #202b38; }
+  .post article th, .post article td { padding: 0.8rem 1rem; vertical-align: top; border-bottom: 1px solid var(--global-table-border-color); }
+  .post article .key-table thead { background: var(--global-table-header-bg); color: var(--global-text-color); }
+  .post article .key-table tbody tr:nth-child(odd) { background: var(--global-table-row-bg); color: var(--global-text-color); }
+  .post article .key-table tbody tr:nth-child(even) { background: var(--global-table-stripe-bg); color: var(--global-text-color); }
   .post article td:first-child { font-weight: 500; }
 project_keywords:
   - EEG decoding
