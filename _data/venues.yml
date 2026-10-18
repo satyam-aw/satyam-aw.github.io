@@ -12,3 +12,15 @@
 
 "Vision":
   color: "#009f36"
+
+"JNE":
+  url: https://iopscience.iop.org/journal/1741-2552
+  color: "#3f6176"
+
+"IEEE TBME":
+  url: https://www.embs.org/tbme/
+  color: "#496a58"
+
+"bioRxiv":
+  url: https://www.biorxiv.org/
+  color: "#800020"
