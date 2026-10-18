@@ -44,7 +44,10 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/zen-garden/";
           },
-        },{id: "projects-autonomous-navigation-amp-robotics",
+        },{id: "news-completed-initial-single-target-cca-recordings-using-my-custom-built-eeg-cap-for-ssvep-based-navigation-with-encouraging-stimulation-associated-target-scores-next-improving-target-separation-and-idle-rejection-before-four-target-control",
+          title: 'Completed initial single-target CCA recordings using my custom-built EEG cap for SSVEP-based navigation,...',
+          description: "",
+          section: "News",},{id: "projects-autonomous-navigation-amp-robotics",
           title: 'Autonomous Navigation &amp;amp; Robotics',
           description: "Undergraduate robotics work with the AGV group and Technology Robotix Society at IIT Kharagpur, spanning autonomous navigation, robot coordination, and drones.",
           section: "Projects",handler: () => {
@@ -116,7 +119,7 @@ ninja.data = [{
               window.location.href = "/projects/spell_training_in_vr/";
             },},{id: "projects-ssvep-based-eeg-navigation",
           title: 'SSVEP-Based EEG Navigation',
-          description: "Developing a four-channel EEG interface for confidence-aware navigation, with an OpenGL maze, SSVEP visual targets, and optical stimulus validation hardware.",
+          description: "Toward reliable EEG-based navigation through SSVEP decoding and feedback control.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ssvep_navigation/";
             },},{id: "projects-state-dependent-robust-output-feedback-mpc",
