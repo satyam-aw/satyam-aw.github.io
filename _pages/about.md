@@ -28,14 +28,14 @@ selected_projects:
   limit: 3
 ---
 
-My research interests center on **reliable closed-loop brain–computer interfaces**—from physiological signal acquisition and intended-action decoding to control, feedback, and adaptation.
+My research interests center on **reliable closed-loop brain–computer interfaces**—from physiological signal acquisition and intended-action decoding to uncertainty-aware control, feedback, and adaptation.
 
-I earned my M.S. in Computer Science at UC Santa Barbara in March 2023, where I studied eye-tracking behavior and calibration during mixed-reality locomotion with Prof. Tobias Höllerer and Prof. Michael Beyeler in the Four Eyes Lab.
+I earned my M.S. in Computer Science at UC Santa Barbara, where I investigated eye-tracking behavior and calibration during mixed-reality locomotion in the Four Eyes Lab with Prof. Tobias Höllerer and Prof. Michael Beyeler.
 
-My current research connects **EEG decoding, brain–computer interfaces, and reliable closed-loop control**. I pursue EEG and BCI projects with guidance from Dr. Serafeim Perdikis, Prof. Slawomir Nasuto, and Dr. Camille Gontier, alongside work on robust estimation and control with Dr. Johannes Köhler.
+My current work spans **EEG-based decoding and robust estimation and control under uncertainty**. I explore neural-interface research with guidance from Dr. Serafeim Perdikis, Prof. Slawomir Nasuto, and Dr. Camille Gontier, alongside research on robust output-feedback control with Dr. Johannes Köhler.
 
 ### Research questions
 
-**How much can noisy physiological signals tell us about an intended action, and how early and precisely can we infer it?**
+**How much can noisy physiological signals reveal about intended actions, and how early and precisely can we infer them?**
 
-**How should a system act when that inference is uncertain?**
+**How can a closed-loop BCI use feedback control to act reliably when those inferences are uncertain?**
