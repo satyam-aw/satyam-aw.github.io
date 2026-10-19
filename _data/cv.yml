@@ -6,9 +6,9 @@ cv:
   label: Closed-Loop Brain-Computer Interfaces | Sensing, Decoding & Control
   email: satyam.aw@yahoo.com
   website: https://satyam-aw.github.io
-  summary: I study reliable closed-loop brain-computer interfaces, connecting physiological signal acquisition and
-    intent decoding with estimation and control under uncertainty. My work spans EEG interfaces, robust output-feedback
-    MPC, and movement-dependent sensing reliability.
+  summary: My research interests center on reliable closed-loop brain-computer interfaces, from physiological signal
+    acquisition and intent decoding to uncertainty-aware control, feedback, and adaptation. My current work spans
+    EEG-based decoding and robust estimation and control under uncertainty.
   social_networks:
     - network: GitHub
       username: satyam-aw
@@ -53,10 +53,12 @@ cv:
         location: Remote
         summary: "Guidance: Dr. Camille Gontier (Inria)."
         highlights:
-          - Developing a four-channel EEG interface for confidence-aware navigation in a C++/OpenGL maze.
-          - Assembled BioAmp hardware, implemented visual targets and acquisition diagnostics, and built optical stimulus-timing
-            tools.
-          - EEG streaming, CCA decoding, and EEG-controlled navigation remain integration and evaluation work.
+          - Built four-channel BioAmp/MG24 acquisition, a custom-built EEG cap, optical timing tools, and a live CCA
+            decoding pipeline.
+          - Evaluated live CCA decoding and offline decision-threshold replay, identifying target-discrimination
+            differences and trade-offs between command detection and false activations.
+          - Developing an EEG interface for a C++/OpenGL maze; simultaneous four-target control and neural error feedback
+            remain planned.
       - company: EEG-to-Kinematics Decoding
         position: Research Project
         start_date: 2026
