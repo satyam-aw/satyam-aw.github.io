@@ -34,7 +34,7 @@ design:
   sections:
     # Keep each section together so a new page retains its heading.
     allow_page_break: false
-    space_between_regular_entries: 0.85em
+    space_between_regular_entries: 0.55em
   entries:
     allow_page_break: false
     date_and_location_width: 4.1cm
