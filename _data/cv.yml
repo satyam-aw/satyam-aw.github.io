@@ -6,9 +6,9 @@ cv:
   label: Closed-Loop Brain-Computer Interfaces | Sensing, Decoding & Control
   email: satyam.aw@yahoo.com
   website: https://satyam-aw.github.io
-  summary: My research interests center on reliable closed-loop brain-computer interfaces, from physiological signal
-    acquisition and intent decoding to uncertainty-aware control, feedback, and adaptation. My current work spans
-    EEG-based decoding and robust estimation and control under uncertainty.
+  summary: My research interests center on reliable closed-loop brain-computer interfaces, spanning physiological sensing,
+    intent decoding, uncertainty-aware control, feedback, and adaptation. My current work spans EEG decoding, sensory
+    feedback for bidirectional neural interfaces, and robust estimation and control.
   social_networks:
     - network: GitHub
       username: satyam-aw
@@ -38,7 +38,6 @@ cv:
         start_date: 2026
         end_date: present
         url: /projects/ssvep_navigation/
-        location: Remote
         summary: "Guidance: Dr. Camille Gontier (Inria)."
         highlights:
           - Built four-channel BioAmp/MG24 acquisition, a custom-built EEG cap, optical timing tools, and a live CCA
@@ -52,7 +51,6 @@ cv:
         start_date: 2026
         end_date: present
         url: /projects/tens-eeg-waveform-decoding/
-        location: Remote
         summary: "Guidance: Prof. Mohsen Rakhshan (University of Central Florida)."
         highlights:
           - Investigating how peripheral stimulation waveforms relate to EEG responses and perceived sensation,
@@ -64,7 +62,6 @@ cv:
         start_date: 2026-07
         end_date: present
         url: /projects/state-dependent-robust-output-fb-mpc/
-        location: Remote
         summary: "Guidance: Dr. Johannes Köhler (Imperial College London)."
         highlights:
           - Developing coupled estimation and tracking-error bounds for state-dependent uncertainty using a reproduced
@@ -76,13 +73,10 @@ cv:
         start_date: 2026
         end_date: present
         url: /projects/eeg-kinematics-decoding/
-        location: Remote
         summary: "Guidance: Prof. Slawomir Nasuto (University of Reading)."
         highlights:
-          - Built run-separated evaluation of wrist-position prediction from 32-channel EEG, using training-only scaling.
-          - Compared six regression baselines; CNN-BiLSTM achieved R² = 0.809/0.783/0.748 for wrist X/Y/Z
-            on held-out runs from one participant.
-          - Cross-participant transfer and broader validation remain ongoing.
+          - Investigating how reliably EEG can reconstruct wrist movements across recording runs.
+          - Compared six models; best R² = 0.75-0.81 across wrist-position axes on held-out runs from one participant.
       - company: Four Eyes Laboratory, UC Santa Barbara
         position: Graduate Researcher - EyeTTS
         start_date: 2021-09

@@ -32,7 +32,7 @@ My research interests center on **reliable closed-loop brain–computer interfac
 
 I earned my M.S. in Computer Science at UC Santa Barbara, where I investigated eye-tracking behavior and calibration during mixed-reality locomotion in the Four Eyes Lab with Prof. Tobias Höllerer and Prof. Michael Beyeler.
 
-My current work spans **EEG-based decoding and robust estimation and control under uncertainty**. I explore neural-interface research with guidance from Dr. Serafeim Perdikis, Prof. Slawomir Nasuto, and Dr. Camille Gontier, alongside research on robust output-feedback control with Dr. Johannes Köhler.
+My current work spans **EEG-based decoding, sensory feedback for bidirectional neural interfaces, and robust estimation and control under uncertainty**. I pursue these projects with guidance from Dr. Camille Gontier, Prof. Mohsen Rakhshan, and Dr. Johannes Köhler, alongside collaborations in EEG decoding with researchers at Essex and Reading.
 
 ### Research questions
 
