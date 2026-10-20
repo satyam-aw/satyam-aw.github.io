@@ -1,5 +1,6 @@
 ---
 layout: page
+pinned: true
 title: Error-Related EEG During Mouse Movements
 description: Investigating responses to unexpected target displacement through participant-wise EEG analysis and matched preprocessing comparisons.
 img: /assets/img/projects/mouse-displacement-eeg/task-overview.png

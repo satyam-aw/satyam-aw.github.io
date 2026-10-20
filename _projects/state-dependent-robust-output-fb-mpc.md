@@ -1,5 +1,6 @@
 ---
 layout: page
+pinned: true
 research_connection: >-
   Estimation and control under uncertainty provide foundations for reliable closed-loop BCIs. Applying these methods to a BCI remains a longer-term research objective.
 title: State-Dependent Robust Output-Feedback MPC

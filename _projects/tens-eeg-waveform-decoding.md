@@ -1,5 +1,6 @@
 ---
 layout: page
+pinned: true
 title: TENS Waveform Decoding from EEG
 description: Auditing stimulus events and testing single-epoch EEG decoding of peripheral stimulation waveforms.
 research_connection: >-
@@ -34,6 +35,7 @@ I am investigating whether a single EEG epoch can distinguish which of five wave
 My initial Task 4 baseline did **not demonstrate reliable decoding above the 20% chance reference**. The current work emphasizes an auditable event-to-label pipeline and diagnostic controls before introducing more complex models.
 
 {% include figure.liquid path="assets/img/projects/tens-eeg/waveforms.png" alt="Illustrative profiles of sine, square, triangle, decreasing ramp, and increasing ramp stimulation waveforms" class="img-fluid rounded" %}
+
 <div class="caption">Conceptual waveform profiles only. These are not recorded current traces or a representation of the experiment's pulse timing, polarity, amplitude, or charge.</div>
 
 ## Motivation and experimental context

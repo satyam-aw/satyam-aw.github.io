@@ -1,5 +1,6 @@
 ---
 layout: page
+pinned: true
 title: EEG-to-Kinematics Decoding
 description: Decoding wrist position from 32-channel EEG with run-separated evaluation and six regression baselines on WAY-EEG-GAL.
 img: /assets/img/projects/eeg-kinematics/eeg-kinematics-thumbnail.jpg

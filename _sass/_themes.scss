@@ -19,6 +19,7 @@
   --global-distill-app-color: #{v.$grey-color};
   --global-divider-color: rgba(0, 0, 0, 0.1);
   --global-card-bg-color: #{v.$white-color};
+  --global-project-scrollbar-color: #dadde1;
   --global-table-header-bg: #e9edf2;
   --global-table-row-bg: #fff;
   --global-table-stripe-bg: #f3f4f6;
@@ -105,6 +106,7 @@ html[data-theme="dark"] {
   --global-distill-app-color: #{v.$grey-color-light};
   --global-divider-color: #424246;
   --global-card-bg-color: #{v.$grey-900};
+  --global-project-scrollbar-color: #3b4046;
   --global-table-header-bg: #34343c;
   --global-table-row-bg: var(--global-bg-color);
   --global-table-stripe-bg: var(--global-card-bg-color);

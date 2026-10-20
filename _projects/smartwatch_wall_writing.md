@@ -1,5 +1,6 @@
 ---
 layout: page
+pinned: true
 research_connection: >-
   Reconstructing writing from wrist-mounted inertial signals developed my interest in inferring human actions from indirect measurements, connecting acquisition, signal interpretation, and output evaluation.
 title: SmartWatch for Wall Writing

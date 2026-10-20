@@ -7,6 +7,7 @@ description: Toward reliable EEG-based navigation through SSVEP decoding and fee
 img: /assets/img/projects/bci_maze/ssvep_thumbnail.png
 completed_on: "Remote collaboration · Inria, 2026–Present"
 selected: true
+pinned: true
 thumbnail_credit:
   authors: "Rejer & Cieszyński"
   source: https://link.springer.com/article/10.1007/s10044-018-0758-4
