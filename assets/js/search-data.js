@@ -87,6 +87,11 @@ ninja.data = [{
           description: "Predictive control of adaptive video streaming using learned network forecasts.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/jitternot/";
+            },},{id: "projects-error-related-eeg-during-mouse-movements",
+          title: 'Error-Related EEG During Mouse Movements',
+          description: "Investigating responses to unexpected target displacement through participant-wise EEG analysis and matched preprocessing comparisons.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/mouse-displacement-eeg/";
             },},{id: "projects-distributed-mutual-exclusion-under-adversarial-networks",
           title: 'Distributed Mutual Exclusion under Adversarial Networks',
           description: "An investigation into distributed mutual exclusion within an adversarial network topology.",
@@ -127,6 +132,11 @@ ninja.data = [{
           description: "Dynamic estimation and tracking-error bounds using a reproduced ROHMPC certificate and state-dependent disturbance envelopes.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/state-dependent-robust-output-fb-mpc/";
+            },},{id: "projects-tens-waveform-decoding-from-eeg",
+          title: 'TENS Waveform Decoding from EEG',
+          description: "Auditing stimulus events and testing single-epoch EEG decoding of peripheral stimulation waveforms.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/tens-eeg-waveform-decoding/";
             },},{id: "teachings-cmpsc-189b-senior-computer-systems-project-capstone",
           title: 'CMPSC 189B: Senior Computer Systems Project (Capstone)',
           description: "The second quarter of the computer science senior capstone sequence focusing on engineering implementation, testing, and final product deployment.",
