@@ -33,18 +33,6 @@ cv:
         location: Kharagpur, India
         summary: "GPA: 8.98/10.0. Minor in Computer Science."
     Research Experience:
-      - company: Robust Output-Feedback MPC
-        position: Research Project
-        start_date: 2026-07
-        end_date: present
-        url: /projects/state-dependent-robust-output-fb-mpc/
-        location: Remote
-        summary: "Guidance: Dr. Johannes Köhler (Imperial College London)."
-        highlights:
-          - Developing coupled estimation and tracking-error bounds for state-dependent uncertainty using a reproduced
-            ROHMPC certificate.
-          - Computed a 6.68% final-time observer-radius reduction in a synthetic bound-propagation experiment;
-            closed-loop validation remains ongoing.
       - company: SSVEP-Based EEG Navigation
         position: Research Project
         start_date: 2026
@@ -59,6 +47,30 @@ cv:
             differences and trade-offs between command detection and false activations.
           - Developing an EEG interface for a C++/OpenGL maze; simultaneous four-target control and neural error feedback
             remain planned.
+      - company: Sensory Feedback for Bidirectional Neural Interfaces
+        position: Research Collaboration
+        start_date: 2026
+        end_date: present
+        url: /projects/tens-eeg-waveform-decoding/
+        location: Remote
+        summary: "Guidance: Prof. Mohsen Rakhshan (University of Central Florida)."
+        highlights:
+          - Investigating how peripheral stimulation waveforms relate to EEG responses and perceived sensation,
+            toward more natural sensory feedback for bidirectional interfaces.
+          - Testing whether single-epoch EEG classification can distinguish five stimulation waveforms, while
+            examining generalization across participants and potential stimulation and task-related confounds.
+      - company: Robust Output-Feedback MPC
+        position: Research Project
+        start_date: 2026-07
+        end_date: present
+        url: /projects/state-dependent-robust-output-fb-mpc/
+        location: Remote
+        summary: "Guidance: Dr. Johannes Köhler (Imperial College London)."
+        highlights:
+          - Developing coupled estimation and tracking-error bounds for state-dependent uncertainty using a reproduced
+            ROHMPC certificate.
+          - Computed a 6.68% final-time observer-radius reduction in a synthetic bound-propagation experiment;
+            closed-loop validation remains ongoing.
       - company: EEG-to-Kinematics Decoding
         position: Research Project
         start_date: 2026
