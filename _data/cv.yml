@@ -40,8 +40,7 @@ cv:
         url: /projects/ssvep_navigation/
         summary: "Guidance: Dr. Camille Gontier (Inria)."
         highlights:
-          - Built four-channel BioAmp/MG24 acquisition, a custom-built EEG cap, optical timing tools, and a live CCA
-            decoding pipeline.
+          - Built four-channel BioAmp/MG24 acquisition, a custom-built EEG cap, optical timing tools, and live CCA decoding.
           - Evaluated live CCA decoding and offline decision-threshold replay, identifying target-discrimination
             differences and trade-offs between command detection and false activations.
           - Developing an EEG interface for a C++/OpenGL maze; simultaneous four-target control and neural error feedback
@@ -55,8 +54,7 @@ cv:
         highlights:
           - Investigating how peripheral stimulation waveforms relate to EEG responses and perceived sensation,
             toward more natural sensory feedback for bidirectional interfaces.
-          - Testing whether single-epoch EEG classification can distinguish five stimulation waveforms, while
-            examining generalization across participants and potential stimulation and task-related confounds.
+          - Testing whether single-epoch EEG classification can distinguish five stimulation waveforms, examining cross-participant generalization and potential stimulation and task-related confounds.
       - company: Robust Output-Feedback MPC
         position: Research Project
         start_date: 2026-07
@@ -67,7 +65,7 @@ cv:
           - Developing coupled estimation and tracking-error bounds for state-dependent uncertainty using a reproduced
             ROHMPC certificate.
           - Computed a 6.68% final-time observer-radius reduction in a synthetic bound-propagation experiment;
-            closed-loop validation remains ongoing.
+            closed-loop validation is ongoing.
       - company: EEG-to-Kinematics Decoding
         position: Research Project
         start_date: 2026
@@ -75,9 +73,9 @@ cv:
         url: /projects/eeg-kinematics-decoding/
         summary: "Guidance: Prof. Slawomir Nasuto (University of Reading)."
         highlights:
-          - Investigating how reliably EEG predicts hand movement across participants and experimental conditions.
-          - Compared six decoding models, finding strong within-participant performance but limited transfer to other participants.
-          - Examining when prediction errors arise during movement and whether EEG distinguishes object weights.
+          - Investigating how reliably EEG predicts hand movement across participants and conditions.
+          - Compared six decoding models, finding strong within-participant performance but limited cross-participant transfer.
+          - Examining prediction-error timing during movement and whether EEG distinguishes object weights.
       - company: Four Eyes Laboratory, UC Santa Barbara
         position: Graduate Researcher - EyeTTS
         start_date: 2021-09
@@ -95,8 +93,7 @@ cv:
         end_date: 2018
         url: /projects/agv_and_robotix/
         highlights:
-          - Contributed perception, sensor fusion, and navigation components to the Eklavya autonomous ground vehicle
-            platform.
+          - Contributed perception, sensor fusion, and navigation to the Eklavya autonomous ground vehicle platform.
           - Worked on robot coordination and drone projects through Technology Robotix Society.
     Publications:
       - title: Eye Tracking Performance in Mobile Mixed Reality
@@ -140,10 +137,10 @@ cv:
         start_date: 2019
         end_date: 2020
         url: /projects/smartwatch_wall_writing/
-        summary: IIT Kharagpur. Inertial-signal reconstruction of wall writing.
+        summary: IIT Kharagpur. Inertial-signal reconstruction of wall writing. COMSNETS 2022.
         highlights:
           - Combined orientation correction and unsupervised stroke separation without a pretrained handwriting model;
-            evaluated human readability and geometric reconstruction. Published at COMSNETS 2022.
+            evaluated human readability and geometric reconstruction.
       - name: JitterNot
         date: Spring 2022
         url: /projects/jitternot/
@@ -180,15 +177,14 @@ cv:
         start_date: 2022-06
         end_date: 2022-09
         highlights:
-          - Developed user-facing search and product-discovery features for Coupang's Android commerce platform.
+          - Developed search and product-discovery features for Coupang's Android app.
       - company: Samsung Research Institute
         position: Software Engineer (CL 2)
         location: Noida, India
         start_date: 2020-09
         end_date: 2021-09
         highlights:
-          - Developed Android platform and device applications involving media processing, privacy, and isolated user-storage
-            architectures.
+          - Developed Android platform and device applications for media processing, privacy, and isolated user-storage architectures.
     Teaching:
       - company: University of California, Santa Barbara
         position: Graduate Teaching Assistant
@@ -198,7 +194,7 @@ cv:
         summary: Six quarters across introductory CS, mobile development, and senior capstone courses; mentored and
           evaluated 300+ students.
         highlights:
-          - Led discussion sections for up to 60 students, developed assessments, delivered guest lectures, and guided
+          - Led discussion sections for up to 60 students, developed assessments, gave guest lectures, and guided
             capstone teams.
           - "Courses: CMPSC 16, 24, 184, and 189A/B."
         location: Santa Barbara, CA
