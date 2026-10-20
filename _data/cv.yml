@@ -75,8 +75,9 @@ cv:
         url: /projects/eeg-kinematics-decoding/
         summary: "Guidance: Prof. Slawomir Nasuto (University of Reading)."
         highlights:
-          - Investigating how reliably EEG can reconstruct wrist movements across recording runs.
-          - Compared six models; best R² = 0.75-0.81 across wrist-position axes on held-out runs from one participant.
+          - Investigating how reliably EEG predicts hand movement across participants and experimental conditions.
+          - Compared six decoding models, finding strong within-participant performance but limited transfer to other participants.
+          - Examining when prediction errors arise during movement and whether EEG distinguishes object weights.
       - company: Four Eyes Laboratory, UC Santa Barbara
         position: Graduate Researcher - EyeTTS
         start_date: 2021-09
