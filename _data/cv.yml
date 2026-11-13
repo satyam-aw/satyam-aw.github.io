@@ -40,11 +40,11 @@ cv:
         url: /projects/ssvep_navigation/
         summary: "Guidance: Dr. Camille Gontier (Inria)."
         highlights:
-          - Built four-channel BioAmp/MG24 acquisition, a custom-built EEG cap, optical timing tools, and live CCA decoding.
-          - Evaluated live CCA decoding and offline decision-threshold replay, identifying target-discrimination
-            differences and trade-offs between command detection and false activations.
-          - Developing an EEG interface for a C++/OpenGL maze; simultaneous four-target control and neural error feedback
-            remain planned.
+          - Built a four-channel BioAmp/MG24 EEG acquisition system, a custom EEG cap with a documented montage,
+            and photodiode timing tools.
+          - Tested single- and four-target CCA decoding and used replay for initial tuning of window length,
+            harmonic count, and decision thresholds.
+          - Integrated a live CCA decoder with a C++/OpenGL maze and tested the pipeline end to end.
       - company: Sensory Feedback for Bidirectional Neural Interfaces
         position: Research Collaboration
         start_date: 2026
