@@ -115,12 +115,12 @@ layout: default
         <!-- Summary -->
         {% if cv.summary %}
           <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">Professional Summary</h3>
+            <h3 class="card-title font-weight-medium">Research Profile</h3>
             <p>{{ cv.summary | markdownify | remove: '<p>' | remove: '</p>' }}</p>
           </div>
         {% endif %}
 
-        <!-- 1. Education Section -->
+        <!-- Education -->
         {% if cv.sections.Education %}
           <a class="anchor" id="education"></a>
           <div class="card mt-3 p-3">
@@ -132,31 +132,48 @@ layout: default
           </div>
         {% endif %}
 
-        <!-- 2. Skills Section -->
-        {% if cv.sections.Skills %}
-          <a class="anchor" id="skills"></a>
-          <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">Skills</h3>
-            <div>
-              {% assign entries = cv.sections.Skills %}
-              {% include cv/skills.liquid %}
+        {% if cv.sections['Research Experience'] %}
+          <a class="anchor" id="experience"></a>
+          {% assign research = cv.sections['Research Experience'] %}
+          {% assign current_research = research | where: 'end_date', 'present' %}
+          {% assign earlier_research = research | where_exp: 'entry', 'entry.end_date != "present"' %}
+          {% assign empty_array = '' | split: ',' %}
+          {% assign volunteer = cv.sections.Volunteer | default: empty_array %}
+          {% assign earlier_research = earlier_research | concat: volunteer %}
+          {% assign research_headings = 'Current Research Projects|Earlier Research Experience' | split: '|' %}
+          {% for heading in research_headings %}
+            {% if forloop.first %}
+              {% assign entries = current_research %}
+            {% else %}
+              {% assign entries = earlier_research %}
+            {% endif %}
+            {% if entries.size > 0 %}
+              <a class="anchor" id="{{ heading | slugify }}"></a>
+              <div class="card mt-3 p-3">
+                <h3 class="card-title font-weight-medium">{{ heading }}</h3>
+                <div>{% include cv/experience.liquid %}</div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          <!-- 6. Combined Experience & Volunteer Section -->
+          {% assign empty_array = '' | split: ',' %}
+          {% assign exp = cv.sections.Experience | default: empty_array %}
+          {% assign vol = cv.sections.Volunteer | default: empty_array %}
+          {% assign combined_experience = exp | concat: vol %}
+          {% if combined_experience.size > 0 %}
+            <a class="anchor" id="experience"></a>
+            <div class="card mt-3 p-3">
+              <h3 class="card-title font-weight-medium">Experience</h3>
+              <div>
+                {% assign entries = combined_experience %}
+                {% include cv/experience.liquid %}
+              </div>
             </div>
-          </div>
+          {% endif %}
         {% endif %}
 
-        <!-- 3. Interests Section -->
-        {% if cv.sections.Interests %}
-          <a class="anchor" id="interests"></a>
-          <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">Interests</h3>
-            <div>
-              {% assign entries = cv.sections.Interests %}
-              {% include cv/interests.liquid %}
-            </div>
-          </div>
-        {% endif %}
-
-        <!-- 4. Publications Section -->
+        <!-- Publications -->
         {% if cv.sections.Publications %}
           <a class="anchor" id="publications"></a>
           <div class="card mt-3 p-3">
@@ -168,7 +185,31 @@ layout: default
           </div>
         {% endif %}
 
-        <!-- 5. Teaching Section -->
+        <!-- Skills -->
+        {% if cv.sections.Skills %}
+          <a class="anchor" id="skills"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Skills</h3>
+            <div>
+              {% assign entries = cv.sections.Skills %}
+              {% include cv/skills.liquid %}
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- Interests -->
+        {% if cv.sections.Interests %}
+          <a class="anchor" id="interests"></a>
+          <div class="card mt-3 p-3">
+            <h3 class="card-title font-weight-medium">Interests</h3>
+            <div>
+              {% assign entries = cv.sections.Interests %}
+              {% include cv/interests.liquid %}
+            </div>
+          </div>
+        {% endif %}
+
+        <!-- Teaching -->
         {% if cv.sections.Teaching %}
           <a class="anchor" id="teaching"></a>
           <div class="card mt-3 p-3">
@@ -180,25 +221,7 @@ layout: default
           </div>
         {% endif %}
 
-        <!-- 6. Combined Experience & Volunteer Section -->
-        {% assign empty_array = '' | split: ',' %}
-        {% assign exp = cv.sections['Research Experience'] | default: cv.sections.Experience | default: empty_array %}
-        {% assign vol = cv.sections.Volunteer | default: empty_array %}
-        {% assign combined_experience = exp | concat: vol %}
-        {% if combined_experience.size > 0 %}
-          <a class="anchor" id="experience"></a>
-          <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">
-              {% if cv.sections['Research Experience'] %}Research Experience{% else %}Experience{% endif %}
-            </h3>
-            <div>
-              {% assign entries = combined_experience %}
-              {% include cv/experience.liquid %}
-            </div>
-          </div>
-        {% endif %}
-
-        <!-- 7. Fallback Loop for all remaining/uncaught sections -->
+        <!-- Remaining sections -->
         {% for section_pair in cv.sections %}
           {% assign section_title = section_pair[0] %}
           {% assign section_entries = section_pair[1] %}

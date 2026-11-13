@@ -6,7 +6,7 @@ cv:
   label: Closed-Loop Brain-Computer Interfaces | Sensing, Decoding & Control
   email: satyam.aw@yahoo.com
   website: https://satyam-aw.github.io
-  summary: I develop methods for decoding movement from EEG and for reliable closed-loop control. My current
+  summary: I develop methods for neural decoding and reliable closed-loop brain–computer interfaces. My current
     research spans real-time EEG interfaces, motor decoding, sensory feedback, and robust control under
     uncertainty.
   social_networks:
@@ -51,9 +51,24 @@ cv:
         url: /projects/eeg-kinematics-decoding/
         summary: "Guidance: Prof. Slawomir Nasuto (University of Reading)."
         highlights:
-          - Investigate how reliably EEG can reconstruct wrist movement during grasping and lifting, and whether separate decoders could improve predictions for specific movement stages.
-          - Compared six decoding models. Strong performance within one participant did not transfer reliably to 11 others without adaptation.
-          - Tested how EEG timing and input duration affect wrist decoding across 12 participants. Longer windows with more averaging reduced held-out prediction error for a convolutional model in all 12, by 17% on average.
+          - Investigate how reliably EEG can reconstruct wrist movement during grasping and lifting, and whether
+            separate decoders could improve predictions for specific movement stages.
+          - Compared six decoding models. Strong performance within one participant did not transfer reliably to 11
+            others without adaptation.
+          - Tested how EEG timing and input duration affect wrist decoding across 12 participants. Longer windows
+            with more averaging reduced held-out prediction error for a convolutional model in all 12, by 17% on
+            average.
+      - company: Error-Related EEG During Mouse Movements
+        position: Research Collaboration
+        start_date: 2026
+        end_date: present
+        url: /projects/mouse-displacement-eeg/
+        summary: "Guidance: Dr. Serafeim Perdikis (University of Essex); collaboration with Mushfika Sultana."
+        highlights:
+          - Cluster-based permutation tests on reaches matched for target entry identified significant EEG
+            differences after target displacement.
+          - Tested whether EEG could distinguish displaced from non-displaced trials on held-out runs within each
+            participant and session, achieving 76.3% mean balanced accuracy across 23 non-pilot participants.
       - company: Sensory Feedback for Bidirectional Neural Interfaces
         position: Research Collaboration
         start_date: 2026
@@ -74,17 +89,6 @@ cv:
           - Developing joint bounds for state-estimation and tracking errors under state-dependent uncertainty.
           - Reduced the final observer radius by 6.68% in a synthetic bound-propagation experiment. Closed-loop
             validation is ongoing.
-      - company: Error-Related EEG During Mouse Movements
-        position: Research Collaboration
-        start_date: 2026
-        end_date: present
-        url: /projects/mouse-displacement-eeg/
-        summary: "Guidance: Dr. Serafeim Perdikis (University of Essex); collaboration with Mushfika Sultana."
-        highlights:
-          - Examined when EEG responses differed between reaches with and without target displacement. Temporal
-            permutation tests on matched trials identified significant clusters after the target shifted.
-          - Tested whether EEG could distinguish displaced from non-displaced trials on held-out runs within each
-            participant and session, achieving 76.3% mean balanced accuracy across 23 non-pilot participants.
       - company: Four Eyes Laboratory, UC Santa Barbara
         position: Graduate Researcher - EyeTTS
         start_date: 2022-01
@@ -102,19 +106,6 @@ cv:
         end_date: 2018
         summary: Perception, sensor fusion, and navigation for the Eklavya autonomous ground vehicle.
     Publications:
-      - title: "SmartWatch for Wall Writing: Real-time Transcription of Wall Writing from Inertial Sensing"
-        authors:
-          - Snigdha Das
-          - Satyam Awasthi
-          - Abdul Shamnar P
-          - Pradipta De
-          - Sandip Chakraborty
-          - Bivas Mitra
-        publisher: COMSNETS
-        releaseDate: 2022
-        doi: 10.1109/COMSNETS53615.2022.9668531
-        url: https://doi.org/10.1109/COMSNETS53615.2022.9668531
-        publication_type: conference
       - title: Eye Tracking Performance in Mobile Mixed Reality
         authors:
           - Satyam Awasthi
@@ -138,31 +129,19 @@ cv:
         doi: 10.1109/ISMAR-Adjunct60411.2023.00104
         url: https://doi.org/10.1109/ISMAR-Adjunct60411.2023.00104
         publication_type: workshop_poster
-    Industry Experience:
-      - company: Intuit
-        position: Software Engineer 2
-        start_date: 2024-03
-        end_date: 2026-01
-      - company: Yahoo
-        position: Software Dev Engineer II (IC3)
-        start_date: 2023-04
-        end_date: 2023-11
-      - company: Coupang
-        position: Software Engineering Intern
-        start_date: 2022-06
-        end_date: 2022-09
-      - company: Samsung Research Institute
-        position: Software Engineer (CL 2)
-        start_date: 2020-09
-        end_date: 2021-09
-    Teaching:
-      - company: University of California, Santa Barbara
-        position: Graduate Teaching Assistant
-        start_date: 2021-09
-        end_date: 2023-03
-        url: /teaching/
-        summary: Taught six quarters across CMPSC 16, 24, 184, and 189A/B, mentored capstone teams, and supported
-          300+ students.
+      - title: "SmartWatch for Wall Writing: Real-time Transcription of Wall Writing from Inertial Sensing"
+        authors:
+          - Snigdha Das
+          - Satyam Awasthi
+          - Abdul Shamnar P
+          - Pradipta De
+          - Sandip Chakraborty
+          - Bivas Mitra
+        publisher: COMSNETS
+        releaseDate: 2022
+        doi: 10.1109/COMSNETS53615.2022.9668531
+        url: https://doi.org/10.1109/COMSNETS53615.2022.9668531
+        publication_type: conference
     Skills:
       - name: Programming & scientific computing
         keywords:
@@ -188,5 +167,30 @@ cv:
           - BioAmp EEG acquisition
           - photodiode timing
           - OpenGL
+    Teaching:
+      - company: University of California, Santa Barbara
+        position: Graduate Teaching Assistant
+        start_date: 2021-09
+        end_date: 2023-03
+        url: /teaching/
+        summary: Taught six quarters across CMPSC 16, 24, 184, and 189A/B, mentored capstone teams, and supported
+          300+ students.
+    Industry Experience:
+      - company: Intuit
+        position: Software Engineer 2
+        start_date: 2024-03
+        end_date: 2026-01
+      - company: Yahoo
+        position: Software Dev Engineer II (IC3)
+        start_date: 2023-04
+        end_date: 2023-11
+      - company: Coupang
+        position: Software Engineering Intern
+        start_date: 2022-06
+        end_date: 2022-09
+      - company: Samsung Research Institute
+        position: Software Engineer (CL 2)
+        start_date: 2020-09
+        end_date: 2021-09
     Academic Service:
       - bullet: Peer Reviewer, ACM UIST 2024 (interactive systems, spatial tracking, and interface hardware).
