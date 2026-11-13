@@ -6,9 +6,9 @@ cv:
   label: Closed-Loop Brain-Computer Interfaces | Sensing, Decoding & Control
   email: satyam.aw@yahoo.com
   website: https://satyam-aw.github.io
-  summary: My research interests center on reliable closed-loop brain-computer interfaces, spanning physiological sensing,
-    intent decoding, uncertainty-aware control, feedback, and adaptation. My current work spans EEG decoding, sensory
-    feedback for bidirectional neural interfaces, and robust estimation and control.
+  summary: I develop methods for decoding movement from EEG and for reliable closed-loop control. My current
+    research spans real-time EEG interfaces, motor decoding, sensory feedback, and robust control under
+    uncertainty.
   social_networks:
     - network: GitHub
       username: satyam-aw
@@ -40,32 +40,10 @@ cv:
         url: /projects/ssvep_navigation/
         summary: "Guidance: Dr. Camille Gontier (Inria)."
         highlights:
-          - Built a four-channel BioAmp/MG24 EEG acquisition system, a custom EEG cap with a documented montage,
-            and photodiode timing tools.
-          - Tested single- and four-target CCA decoding and used replay for initial tuning of window length,
-            harmonic count, and decision thresholds.
-          - Integrated a live CCA decoder with a C++/OpenGL maze and tested the pipeline end to end.
-      - company: Sensory Feedback for Bidirectional Neural Interfaces
-        position: Research Collaboration
-        start_date: 2026
-        end_date: present
-        url: /projects/tens-eeg-waveform-decoding/
-        summary: "Guidance: Prof. Mohsen Rakhshan (University of Central Florida)."
-        highlights:
-          - Investigating how peripheral stimulation waveforms relate to EEG responses and perceived sensation,
-            toward more natural sensory feedback for bidirectional interfaces.
-          - Testing whether single-epoch EEG classification can distinguish five stimulation waveforms, examining cross-participant generalization and potential stimulation and task-related confounds.
-      - company: Robust Output-Feedback MPC
-        position: Research Project
-        start_date: 2026-07
-        end_date: present
-        url: /projects/state-dependent-robust-output-fb-mpc/
-        summary: "Guidance: Dr. Johannes Köhler (Imperial College London)."
-        highlights:
-          - Developing coupled estimation and tracking-error bounds for state-dependent uncertainty using a reproduced
-            ROHMPC certificate.
-          - Computed a 6.68% final-time observer-radius reduction in a synthetic bound-propagation experiment;
-            closed-loop validation is ongoing.
+          - Built a four-channel BioAmp/MG24 EEG system, a custom electrode cap, and photodiode timing tools.
+          - Tested CCA decoding with one and four targets. Used recorded EEG to tune window length, harmonics, and
+            decision thresholds.
+          - Integrated live CCA decoding with a C++/OpenGL maze and tested the pipeline end to end.
       - company: EEG-to-Kinematics Decoding
         position: Research Project
         start_date: 2026
@@ -73,52 +51,57 @@ cv:
         url: /projects/eeg-kinematics-decoding/
         summary: "Guidance: Prof. Slawomir Nasuto (University of Reading)."
         highlights:
-          - Investigating how reliably EEG predicts hand movement across participants and conditions.
-          - Compared six decoding models, finding strong within-participant performance but limited cross-participant transfer.
-          - Examining prediction-error timing during movement and whether EEG distinguishes object weights.
+          - Investigate how reliably EEG can reconstruct wrist movement during grasping and lifting, and whether separate decoders could improve predictions for specific movement stages.
+          - Compared six decoding models. Strong performance within one participant did not transfer reliably to 11 others without adaptation.
+          - Tested how EEG timing and input duration affect wrist decoding across 12 participants. Longer windows with more averaging reduced held-out prediction error for a convolutional model in all 12, by 17% on average.
+      - company: Sensory Feedback for Bidirectional Neural Interfaces
+        position: Research Collaboration
+        start_date: 2026
+        end_date: present
+        url: /projects/tens-eeg-waveform-decoding/
+        summary: "Guidance: Prof. Mohsen Rakhshan (University of Central Florida)."
+        highlights:
+          - Studying how peripheral stimulation waveforms relate to EEG responses and perceived sensation.
+          - Testing whether single EEG epochs distinguish five waveforms across participants while checking for
+            stimulation and task confounds.
+      - company: Robust Output-Feedback MPC
+        position: Research Project
+        start_date: 2026-07
+        end_date: present
+        url: /projects/state-dependent-robust-output-fb-mpc/
+        summary: "Guidance: Dr. Johannes Köhler (Imperial College London)."
+        highlights:
+          - Developing joint bounds for state-estimation and tracking errors under state-dependent uncertainty.
+          - Reduced the final observer radius by 6.68% in a synthetic bound-propagation experiment. Closed-loop
+            validation is ongoing.
+      - company: Error-Related EEG During Mouse Movements
+        position: Research Collaboration
+        start_date: 2026
+        end_date: present
+        url: /projects/mouse-displacement-eeg/
+        summary: "Guidance: Dr. Serafeim Perdikis (University of Essex); collaboration with Mushfika Sultana."
+        highlights:
+          - Examined when EEG responses differed between reaches with and without target displacement. Temporal
+            permutation tests on matched trials identified significant clusters after the target shifted.
+          - Tested whether EEG could distinguish displaced from non-displaced trials on held-out runs within each
+            participant and session, achieving 76.3% mean balanced accuracy across 23 non-pilot participants.
       - company: Four Eyes Laboratory, UC Santa Barbara
         position: Graduate Researcher - EyeTTS
-        start_date: 2021-09
+        start_date: 2022-01
         end_date: 2023-03
         url: /projects/eyetts_for_mobile_mr/
         summary: "Advisor: Prof. Tobias Höllerer; co-advisor: Prof. Michael Beyeler."
         highlights:
-          - Developed the Magic Leap 1 eye-tracking study framework and Python calibration and analysis pipeline for
+          - Built a Magic Leap 1 eye-tracking study and a Python pipeline for calibration and analysis during
             mixed-reality locomotion.
-          - Studied gaze errors, eye-movement behavior, and temporal alignment under target and head/body motion.
-          - Contributed two first-author poster papers at IEEE ISMAR Adjunct 2023 and IEEE VR Workshops 2024.
-      - company: IIT Kharagpur
-        position: Undergraduate Robotics Research - AGV Group & Technology Robotix Society
+          - Analysed gaze error and timing during target, head, and body movement. First author on two poster
+            papers.
+      - company: Undergraduate Robotics Research, IIT Kharagpur
+        position: ""
         start_date: 2016
         end_date: 2018
-        url: /projects/agv_and_robotix/
-        highlights:
-          - Contributed perception, sensor fusion, and navigation to the Eklavya autonomous ground vehicle platform.
-          - Worked on robot coordination and drone projects through Technology Robotix Society.
+        summary: Perception, sensor fusion, and navigation for the Eklavya autonomous ground vehicle.
     Publications:
-      - title: Eye Tracking Performance in Mobile Mixed Reality
-        authors:
-          - Satyam Awasthi
-          - Vivian Ross
-          - Sydney Lim
-          - Michael Beyeler
-          - Tobias Höllerer
-        publisher: IEEE VR Workshops (VRW)
-        releaseDate: 2024
-        doi: 10.1109/VRW62533.2024.00321
-        url: https://doi.org/10.1109/VRW62533.2024.00321
-        publication_type: workshop_poster
-      - title: "EyeTTS: Evaluating and Calibrating Eye Tracking for Mixed-Reality Locomotion"
-        authors:
-          - Satyam Awasthi
-          - Vivian Ross
-          - Michael Beyeler
-          - Tobias Höllerer
-        publisher: IEEE ISMAR Adjunct
-        releaseDate: 2023
-        doi: 10.1109/ISMAR-Adjunct60411.2023.00104
-        url: https://doi.org/10.1109/ISMAR-Adjunct60411.2023.00104
-        publication_type: workshop_poster
       - title: "SmartWatch for Wall Writing: Real-time Transcription of Wall Writing from Inertial Sensing"
         authors:
           - Snigdha Das
@@ -132,105 +115,78 @@ cv:
         doi: 10.1109/COMSNETS53615.2022.9668531
         url: https://doi.org/10.1109/COMSNETS53615.2022.9668531
         publication_type: conference
-    Selected Research Projects:
-      - name: SmartWatch for Wall Writing (WatchScribe)
-        start_date: 2019
-        end_date: 2020
-        url: /projects/smartwatch_wall_writing/
-        summary: IIT Kharagpur. Inertial-signal reconstruction of wall writing. COMSNETS 2022.
-        highlights:
-          - Combined orientation correction and unsupervised stroke separation without a pretrained handwriting model;
-            evaluated human readability and geometric reconstruction.
-      - name: JitterNot
-        date: Spring 2022
-        url: /projects/jitternot/
-        summary: UC Santa Barbara. Learning-assisted MPC for adaptive video streaming.
-        highlights:
-          - Combined offline LSTM throughput prediction with constrained online resolution selection; evaluated against
-            Jitsi Meet under emulated network conditions.
-      - name: Wearable Human Activity Recognition
-        date: 2019-11
-        url: /projects/in_motion_har_deepconvlstm/
-        summary: IIT Kharagpur. DeepConvLSTM classification of inertial signals.
-        highlights:
-          - Built a six-channel, 100 Hz streaming pipeline with convolutional feature extraction and LSTM modeling of
-            overlapping five-second windows.
+      - title: Eye Tracking Performance in Mobile Mixed Reality
+        authors:
+          - Satyam Awasthi
+          - Vivian Ross
+          - Sydney Lim
+          - Michael Beyeler
+          - Tobias Höllerer
+        publisher: IEEE VR Workshops (VRW) (Workshop poster)
+        releaseDate: 2024
+        doi: 10.1109/VRW62533.2024.00321
+        url: https://doi.org/10.1109/VRW62533.2024.00321
+        publication_type: workshop_poster
+      - title: "EyeTTS: Evaluating and Calibrating Eye Tracking for Mixed-Reality Locomotion"
+        authors:
+          - Satyam Awasthi
+          - Vivian Ross
+          - Michael Beyeler
+          - Tobias Höllerer
+        publisher: IEEE ISMAR Adjunct (Workshop poster)
+        releaseDate: 2023
+        doi: 10.1109/ISMAR-Adjunct60411.2023.00104
+        url: https://doi.org/10.1109/ISMAR-Adjunct60411.2023.00104
+        publication_type: workshop_poster
     Industry Experience:
-      - company: Intuit Inc
+      - company: Intuit
         position: Software Engineer 2
-        location: Mountain View, CA
         start_date: 2024-03
         end_date: 2026-01
-        highlights:
-          - Built dual-stage agent pipelines for intent routing, structured tool execution, and generative UI composition.
-      - company: Yahoo Inc
+      - company: Yahoo
         position: Software Dev Engineer II (IC3)
-        location: Mountain View, CA
         start_date: 2023-04
         end_date: 2023-11
-        highlights:
-          - Developed production Android systems for Yahoo Mail, including data-driven inbox commerce and expense-management
-            features.
-      - company: Coupang Global LLC
+      - company: Coupang
         position: Software Engineering Intern
-        location: Mountain View, CA
         start_date: 2022-06
         end_date: 2022-09
-        highlights:
-          - Developed search and product-discovery features for Coupang's Android app.
       - company: Samsung Research Institute
         position: Software Engineer (CL 2)
-        location: Noida, India
         start_date: 2020-09
         end_date: 2021-09
-        highlights:
-          - Developed Android platform and device applications for media processing, privacy, and isolated user-storage architectures.
     Teaching:
       - company: University of California, Santa Barbara
         position: Graduate Teaching Assistant
         start_date: 2021-09
         end_date: 2023-03
         url: /teaching/
-        summary: Six quarters across introductory CS, mobile development, and senior capstone courses; mentored and
-          evaluated 300+ students.
-        highlights:
-          - Led discussion sections for up to 60 students, developed assessments, gave guest lectures, and guided
-            capstone teams.
-          - "Courses: CMPSC 16, 24, 184, and 189A/B."
-        location: Santa Barbara, CA
+        summary: Taught six quarters across CMPSC 16, 24, 184, and 189A/B, mentored capstone teams, and supported
+          300+ students.
     Skills:
-      - name: Programming
+      - name: Programming & scientific computing
         keywords:
           - Python
           - C++
           - MATLAB
-          - Java
-          - Kotlin
-          - Git
-      - name: Machine learning & signal processing
-        keywords:
-          - PyTorch
           - NumPy/SciPy
-          - OpenCV
-          - CNN/LSTM models
-          - Spectral analysis
-          - Digital filtering
+          - PyTorch
+      - name: Neural signal processing
+        keywords:
+          - EEG preprocessing
+          - spectral analysis
+          - digital filtering
+          - CCA
+          - time-series decoding
       - name: Control & estimation
         keywords:
-          - Robust output-feedback MPC
-          - Contraction-based methods
-          - EKF
-          - Sensor fusion
-          - Motion planning
-      - name: Robotics & interfaces
+          - robust output-feedback MPC
+          - contraction-based methods
+          - uncertainty propagation
+      - name: EEG & experimental systems
         keywords:
-          - ROS/ROS2
-          - Gazebo
-          - RViz
-          - Unity
+          - BioAmp EEG acquisition
+          - photodiode timing
           - OpenGL
-          - BioAmp
-          - Optical stimulus measurement
     Academic Service:
-      - bullet: Peer Reviewer, ACM UIST 2024 — reviewed submissions on interactive systems, spatial tracking, and
-          interface hardware.
+      - bullet: Peer Reviewer, ACM UIST 2024 (interactive systems, spatial tracking, and interface hardware).

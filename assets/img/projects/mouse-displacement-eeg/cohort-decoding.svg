@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 292" role="img" aria-labelledby="title desc">
+  <title id="title">Decoding target displacement on held-out runs</title>
+  <desc id="desc">Mean balanced accuracy across 23 non-pilot participants: 76.3% for eight channels and 70.3% for Cz and FCz. Chance reference 50%.</desc>
+  <rect width="760" height="292" rx="12" fill="#101c32"/>
+  <g font-family="system-ui, sans-serif" fill="#e6eef9">
+    <text x="32" y="40" font-size="23" font-weight="600">Decoding on held-out runs</text>
+    <text x="32" y="67" font-size="15" fill="#b5cef3">Mean balanced accuracy · 23 non-pilot participants</text>
+    <text x="32" y="132" font-size="16">Eight channels</text>
+    <text x="32" y="190" font-size="16">Cz / FCz</text>
+    <path d="M200 223H690" stroke="#8194af"/>
+    <rect x="200" y="109" width="373.87" height="32" rx="3" fill="#70bfe0"/>
+    <rect x="200" y="167" width="344.47" height="32" rx="3" fill="#eeb17f"/>
+    <path d="M445 91V223" stroke="#fff" stroke-dasharray="5 5" opacity=".85"/>
+    <text x="585" y="132" font-size="17" font-weight="600">76.3%</text>
+    <text x="555" y="190" font-size="17" font-weight="600">70.3%</text>
+    <g font-size="14" text-anchor="middle" fill="#c4d3e9">
+      <text x="200" y="247">0%</text><text x="445" y="247">50%</text><text x="690" y="247">100%</text>
+      <text x="445" y="272">Chance reference</text>
+    </g>
+  </g>
+</svg>
