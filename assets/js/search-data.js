@@ -67,7 +67,7 @@ ninja.data = [{
               window.location.href = "/projects/cohesive_ar/";
             },},{id: "projects-eeg-to-kinematics-decoding",
           title: 'EEG-to-Kinematics Decoding',
-          description: "Evaluating EEG-based wrist decoding across recording runs, participants, movement stages, and object conditions on WAY-EEG-GAL.",
+          description: "Studying how EEG timing, movement stage, and participant differences affect wrist decoding on WAY-EEG-GAL.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/eeg-kinematics-decoding/";
             },},{id: "projects-eyetts",
@@ -92,7 +92,7 @@ ninja.data = [{
               window.location.href = "/projects/jitternot/";
             },},{id: "projects-error-related-eeg-during-mouse-movements",
           title: 'Error-Related EEG During Mouse Movements',
-          description: "Investigating responses to unexpected target displacement through participant-wise EEG analysis and matched preprocessing comparisons.",
+          description: "Event-aligned EEG and held-out-run decoding of unexpected target displacement across 25 participants.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/mouse-displacement-eeg/";
             },},{id: "projects-distributed-mutual-exclusion-under-adversarial-networks",

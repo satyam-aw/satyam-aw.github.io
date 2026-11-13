@@ -32,8 +32,8 @@ design:
     space_above: 0.6cm
     space_below: 0.2cm
   sections:
-    # Keep each section together so a new page retains its heading.
-    allow_page_break: false
+    # Allow sections to continue on the next page; keep individual entries together.
+    allow_page_break: true
     space_between_regular_entries: 0.55em
   entries:
     allow_page_break: false
