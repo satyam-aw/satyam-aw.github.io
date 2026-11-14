@@ -53,7 +53,7 @@ cv:
         highlights:
           - Investigate how reliably EEG predicts wrist kinematics and whether stage-specific decoders improve prediction across movement phases.
           - Compared six wrist decoders; strong within-participant performance did not transfer reliably to 11 other participants without adaptation.
-          - During loading, EEG distinguished three object weights on held-out switch trials with 55% balanced accuracy (33% chance).
+          - Across 12 participants, stage-specific ridge regression reduced balanced mean squared error for wrist-position decoding from 0.60 to 0.14 compared with a single model trained across all stages.
       - company: Error-Related EEG During Mouse Movements
         position: Research Collaboration
         start_date: 2026

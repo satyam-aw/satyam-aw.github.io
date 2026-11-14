@@ -34,8 +34,6 @@ _styles: |
   .research-figure { max-width: 720px; margin: 1.5rem auto; }
   .post article table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.75rem; font-size: 0.95rem; line-height: 1.55; }
   .post article th, .post article td { padding: 0.8rem 1rem; vertical-align: top; border-bottom: 1px solid var(--global-table-border-color); }
-  .post article .key-table thead { background: transparent; color: var(--global-text-color); }
-  .post article .key-table tbody tr { background: transparent; color: var(--global-text-color); }
   .post article td:first-child { font-weight: 500; }
 project_keywords:
   - EEG decoding
@@ -66,7 +64,7 @@ I investigate these questions using 32-channel EEG from the WAY-EEG-GAL grasp-an
 
 <div class="research-note"><strong class="research-label"><a href="https://htmlpreview.github.io/?https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/reports/index.html">Explore the interactive experiment reports</a></strong><br>Browse charts and tables for ten experiment families. Filter by participant, model or movement stage where available, and follow the links to detailed results.</div>
 
-<div class="research-note"><strong class="research-label">Current scope</strong><br>Timing, EEG history, movement targets, and stage-specific weight decoding were evaluated on held-out runs within each of the 12 participants. The six-model benchmark uses P1, and the transfer study tests those models on the other 11 participants. Updated November 14, 2026.</div>
+<div class="research-note"><strong class="research-label">Current scope</strong><br>Model comparison, timing, EEG history, movement targets, and stage-specific weight decoding were evaluated on held-out runs within each of the 12 participants. The separate transfer study tests six P1 reference models on the other 11 participants. Updated November 14, 2026.</div>
 
 ---
 
@@ -106,27 +104,17 @@ The reference decoder uses continuous recordings, including intertrial samples. 
 
 ## 2. Experiments and findings
 
-### 2.1. Six-model P1 comparison
+<h3 id="21-six-model-p1-comparison">2.1. Wrist decoder comparison across 12 participants</h3>
 
-The six-model benchmark uses the same training and test runs from P1 for each model. **CNN–BiLSTM had the highest held-out R² on all three wrist axes**, and adding ELU improved the original CNN on each axis. This comparison uses one participant and one training seed.
+I compared four models fitted separately for each participant, using the same held-out wrist targets and a fixed 2 ms gap between EEG input and wrist prediction. Each participant contributes equally to the cohort scores.
 
-<div class="key-table" markdown="1">
-
-| Model             | Wrist X R² | Wrist Y R² | Wrist Z R² |
-| ----------------- | ---------: | ---------: | ---------: |
-| Training mean     |     -0.204 |     -0.324 |     -0.185 |
-| Ridge regression  |      0.558 |      0.420 |      0.462 |
-| Original CNN      |      0.547 |      0.399 |      0.451 |
-| CNN–BiLSTM        |  **0.809** |  **0.783** |  **0.748** |
-| CNN + ELU         |      0.746 |      0.713 |      0.678 |
-| EEGNet regression |      0.758 |      0.683 |      0.663 |
-
-</div>
+**EEGNet had the highest mean held-out R² (0.243)**, followed by CNN + ELU (0.140), CNN–BiLSTM (0.111), and ridge (0.049). This comparison measures performance on new recordings from the same participants.
 
 <div class="research-figure">
-{% include figure.liquid path="assets/img/projects/eeg-kinematics/eeg-kinematics-r2.png" alt="Held-out P1 wrist-position R-squared comparison across six models" class="img-fluid rounded" %}
-<div class="caption">Six-model comparison on held-out runs from P1. These are single-seed results, not a population-level performance estimate.</div>
+{% include figure.liquid path="assets/img/projects/eeg-kinematics/cohort-model-comparison.png" alt="Held-out wrist-position R-squared by axis and averaged across axes, for CNN plus ELU, CNN–BiLSTM, EEGNet, and ridge. EEGNet has the highest mean score." caption="Held-out R² for wrist X, Y and Z, averaged across 12 participants. Mean XYZ gives the three axes equal weight. The dashed line at zero marks the held-out mean reference." class="img-fluid rounded" zoomable=true %}
 </div>
+
+[Cohort scores and evaluation details](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/35a3597d216e7716d88425b254dd898786550988/outputs/timing-decoder-preferences-p1-p12-20261111T113206Z/heldout/population_summary.json)
 
 [Explore the interactive model comparison](https://htmlpreview.github.io/?https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/reports/model-comparison/index.html)
 
