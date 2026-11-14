@@ -51,13 +51,9 @@ cv:
         url: /projects/eeg-kinematics-decoding/
         summary: "Guidance: Prof. Slawomir Nasuto (University of Reading)."
         highlights:
-          - Investigate how reliably EEG can reconstruct wrist movement during grasping and lifting, and whether
-            separate decoders could improve predictions for specific movement stages.
-          - Compared six decoding models. Strong performance within one participant did not transfer reliably to 11
-            others without adaptation.
-          - Tested how EEG timing and input duration affect wrist decoding across 12 participants. Longer windows
-            with more averaging reduced held-out prediction error for a convolutional model in all 12, by 17% on
-            average.
+          - Investigate how reliably EEG predicts wrist kinematics and whether stage-specific decoders improve prediction across movement phases.
+          - Compared six wrist decoders; strong within-participant performance did not transfer reliably to 11 other participants without adaptation.
+          - During loading, EEG distinguished three object weights on held-out switch trials with 55% balanced accuracy (33% chance).
       - company: Error-Related EEG During Mouse Movements
         position: Research Collaboration
         start_date: 2026

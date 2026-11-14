@@ -44,20 +44,10 @@ project_keywords:
   - Cross-participant generalization
   - Movement-stage errors
 project_resources:
+  - label: Interactive experiment reports
+    url: https://htmlpreview.github.io/?https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/reports/index.html
   - label: Code and experiment roadmap
     url: https://github.com/neurocontrol-lab/eeg-kinematics-decoding#experiment-status
-  - label: Six-model P1 results
-    url: https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/six-model-comparison-p1-gpu-20260930T095506Z/RESULTS.md
-  - label: Frozen participant transfer
-    url: https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/frozen-p1-cross-participant-gpu-20260930T125956Z/RESULTS.md
-  - label: Movement-stage analysis
-    url: https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/saved-decoder-analysis-p1-20261013T172654Z/RESULTS.md
-  - label: P1 timing pilot
-    url: https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/ca75526aff08b4cb7d566fc12fdc721fd845c9a3/outputs/timing-alignment-p1-gpu-20261027T120222Z/RESULTS.md
-  - label: Movement dynamics and decoder error
-    url: https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/ca75526aff08b4cb7d566fc12fdc721fd845c9a3/outputs/error-dynamics-p1-20261028T091450Z/RESULTS.md
-  - label: Condition classification
-    url: https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/weight-classification-p1-gpu-20261014T115817Z/RESULTS.md
   - label: Target and coordinate provenance
     url: https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/documentation/dataset/COORDINATE_SYSTEM.md
   - label: Corrected baseline methods
@@ -74,7 +64,9 @@ How reliably can EEG reconstruct wrist movement during grasping and lifting, and
 
 I investigate these questions using 32-channel EEG from the WAY-EEG-GAL grasp-and-lift dataset. I extended a fork of [Thowfiq23/hand_motion_eeg](https://github.com/Thowfiq23/hand_motion_eeg), preserving the original pipeline as a reference and building an evaluation-corrected baseline. The work spans model comparison, transfer across participants, movement-stage and condition analyses, and controlled comparisons of timing, EEG history and movement targets.
 
-<div class="research-note"><strong class="research-label">Current scope</strong><br>The original six-model comparison trained on P1; frozen transfer evaluated those models on P2–P12. Follow-up timing, history and movement-target studies fit separate models for all 12 participants. Those studies evaluate held-out runs within each person. Updated November 13, 2026.</div>
+<div class="research-note"><strong class="research-label"><a href="https://htmlpreview.github.io/?https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/reports/index.html">Explore the interactive experiment reports</a></strong><br>Browse charts and tables for ten experiment families. Filter by participant, model or movement stage where available, and follow the links to detailed results.</div>
+
+<div class="research-note"><strong class="research-label">Current scope</strong><br>The original six-model comparison trained on P1; frozen transfer evaluated those models on P2–P12. Follow-up timing, history, movement-target and stage-specific weight studies fit separate models for all 12 participants. Those studies evaluate held-out runs within each person. Updated November 14, 2026.</div>
 
 ---
 
@@ -91,8 +83,8 @@ Each experiment defines its participant scope, prediction target, and analysis i
   <div class="evaluation-connector"><span aria-hidden="true">↓</span>Experiment-specific inputs and evaluation</div>
   <div class="evaluation-branches">
     <div class="evaluation-card"><strong>Continuous decoding</strong><span>Run-contained EEG predicts wrist movement; vary timing, history and target within participants, and test frozen transfer separately.</span></div>
-    <div class="evaluation-card"><strong>Movement-stage analysis</strong><span>Align saved predictions to events and compare error across stages. Stage-specific decoder training is planned.</span></div>
-    <div class="evaluation-card"><strong>Condition decoding</strong><span>Select trials by experimental condition, then aggregate EEG-window predictions to classify object weight.</span></div>
+    <div class="evaluation-card"><strong>Movement-stage analysis</strong><span>Align saved predictions to events and compare error across stages. Stage-specific wrist regression is planned.</span></div>
+    <div class="evaluation-card"><strong>Condition decoding</strong><span>Classify object weight at a fixed surface from whole trials or from EEG aligned to specific movement stages.</span></div>
   </div>
 </div>
 
@@ -155,7 +147,7 @@ For CNN–BiLSTM, errors were larger during reaching and return than during prep
 <div class="caption">Run 8 averages across 34 LEDOn-aligned trials. Orange intervals indicate error elevated relative to preparation under the exploratory simultaneous-band analysis. Error units are normalized coordinates; later stages can blur because trial durations differ.</div>
 </div>
 
-The airborne interval combines lifting and holding. Short phases have few or no windows entirely contained within the phase. These diagnostics motivate stage-specific comparisons, but **no stage-specific decoders have been trained**, and prediction errors alone do not establish distinct neural control routines. [Stage analysis](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/saved-decoder-analysis-p1-20261013T172654Z/RESULTS.md) and [trial-average methods](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/saved-decoder-analysis-p1-20261013T172654Z/trial_averages/RESULTS.md).
+The airborne interval combines lifting and holding. Short phases have few or no windows entirely contained within the phase. These diagnostics motivate stage-specific comparisons, but **no stage-specific wrist-trajectory decoders have been trained**, and prediction errors alone do not establish distinct neural control routines. [Stage analysis](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/saved-decoder-analysis-p1-20261013T172654Z/RESULTS.md) and [trial-average methods](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/saved-decoder-analysis-p1-20261013T172654Z/trial_averages/RESULTS.md).
 
 A [follow-up analysis](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/ca75526aff08b4cb7d566fc12fdc721fd845c9a3/outputs/error-dynamics-p1-20261028T091450Z/RESULTS.md) asked whether speed and acceleration explain prediction errors beyond wrist position and task stage. For the leading P1 decoder, adding those features gave no clear improvement in explaining held-out errors. A [follow-up across all 12 participants](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/35a3597d216e7716d88425b254dd898786550988/outputs/r6-population-error-models-20261111/RESULTS.md) likewise found no average improvement for the ridge or CNN + ELU error models in the primary comparison. These analyses use observed movement after the fact and inform how to test stage-based or dynamics-based decoders.
 
@@ -176,6 +168,20 @@ The first controlled classification task asks whether P1 EEG distinguishes **thr
 | CNN + ELU                   |                           27.73% |
 
 **Both learned classifiers scored below the 33.33% chance reference**: logistic regression reached 32.48% and CNN + ELU reached 27.73% held-out trial balanced accuracy. Neither classifier showed reliable held-out discrimination in this setup. A conditional circular-shift reference keeps predictions fixed and shifts whole-trial labels within each test run; it does not retrain under shuffled labels. The result does not establish that EEG lacks weight information. [Condition audit](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/condition-audit-20261014T115618Z/RESULTS.md) and [classification results](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/weight-classification-p1-gpu-20261014T115817Z/RESULTS.md).
+
+**By movement stage (C10).** The follow-up classified the same three weights at fixed sandpaper using separate models for each participant and stage. It compared a 64 ms EEG segment with a summary of the entire event-defined stage on the same **769 held-out trials** from 12 participants, including 275 trials where the weight changed.
+
+**EEG features carried weight-related information on held-out trials.** On weight-switch trials, shrinkage LDA using full-stage EEG reached **55.0% balanced accuracy during loading**, compared with **35.8% during reach** and a **33.3% chance reference**. The exploratory 95% participant bootstrap interval was 48.0–61.6% during loading and 30.3–40.4% during reach. Loading gave the clearest evidence of weight discrimination in this setup.
+
+On those same loading-stage switch trials, using full-stage features rather than the 64 ms segment also improved logistic regression from 40.5% to 55.7% and shrinkage LDA from 40.6% to 55.0%.
+
+<div class="research-figure">
+{% include figure.liquid path="assets/img/projects/eeg-kinematics/c10-stage-weight-comparison.png" alt="Changes in balanced accuracy by movement stage for repeat and switch trials, comparing full-stage EEG with a 64 millisecond segment and EEG plus duration with duration alone" caption="C10 · Paired changes in balanced accuracy across participants. The first two panels compare full-stage EEG with the 64 ms segment; the last compares EEG plus duration with duration alone. Bars show exploratory 95% paired bootstrap intervals." class="img-fluid rounded" zoomable=true %}
+</div>
+
+**Stage duration was a stronger predictor in a separate control.** On loading-stage switches, duration alone reached **80.3%** balanced accuracy; the logistic regression model using EEG plus duration reached **57.5%**. This comparison did not show added predictive value from EEG beyond duration in that model. Both analyses use completed stages. The shared weight schedule and signals associated with post-contact movement, force or sensory feedback limit what the EEG-only finding says about anticipation or the source of the information.
+
+[Explore weight decoding by stage, model and trial group](https://htmlpreview.github.io/?https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/reports/condition-decoding/index.html). [64 ms report](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/c10-stage-weight-20261114/RESULTS.md) · [Full-stage report](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/c10-stage-weight-full-stage-20261114/RESULTS.md).
 
 ### 2.5. EEG timing, history and movement targets
 
@@ -224,7 +230,7 @@ A separate saved-model benchmark measures synchronized CPU/GPU calls for individ
 - Audited trial conditions, built the first fixed-surface classifier comparison, and verified target/axis identity.
 - Organized reproducible reports, numeric evidence, and independent checks in the [public repository](https://github.com/neurocontrol-lab/eeg-kinematics-decoding).
 
-Next, I plan to test whether EEG distinguishes event-defined movement stages beyond what trial timing alone predicts. A separate comparison will ask whether stage-specific wrist decoders outperform a single model when training sample counts are matched. Condition-specific decoding and adaptation to new participants remain open. See the [experiment roadmap](https://github.com/neurocontrol-lab/eeg-kinematics-decoding#experiment-status) for the full plan.
+Next, I plan to test whether EEG distinguishes event-defined movement stages beyond what trial timing alone predicts. A separate comparison will ask whether stage-specific wrist decoders outperform a single model when training sample counts are matched. Condition-specific wrist regression and adaptation to new participants remain open. See the [experiment roadmap](https://github.com/neurocontrol-lab/eeg-kinematics-decoding#experiment-status) for the full plan.
 
 ---
 
