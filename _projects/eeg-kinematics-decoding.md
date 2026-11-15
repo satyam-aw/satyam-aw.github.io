@@ -64,7 +64,7 @@ I investigate these questions using 32-channel EEG from the WAY-EEG-GAL grasp-an
 
 <div class="research-note"><strong class="research-label"><a href="https://htmlpreview.github.io/?https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/reports/index.html">Explore the interactive experiment reports</a></strong><br>Browse charts and tables for ten experiment families. Filter by participant, model or movement stage where available, and follow the links to detailed results.</div>
 
-<div class="research-note"><strong class="research-label">Current scope</strong><br>Model comparison, timing, EEG history, movement targets, and stage-specific weight decoding were evaluated on held-out runs within each of the 12 participants. The separate transfer study tests six P1 reference models on the other 11 participants. Updated November 14, 2026.</div>
+<div class="research-note"><strong class="research-label">Current scope</strong><br>Model comparison, timing, EEG history, movement targets, and stage-specific wrist and weight decoding were evaluated on held-out runs within each of the 12 participants. The separate transfer study tests six P1 reference models on the other 11 participants. Updated November 14, 2026.</div>
 
 ---
 
@@ -81,7 +81,7 @@ Each experiment defines its participant scope, prediction target, and analysis i
   <div class="evaluation-connector"><span aria-hidden="true">↓</span>Experiment-specific inputs and evaluation</div>
   <div class="evaluation-branches">
     <div class="evaluation-card"><strong>Continuous decoding</strong><span>Run-contained EEG predicts wrist movement; vary timing, history and target within participants, and test frozen transfer separately.</span></div>
-    <div class="evaluation-card"><strong>Movement-stage analysis</strong><span>Align saved predictions to events and compare error across stages. Stage-specific wrist regression is planned.</span></div>
+    <div class="evaluation-card"><strong>Movement-stage analysis</strong><span>Align predictions to movement events and compare stage-specific wrist decoders with a model trained across stages.</span></div>
     <div class="evaluation-card"><strong>Condition decoding</strong><span>Classify object weight at a fixed surface from EEG spanning individual movement stages.</span></div>
   </div>
 </div>
@@ -134,7 +134,7 @@ Across 12 participants, I asked whether observed wrist velocity and acceleration
 {% include figure.liquid path="assets/img/projects/eeg-kinematics/r6-dynamics-error-explanation.png" alt="Change in accuracy of error models after adding observed velocity and acceleration for ridge and CNN plus ELU at three smoothing durations" caption="Change in error-model performance after adding velocity and acceleration. Values below zero indicate worse error prediction." class="img-fluid rounded" zoomable=true %}
 </div>
 
-The trial-average example below shows how errors change within a trial. In this P1 example, the CNN–BiLSTM had larger errors during reaching and return than during preparation or lift and hold. The stage comparisons motivate testing whether separate wrist decoders improve on one model trained across stages.
+The trial-average example below shows how errors change within a trial. In this P1 example, the CNN–BiLSTM had larger errors during reaching and return than during preparation or lift and hold. The next section tests whether fitting separate wrist decoders for known stages reduces errors.
 
 <div class="research-figure">
 {% include figure.liquid path="assets/img/projects/eeg-kinematics/p1-run8-trial-average.png" alt="Observed and predicted wrist trajectories and aligned prediction errors for 34 held-out P1 trials" caption="Example from P1: 34 trials aligned to the start cue. Orange intervals mark error elevated relative to preparation under exploratory simultaneous bootstrap bands." class="img-fluid rounded" zoomable=true %}
@@ -142,7 +142,21 @@ The trial-average example below shows how errors change within a trial. In this 
 
 [Explore the interactive movement-stage report](https://htmlpreview.github.io/?https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/reports/movement-stages/index.html)
 
-<h3 id="24-trial-condition-audit-and-weight-classification">2.4. Object-weight decoding across movement stages</h3>
+<h3 id="stage-specific-wrist-decoding">2.4. Stage-specific wrist decoding</h3>
+
+Does knowing the movement stage help decode wrist position from EEG? I compared four architectures fitted separately for each movement stage with the same architectures trained across stages. The comparison used identical held-out targets across 12 participants and five stages: preparation, reach, lift and hold, lowering, and return. Each EEG window and its target fell within the same stage.
+
+**Stage-specific ridge reduced balanced mean squared error from 0.60 to 0.14**, a **77% reduction** versus ridge trained across all stages. All four architectures had lower error when fitted by stage, including when compared with pooled models trained on the same number of windows.
+
+<div class="research-figure">
+{% include figure.liquid path="assets/img/projects/eeg-kinematics/stage-specific-wrist-decoding.png" alt="Balanced wrist-position MSE for stage-specific, pooled, and sample-matched pooled decoders. Stage-specific ridge scores 0.138, pooled ridge scores 0.600, and the stage mean scores 0.143." caption="Held-out mean squared error in standardized wrist coordinates. Trials have equal weight within each stage, and the five stages and 12 participants contribute equally to the summary. Lower is better." class="img-fluid rounded" zoomable=true %}
+</div>
+
+A baseline that predicted the training mean wrist position for each stage scored **0.143 MSE**, close to stage-specific ridge (0.138). The study shows that known stage boundaries help relative to a pooled decoder; it does not establish a clear gain from EEG over the stage mean or test whether stages can be identified in real time.
+
+[Explore the interactive movement-stage report](https://htmlpreview.github.io/?https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/reports/movement-stages/index.html) · [Full methods and results](https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/d6af800ef0876bc9aba1918baa39067c0f82f250/outputs/c5-stage-specific-models-20261114/RESULTS.md)
+
+<h3 id="24-trial-condition-audit-and-weight-classification">2.5. Object-weight decoding across movement stages</h3>
 
 Can EEG distinguish **165, 330, and 660 g** during grasping and lifting? With the contact surface fixed to sandpaper, I trained separate classifiers for each participant and movement stage using EEG from the full stage. The evaluation covered **769 held-out trials across 12 participants**, including 275 trials where the weight changed from the previous trial.
 
@@ -154,7 +168,7 @@ Can EEG distinguish **165, 330, and 660 g** during grasping and lifting? With th
 
 [Explore the interactive weight-decoding report](https://htmlpreview.github.io/?https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/reports/condition-decoding/index.html)
 
-<h3 id="25-eeg-timing-history-and-movement-targets">2.5. EEG timing</h3>
+<h3 id="25-eeg-timing-history-and-movement-targets">2.6. EEG timing</h3>
 
 Does the time between the last EEG sample and the wrist sample affect accuracy? I chose this gap using validation runs separately for each of the 12 participants and compared it with the 2 ms reference on the same test samples.
 
@@ -170,7 +184,7 @@ Does the time between the last EEG sample and the wrist sample affect accuracy? 
 
 [Explore the interactive timing report](https://htmlpreview.github.io/?https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/reports/timing-alignment/index.html)
 
-### 2.6. EEG history
+<h3 id="26-eeg-history">2.7. EEG history</h3>
 
 Does giving the decoder more EEG history help? I compared 256, 512, and 1,024 ms of EEG with the same input dimensions and prediction targets for each of the 12 participants.
 
@@ -182,7 +196,7 @@ Does giving the decoder more EEG history help? I compared 256, 512, and 1,024 ms
 
 [Explore the interactive EEG history report](https://htmlpreview.github.io/?https://github.com/neurocontrol-lab/eeg-kinematics-decoding/blob/main/outputs/reports/history-duration/index.html)
 
-### 2.7. Position versus velocity
+<h3 id="27-position-versus-velocity">2.8. Position versus velocity</h3>
 
 Using the same EEG windows and test times for all 12 participants, I compared prediction of wrist position and signed velocity. I evaluated each target against its own training-mean baseline.
 
@@ -212,12 +226,12 @@ The inference benchmark measures model calls on CPU and GPU. It leaves out acqui
 
 - Corrected split/scaling evaluation and established six comparable P1 references.
 - Implemented frozen-model participant transfer with source replay and provenance checks.
-- Aligned predictions to movement events and tested how stage and movement dynamics relate to errors.
+- Aligned predictions to movement events and tested whether fitting decoders separately by stage improves wrist prediction.
 - Ran matched comparisons of EEG timing, history duration and wrist position versus velocity.
 - Tested object-weight decoding by movement stage and verified the wrist targets and coordinate axes.
 - Organized reproducible reports, numeric evidence, and independent checks in the [public repository](https://github.com/neurocontrol-lab/eeg-kinematics-decoding).
 
-Next, I plan to test whether EEG distinguishes event-defined movement stages beyond what trial timing alone predicts. A separate comparison will ask whether stage-specific wrist decoders outperform a single model when training sample counts are matched. Condition-specific wrist regression and adaptation to new participants remain open. See the [experiment roadmap](https://github.com/neurocontrol-lab/eeg-kinematics-decoding#experiment-status) for the full plan.
+Next, I plan to test whether EEG distinguishes event-defined movement stages beyond what trial timing alone predicts. The stage-specific results use known event boundaries. A next step is to test how well specialists work when the stage must be inferred from data available at prediction time. Condition-specific wrist regression and adaptation to new participants remain open. See the [experiment roadmap](https://github.com/neurocontrol-lab/eeg-kinematics-decoding#experiment-status) for the full plan.
 
 ---
 
