@@ -53,12 +53,7 @@ ninja.data = [{
           section: "News",},{id: "news-stage-specific-eeg-decoders-reduced-balanced-mean-squared-error-in-wrist-position-prediction-by-77-across-12-participants-compared-with-a-single-decoder-trained-across-all-movement-stages-see-results",
           title: 'Stage-specific EEG decoders reduced balanced mean squared error in wrist-position prediction by 77%...',
           description: "",
-          section: "News",},{id: "projects-autonomous-navigation-amp-robotics",
-          title: 'Autonomous Navigation &amp;amp; Robotics',
-          description: "Undergraduate robotics work with the AGV group and Technology Robotix Society at IIT Kharagpur, spanning autonomous navigation, robot coordination, and drones.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/agv_and_robotix/";
-            },},{id: "projects-battleship-solitaire-solver",
+          section: "News",},{id: "projects-battleship-solitaire-solver",
           title: 'Battleship Solitaire Solver',
           description: "Solver-aided constraint synthesis for Battleship Solitaire using Rosette/Racket, symbolic variables, and angelic execution.",
           section: "Projects",handler: () => {
@@ -143,6 +138,11 @@ ninja.data = [{
           description: "Auditing stimulus events and testing single-epoch EEG decoding of peripheral stimulation waveforms.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/tens-eeg-waveform-decoding/";
+            },},{id: "projects-autonomous-navigation-amp-robotics",
+          title: 'Autonomous Navigation &amp;amp; Robotics',
+          description: "Undergraduate robotics work at IIT Kharagpur on autonomous ground vehicle navigation, robot coordination, and aerial robotics.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/undergrad_robotics/";
             },},{id: "teachings-cmpsc-189b-senior-computer-systems-project-capstone",
           title: 'CMPSC 189B: Senior Computer Systems Project (Capstone)',
           description: "The second quarter of the computer science senior capstone sequence focusing on engineering implementation, testing, and final product deployment.",
