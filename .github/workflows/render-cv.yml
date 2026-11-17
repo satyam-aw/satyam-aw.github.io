@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - "_data/cv.yml"
+      - "_data/classic/entries/PublicationEntry.j2.typ"
       - "bin/prepare_rendercv.py"
       - "requirements.txt"
       - ".github/workflows/render-cv.yml"

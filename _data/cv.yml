@@ -96,11 +96,13 @@ cv:
             mixed-reality locomotion.
           - Analysed gaze error and timing during target, head, and body movement. First author on two poster
             papers.
-      - company: Undergraduate Robotics Research, IIT Kharagpur
-        position: ""
-        start_date: 2016
-        end_date: 2018
-        summary: Perception, sensor fusion, and navigation for the Eklavya autonomous ground vehicle.
+      - company: SmartWatch Wall Writing, IIT Kharagpur
+        position: Undergraduate Research Project
+        start_date: 2019
+        end_date: 2020
+        url: /projects/smartwatch_wall_writing/
+        summary: Developed methods to transcribe wall writing in real time from smartwatch motion data.
+          Co-authored the resulting COMSNETS 2022 publication.
     Publications:
       - title: Eye Tracking Performance in Mobile Mixed Reality
         authors:
