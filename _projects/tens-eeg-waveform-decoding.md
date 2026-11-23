@@ -1,7 +1,7 @@
 ---
 layout: page
 pinned: true
-title: TENS Waveform Decoding from EEG
+title: Neural Responses to Peripheral Electrical Stimulation
 description: Auditing stimulus events and testing single-epoch EEG decoding of peripheral stimulation waveforms.
 research_connection: >-
   Sensory feedback is the return path of a bidirectional neural interface. This project investigates whether EEG distinguishes peripheral stimulation conditions, while separating predictive information from timing, stimulation artifacts, and task context.

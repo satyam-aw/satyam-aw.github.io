@@ -8,7 +8,7 @@ description: Dynamic estimation and tracking-error bounds using a reproduced ROH
 img: /assets/img/projects/safe-output-fb-mpc.jpg
 category: "Safe & Intelligent Control"
 importance: 3
-selected: true
+selected: false
 completed_on: "Remote collaboration · Imperial College London, 2026–Present"
 github: https://github.com/satyam-aw/ROHMPC-State-Dependent-Uncertainty
 project_pdf: https://github.com/satyam-aw/ROHMPC-State-Dependent-Uncertainty/blob/master/research/state_dependent_bounds/manuscript/state_dependent_rohmpc.pdf

@@ -1,10 +1,10 @@
 ---
 layout: about
 title: about
-seo_title: "Satyam Awasthi | Closed-Loop Brain–Computer Interfaces"
+seo_title: "Satyam Awasthi | Neural Decoding, Learning & Closed-Loop Interfaces"
 og_image_alt: "Satyam Awasthi"
 permalink: /
-subtitle: Ph.D. Applicant | Closed-Loop Brain–Computer Interfaces | UCSB MS · IIT Kharagpur · Ex-Intuit/Yahoo
+subtitle: Ph.D. Applicant | Neural Decoding, Learning & Closed-Loop Interfaces
 
 profile:
   align: right
@@ -28,14 +28,16 @@ selected_projects:
   limit: 3
 ---
 
-My research interests center on **reliable closed-loop brain–computer interfaces**—from physiological signal acquisition and intended-action decoding to uncertainty-aware control, feedback, and adaptation.
+My research interests center on how neural activity represents actions, changes with learning and experience, and can be interpreted for reliable closed-loop interaction.
 
-I earned my M.S. in Computer Science at UC Santa Barbara, where I investigated eye-tracking behavior and calibration during mixed-reality locomotion in the Four Eyes Lab with Prof. Tobias Höllerer and Prof. Michael Beyeler.
+My current work uses EEG to study movement decoding, task-related neural responses, sensory feedback, and real-time brain–computer interfaces, alongside research on robust estimation and control under uncertainty. I am particularly interested in how neural representations evolve across behavioral states and learning, how well they generalize to new conditions, and how these principles can inform adaptive neural interfaces.
 
-My current work spans **EEG-based decoding, sensory feedback for bidirectional neural interfaces, and robust estimation and control under uncertainty**. I pursue these projects with guidance from Dr. Camille Gontier, Prof. Mohsen Rakhshan, and Dr. Johannes Köhler, alongside collaborations in EEG decoding with researchers at Essex and Reading.
+I earned my M.S. in Computer Science at UC Santa Barbara, where I studied eye-tracking behavior and calibration during mixed-reality locomotion with Prof. Tobias Höllerer and Prof. Michael Beyeler. My background in electrical engineering and computer science provides the quantitative foundation I now hope to combine with deeper experimental and systems neuroscience training.
 
 ### Research questions
 
-**How much can noisy physiological signals reveal about intended actions, and how early and precisely can we infer them?**
+**How are actions, task structure, and behavioral strategies represented in neural population activity, and how do these representations change through learning and experience?**
 
-**How can a closed-loop BCI use feedback control to act reliably when those inferences are uncertain?**
+**Which aspects of these neural representations remain stable enough to generalize across behavioral states, contexts, sessions, and individuals?**
+
+**How can neural interfaces use these representations—and recognize when they change—to support reliable closed-loop interaction without disrupting the user’s own learning?**

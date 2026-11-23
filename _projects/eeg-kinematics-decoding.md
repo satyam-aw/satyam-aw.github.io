@@ -7,7 +7,7 @@ research_connection: >-
   Reliable movement decoding is a component of closed-loop brain-computer interfaces. This project tests where EEG-based predictions generalize and where errors concentrate before introducing adaptation or feedback control.
 img: /assets/img/projects/eeg-kinematics/eeg-kinematics-thumbnail.jpg
 category: "Neural Interfaces & Biosignals"
-importance: 2
+importance: 1
 selected: true
 thumbnail_credit:
   authors: "Luciw, Jarocka & Edin"

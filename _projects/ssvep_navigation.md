@@ -13,7 +13,7 @@ thumbnail_credit:
   authors: "Rejer & Cieszyński"
   source: https://link.springer.com/article/10.1007/s10044-018-0758-4
   license: https://creativecommons.org/licenses/by/4.0/
-importance: 1
+importance: 3
 github: https://github.com/neurocontrol-lab/ssvep-decoding
 category: "Neural Interfaces & Biosignals"
 related_publications: true

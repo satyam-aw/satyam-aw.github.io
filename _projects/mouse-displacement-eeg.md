@@ -1,11 +1,11 @@
 ---
 layout: page
 pinned: true
-title: Error-Related EEG During Mouse Movements
+title: EEG Responses to Visuomotor Perturbations
 description: Event-aligned EEG and held-out-run decoding of unexpected target displacement across 25 participants.
 img: /assets/img/projects/mouse-displacement-eeg/task-overview.png
 category: "Neural Interfaces & Biosignals"
-importance: 4
+importance: 2
 completed_on: "Remote research collaboration · University of Essex, 2026–Present"
 research_connection: >-
   Error-related EEG could provide feedback about unintended outcomes in a closed-loop BCI. This project studies whether a reliable response can be identified before using it for decoding or adaptation.
@@ -27,6 +27,7 @@ project_toc: true
 project_toc_level: "2"
 _styles: |
   .post article h2 { color: var(--global-theme-color); }
+selected: true
 ---
 
 What happens in the EEG when a target moves unexpectedly during a reach? I’m working with Mushfika Sultana and Dr. Serafeim Perdikis at the University of Essex to find out. The study asks two related questions: when the EEG changes after a target jump, and whether those changes can distinguish displaced from non-displaced trials on new recording runs.
