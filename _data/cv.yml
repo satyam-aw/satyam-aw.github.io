@@ -3,12 +3,12 @@
 # Project periods follow the current portfolio where its dates differ from the published CV.
 cv:
   name: Satyam Awasthi
-  label: Closed-Loop Brain-Computer Interfaces | Sensing, Decoding & Control
+  label: Neural Decoding | Sensorimotor Learning | Closed-Loop Interfaces
   email: satyam.aw@yahoo.com
   website: https://satyam-aw.github.io
-  summary: I develop methods for neural decoding and reliable closed-loop brain–computer interfaces. My current
-    research spans real-time EEG interfaces, motor decoding, sensory feedback, and robust control under
-    uncertainty.
+  summary: My research uses neural decoding and behavioral analysis to study how neural activity relates to movement
+    and task state. I am interested in how neural representations and behavioral strategies change with learning
+    and adaptation, and how these changes affect generalization and closed-loop interaction.
   social_networks:
     - network: GitHub
       username: satyam-aw
@@ -33,6 +33,26 @@ cv:
         location: Kharagpur, India
         summary: "GPA: 8.98/10.0. Minor in Computer Science."
     Research Experience:
+      - company: EEG-to-Kinematics Decoding
+        position: Research Project
+        start_date: 2026
+        end_date: present
+        url: /projects/eeg-kinematics-decoding/
+        summary: "Guidance: Prof. Slawomir Nasuto (University of Reading)."
+        highlights:
+          - Investigating whether the EEG–movement relationship varies across movement phases by comparing stage-specific and pooled decoders.
+          - Compared six wrist decoders; strong within-participant performance did not transfer reliably to 11 other participants without adaptation.
+          - Across 12 participants, stage-specific ridge regression reduced balanced mean squared error for wrist-position decoding from 0.60 to 0.14 compared with a single model trained across all stages.
+      - company: EEG Responses to Visuomotor Perturbations
+        position: Research Collaboration
+        start_date: 2026
+        end_date: present
+        url: /projects/mouse-displacement-eeg/
+        summary: "Guidance: Dr. Serafeim Perdikis (University of Essex); collaboration with Mushfika Sultana."
+        highlights:
+          - In a mouse-to-target reaching task with unexpected target shifts, identified time intervals with significant EEG differences between displaced and non-displaced trials using cluster-based permutation tests.
+          - Tested whether EEG could distinguish displaced from non-displaced trials on held-out runs within each
+            participant and session, achieving 76.3% mean balanced accuracy across 23 non-pilot participants.
       - company: SSVEP-Based EEG Navigation
         position: Research Project
         start_date: 2026
@@ -44,28 +64,7 @@ cv:
           - Tested CCA decoding with one and four targets. Used recorded EEG to tune window length, harmonics, and
             decision thresholds.
           - Integrated live CCA decoding with a C++/OpenGL maze and tested the pipeline end to end.
-      - company: EEG-to-Kinematics Decoding
-        position: Research Project
-        start_date: 2026
-        end_date: present
-        url: /projects/eeg-kinematics-decoding/
-        summary: "Guidance: Prof. Slawomir Nasuto (University of Reading)."
-        highlights:
-          - Investigate how reliably EEG predicts wrist kinematics and whether stage-specific decoders improve prediction across movement phases.
-          - Compared six wrist decoders; strong within-participant performance did not transfer reliably to 11 other participants without adaptation.
-          - Across 12 participants, stage-specific ridge regression reduced balanced mean squared error for wrist-position decoding from 0.60 to 0.14 compared with a single model trained across all stages.
-      - company: Error-Related EEG During Mouse Movements
-        position: Research Collaboration
-        start_date: 2026
-        end_date: present
-        url: /projects/mouse-displacement-eeg/
-        summary: "Guidance: Dr. Serafeim Perdikis (University of Essex); collaboration with Mushfika Sultana."
-        highlights:
-          - Cluster-based permutation tests on reaches matched for target entry identified significant EEG
-            differences after target displacement.
-          - Tested whether EEG could distinguish displaced from non-displaced trials on held-out runs within each
-            participant and session, achieving 76.3% mean balanced accuracy across 23 non-pilot participants.
-      - company: Sensory Feedback for Bidirectional Neural Interfaces
+      - company: EEG Responses to Peripheral Electrical Stimulation
         position: Research Collaboration
         start_date: 2026
         end_date: present
@@ -96,13 +95,14 @@ cv:
             mixed-reality locomotion.
           - Analysed gaze error and timing during target, head, and body movement. First author on two poster
             papers.
-      - company: SmartWatch Wall Writing, IIT Kharagpur
-        position: Undergraduate Research Project
+      - company: Mobile Research Lab, IIT Kharagpur
+        position: Undergraduate Research Project - SmartWatch Wall Writing
         start_date: 2019
         end_date: 2020
         url: /projects/smartwatch_wall_writing/
-        summary: Developed methods to transcribe wall writing in real time from smartwatch motion data.
-          Co-authored the resulting COMSNETS 2022 publication.
+        summary: |-
+          Advisor: Prof. Bivas Mitra.
+          Developed methods to transcribe wall writing in real time from smartwatch motion data. Co-authored the resulting COMSNETS 2022 publication.
     Publications:
       - title: Eye Tracking Performance in Mobile Mixed Reality
         authors:
@@ -148,11 +148,11 @@ cv:
           - MATLAB
           - NumPy/SciPy
           - PyTorch
-      - name: Neural signal processing
+      - name: Neural data analysis
         keywords:
           - EEG preprocessing
           - spectral analysis
-          - digital filtering
+          - cluster-based permutation testing
           - CCA
           - time-series decoding
       - name: Control & estimation
