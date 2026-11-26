@@ -40,9 +40,9 @@ cv:
         url: /projects/eeg-kinematics-decoding/
         summary: "Guidance: Prof. Slawomir Nasuto (University of Reading)."
         highlights:
-          - Investigating whether the EEG–movement relationship varies across movement phases by comparing stage-specific and pooled decoders.
-          - Compared six wrist decoders; strong within-participant performance did not transfer reliably to 11 other participants without adaptation.
-          - Across 12 participants, stage-specific ridge regression reduced balanced mean squared error for wrist-position decoding from 0.60 to 0.14 compared with a single model trained across all stages.
+          - "Investigating whether the EEG–movement relationship varies across movement stages and dynamics in an object reach-and-lift task, comparing stage-specific and pooled decoders."
+          - "Across 12 participants, stage-specific ridge regression reduced balanced mean squared error for wrist-position decoding from 0.60 to 0.14 compared with a pooled model."
+          - "Decoded object weight using shrinkage LDA on held-out weight-switch trials; balanced accuracy rose from 33.4% before contact (preparation) to 55.0% after contact (loading; 3 classes, chance: 33.3%)."
       - company: EEG Responses to Visuomotor Perturbations
         position: Research Collaboration
         start_date: 2026
