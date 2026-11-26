@@ -51,7 +51,7 @@ cv:
         summary: "Guidance: Dr. Serafeim Perdikis (University of Essex); collaboration with Mushfika Sultana."
         highlights:
           - In a mouse-to-target reaching task with unexpected target shifts, identified time intervals with significant EEG differences between displaced and non-displaced trials using cluster-based permutation tests.
-          - Tested whether EEG could distinguish displaced from non-displaced trials on held-out runs within each
+          - Used shrinkage LDA to distinguish displaced from non-displaced trials on held-out runs within each
             participant and session, achieving 76.3% mean balanced accuracy across 23 non-pilot participants.
       - company: SSVEP-Based EEG Navigation
         position: Research Project
